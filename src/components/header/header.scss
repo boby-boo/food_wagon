@@ -1,0 +1,87 @@
+@import '../../style/variables.scss';
+
+.header__row {
+    @include templateFlex(space-between, center);
+    padding: 16px 0;
+    column-gap: 25px;
+    &_logo {
+        @include templateFont(32, 700, 1.2);
+        text-transform: lowercase;
+        color: $secondary-color;
+        a {
+            @include templateFlex(center, center);
+            column-gap: 12px;
+        }
+        span {
+            color: $primary-color;
+        }
+        @media (max-width: 1240px){
+            font-size: 24px;
+            img {
+                width: 25px;
+            }
+        }
+    }
+    &_location {
+        @include templateFlex(space-between, center);
+        @include templateFont(18, 700, 1.0);
+        color: $dark-color;
+        .location__input {
+            padding: 0 4px 0 12px;
+            @include templateFlex(space-between, center);
+            column-gap: 8px;
+            font-weight: 400;
+        }
+        @media (max-width: 1240px){
+            font-size: 16px;
+        }
+    }
+    &_user-panel {
+        @include templateFlex(center, center);
+        column-gap: 30px;
+        @media (max-width: 1240px) {
+            column-gap: 20px;
+
+        }
+        input {
+            @include templateFont(18, 700, 1);
+            max-width: 166px;
+            padding: 14px 0 14px 26px;
+            background: url(../../resources/icons/search-food__icon.svg) 3px/18px 18px no-repeat;
+            border-radius: 8px;
+            @include templateTransition(all);
+            &::placeholder {
+                @include templateFont(18, 700, 1);
+                @include templateTransition(background-color);
+                color: $dark-color;
+            }
+            &:hover {
+                background-color: transparentize($primary-color, .9);
+            }
+        }
+        button {
+            padding: 14px 24px;
+            @include templateFlex(center, center);
+            column-gap: 10px;
+            @include templateFont(18, 700, 1.0);
+            color: $primary-color;
+            border-radius: 8px;
+            box-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29), 0px 5px 10px 0px rgba(255, 174, 0, 0.26);
+            @include templateTransition(background-color);
+            &:hover {
+                background-color: transparentize($primary-color, .9);
+            }
+        }
+        @media (max-width: 1240px) {
+            input, button  {
+                font-size: 14px;
+            }
+            input {
+                &::placeholder {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
