@@ -12,32 +12,33 @@ const Header = () => {
                 <div className='container'>
                     <nav>
                         <ul className='header__row'>
-                                <li className='header__row_logo'>
-                                    <a href="/">
-                                        <img src={logo__icon} alt="foodwagon logo" />
-                                        <div>
-                                            food<span>wagon</span>  
-                                        </div>
-                                    </a>
-                                </li>
-                                <li className='header__row_location location'>
-                                    Deliver to:
-                                    <div className='location__input'>
-                                        <img src={map__icon} alt="map icon" />
-                                        Current Location
+                            <li className='header__row_logo'>
+                                <a href="/">
+                                    <img src={logo__icon} alt="foodwagon logo" />
+                                    <div>
+                                        food<span>wagon</span>  
                                     </div>
-                                    <span>Mohammadpur Bus Stand, Dhaka</span>
-                                </li>
-                                <li className='header__row_user-panel'>
-                                        <input 
-                                            type="text" 
-                                            id='search__panel'
-                                            placeholder='Search Food' 
-                                            />
-                                        <button>
-                                        <img src={user__icon} alt="user icon" />
-                                        Login</button>
-                                </li>
+                                </a>
+                            </li>
+                            <li className='header__row_location location'>
+                                Deliver to:
+                                <div className='location__input'>
+                                    <img src={map__icon} alt="map icon" />
+                                Mohammadpur Bus Stand, Dhaka
+                                {/* Current Location */}
+                                </div>
+                            </li>
+                            <li className='header__row_user-panel'>
+                                <input 
+                                    type="text" 
+                                    id='search__panel'
+                                    placeholder='Search Food' 
+                                    />
+                                <button>
+                                    <img src={user__icon} alt="user icon" />
+                                    Login
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
