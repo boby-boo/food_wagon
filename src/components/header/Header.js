@@ -1,8 +1,6 @@
 import React from 'react';
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 import map__icon from '../../resources/icons/map__icon.svg';
-import user__icon from '../../resources/icons/user__icon.svg';
-import search__icon from '../../resources/icons/search-food__icon.svg';
 
 import './header.scss'
 
@@ -35,7 +33,6 @@ const Header = () => {
                                     placeholder='Search Food' 
                                     />
                                 <button>
-                                    <img src={user__icon} alt="user icon" />
                                     Login
                                 </button>
                             </li>

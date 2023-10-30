@@ -2,6 +2,7 @@ $primary-color: #FFB30E;
 $secondary-color: #F17228;
 $light-color: #FFF;
 $dark-color: #424242;
+$gray-color: #9E9E9E;
 
 @mixin templateFlex($justify-content, $align-items) {
     display: flex;
