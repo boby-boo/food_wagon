@@ -1,19 +1,20 @@
 @import '../../style/variables.scss';
 
 .header__row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
-    justify-items: center;
     padding: 16px 0;
+    @include templateFlex(space-between, center);
     column-gap: 25px;
-    @media (max-width: 1000px) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        row-gap: 20px;
+    @media (max-width: 830px) {
+        .header__row {
+            &_location {
+                display: none;
+            }
+            &_user-panel {
+                display: none;
+            }
+        }
     };
     &_logo {
-        grid-column: 1/3;
         @include templateFont(32, 700, 1.2);
         text-transform: lowercase;
         color: $secondary-color;
@@ -34,36 +35,26 @@
         }
     }
     &_location {
-        grid-column: 3/10;
         @include templateFlex(center, center);
         @include templateFont(18, 700, 1.0);
         column-gap: 12px;
-        color: $dark-color;
+        color: $gray-color;
         .location__input {
             @include templateFlex(space-between, center);
             column-gap: 8px;
         }
         @media (max-width: 1000px) {
-            grid-column: 1/4;
-            grid-row: 3/4;
             font-size: 16px;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 900px) {
             font-size: 14px;
-            .location__input {
-                font-size: 14px;
-            }
         };
     }
     &_user-panel {
-        grid-column: 10/13;
-        @include templateFlex(center, center);
+        @include templateFlex(space-between, center);
         column-gap: 30px;
-        @media (max-width: 1240px) {
-            column-gap: 20px;
-        }
         input {
-            max-width: 166px;
+            max-width: 180px;
             padding: 14px 0 14px 26px;
             @include templateFont(18, 700, 1);
             color: $gray-color;
@@ -103,144 +94,77 @@
         input:hover {
             background-color: transparentize($primary-color, .9);
         }
+        @media (max-width: 1240px) {
+            column-gap: 20px;
+        }
         @media (max-width: 1000px) {
-            flex-direction: row-reverse;
-            grid-column: 1/4;
-            grid-row: 2/3;
-            input, button  {
+            button,
+            input {
+                font-size: 16px;
+            }
+            input::placeholder {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 900px) {
+            column-gap: 10px;
+            button,
+            input {
                 font-size: 14px;
             }
-            input {
-                &::placeholder {
-                    font-size: 14px;
-                }
+            input::placeholder {
+                font-size: 14px;
             }
         }
     }
 }
 
-.delivery-banner {
-    background: url(../../resources/images/banner__food-image.png) center / cover no-repeat;
-    &__row {
-        padding: 132px 0;
-        @media (max-width: 1000px) {
-            padding: 64px 0;
-        }
-        &_text {
-            margin-bottom: 32px;
-            h1 {
-                @include templateFont(88, 700, 1);
-                color: $light-color;
-                margin-bottom: 15px;
-            }
-            p {
-                @include templateFont(22, 400, 1.2);
-            }
-            @media (max-width: 1280px) {
-                h1 {
-                    font-size: 69px;
-                }
-            }
-            @media (max-width: 1000px) {
-                h1, p {
-                    text-align: center;
-                }
+.header__menu-button {
+    display: none;
+    width: 30px;
+    height: 30px;
+    button {
+        @include templateFlex(center, center);
+        img {
+            width: 100%;
+            height: 100%;
+            @include templateTransition(opacity);
+            &:hover {
+                opacity: .9;
             }
         }
     }
-    &__form {
-        max-width: 880px;
+
+    @media (max-width: 830px) {
+        display: block;
+    }
+}
+
+.header__mobile-menu {
+    &_row {
+        @include templateFlex(flex-start, center);
+        flex-direction: column;
+        row-gap: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        z-index: 111;
+        padding: 20px 0;
         background-color: $light-color;
-        border-radius: 16px;
-        box-shadow: $primary-shadow;
-        @media (max-width: 1000px) {
-            max-width: 100%;
-        }
-        &_top {
-            padding: 24px;
-            @include templateFlex(flex-start, center);
-            column-gap: 8px;
-            border-bottom: 1px solid transparentize($gray-color, .8);
-            @media (max-width: 1000px) {
-                justify-content: center;
-            }
-            input {
-                display: none;
-            }
-            .form__top_input {
-                max-width: 148px;
-                width: 100%;
-                min-height: 38px;
-                padding: 5px;
-                @include templateFlex(center, center);
-                column-gap: 10px;
-                @include templateFont(18, 700, 1);
-                color: #757575;
-                border-radius: 8px;
-                @include templateTransition(all);
-                path {
-                    @include templateTransition(fill);
-                }
-                &:hover {
-                    color: $secondary-color;
-                    background: rgba(241, 114, 40, 0.10);
-                    cursor: pointer;
-                    path {
-                        fill: $secondary-color
-                    }
-                }
-                path {
-                    fill: #757575;
-                }
-            }
-        }
-        &_bottom {
-            padding: 24px;
-            @include templateFlex(flex-start, center);
-            column-gap: 16px;
-            @media (max-width: 1000px) {
-                justify-content: center;
-            }
-            input {
-                padding: 7px 7px 8px 46px;
-                max-width: 593px;
-                width: 100%;
-                min-height: 49px;
-                font-size: 18px;
-                color: $gray-color;
-                background: #F5F5F5 url(../../resources/icons/form-location__icon.svg) 16px center / 18px 34px no-repeat;
-                border-radius: 8px;
-                @include templateTransition(box-shadow);
-                &::placeholder {
-                    @include templateFont(18, 400, 1.4);
-                    color: $gray-color;
-                }
-                &:hover {
-                    background-color: transparentize($primary-color, $amount: .9);
-                    box-shadow: $primary-shadow;
-                } 
-            }
-            button {
-                max-width: 199px;
-                width: 100%;
-                min-height: 60px;
-                @include templateFlex(center, center);
-                column-gap: 10px;
-                @include templateFont(18, 700, 1);
-                color: $light-color;
-                border-radius: 8px;
-                background: linear-gradient(96deg, #FF7A7A -39.64%, #F65900 135.31%);
-                @include templateTransition(opacity);
-                &:hover {
-                    opacity: .9;
-                }
-                &::before {
-                    content: '';
-                    display: block;
-                    width: 14px;
-                    height: 14px;
-                    background: url(../../resources/icons/form-location__search_icon.svg);
-                }
+        text-transform: uppercase;
+        @include templateFont(18, 700, 1.4);
+        color: $dark-color;
+        button {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            img {
+                width: 80%;
+                height: 80%;
             }
         }
     }
