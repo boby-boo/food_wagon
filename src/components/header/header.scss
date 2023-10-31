@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    justify-items: center;
     padding: 16px 0;
     column-gap: 25px;
     @media (max-width: 1000px) {
@@ -42,7 +43,6 @@
             @include templateFlex(space-between, center);
             column-gap: 8px;
         }
-
         @media (max-width: 1000px) {
             grid-column: 1/4;
             grid-row: 3/4;
@@ -76,15 +76,16 @@
             }
         }
         button {
+            min-height: 46px;
+            min-width: 118px;
+            width: 100%;
+            padding: 3px;
             @include templateFlex(center, center);
             column-gap: 10px;
-            max-width: 118px;
-            min-height: 46px;
-            width: 100%;
             @include templateFont(18, 700, 1.0);
             text-align: center;
             color: $primary-color;
-            box-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29), 0px 5px 10px 0px rgba(255, 174, 0, 0.26);
+            box-shadow: $primary-shadow;
             &::before {
                 content: '';
                 display: block;
@@ -118,3 +119,129 @@
     }
 }
 
+.delivery-banner {
+    background: url(../../resources/images/banner__food-image.png) center / cover no-repeat;
+    &__row {
+        padding: 132px 0;
+        @media (max-width: 1000px) {
+            padding: 64px 0;
+        }
+        &_text {
+            margin-bottom: 32px;
+            h1 {
+                @include templateFont(88, 700, 1);
+                color: $light-color;
+                margin-bottom: 15px;
+            }
+            p {
+                @include templateFont(22, 400, 1.2);
+            }
+            @media (max-width: 1280px) {
+                h1 {
+                    font-size: 69px;
+                }
+            }
+            @media (max-width: 1000px) {
+                h1, p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &__form {
+        max-width: 880px;
+        background-color: $light-color;
+        border-radius: 16px;
+        box-shadow: $primary-shadow;
+        @media (max-width: 1000px) {
+            max-width: 100%;
+        }
+        &_top {
+            padding: 24px;
+            @include templateFlex(flex-start, center);
+            column-gap: 8px;
+            border-bottom: 1px solid transparentize($gray-color, .8);
+            @media (max-width: 1000px) {
+                justify-content: center;
+            }
+            input {
+                display: none;
+            }
+            .form__top_input {
+                max-width: 148px;
+                width: 100%;
+                min-height: 38px;
+                padding: 5px;
+                @include templateFlex(center, center);
+                column-gap: 10px;
+                @include templateFont(18, 700, 1);
+                color: #757575;
+                border-radius: 8px;
+                @include templateTransition(all);
+                path {
+                    @include templateTransition(fill);
+                }
+                &:hover {
+                    color: $secondary-color;
+                    background: rgba(241, 114, 40, 0.10);
+                    cursor: pointer;
+                    path {
+                        fill: $secondary-color
+                    }
+                }
+                path {
+                    fill: #757575;
+                }
+            }
+        }
+        &_bottom {
+            padding: 24px;
+            @include templateFlex(flex-start, center);
+            column-gap: 16px;
+            @media (max-width: 1000px) {
+                justify-content: center;
+            }
+            input {
+                padding: 7px 7px 8px 46px;
+                max-width: 593px;
+                width: 100%;
+                min-height: 49px;
+                font-size: 18px;
+                color: $gray-color;
+                background: #F5F5F5 url(../../resources/icons/form-location__icon.svg) 16px center / 18px 34px no-repeat;
+                border-radius: 8px;
+                @include templateTransition(box-shadow);
+                &::placeholder {
+                    @include templateFont(18, 400, 1.4);
+                    color: $gray-color;
+                }
+                &:hover {
+                    background-color: transparentize($primary-color, $amount: .9);
+                    box-shadow: $primary-shadow;
+                } 
+            }
+            button {
+                max-width: 199px;
+                width: 100%;
+                min-height: 60px;
+                @include templateFlex(center, center);
+                column-gap: 10px;
+                @include templateFont(18, 700, 1);
+                color: $light-color;
+                border-radius: 8px;
+                background: linear-gradient(96deg, #FF7A7A -39.64%, #F65900 135.31%);
+                @include templateTransition(opacity);
+                &:hover {
+                    opacity: .9;
+                }
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    background: url(../../resources/icons/form-location__search_icon.svg);
+                }
+            }
+        }
+    }
+}
