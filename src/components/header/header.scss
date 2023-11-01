@@ -142,20 +142,20 @@
 
 .header__mobile-menu {
     &_row {
-        @include templateFlex(flex-start, center);
-        flex-direction: column;
-        row-gap: 10px;
         position: fixed;
         top: 0;
         left: 0;
+        @include templateFlex(flex-start, center);
+        flex-direction: column;
+        row-gap: 10px;
         height: 100%;
         width: 100vw;
-        z-index: 111;
         padding: 20px 0;
-        background-color: $light-color;
-        text-transform: uppercase;
         @include templateFont(18, 700, 1.4);
         color: $dark-color;
+        text-transform: uppercase;
+        background-color: $light-color;
+        z-index: 111;
         button {
             position: absolute;
             top: 20px;

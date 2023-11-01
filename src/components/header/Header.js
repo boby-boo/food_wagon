@@ -68,7 +68,6 @@ const Header = () => {
                                 <div className='location__input'>
                                     <img src={map__icon} alt="map icon" />
                                 Mohammadpur Bus Stand, Dhaka
-                                {/* Current Location */}
                                 </div>
                             </li>
                             <li className='header__row_user-panel'>
