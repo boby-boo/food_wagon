@@ -1,10 +1,15 @@
 import Header from "../header/Header";
+import DeliveryBanner from '../deliveryBanner/DeliveryBanner';
+import AboutService from '../aboutService/AboutService';
 
-function App() {
+
+const App = () => {
   return (
-    <div>
+    <>
       <Header/>
-    </div>
+      <DeliveryBanner/>
+      <AboutService/>
+    </>
   );
 }
 

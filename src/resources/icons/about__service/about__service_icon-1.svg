@@ -1,0 +1,26 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 117" width="90" height="117">
+	<title>Map Marker-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m2 3h86v112h-86z"/>
+		</clipPath>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,192.254,-146.813,0,45,-39.802)">
+			<stop offset=".63" stop-color="#ffae00"/>
+			<stop offset="1" stop-color="#ffcd1e"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,112,-85.527,0,45,3)">
+			<stop offset="0" stop-color="#ff9f00"/>
+			<stop offset="1" stop-color="#ffb800"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1);stroke: url(#g2);stroke-width: 2 } 
+		.s1 { fill: #ffffff } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" class="s0" d="m45 114c-0.8 0-1.5-0.4-1.9-1-8-11.4-14.9-20.2-20.5-27.3-12.8-16.2-19.6-24.9-19.6-40 0-23 18.8-41.7 42-41.7 23.2 0 42 18.7 42 41.7 0 15.1-6.8 23.8-19.8 40.2-5.5 7-12.4 15.8-20.3 27.1-0.4 0.6-1.1 1-1.9 1z"/>
+			<path id="Layer" class="s1" d="m45 69c-12.7 0-23-10.3-23-23 0-12.7 10.3-23 23-23 12.7 0 23 10.3 23 23 0 12.7-10.3 23-23 23z"/>
+		</g>
+	</g>
+</svg>

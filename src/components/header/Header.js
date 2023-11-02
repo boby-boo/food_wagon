@@ -5,7 +5,7 @@ import menuButton from '../../resources/icons/header__menu_button.svg';
 import menuButtonClosed from '../../resources/icons/header__menu_button-closed.svg';
 
 import './header.scss'
-import DeliveryBanner from '../deliveryBanner/DeliveryBanner';
+
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -87,7 +87,6 @@ const Header = () => {
                     </nav>
                 </div>
             </header>
-            <DeliveryBanner/>
         </>
     );
 };

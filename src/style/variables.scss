@@ -20,3 +20,8 @@ $primary-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29), 0px 5px 10px 0px rgb
 @mixin templateTransition($animate) {
     transition: $animate .3s ease;
 }
+
+.primary-title {
+    @include templateFont(43, 700, 1.2);
+    text-align: center;
+}
