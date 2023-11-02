@@ -7,6 +7,9 @@
         @media (max-width: 1000px) {
             padding: 64px 0;
         }
+        @media (max-width: 700px) {
+            padding: 30px 0;
+        }
         &_text {
             margin-bottom: 32px;
             h1 {
@@ -27,7 +30,7 @@
             }
             @media (max-width: 700px) {
                 h1 {
-                    font-size: 50px;
+                    font-size: 40px;
                 }
                 p {
                     font-size: 16px;
