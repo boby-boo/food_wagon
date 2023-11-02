@@ -17,14 +17,20 @@
             p {
                 @include templateFont(22, 400, 1.2);
             }
-            @media (max-width: 1280px) {
+            @media (max-width: 1000px) {
+                h1, p {
+                    text-align: center;
+                }
                 h1 {
                     font-size: 69px;
                 }
             }
-            @media (max-width: 1000px) {
-                h1, p {
-                    text-align: center;
+            @media (max-width: 700px) {
+                h1 {
+                    font-size: 50px;
+                }
+                p {
+                    font-size: 16px;
                 }
             }
         }
