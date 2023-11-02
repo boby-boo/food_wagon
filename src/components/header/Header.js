@@ -1,11 +1,10 @@
 import { useState } from 'react';
+
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
-import map__icon from '../../resources/icons/map__icon.svg';
 import menuButton from '../../resources/icons/header__menu_button.svg';
 import menuButtonClosed from '../../resources/icons/header__menu_button-closed.svg';
 
 import './header.scss'
-
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +16,11 @@ const Header = () => {
     if (isOpen) {
         return (
             <div className='header__mobile-menu'>
-                <nav className="container">
+                <nav className='container'>
                     <ul className='header__mobile-menu_row'>
                         <li className='header__row_logo'>
-                            <a href="/">
-                                <img src={logo__icon} alt="foodwagon logo" />
+                            <a href='/'>
+                                <img src={logo__icon} alt='foodwagon logo' />
                                 <div>
                                     food<span>wagon</span>  
                                 </div>
@@ -41,7 +40,7 @@ const Header = () => {
                         </li>
                         <li>
                             <button onClick={handleClick}>
-                                <img src={menuButtonClosed} alt="burger menu icon closed" />
+                                <img src={menuButtonClosed} alt='burger menu icon closed' />
                             </button>
                         </li>
                     </ul>
@@ -52,13 +51,13 @@ const Header = () => {
 
     return (
         <>
-            <header className="header">
+            <header className='header'>
                 <div className='container'>
                     <nav>
                         <ul className='header__row'>
                             <li className='header__row_logo'>
-                                <a href="/">
-                                    <img src={logo__icon} alt="foodwagon logo" />
+                                <a href='/'>
+                                    <img src={logo__icon} alt='foodwagon logo' />
                                     <div>
                                         food<span>wagon</span>  
                                     </div>
@@ -66,13 +65,12 @@ const Header = () => {
                             </li>
                             <li className='header__row_location location'>
                                 <div className='location__input'>
-                                    <img src={map__icon} alt="map icon" />
                                 Mohammadpur Bus Stand, Dhaka
                                 </div>
                             </li>
                             <li className='header__row_user-panel'>
                                 <input 
-                                    type="text" 
+                                    type='text' 
                                     id='search__panel'
                                     placeholder='Search Food' 
                                     />

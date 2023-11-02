@@ -42,6 +42,13 @@
         .location__input {
             @include templateFlex(space-between, center);
             column-gap: 8px;
+            &::before {
+                content: '';
+                display: block;
+                width: 14px;
+                height: 19px;
+                background: url(../../resources/icons/map__icon.svg);
+            }
         }
         @media (max-width: 1000px) {
             font-size: 16px;
@@ -55,7 +62,7 @@
         column-gap: 30px;
         input {
             max-width: 180px;
-            padding: 14px 0 14px 26px;
+            padding: 14px 10px 14px 30px;
             @include templateFont(18, 700, 1);
             color: $gray-color;
             text-align: center;
