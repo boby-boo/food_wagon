@@ -1,0 +1,96 @@
+@import '../../style/variables.scss';
+
+.deal__cards {
+    &_row {
+        @include templateFlex(center, center);
+        gap: 32px 15px;
+        flex-wrap: wrap;
+    }
+    .deal__card {
+        border-radius: 16px;
+        &:hover {
+            .card__content:before {
+                opacity: 1;
+            }
+            .card__content_image {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+            .card__content_discount {
+                transform: translateX(-150px);
+            }
+        }
+        max-width: 357px;
+        overflow: hidden;
+        @media(max-width: 830px) {
+            max-width: 250px;
+        }
+        .card__content {
+            position: relative;
+            height: 301px;
+            margin-bottom: 26px;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                background-color: transparentize(#000, .6);
+                @include templateTransition(opacity);
+                z-index: 111;
+            }
+            &_image {
+                max-width: 357px;
+                height: 301px;
+                overflow: hidden;
+                border-radius: 0 0 16px 16px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include templateTransition(transform);
+                }
+
+            }
+            &_discount {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                @include templateFlex(flex-start, center);
+                padding: 10px 18px;
+                @include templateFont(68, 700, 1);
+                color: $light-color;
+                border-radius: 0 32px 0 0;
+                background-color: $primary-color;
+                transform: translateX(0);
+                @include templateTransition(transform);
+                &-items {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 35px;
+                    span {
+                        @include templateFont(22, 400, 1.2);
+                    }
+                }
+            }
+        }
+        &_description {
+            @include templateFont(22, 700, 1.2);
+            padding: 6px 0 0 0;
+            h3 {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+            &-remaining {
+                display: inline-block;
+                padding: 8px 16px;
+                color: $secondary-color;
+                background-color: transparentize($secondary-color, .8);
+                border-radius: 8px;
+            }
+        }
+    }
+}
