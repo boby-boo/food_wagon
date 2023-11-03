@@ -1,6 +1,7 @@
 @import '../../style/variables.scss';
 
 .deal__cards {
+    padding: 80px 0;
     &_row {
         @include templateFlex(center, center);
         gap: 32px 15px;
@@ -42,6 +43,10 @@
                 @include templateTransition(opacity);
                 z-index: 111;
             }
+            @media(max-width: 830px) {
+                height: 200px;
+                margin-bottom: 10px;
+            }
             &_image {
                 max-width: 357px;
                 height: 301px;
@@ -53,7 +58,9 @@
                     object-fit: cover;
                     @include templateTransition(transform);
                 }
-
+                @media(max-width: 830px) {
+                    height: 200px;
+                }
             }
             &_discount {
                 position: absolute;
@@ -67,22 +74,38 @@
                 background-color: $primary-color;
                 transform: translateX(0);
                 @include templateTransition(transform);
+                @media(max-width: 830px) {
+                    column-gap: 3px;
+                    padding: 10px 15px 10px 8px;
+                    font-size: 32px;
+                }
                 &-items {
                     display: flex;
                     flex-direction: column;
                     font-size: 35px;
+                    @media(max-width: 830px) {
+                        row-gap: 3px;
+                        font-size: 16px;
+                    }
                     span {
                         @include templateFont(22, 400, 1.2);
+                        @media(max-width: 830px) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
         }
         &_description {
             @include templateFont(22, 700, 1.2);
-            padding: 6px 0 0 0;
+            padding-top: 6px;
             h3 {
                 font-size: 22px;
                 margin-bottom: 14px;
+                @media(max-width: 830px) {
+                    font-size: 18px;
+                    text-align: center;
+                }
             }
             &-remaining {
                 display: inline-block;
@@ -90,6 +113,12 @@
                 color: $secondary-color;
                 background-color: transparentize($secondary-color, .8);
                 border-radius: 8px;
+                @media(max-width: 830px) {
+                    border-radius: 0;
+                    display: block;
+                    font-size: 16px;
+                    text-align: center;
+                }
             }
         }
     }
