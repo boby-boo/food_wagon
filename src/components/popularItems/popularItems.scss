@@ -1,0 +1,89 @@
+@import '../../style/variables.scss';
+
+.popular-items {
+    padding: 80px 40px 0;
+    &__row {
+    }
+    .popular-item {
+        max-width: 283px;
+        @include templateFlex(center, flex-start);
+        flex-direction: column;
+        row-gap: 16px;
+        &:hover {
+            .popular-item__image:before{
+                opacity: 1;
+            }
+            .popular-item__image img {
+                transform: scale(1.01);
+            }
+        }
+        &__image {
+            position: relative;
+            max-width: 283px;
+            height: 283px;
+            border-radius: 16px;
+            overflow: hidden;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: transparentize(#000, .5);
+                opacity: 0;
+                @include templateTransition(opacity);
+                z-index: 111;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include templateTransition(transform)
+            }
+        }
+        &__description {
+            @include templateFlex(center, flex-start);
+            flex-direction: column;
+            row-gap: 8px;
+            @include templateFont(22, 700, 1.2);
+            h3 {
+                @include templateFont(22, 700, 1.2);
+            }
+            &_location {
+                width: 100%;
+                @include templateFlex(flex-start, center);
+                column-gap: 8px;
+                @include templateFont(22, 400, 1.2);
+                color: $primary-color;
+                &::before {
+                    content: '';
+                    display: block;
+                    max-width: 14px;
+                    width: 100%;
+                    height: 22px;
+                    background: no-repeat url(../../resources/icons/popular__items_location-icon.svg) center;
+                }
+            }
+
+        }
+        &__button {
+            padding: 10px;
+            width: 100%;
+            min-height: 60px;
+            @include templateFlex(center, center);
+            @include templateFont(18, 700, 1);
+            color: $light-color;
+            background-color: $secondary-color;
+            border-radius: 8px;
+            box-shadow: 0px 20px 40px 0px #fa63233d, 0px 5px 10px 0px #fd725c38;
+            @include templateTransition(all);
+            &:hover {
+                letter-spacing: 2px;
+                background-color: transparentize($secondary-color, .1);
+            }
+            &:active {
+                background-color: transparentize($secondary-color, .2);
+            }
+        }
+    }
+}
