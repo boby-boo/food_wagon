@@ -1,8 +1,11 @@
 @import '../../style/variables.scss';
 
-.deal__cards {
+.flash__deals {
     padding: 80px 0;
-    &_row {
+    @media(max-width: 830px) {
+        padding: 40px 0;
+    }
+    .deal__cards_row {
         @include templateFlex(center, center);
         gap: 32px 15px;
         flex-wrap: wrap;
