@@ -76,7 +76,6 @@
             color: $light-color;
             background-color: $secondary-color;
             border-radius: 8px;
-            // box-shadow: 0px 20px 40px 0px #fa63233d, 0px 5px 10px 0px #fd725c38;
             @include templateTransition(all);
             &:hover {
                 letter-spacing: 2px;
@@ -129,22 +128,4 @@
 
 .slick-active {
     display: flex !important;
-    @include templateFlex(center, center)
 }
-
-// .slick-track {
-//     display: flex;
-//     justify-content: center;
-//     gap: 16px;
-// }
-// .slick-track > div {
-//     max-width: 283px !important;
-// }
-// .slick-track {
-//     display: flex ;
-//     justify-content: space-around;
-// }
-// .slick-active .slick-slide {
-//     max-width: 283px;
-//     background-color: #000;
-// } 
