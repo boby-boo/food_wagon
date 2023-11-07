@@ -12,10 +12,10 @@ const FlashDeals = () => {
         <section className='flash__deals'>
             <div className='container'>
                 <ul className='deal__cards_row'>
-                    <li className='deal__card'>
+                    <li className='primary__card deal__card'>
                         <a href='/'>
-                            <div className='deal__card_content card__content'>
-                                <div className='card__content_image'>
+                            <div className='primary__card_content deal__card_content card__content'>
+                                <div className='primary__card_image'>
                                     <img src={dealCardImage} alt='deal card image' />
                                 </div>
                                 <div className='card__content_discount'>
@@ -33,10 +33,10 @@ const FlashDeals = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='deal__card'>
+                    <li className='primary__card deal__card'>
                         <a href='/'>
-                            <div className='deal__card_content card__content'>
-                                <div className='card__content_image'>
+                            <div className='primary__card_content deal__card_content card__content'>
+                                <div className='primary__card_image'>
                                     <img src={dealCardImage1} alt='deal card image' />
                                 </div>
                                 <div className='card__content_discount'>
@@ -54,10 +54,10 @@ const FlashDeals = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='deal__card'>
+                    <li className='primary__card deal__card'>
                         <a href='/'>
-                            <div className='deal__card_content card__content'>
-                                <div className='card__content_image'>
+                            <div className='primary__card_content deal__card_content card__content'>
+                                <div className='primary__card_image'>
                                     <img src={dealCardImage2} alt='deal card image' />
                                 </div>
                                 <div className='card__content_discount'>
@@ -75,10 +75,10 @@ const FlashDeals = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='deal__card'>
+                    <li className='primary__card deal__card'>
                         <a href='/'>
-                            <div className='deal__card_content card__content'>
-                                <div className='card__content_image'>
+                            <div className='primary__card_content deal__card_content card__content'>
+                                <div className='primary__card_image '>
                                     <img src={dealCardImage3} alt='deal card image' />
                                 </div>
                                 <div className='card__content_discount'>
