@@ -2,8 +2,8 @@
 
 .popular-items {
     padding: 80px 0 40px 0;
-    h2 {
-        margin-bottom: 88px;
+    @media (max-width: 830px) {
+        padding: 40px 0 20px 0;
     }
     .popular-item {
         max-width: 283px;
@@ -86,46 +86,4 @@
             }
         }
     }
-}
-
-.custom-arrow {
-    &__prev_item,
-    &__next_item {
-        position: absolute;
-        @include templateFlex(center, center);
-        max-width: 76px;
-        width: 100%;
-        min-height: 76px;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        background-color: $primary-color;
-        box-shadow: 0px 14px 32px 0px #ffb20e4a, 0px 5px 8px 0px #de97003d;
-        @include templateTransition(all);
-        &:hover {
-            cursor: pointer;
-            background-color: transparentize($primary-color, .2);
-        }
-        &:before {
-            content: '';
-            width: 56px;
-            height: 56px;
-            display: block;
-            background: no-repeat url(../../resources/icons/slick__icon_arrow.svg) center;
-        }
-    }
-    &__prev_item {
-        top: 50%;
-        left: -143px;
-    }
-    &__next_item {
-        top: 50%;
-        right: -143px;
-        &:before {
-            transform: rotate(-180deg);
-        }
-    }
-}
-
-.slick-active {
-    display: flex !important;
 }

@@ -55,23 +55,40 @@ const PopularItems = () => {
             {
             breakpoint: 1300,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 3.60,
                 slidesToScroll: 2,
                 arrows: false
             }
             },
             {
-            breakpoint: 1000,
+            breakpoint: 1100,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 3.10,
                 slidesToScroll: 2,
                 arrows: false
             }
             },
             {
-            breakpoint: 480,
+            breakpoint: 950,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2.55,
+                slidesToScroll: 2,
+                arrows: false
+            }
+            },
+            {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 2.10,
+                slidesToScroll: 2,
+                arrows: false
+            }
+            },
+            {
+            breakpoint: 670,
+            settings: {
+                slidesToShow: 1.32,
+                centerMode: true,
                 slidesToScroll: 1,
                 arrows: false,
             }
