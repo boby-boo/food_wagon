@@ -87,7 +87,7 @@ const PopularItems = () => {
             {
             breakpoint: 670,
             settings: {
-                slidesToShow: 1.32,
+                slidesToShow: 1.55,
                 centerMode: true,
                 slidesToScroll: 1,
                 arrows: false,
