@@ -3,6 +3,7 @@ import DeliveryBanner from '../deliveryBanner/DeliveryBanner';
 import AboutService from '../aboutService/AboutService';
 import FlashDeals from '../flashDeals/FlashDeals';
 import PopularItems from '../popularItems/PopularItems'
+import FeatureRestaurants from '../featureRestaurants/FeatureRestaurants';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <FlashDeals/>
       <AboutService/>
       <PopularItems/>
+      <FeatureRestaurants/>
     </>
   );
 }
