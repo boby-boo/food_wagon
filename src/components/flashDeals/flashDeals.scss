@@ -110,19 +110,6 @@
                     text-align: center;
                 }
             }
-            &-remaining {
-                display: inline-block;
-                padding: 8px 16px;
-                color: $secondary-color;
-                background-color: transparentize($secondary-color, .8);
-                border-radius: 8px;
-                @media(max-width: 830px) {
-                    border-radius: 0;
-                    display: block;
-                    font-size: 16px;
-                    text-align: center;
-                }
-            }
         }
     }
 }

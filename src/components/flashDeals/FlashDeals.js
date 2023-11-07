@@ -27,7 +27,7 @@ const FlashDeals = () => {
                             </div>
                             <div className='deal__card_description'>
                                 <h3>Greys Vage</h3>
-                                <div className='deal__card_description-remaining'>
+                                <div className='deal__card_description-remaining main__footnote'>
                                     6 Days Remaining
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ const FlashDeals = () => {
                             </div>
                             <div className='deal__card_description'>
                                 <h3>Greys Vage</h3>
-                                <div className='deal__card_description-remaining'>
+                                <div className='deal__card_description-remaining main__footnote'>
                                     6 Days Remaining
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ const FlashDeals = () => {
                             </div>
                             <div className='deal__card_description'>
                                 <h3>Greys Vage</h3>
-                                <div className='deal__card_description-remaining'>
+                                <div className='deal__card_description-remaining main__footnote'>
                                     7 Days Remaining 
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const FlashDeals = () => {
                             </div>
                             <div className='deal__card_description'>
                                 <h3>Greys Vage</h3>
-                                <div className='deal__card_description-remaining'>
+                                <div className='deal__card_description-remaining main__footnote'>
                                     8 Days Remaining 
                                 </div>
                             </div>
