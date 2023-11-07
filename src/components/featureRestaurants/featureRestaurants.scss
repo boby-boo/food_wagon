@@ -2,8 +2,14 @@
 
 .feature-restaurants {
     padding: 80px 0;
+    @media (max-width: 830px) {
+        padding: 20px 0;
+    }
     h2 {
         margin-bottom: 80px;
+        @media (max-width: 830px) {
+            margin-bottom: 40px;
+        }
     }
     .restaurants__row {
         @include templateFlex(center, flex-start);
@@ -16,7 +22,6 @@
     }
     .restaurant__card {
         @include templateTransition(box-shadow);
-        
         &:hover {
             box-shadow: 2px 2px 15px 2px transparentize($dark-color, .9);
             .restaurant__card_discount,
