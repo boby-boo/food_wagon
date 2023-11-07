@@ -92,6 +92,24 @@ const PopularItems = () => {
                 slidesToScroll: 1,
                 arrows: false,
             }
+            },
+            {
+            breakpoint: 590,
+            settings: {
+                slidesToShow: 1.22,
+                centerMode: true,
+                slidesToScroll: 1,
+                arrows: false,
+            }
+            },
+            {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 1.1,
+                centerMode: true,
+                slidesToScroll: 1,
+                arrows: false,
+            }
             }
         ]
     }
