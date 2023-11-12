@@ -9,11 +9,11 @@ import SearchFood from "../searchFood/SearchFood";
 const App = () => {
   return (
     <>
-      {/* <Header/>
+      <Header/>
       <DeliveryBanner/>
       <FlashDeals/>
-      <AboutService/> */}
-      {/* <PopularItems/> */}
+      <AboutService/>
+      <PopularItems/>
       <FeatureRestaurants/>
       <SearchFood/>
     </>

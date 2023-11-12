@@ -3,6 +3,7 @@
 
 .search__food {
     padding: 80px 0 55px 0;
+    background-color: #FEFAF1;
     &_content {
         @include templateFlex(space-between, center);
         margin-bottom: 80px;
@@ -14,8 +15,6 @@
         @include templateFlex(space-between, center);
         column-gap: 26px;
         &_view {
-            // width: 83px;
-            // height: 76px;
             padding: 6px;
             @include templateFlex(center, center);
             column-gap: 10px;
@@ -57,7 +56,11 @@
                 }
                 img {
                     transform: scale(1.03);
+                    transform: scale(.99);
                 }
+            }
+            h3 {
+                color: $primary-color;
             }
         }
         &_image {
@@ -88,6 +91,7 @@
             padding: 0 4px;
             @include templateFont(22, 700, 1.2);
             text-align: center;
+            @include templateTransition(color);
         }
     }
 }
