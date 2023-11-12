@@ -16,7 +16,7 @@ const SamplePrevArrow = (props) => {
     const {onClick } = props;
     return (
       <div
-        className='custom-arrow__prev_item'
+        className='popular-items__slider_prev-btn'
         onClick={onClick}
       />
     );
@@ -26,7 +26,7 @@ const SampleNextArrow = (props) => {
     const {onClick } = props;
     return (
       <div
-        className='custom-arrow__next_item'
+      className='popular-items__slider_next-btn'
         onClick={onClick}
       />
     );

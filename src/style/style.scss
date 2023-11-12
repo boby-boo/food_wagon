@@ -185,8 +185,7 @@ input::-webkit-inner-spin-button {
     &__next_item {
         position: absolute;
         @include templateFlex(center, center);
-        max-width: 76px;
-        width: 100%;
+        width: 76px;
         min-height: 76px;
         transform: translateY(-50%);
         border-radius: 50%;
@@ -205,13 +204,7 @@ input::-webkit-inner-spin-button {
             background: no-repeat url(../resources/icons/slick__icon_arrow.svg) center;
         }
     }
-    &__prev_item {
-        top: 50%;
-        left: -143px;
-    }
     &__next_item {
-        top: 50%;
-        right: -143px;
         &:before {
             transform: rotate(-180deg);
         }

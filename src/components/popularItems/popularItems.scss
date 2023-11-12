@@ -1,4 +1,5 @@
 @import '../../style/variables.scss';
+@import '../../style/style.scss';
 
 .popular-items {
     padding: 80px 0 40px 0;
@@ -85,5 +86,18 @@
                 background-color: transparentize($secondary-color, .2);
             }
         }
+    }
+}
+
+.popular-items__slider {
+    &_prev-btn {
+        @extend .custom-arrow__prev_item;
+        top: 50%;
+        left: -143px;
+    }
+    &_next-btn {
+        @extend .custom-arrow__next_item;
+        top: 50%;
+        right: -143px;
     }
 }

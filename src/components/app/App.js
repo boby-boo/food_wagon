@@ -4,16 +4,18 @@ import AboutService from '../aboutService/AboutService';
 import FlashDeals from '../flashDeals/FlashDeals';
 import PopularItems from '../popularItems/PopularItems'
 import FeatureRestaurants from '../featureRestaurants/FeatureRestaurants';
+import SearchFood from "../searchFood/SearchFood";
 
 const App = () => {
   return (
     <>
-      <Header/>
+      {/* <Header/>
       <DeliveryBanner/>
       <FlashDeals/>
-      <AboutService/>
-      <PopularItems/>
+      <AboutService/> */}
+      {/* <PopularItems/> */}
       <FeatureRestaurants/>
+      <SearchFood/>
     </>
   );
 }
