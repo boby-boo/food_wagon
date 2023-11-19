@@ -7,6 +7,7 @@ import FeatureRestaurants from '../featureRestaurants/FeatureRestaurants';
 import SearchFood from "../searchFood/SearchFood";
 import FeaturesApp from "../featuresApp/FeaturesApp";
 import CardsOfOrders from "../cardsOfOrders/CardsOfOrders";
+import Banner from "../Banner/Banner";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <SearchFood/>
       <FeaturesApp/>
       <CardsOfOrders/>
+      <Banner/>
     </>
   );
 }
