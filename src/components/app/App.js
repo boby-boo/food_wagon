@@ -6,6 +6,7 @@ import PopularItems from '../popularItems/PopularItems'
 import FeatureRestaurants from '../featureRestaurants/FeatureRestaurants';
 import SearchFood from "../searchFood/SearchFood";
 import FeaturesApp from "../featuresApp/FeaturesApp";
+import CardsOfOrders from "../cardsOfOrders/CardsOfOrders";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <FeatureRestaurants/>
       <SearchFood/>
       <FeaturesApp/>
+      <CardsOfOrders/>
     </>
   );
 }
