@@ -5,17 +5,19 @@ import FlashDeals from '../flashDeals/FlashDeals';
 import PopularItems from '../popularItems/PopularItems'
 import FeatureRestaurants from '../featureRestaurants/FeatureRestaurants';
 import SearchFood from "../searchFood/SearchFood";
+import FeaturesApp from "../featuresApp/FeaturesApp";
 
 const App = () => {
   return (
     <>
-      <Header/>
+      <Header/>      
       <DeliveryBanner/>
       <FlashDeals/>
       <AboutService/>
       <PopularItems/>
       <FeatureRestaurants/>
       <SearchFood/>
+      <FeaturesApp/>
     </>
   );
 }
