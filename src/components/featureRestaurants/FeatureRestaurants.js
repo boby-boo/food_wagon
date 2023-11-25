@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import restaurantCard1 from '../../resources/images/restaurant__card_img1.png';
 import restaurantLogo1 from '../../resources/images/restaurant__card_logo8.png';
 import restaurantCard2 from '../../resources/images/restaurant__card_img2.png';
@@ -19,218 +19,83 @@ import restaurantLogo8 from '../../resources/images/restaurant__card_logo8.png';
 import './featureRestaurants.scss';
 
 const FeatureRestaurants = () => {
+    const [data, setData] = useState(null);
+
+
+    useEffect(() => {
+        getData()
+    }, []);
+
+  
+    const getData = async () => {
+
+        try {
+            const response = await fetch('/foodWagonData.json');
+            const data = await response.json();
+
+            setData(data.partners);
+        } 
+        catch(e) {
+            throw e;
+        }
+    
+    }
+    
+    const renderItems = (data) => {
+        const items = data.map(item => {
+            const {name, time_of_delivery, stars} = item;
+            return (
+                <li key={name} className="primary__card restaurant__card">
+                <a href="/">
+                    <div className="primary__card_content restaurant__card_content">
+                        <div className="primary__card_image">
+                            <img src={restaurantCard1} alt="" />
+                        </div>
+                        <div className="restaurant__card_items">
+                            <div className="restaurant__card_discount">20% off</div>
+                            <div className="restaurant__card_speed">{time_of_delivery}</div>
+                        </div>
+                    </div>
+                    <div className="restaurant__card_review card__review">
+                        <div className="card__review_logo">
+                            <img src={restaurantLogo1} alt="" />
+                        </div>
+                        <div className="card__review_about">
+                            <h3>{name}</h3>
+                            <span>{stars}</span>
+                        </div>
+                    </div>
+                    <div className="primary__card_footnote main__footnote restaurant__card_footnote">
+                        Opens tomorrow
+                    </div>
+                </a>
+                </li>
+            )
+        })
+
+        return (
+            <ul className="restaurants__row">
+                {items}
+            </ul>
+        )
+    }
+
+    if (!data) {
+        return (
+            <h2>
+                Sorry
+            </h2>
+        ) 
+    }
+
+    const content = renderItems(data);
+
     return (
         <section className='feature-restaurants restaurants'>
             <div className="container">
                 <h2 className='primary-title'>Featured Restaurants</h2>
                 <ul className="restaurants__row">
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard1} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">20% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo1} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Foodworld</h3>
-                                    <span>46</span>
-                                </div>
-                            </div>
-                            <div className="primary__card_footnote main__footnote restaurant__card_footnote">
-                                Opens tomorrow
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard2} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">15% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo2} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Pizzahub</h3>
-                                    <span>40</span>
-                                </div>
-                            </div>
-                            <div className="primary__card_footnote main__footnote restaurant__card_footnote">
-                                Opens tomorrow
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard3} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">10% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo3} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Donuts hut</h3>
-                                    <span>20</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard4} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">15% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo4} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Donuts hut</h3>
-                                    <span>50</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard5} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">10% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo5} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Ruby Tuesday</h3>
-                                    <span>26</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard6} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">25% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo6} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Kuakata Fried Chicken</h3>
-                                    <span>53</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard7} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">10% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo7} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Red Square</h3>
-                                    <span>53</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
-
-                    <li className="primary__card restaurant__card">
-                        <a href="/">
-                            <div className="primary__card_content restaurant__card_content">
-                                <div className="primary__card_image">
-                                    <img src={restaurantCard8} alt="" />
-                                </div>
-                                <div className="restaurant__card_items">
-                                    <div className="restaurant__card_discount">10% off</div>
-                                    <div className="restaurant__card_speed">Fast</div>
-                                </div>
-                            </div>
-                            <div className="restaurant__card_review card__review">
-                                <div className="card__review_logo">
-                                    <img src={restaurantLogo8} alt="" />
-                                </div>
-                                <div className="card__review_about">
-                                    <h3>Taco Bell</h3>
-                                    <span>35</span>
-                                </div>
-                            </div>
-                            <div className="main__footnote_open restaurant__card_footnote">
-                                Open Now
-                            </div>
-                        </a>
-                    </li>
+                    {content}
                 </ul>
                 <div>
                     <button className='restaurants__button primary__button'>

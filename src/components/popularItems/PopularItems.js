@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -33,6 +33,7 @@ const SampleNextArrow = (props) => {
 }
 
 const PopularItems = () => {
+
     const settings = {
         autoplay: true,
         infinite: true,
@@ -113,12 +114,12 @@ const PopularItems = () => {
             }
         ]
     }
-    
     return (
         <section className='popular-items'>
             <div className="container">
                 <h2 className='primary-title'>Popular items</h2> 
                     <Slider {...settings}>
+                        {/* {items} */}
                         <div className="popular-item">
                             <div className="popular-item__image">
                                 <img src={popularImage1} alt="popular food" />

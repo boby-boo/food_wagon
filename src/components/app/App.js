@@ -9,7 +9,10 @@ import FeaturesApp from "../featuresApp/FeaturesApp";
 import CardsOfOrders from "../cardsOfOrders/CardsOfOrders";
 import Banner from "../Banner/Banner";
 
+
 const App = () => {
+
+
   return (
     <>
       <Header/>      

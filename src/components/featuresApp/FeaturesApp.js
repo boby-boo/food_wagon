@@ -14,12 +14,12 @@ const FeaturesApp = () => {
     
     useEffect(() => {
         const timerId = setInterval(() => {
-            console.log('Component did mount')
+            // console.log('Component did mount')
             selectTiming()
         }, 5000);
 
         return () => {
-            console.log('Component did unmount')
+            // console.log('Component did unmount')
             clearInterval(timerId)
         }
     });
