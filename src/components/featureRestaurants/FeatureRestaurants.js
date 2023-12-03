@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import restaurantCard1 from '../../resources/images/restaurant__card_img1.png';
 import restaurantLogo1 from '../../resources/images/restaurant__card_logo8.png';
 import restaurantCard2 from '../../resources/images/restaurant__card_img2.png';
@@ -18,12 +18,75 @@ import restaurantLogo8 from '../../resources/images/restaurant__card_logo8.png';
 
 import './featureRestaurants.scss';
 
+// const d = require('../src/resources/restaurant/partners/donuts_hut.png')
 const FeatureRestaurants = () => {
+    const [data, setData] = useState(null);
+
+
+    useEffect(() => {
+        request()    
+    }, [])
+
+    const request = async () => {
+        try {
+            const res = await fetch('http://localhost:3000/food_wagon.json');
+            const data = await res.json();
+            setData(data);
+        } catch (error) {
+            console.error('Error: ', error)
+        }
+    }
+    if (!data) {
+        return (
+            <h1>Sorry</h1>
+        )
+    }
+
+    const rerenderItems = (data) => {
+        const items = data.map(item => {
+            const {name, logo, rate, image} = item;
+            const img = require(`../../resources/${image}`);
+            const logotype = require(`../../resources/${logo}`);
+            return (
+                <li key={name} className="primary__card restaurant__card">
+                <a href="/">
+                    <div className="primary__card_content restaurant__card_content">
+                        <div className="primary__card_image">
+                            <img src={img} alt={name} />
+                        </div>
+                        <div className="restaurant__card_items">
+                            <div className="restaurant__card_discount">20% off</div>
+                            <div className="restaurant__card_speed">Fast</div>
+                        </div>
+                    </div>
+                    <div className="restaurant__card_review card__review">
+                        <div className="card__review_logo">
+                            <img src={logotype} alt={name} />
+                        </div>
+                        <div className="card__review_about">
+                            <h3>{name}</h3>
+                            <span>{rate}</span>
+                        </div>
+                    </div>
+                    <div className="primary__card_footnote main__footnote restaurant__card_footnote">
+                        Opens tomorrow
+                    </div>
+                </a>
+            </li>
+            )
+        })
+
+        return items;
+    }
+
+    const content = rerenderItems(data.partners);
+    
     return (
         <section className='feature-restaurants restaurants'>
             <div className="container">
                 <h2 className='primary-title'>Featured Restaurants</h2>
                 <ul className="restaurants__row">
+                    {content}
                     <li className="primary__card restaurant__card">
                         <a href="/">
                             <div className="primary__card_content restaurant__card_content">
@@ -243,3 +306,9 @@ const FeatureRestaurants = () => {
 };
 
 export default FeatureRestaurants;
+
+// "foodBand": {
+//     "partnerName": "Food world",
+//     "category": "All",
+//     "data": []
+//     }

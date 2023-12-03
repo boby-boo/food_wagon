@@ -14,12 +14,10 @@ const FeaturesApp = () => {
     
     useEffect(() => {
         const timerId = setInterval(() => {
-            console.log('Component did mount')
             selectTiming()
         }, 5000);
 
         return () => {
-            console.log('Component did unmount')
             clearInterval(timerId)
         }
     });
@@ -28,7 +26,6 @@ const FeaturesApp = () => {
 
     function selectTiming() {
         const items = Array.from(itemsRef.current.children);
-        console.log(index)
 
         items.forEach(item => {
             item.classList.remove('features__row_item-active');
@@ -40,23 +37,6 @@ const FeaturesApp = () => {
             index = 0;
         }
         items[index].classList.add('features__row_item-active');
-        // function test() {
-        //     items.forEach(item => {
-        //         item.classList.remove('features__row_item-active');
-        //     })
-    
-        //     if (items.length - 1 > index) {
-        //         index ++;
-        //     } else {
-        //         index = 0;
-        //     }
-        //     items[index].classList.add('features__row_item-active');
-        // }
-        // function startTimer() {
-        //     return setInterval (() => {
-        //         test();
-        //     }, 1000);
-        // }
     }
 
     return (
