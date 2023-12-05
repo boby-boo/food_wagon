@@ -17,25 +17,37 @@ import restaurantCard8 from '../../resources/images/restaurant__card_img8.png';
 import restaurantLogo8 from '../../resources/images/restaurant__card_logo8.png';
 
 import './featureRestaurants.scss';
+import { useHttp } from '../../hooks/http.hook';
 
-// const d = require('../src/resources/restaurant/partners/donuts_hut.png')
 const FeatureRestaurants = () => {
     const [data, setData] = useState(null);
+    const [testData, setTestData] = useState(null);
 
+    const { request } = useHttp();
 
     useEffect(() => {
-        request()    
-    }, [])
+        request('http://localhost:3001/partners')
+            .then(res => setData(res))
+    }, []);
+    // console.log(testData);
 
-    const request = async () => {
-        try {
-            const res = await fetch('http://localhost:3000/food_wagon.json');
-            const data = await res.json();
-            setData(data);
-        } catch (error) {
-            console.error('Error: ', error)
-        }
+    const checkOpenRestaurant = (workingHours) => {
+        const   hoursNow = new Date(),
+                workHoursArray = workingHours.replace(/\:/g, ' ').split(' '),
+                startWorkHours = new Date(),
+                endWorkHours = new Date()
+
+        startWorkHours.setHours(workHoursArray[0], workHoursArray[1], 0, 0)
+        endWorkHours.setHours(workHoursArray[3], workHoursArray[4], 0, 0)
+
+        const isOpen = hoursNow >= startWorkHours && hoursNow <= endWorkHours;
+
+        const text = isOpen ? 'Open now' : 'Open tomorrow';
+        const isWork = isOpen ? '_open' : '';
+
+        return [text, isWork];
     }
+
     if (!data) {
         return (
             <h1>Sorry</h1>
@@ -44,9 +56,12 @@ const FeatureRestaurants = () => {
 
     const rerenderItems = (data) => {
         const items = data.map(item => {
-            const {name, logo, rate, image} = item;
-            const img = require(`../../resources/${image}`);
-            const logotype = require(`../../resources/${logo}`);
+            const   {name, logo, rate, image, working_hours} = item,
+                    img = require(`../../resources/${image}`),
+                    logotype = require(`../../resources/${logo}`);
+
+            const [text, isWork] = checkOpenRestaurant(working_hours);
+
             return (
                 <li key={name} className="primary__card restaurant__card">
                 <a href="/">
@@ -68,8 +83,8 @@ const FeatureRestaurants = () => {
                             <span>{rate}</span>
                         </div>
                     </div>
-                    <div className="primary__card_footnote main__footnote restaurant__card_footnote">
-                        Opens tomorrow
+                    <div className={`primary__card_footnote main__footnote${isWork} restaurant__card_footnote`}>
+                        {text}
                     </div>
                 </a>
             </li>
@@ -79,7 +94,7 @@ const FeatureRestaurants = () => {
         return items;
     }
 
-    const content = rerenderItems(data.partners);
+    const content = rerenderItems(data);
     
     return (
         <section className='feature-restaurants restaurants'>

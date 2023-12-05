@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -33,6 +33,28 @@ const SampleNextArrow = (props) => {
 }
 
 const PopularItems = () => {
+    const [testData, setTestData] = useState();
+
+
+    useEffect(() => {
+        test().then(res => setTestData(res));
+
+        console.log(testData)
+    }, []);
+
+    const test = async () => {
+        const response = await fetch('http://localhost:3001/restaurant');
+
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}`)
+        }
+
+        const data = await response.json();
+        // const updateData = data.map(item => item.data).flat();
+        // return updateData
+        return data;
+    }
+
     const settings = {
         autoplay: true,
         infinite: true,
@@ -114,11 +136,46 @@ const PopularItems = () => {
         ]
     }
     
+    if (!testData) {
+        return (
+            <h1>Sorry</h1>
+        )
+    }
+    
+    const renderItems = (data) => {
+        const items = data.map(restaurant => {
+            const cards = restaurant.data.map(card => {
+                const   {name, id, price, image} = card,
+                        img = require(`../../resources/${image}`);
+    
+                return (
+                    <div key={id} className="popular-item">
+                    <div className="popular-item__image">
+                        <img src={img} alt={name} />
+                    </div>
+                    <div className="popular-item__description">
+                        <h3>{name}</h3>
+                        <div className='popular-item__description_location'>{restaurant.partnerName}</div>
+                        ${price.toFixed(2)}
+                    </div>
+                        <button className="popular-item__button">Order Now</button>
+                </div>
+                )
+            })
+            return cards;
+        })
+
+        return items
+    }
+
+    const cards = renderItems(testData);
+
     return (
         <section className='popular-items'>
             <div className="container">
                 <h2 className='primary-title'>Popular items</h2> 
                     <Slider {...settings}>
+                        {cards}
                         <div className="popular-item">
                             <div className="popular-item__image">
                                 <img src={popularImage1} alt="popular food" />
