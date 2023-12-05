@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
+import Spinner from '../spinner/Spinner';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import './popularItems.scss';
-
-import popularImage1 from '../../resources/images/popular__items-img1.png'; 
-import popularImage2 from '../../resources/images/popular__items-img2.png'; 
-import popularImage3 from '../../resources/images/popular__items-img3.png'; 
-import popularImage4 from '../../resources/images/popular__items-img4.png'; 
-import popularImage5 from '../../resources/images/popular__items-img5.png'; 
+import { useHttp } from '../../hooks/http.hook';
 
 const SamplePrevArrow = (props) => {
     const {onClick } = props;
@@ -33,27 +29,13 @@ const SampleNextArrow = (props) => {
 }
 
 const PopularItems = () => {
-    const [testData, setTestData] = useState();
-
+    const [cards, setCards] = useState();
+    const { request } = useHttp();
 
     useEffect(() => {
-        test().then(res => setTestData(res));
-
-        console.log(testData)
+        request('http://localhost:3001/restaurant')
+            .then(res => setCards(res));
     }, []);
-
-    const test = async () => {
-        const response = await fetch('http://localhost:3001/restaurant');
-
-        if (!response.ok) {
-            throw new Error(`Error ${response.status}`)
-        }
-
-        const data = await response.json();
-        // const updateData = data.map(item => item.data).flat();
-        // return updateData
-        return data;
-    }
 
     const settings = {
         autoplay: true,
@@ -136,14 +118,14 @@ const PopularItems = () => {
         ]
     }
     
-    if (!testData) {
+    if (!cards) {
         return (
-            <h1>Sorry</h1>
+            <Spinner/>
         )
     }
     
     const renderItems = (data) => {
-        const items = data.map(restaurant => {
+        const cardsRow = data.map(restaurant => {
             const cards = restaurant.data.map(card => {
                 const   {name, id, price, image} = card,
                         img = require(`../../resources/${image}`);
@@ -165,138 +147,20 @@ const PopularItems = () => {
             return cards;
         })
 
-        return items
+        return (
+            <Slider {...settings}>
+                {cardsRow}
+            </Slider>
+        )
     }
 
-    const cards = renderItems(testData);
+    const cardsRow = renderItems(cards);
 
     return (
         <section className='popular-items'>
             <div className="container">
                 <h2 className='primary-title'>Popular items</h2> 
-                    <Slider {...settings}>
-                        {cards}
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage1} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Cheese Burger </h3>
-                                <div className='popular-item__description_location'>Burger Arena</div>
-                                $3.88
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage2} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Toffe’s Cake</h3>
-                                <div className='popular-item__description_location'>Top Sticks</div>
-                                $4.00
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage3} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Dancake</h3>
-                                <div className='popular-item__description_location'>Cake World</div>
-                                $1.99
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage4} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Crispy Sandwitch</h3>
-                                <div className='popular-item__description_location'>Fastfood Dine</div>
-                                $3.00
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage5} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Thai Soup</h3>
-                                <div className='popular-item__description_location'>Foody man</div>
-                                $2.79
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage1} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Cheese Burger </h3>
-                                <div className='popular-item__description_location'>Burger Arena</div>
-                                $3.88
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage2} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Toffe’s Cake</h3>
-                                <div className='popular-item__description_location'>Top Sticks</div>
-                                $4.00
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage3} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Dancake</h3>
-                                <div className='popular-item__description_location'>Cake World</div>
-                                $1.99
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage4} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Crispy Sandwitch</h3>
-                                <div className='popular-item__description_location'>Fastfood Dine</div>
-                                $3.00
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                        <div className="popular-item">
-                            <div className="popular-item__image">
-                                <img src={popularImage5} alt="popular food" />
-                            </div>
-                            <div className="popular-item__description">
-                                <h3>Thai Soup</h3>
-                                <div className='popular-item__description_location'>Foody man</div>
-                                $2.79
-                            </div>
-                                <button className="popular-item__button">Order Now</button>
-                        </div>
-
-                    </Slider>
+                {cardsRow}
             </div>
         </section>
     );
