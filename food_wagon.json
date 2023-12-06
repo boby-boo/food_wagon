@@ -9,7 +9,7 @@
             "kitchen": "All",
             "image": "restaurant/food_world/preview.jpg",
             "working_hours": "9:30 - 20:00",
-            "products": "foodWorld"
+            "products": "food-world"
         },
         {
             "name": "Pizza hub",
@@ -20,7 +20,7 @@
             "kitchen": "Pizza",
             "image": "restaurant/pizza_hub/preview.jpg",
             "working_hours": "7:00 - 23:30",
-            "products": "pizzaHub"
+            "products": "pizza-hub"
         },
         {
             "name": "Donuts hut",
@@ -31,7 +31,7 @@
             "kitchen": "Pizza",
             "image": "restaurant/donuts_hut/preview.jpg",
             "working_hours": "10:00 - 23:30",
-            "products": "donutsHut"
+            "products": "donuts-hut"
         },
         {
             "name": "Ruby Tuesday",
@@ -42,7 +42,7 @@
             "kitchen": "pizza",
             "image": "restaurant/ruby_tuesday/preview.jpg",
             "working_hours": "8:00 - 23:30",
-            "products": "rubyTuesday"
+            "products": "ruby-tuesday"
         },
         {
             "name": "Kuakata Fried Chicken",
@@ -53,7 +53,7 @@
             "kitchen": "pizza",
             "image": "restaurant/kuakata_fried_chicken/preview.jpg",
             "working_hours": "9:00 - 23:00",
-            "products": "kuakataFriedChicken"
+            "products": "kuakata-fried-chicken"
         },
         {
             "name": "Red Square",
@@ -64,7 +64,7 @@
             "kitchen": "sushi",
             "image": "restaurant/red_square/preview.jpg",
             "working_hours": "11:00 - 22:30",
-            "products": "redSquare"
+            "products": "red-square"
         },
         {
             "name": "Taco Bell",
@@ -75,14 +75,16 @@
             "kitchen": "taco",
             "image": "restaurant/taco_bell/preview.jpg",
             "working_hours": "5:30 - 23:30",
-            "products": "tacoBell"
+            "products": "taco-bell"
         }
     ],
     "restaurant": [
         {
             "partnerName": "Food World",
+            "logo": "restaurant/partners/food_world.png",
             "category": "All",
             "rate": 46,
+            "products": "food-world",
             "data": [
                 {
                     "name": "Calf Sauce",
@@ -151,8 +153,10 @@
         },
         {
             "partnerName": "Pizza hub",
+            "logo": "restaurant/partners/pizza_hub.png",
             "category": "Pizza",
             "rate": 40,
+            "products": "pizza-hub",
             "data": [
                 {
                     "name": "Margarita",
@@ -200,8 +204,10 @@
         },
         {
             "partnerName": "Ruby Tuesday",
+            "logo": "restaurant/partners/ruby_tuesday.png",
             "category": "Pizza",
             "rate": 26,
+            "products": "ruby-tuesday",
             "data": [
                 {
                     "name": "Pizza caesar",
@@ -249,8 +255,10 @@
         },
         {
             "partnerName": "Kuakata Fried Chicken",
+            "logo": "restaurant/partners/kuakata_fried_chicken.png",
             "category": "Pizza",
             "rate": 53,
+            "products": "kuakata-fried-chicken",
             "data": [
                 {
                     "name": "Pizza caesar",
@@ -298,8 +306,10 @@
         },
         {
             "partnerName": "Red Square",
+            "logo": "restaurant/partners/red_square.png",
             "category": "Sushi",
             "rate": 45,
+            "products": "red-square",
             "data": [
                 {
                     "name": "Sushi",
@@ -347,8 +357,10 @@
         },
         {
             "partnerName": "Taco Bell",
+            "logo": "restaurant/partners/taco_bell.png",
             "category": "Taco",
             "rate": 35,
+            "products": "taco-bell",
             "data": [
                 {
                     "name": "Burrito",

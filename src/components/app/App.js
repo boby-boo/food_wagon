@@ -1,31 +1,19 @@
 import Header from "../header/Header";
-import DeliveryBanner from "../deliveryBanner/DeliveryBanner";
-import AboutService from "../aboutService/AboutService";
-import FlashDeals from "../flashDeals/FlashDeals";
-import PopularItems from "../popularItems/PopularItems";
-import FeatureRestaurants from "../featureRestaurants/FeatureRestaurants";
-import SearchFood from "../searchFood/SearchFood";
-import FeaturesApp from "../featuresApp/FeaturesApp";
-import CardsOfOrders from "../cardsOfOrders/CardsOfOrders";
-import Banner from "../Banner/Banner";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
 import RestaurantCards from "../restaurantCards/RestaurantCards";
+import MainPage from "../pages/MainPage";
 
 const App = () => {
     return (
-        <>
+        <Router>
             <Header />
-            {/* <RestaurantCards /> */}
-            <DeliveryBanner />
-            <FlashDeals />
-            <AboutService />
-            <PopularItems />
-            <FeatureRestaurants />
-            <SearchFood />
-            <FeaturesApp />
-            <CardsOfOrders />
-            <Banner />
-        </>
-    );
+            <Routes>
+                <Route exact path='/' element={<MainPage/>}/>
+                <Route exact path='/restaurant/:restaurantName' element={<RestaurantCards/>}/>
+            </Routes>
+        </Router>
+    )
 };
 
 export default App;

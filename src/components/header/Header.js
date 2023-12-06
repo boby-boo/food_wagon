@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 import menuButton from '../../resources/icons/header__menu_button.svg';
@@ -56,12 +57,12 @@ const Header = () => {
                     <nav>
                         <ul className='header__row'>
                             <li className='header__row_logo'>
-                                <a href='/'>
+                                <Link to='/'>
                                     <img src={logo__icon} alt='foodwagon logo' />
                                     <div>
                                         food<span>wagon</span>  
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className='header__row_location location'>
                                 <div className='location__input'>

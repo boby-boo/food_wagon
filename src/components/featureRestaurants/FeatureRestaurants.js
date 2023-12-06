@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
+import { Link } from 'react-router-dom';
+
 import Spinner from '../spinner/Spinner';
 
 import './featureRestaurants.scss';
@@ -39,7 +41,7 @@ const FeatureRestaurants = () => {
 
     const rerenderItems = (data) => {
         const items = data.map(item => {
-            const   {name, logo, rate, image, working_hours} = item,
+            const   {name, logo, rate, image, working_hours, products} = item,
                     img = require(`../../resources/${image}`),
                     logotype = require(`../../resources/${logo}`);
 
@@ -47,30 +49,30 @@ const FeatureRestaurants = () => {
 
             return (
                 <li key={name} className="primary__card restaurant__card">
-                <a href="/">
-                    <div className="primary__card_content restaurant__card_content">
-                        <div className="primary__card_image">
-                            <img src={img} alt={name} />
+                    <Link to={`/restaurant/${products}`}>
+                        <div className="primary__card_content restaurant__card_content">
+                            <div className="primary__card_image">
+                                <img src={img} alt={name} />
+                            </div>
+                            <div className="restaurant__card_items">
+                                <div className="restaurant__card_discount">20% off</div>
+                                <div className="restaurant__card_speed">Fast</div>
+                            </div>
                         </div>
-                        <div className="restaurant__card_items">
-                            <div className="restaurant__card_discount">20% off</div>
-                            <div className="restaurant__card_speed">Fast</div>
+                        <div className="restaurant__card_review card__review">
+                            <div className="card__review_logo">
+                                <img src={logotype} alt={name} />
+                            </div>
+                            <div className="card__review_about">
+                                <h3>{name}</h3>
+                                <span>{rate}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="restaurant__card_review card__review">
-                        <div className="card__review_logo">
-                            <img src={logotype} alt={name} />
+                        <div className={`primary__card_footnote main__footnote${isWork} restaurant__card_footnote`}>
+                            {text}
                         </div>
-                        <div className="card__review_about">
-                            <h3>{name}</h3>
-                            <span>{rate}</span>
-                        </div>
-                    </div>
-                    <div className={`primary__card_footnote main__footnote${isWork} restaurant__card_footnote`}>
-                        {text}
-                    </div>
-                </a>
-            </li>
+                    </Link>
+                </li>
             )
         })
 
