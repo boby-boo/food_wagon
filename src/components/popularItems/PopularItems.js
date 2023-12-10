@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import Spinner from '../spinner/Spinner';
 
+import { Link } from 'react-router-dom';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -131,17 +133,48 @@ const PopularItems = () => {
                         img = require(`../../resources/${image}`);
     
                 return (
-                    <div key={id} className="popular-item">
-                    <div className="popular-item__image">
-                        <img src={img} alt={name} />
-                    </div>
-                    <div className="popular-item__description">
-                        <h3>{name}</h3>
-                        <div className='popular-item__description_location'>{restaurant.partnerName}</div>
-                        ${price.toFixed(2)}
-                    </div>
+                    <div className='popular-item'>
+                        <Link 
+                            key={id}
+                            className="popular-item__body"
+                            to={`/restaurant/${restaurant.products}/${id}`}>
+                                <div className="popular-item__image">
+                                    <img src={img} alt={name} />
+                                </div>
+                                <div className="popular-item__description">
+                                    <h3>{name}</h3>
+                                    <div 
+                                        className='popular-item__description_location' 
+                                        // to={`/restaurant/${restaurant.products}`}
+                                        >
+                                            {restaurant.partnerName}
+                                    </div>
+                                    ${price.toFixed(2)}
+                                </div>
+                        </Link>
                         <button className="popular-item__button">Order Now</button>
-                </div>
+                    </div>
+                    // <div className='popular-item__inner'>
+                    //     <Link 
+                    //         key={id}
+                    //         className="popular-item"
+                    //         to={`/restaurant/${restaurant.products}/${id}`}>
+                    //             <div className="popular-item__image">
+                    //                 <img src={img} alt={name} />
+                    //             </div>
+                    //             <div className="popular-item__description">
+                    //                 <h3>{name}</h3>
+                    //                 <div 
+                    //                     className='popular-item__description_location' 
+                    //                     // to={`/restaurant/${restaurant.products}`}
+                    //                     >
+                    //                         {restaurant.partnerName}
+                    //                 </div>
+                    //                 ${price.toFixed(2)}
+                    //             </div>
+                    //     <button className="popular-item__button">Order Now</button>
+                    //     </Link>
+                    // </div>
                 )
             })
             return cards;

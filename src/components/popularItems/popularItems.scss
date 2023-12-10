@@ -8,7 +8,6 @@
     }
     .popular-item {
         max-width: 283px;
-        display: flex !important;
         @include templateFlex(center, flex-start);
         flex-direction: column;
         row-gap: 16px;
@@ -19,6 +18,11 @@
             .popular-item__image img {
                 transform: scale(1.01);
             }
+        }
+        &__body {
+            @include templateFlex(center, flex-start);
+            flex-direction: column;
+            row-gap: 16px;
         }
         &__image {
             position: relative;
@@ -49,6 +53,7 @@
             @include templateFlex(center, flex-start);
             flex-direction: column;
             row-gap: 8px;
+            margin-bottom: 16px;
             @include templateFont(22, 700, 1.2);
             h3 {
                 @include templateFont(22, 700, 1.2);
