@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Spinner from "../spinner/Spinner";
-import { useHttp } from "../../hooks/http.hook";
-import { Link, Routes, Route } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import ProductItem from "../productItem/ProductItem";
+import { useHttp } from "../../hooks/http.hook";
+import { Link, Route, Routes, Outlet, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import './restaurantCards.scss';
 
 const RestaurantCards = () => {
@@ -11,6 +12,8 @@ const RestaurantCards = () => {
     const [initialCards, setInitialCards] = useState(null);
     const { restaurantName } = useParams();
 
+    const navigate = useNavigate();
+    console.log(navigate)
     const { request } = useHttp();
 
     useEffect(() => {
@@ -59,9 +62,11 @@ const RestaurantCards = () => {
                 </li>
             )
         })
+
         return (
             <ul className="restaurant__cards_row">
                 {content}
+                <Outlet/>
             </ul>
         )
     }
@@ -129,9 +134,15 @@ const RestaurantCards = () => {
     return (
         <section className="restaurant">
             <div className="container">
-                <Link to='/' className="back"/>
+                {/* <button onClick={() => navigate(-1)} className="back"></button> */}
+                <Link to='/' className="back-btn">
+                    <div className="back-btn__back"></div>
+                    <span>Back to Home</span>
+                </Link>
                 <div className="restaurant__row">
-                    <div className="restaurant__card">
+                    <Link 
+                        className="restaurant__card"
+                        to={`/restaurant/${restaurantName}`}>
                         <div className="restaurant__card_image">
                             <img src={restaurantLogo} alt={cards.partnerName} />
                         </div>
@@ -139,16 +150,16 @@ const RestaurantCards = () => {
                             <h1>{cards.partnerName}</h1>
                             <span>{cards.rate}</span>
                         </div>
-                    </div>
+                    </Link>
                     <div className="restaurant__card_price">
                         Average price: <span>${averagePrice}</span>
                     </div>
-                    <Filter data={cards} filteredData={filteredData}/>
+                    <Filter data={cards} filteredData={filteredData} />
                 </div>
-                {cardsList}
                 <Routes>
-                    <Route exact path='restaurant/:restaurantName/:productId' element={<ProductItem/>}/>
-                </Routes>
+                    <Route path='*' element={cardsList} />
+                    <Route exact path=':productId' element={<ProductItem/>}/>
+                </Routes>               
             </div>
         </section>
     );
@@ -216,49 +227,5 @@ const Filter = (props) => {
         </>
     )
 };
-
-
-// const FilteredData = () => {
-//     const optionItems = useRef(null);
-
-//     useEffect(() => {
-
-//     }, [optionItems]);
-
-//     const clickHandler = (e) => {
-//         // Array.from(optionItems.current).forEach(i => console.log(i))
-//         console.log(optionItems.current[0].textContent);
-//         optionItems.current[0].textContent = e.target.textContent;
-//     }
-
-//     let listItems;
-
-//     if (optionItems.current) {
-//         listItems = Array.from(optionItems.current.children).map((option, index) => {
-//             return (
-//                 <li onClick={clickHandler} key={index}>
-//                     {option.value} value
-//                 </li>
-//             )
-
-//         });
-
-//         optionItems.current.style.display = 'none';
-//     }
-
-//     return (
-//         <div>
-//             {listItems || null}
-//             <select defaultValue='default' ref={optionItems}>
-//                 <option value='default'>Default value</option>
-//                 <option value="1">value1</option>
-//                 <option value="2">value2</option>
-//                 <option value="3">value3</option>
-//                 <option value="4">value4</option>
-//                 <option value="5">value5</option>
-//             </select>
-//         </div>
-//     )
-// };
 
 export default RestaurantCards;

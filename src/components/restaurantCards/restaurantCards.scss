@@ -109,25 +109,37 @@
             }
         }
     }
-    .back {
-        width: 30px;
-        height: 30px;
+    .back-btn {
+        max-width: 180px;
+        @include templateFlex(flex-start, center);
+        column-gap: 10px;
         margin-bottom: 20px;
-        @include templateFlex(center, center);
-        border-radius: 50%;
-        background-color: transparentize($gray-color, .7);
-        @include templateTransition(background-color);
-        &:before {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 20px;
-            background: url(../../resources/icons/slick__icon_arrow.svg) center/contain no-repeat;
-        }
+        color: transparentize($gray-color, .1);
+        @include templateTransition(color);
         &:hover {
-            background-color: transparentize($gray-color, .4);
+            color: $gray-color;
+            .back-btn__back {
+                background-color: transparentize($gray-color, .4);
+            }
+        }
+        &__back {
+            width: 30px;
+            height: 30px;
+            @include templateFlex(center, center);
+            border-radius: 50%;
+            background-color: transparentize($gray-color, .7);
+            @include templateTransition(background-color);
+            &:before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-color: transparentize($gray-color, .7);
+                background: url(../../resources/icons/slick__icon_arrow.svg) center/contain no-repeat;
+            }
         }
     }
+
 }
 
 .empty {

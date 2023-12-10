@@ -19,7 +19,7 @@
         }
     }
     &__image {
-        height: 400px;
+        height: 432px;
         max-width: 600px;
         width: 100%;
         @media (max-width: 768px) {
@@ -33,7 +33,7 @@
     &__content {
         max-width: 500px;
         width: 100%;
-        padding-left: 30px;
+        padding: 20px 10px 20px 30px;
         @include templateFlex(space-between, flex-start);
         flex-direction: column;
         gap: 30px;
@@ -136,11 +136,15 @@
             margin-bottom: 10px;
         }
         p {
+            @include templateFont(20, 400, 1.4);
             color: $gray-color;
         }
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;
+            p {
+                font-size: 18px;
+            }
         }
         @media (max-width: 1030px) {
             @include templateFont(18, 400, 1.2);

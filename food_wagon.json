@@ -39,7 +39,7 @@
             "time_of_delivery": 40,
             "rate": 26,
             "price": 45,
-            "kitchen": "pizza",
+            "kitchen": "Pizza",
             "image": "restaurant/ruby_tuesday/preview.jpg",
             "working_hours": "8:00 - 23:30",
             "products": "ruby-tuesday"
@@ -50,7 +50,7 @@
             "time_of_delivery": 26,
             "rate": 53,
             "price": 35,
-            "kitchen": "pizza",
+            "kitchen": "Pizza",
             "image": "restaurant/kuakata_fried_chicken/preview.jpg",
             "working_hours": "9:00 - 23:00",
             "products": "kuakata-fried-chicken"
@@ -61,7 +61,7 @@
             "time_of_delivery": 40,
             "rate": 45,
             "price": 28,
-            "kitchen": "sushi",
+            "kitchen": "Sushi",
             "image": "restaurant/red_square/preview.jpg",
             "working_hours": "11:00 - 22:30",
             "products": "red-square"

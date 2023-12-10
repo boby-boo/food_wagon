@@ -1,11 +1,22 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
+import { useHttp } from '../../hooks/http.hook';
+
 import './searchFood.scss';
 
 import cardImg1 from '../../resources/images/search__food_img1.png';
+import { Link } from 'react-router-dom';
+import Spinner from '../spinner/Spinner';
 
 const SearchFood = () => {
+    const [items, setItems] = useState();
     const sliderRef = useRef(null);
+    const { request } = useHttp();
+
+    useEffect(() => {
+        request('http://localhost:3001/partners')
+            .then(res => setItems(res))
+    }, []);
 
     const handlePrevClick = () => {
         if (sliderRef.current) {
@@ -24,13 +35,13 @@ const SearchFood = () => {
         speed: 900,
         arrows: false,
         slidesToShow: 6,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 1824,
                 settings: {
                 slidesToShow: 5,
-                slidesToScroll: 2,
+                slidesToScroll: 1,
                 arrows: false
             }
             },
@@ -38,21 +49,21 @@ const SearchFood = () => {
             breakpoint: 1300,
             settings: {
                 slidesToShow: 4,
-                slidesToScroll: 2
+                slidesToScroll: 1
             }
             },
             {
             breakpoint: 1100,
             settings: {
                 slidesToShow: 4,
-                slidesToScroll: 2
+                slidesToScroll: 1
             }
             },
             {
             breakpoint: 950,
             settings: {
                 slidesToShow: 2.55,
-                slidesToScroll: 2
+                slidesToScroll: 1
             }
             },
             {
@@ -90,6 +101,41 @@ const SearchFood = () => {
         ]
     }
 
+    if (!items) {
+        return (
+            <Spinner/>
+        )
+    };
+
+    const renderItems = (arr) => {
+        const items = arr.map(item => {
+            const {partnerName, kitchen, image, products} = item,
+                    img = require(`../../resources/${image}`);
+
+            return (
+                <Link 
+                    className="search__food_card food__card" 
+                    to={`/restaurant/${products}`}
+                    key={img}>
+                    <div className="food__card_image">
+                        <img src={img} alt={partnerName} />
+                    </div>
+                    <h3>{kitchen}</h3>
+                </Link>
+            )
+        })
+
+        return (
+            <ul className="search__food_slider">
+                <Slider ref={sliderRef} {...settings}>
+                    {items}
+                </Slider>
+            </ul>
+        )
+    }
+
+    const contentItems = renderItems(items);
+
     return (
         <section className='search__food'>
             <div className="container">
@@ -110,89 +156,7 @@ const SearchFood = () => {
                     </div>
                 </div>
                 <ul className="search__food_slider">
-                    <Slider ref={sliderRef} {...settings}>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-                        <a className="search__food_card food__card" href="/">
-                            <div className="food__card_image">
-                                <img src={cardImg1} alt="" />
-                            </div>
-                            <h3>
-                                Pizza
-                            </h3>
-                        </a>
-
-                    </Slider>
+                    {contentItems}
                 </ul>
             </div>
         </section>
