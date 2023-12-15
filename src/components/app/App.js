@@ -11,8 +11,7 @@ const App = () => {
             <Header />
             <Routes>
                 <Route exact path='/' element={<MainPage/>}/>
-                <Route path='/restaurant/:restaurantName/*' element={<RestaurantCards/>}/>
-                {/* <Route exact path='restaurant/:restaurantName/:productId' element={<ProductItem/>}/> */}
+                <Route path='/:restaurantName/*' element={<RestaurantCards/>} />
             </Routes>
         </Router>
     )

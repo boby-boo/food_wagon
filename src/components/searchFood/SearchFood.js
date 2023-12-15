@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import { useHttp } from '../../hooks/http.hook';
 
-import './searchFood.scss';
-
-import cardImg1 from '../../resources/images/search__food_img1.png';
 import { Link } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
+
+import './searchFood.scss';
 
 const SearchFood = () => {
     const [items, setItems] = useState();
@@ -115,7 +114,7 @@ const SearchFood = () => {
             return (
                 <Link 
                     className="search__food_card food__card" 
-                    to={`/restaurant/${products}`}
+                    to={`/${products}`}
                     key={img}>
                     <div className="food__card_image">
                         <img src={img} alt={partnerName} />

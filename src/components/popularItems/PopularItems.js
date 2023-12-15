@@ -11,22 +11,22 @@ import './popularItems.scss';
 import { useHttp } from '../../hooks/http.hook';
 
 const SamplePrevArrow = (props) => {
-    const {onClick } = props;
+    const { onClick } = props;
     return (
-      <div
-        className='popular-items__slider_prev-btn'
-        onClick={onClick}
-      />
+        <div
+            className='popular-items__slider_prev-btn'
+            onClick={onClick}
+        />
     );
 }
 
 const SampleNextArrow = (props) => {
-    const {onClick } = props;
+    const { onClick } = props;
     return (
-      <div
-      className='popular-items__slider_next-btn'
-        onClick={onClick}
-      />
+        <div
+            className='popular-items__slider_next-btn'
+            onClick={onClick}
+        />
     );
 }
 
@@ -137,44 +137,20 @@ const PopularItems = () => {
                         <Link 
                             key={id}
                             className="popular-item__body"
-                            to={`/restaurant/${restaurant.products}/${id}`}>
+                            to={`/${restaurant.products}/${id}`}>
                                 <div className="popular-item__image">
                                     <img src={img} alt={name} />
                                 </div>
                                 <div className="popular-item__description">
                                     <h3>{name}</h3>
-                                    <div 
-                                        className='popular-item__description_location' 
-                                        // to={`/restaurant/${restaurant.products}`}
-                                        >
-                                            {restaurant.partnerName}
+                                    <div className='popular-item__description_location'>
+                                        {restaurant.partnerName}
                                     </div>
                                     ${price.toFixed(2)}
                                 </div>
                         </Link>
                         <button className="popular-item__button">Order Now</button>
                     </div>
-                    // <div className='popular-item__inner'>
-                    //     <Link 
-                    //         key={id}
-                    //         className="popular-item"
-                    //         to={`/restaurant/${restaurant.products}/${id}`}>
-                    //             <div className="popular-item__image">
-                    //                 <img src={img} alt={name} />
-                    //             </div>
-                    //             <div className="popular-item__description">
-                    //                 <h3>{name}</h3>
-                    //                 <div 
-                    //                     className='popular-item__description_location' 
-                    //                     // to={`/restaurant/${restaurant.products}`}
-                    //                     >
-                    //                         {restaurant.partnerName}
-                    //                 </div>
-                    //                 ${price.toFixed(2)}
-                    //             </div>
-                    //     <button className="popular-item__button">Order Now</button>
-                    //     </Link>
-                    // </div>
                 )
             })
             return cards;

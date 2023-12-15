@@ -2,7 +2,6 @@
 @import '../../style/style.scss';
 
 .product {
-    padding: 52px 0;
     @include templateFont(30, 400, 1);
     &__row {
         max-width: 1100px;
@@ -73,6 +72,7 @@
             flex-direction: column;
             row-gap: 20px;
             h1 {
+                padding-top: 20px;
                 margin-bottom: 0;
             }
         }
@@ -166,4 +166,101 @@
             margin: 0 auto;
         }
     }
+    &__about {
+        max-width: 1100px;
+        margin: 0 auto;
+        @include templateFlex(flex-start, flex-start);
+        flex-direction: column;
+        gap: 4px;
+        @include templateFont(18, 400, 1.4);
+    }
+}
+.review {
+    padding: 40px 0;
+    &__title {
+        @extend .primary-title;
+        color: $dark-color;
+        margin-bottom: 20px;
+    }
+    .review__row {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .review-card {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            @include templateFlex(space-around, center);
+            gap: 30px;
+            flex-wrap: wrap;
+            border-radius: 14px;
+            box-shadow: 2px 2px 15px 2px rgba(66, 66, 66, 0.1);
+            @media (max-width: 900px){
+                flex-direction: column;
+            }
+            &__info {
+                @media (max-width: 800px) {
+                    @include templateFlex(center, center);
+                }
+            }
+            &__author {
+                @include templateFlex(flex-start, center);
+                gap: 20px;
+                flex-wrap: wrap;
+                @media (max-width: 800px) {
+                    justify-content: center;
+                }
+                &_image {
+                    max-width: 140px;
+                    width: 100%;
+                    height: 140px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        @include templateObject();
+                    }
+                }
+                &_desc {
+                    @include templateFlex(flex-start, flex-start);
+                    flex-direction: column;
+                    gap: 6px;
+                    @include templateFont(22, 400, 1.2);
+                    span {
+                        font-style: italic;
+                        color: $gray-color;
+                    }
+                    &-rate {
+                        margin-top: 14px;
+                        @media (max-width: 900px) {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+            &__message {
+                @include templateFont(20, 400, 1.4);
+                max-width: 410px;
+                width: 100%;
+                @media (max-width: 900px){
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+.product__next_btn {
+    @extend .custom-arrow__next_item;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.product__prev_btn {
+    @extend .custom-arrow__prev_item;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }

@@ -23,8 +23,9 @@
     }
     .restaurant__card {
         @include templateTransition(box-shadow);
+        box-shadow: 2px 2px 15px 2px transparentize($dark-color, .9);
         &:hover {
-            box-shadow: 2px 2px 15px 2px transparentize($dark-color, .9);
+            box-shadow: $secondary-shadow;
             .restaurant__card_discount,
             .restaurant__card_speed,
             .card__review {
