@@ -24,7 +24,6 @@ const SampleNextArrow = (props) => {
 
 const ProductItem = () => {
     const [data, setData] = useState(null);
-    const [selectedCardIndex, setSelectedCardIndex] = useState(0);
 
     const { restaurantName, productId } = useParams();
     const navigate = useNavigate();
@@ -32,35 +31,15 @@ const ProductItem = () => {
     const { request } = useHttp();
 
     useEffect(() => {
-        request("http://localhost:3001/restaurant")
-            .then(res => filteredData(res))
-            .then(res => setData(res));
+        request(`http://localhost:3001/restaurant?products=${restaurantName}`)
+            .then(res => setData(res[0]))
     }, []);
 
     const handleSlideChange = (index) => {
+        let newProductId;
         if (data) {
-            const newProductId = data.restaurant.data[index].id;
+            newProductId = data.data[index].id;
             navigate(`/${restaurantName}/${newProductId}`);
-        }
-
-        setSelectedCardIndex(index);
-    };
-
-    const filteredData = (data) => {
-        try {
-            const restaurant = data.find(
-                (restaurant) => restaurant.products === restaurantName
-            );
-            
-            const productIndex = restaurant.data.findIndex(item => item.id === productId);
-
-            handleSlideChange(productIndex);
-            return {
-                restaurant,
-                productIndex,
-            };
-        } catch (e) {
-            console.log(e);
         }
     };
 
@@ -68,26 +47,35 @@ const ProductItem = () => {
         return <Spinner />;
     }
 
-    const renderCards = (data) => {
-        const { restaurant } = data;
+    const renderCards = (array) => {
+        const { data } = array;
 
-        const cards = restaurant.data.map(card => <ProductCard card={card} key={card.id} />);
+        const cards = data.map(card => <ProductCard card={card} key={card.id} />);
+        const initialIndex = data.findIndex(item => item.id === productId);
 
         return (
-            <div className="product__slider">
-                <Slider 
-                    {...settings}
-                    afterChange={handleSlideChange}
-                    initialSlide={data.productIndex}
-                >
-                    {cards}
-                </Slider>
-            </div>
+            <>
+                <div className="product__slider">
+                    <Slider 
+                        {...settings}
+                        afterChange={handleSlideChange}
+                        initialSlide={initialIndex}
+                    >
+                        {cards}
+                    </Slider>
+                </div>
+                <div className="product__about">
+                    <h2>Description: </h2>
+                    {data[initialIndex].description}
+                </div>
+            </>
         )
     }
 
-    const renderReview = (data, index) => {
-        if (data[index].review.length === 0) {
+    const renderReview = (array) => {
+        const card = array.find(item => item.id === productId);
+
+        if (card.review.length === 0) {
             return (
                 <section className="review">
                     <h2 className="review__title">There are no reviews for this product yet.</h2>
@@ -95,7 +83,7 @@ const ProductItem = () => {
             )
         }
 
-        const content = data[index].review.map(item => {
+        const content = card.review.map(item => {
             const { author, rate, comment, date } = item,
                     rateStart = [];
 
@@ -164,16 +152,12 @@ const ProductItem = () => {
     }
 
     const content = renderCards(data);
-    const review = renderReview(data.restaurant.data, selectedCardIndex);
+    const review = renderReview(data.data);
     
     return (
         <section className="product">
             <div className="container">
                 {content}
-                <div className="product__about">
-                    <h2>Description: </h2>
-                    {data.restaurant.data[selectedCardIndex].description}
-                </div>
                 {review}
             </div>
         </section>
@@ -184,12 +168,11 @@ const ProductCard = ({ card }) => {
     const [counter, setCounter] = useState(1);
     
     const handleClick = (value) => {
-        console.log('click')
         if (counter === 1 && value === -1) return;
         setCounter(() => counter + value);
     };
 
-    const { name, price, image, weight, ingredients, id} = card,
+    const { name, price, image, weight, ingredients } = card,
             img = require(`../../resources/${image}`),
             ing = ingredients.join(", ");
 
