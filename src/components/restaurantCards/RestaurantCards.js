@@ -5,6 +5,8 @@ import ProductItem from "../productItem/ProductItem";
 import { useHttp } from "../../hooks/http.hook";
 import { Link, Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../actions";
 
 import "./restaurantCards.scss";
 
@@ -16,6 +18,7 @@ const RestaurantCards = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
     const { request } = useHttp();
 
     useEffect(() => {
@@ -25,7 +28,6 @@ const RestaurantCards = () => {
                 setInitialCards(JSON.parse(JSON.stringify(res)));
                 setCads(res);
             });
-
     }, [restaurantName]);
 
     if (!cards) {
@@ -58,7 +60,9 @@ const RestaurantCards = () => {
                     </Link>
                     <div className="card__footer">
                         <span>${price.toFixed(2)}</span>
-                        <button>BUY</button>
+                        <button onClick={() => dispatch(addToBasket(card))}>
+                            BUY
+                        </button>
                     </div>
                 </li>
             );
@@ -132,7 +136,6 @@ const RestaurantCards = () => {
             return;
         }
         if (location.pathname.includes(`${restaurantName}`)) {
-            console.log('-1')
             navigate('..');
             return;
         }

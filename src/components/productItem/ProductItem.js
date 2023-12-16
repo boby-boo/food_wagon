@@ -4,12 +4,12 @@ import Spinner from "../spinner/Spinner";
 import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 import { useHttp } from "../../hooks/http.hook";
 import { useParams, useNavigate } from "react-router-dom";
-
+import { addToBasket, removeToBasket } from "../../actions";
+import { useSelector, useDispatch } from "react-redux";
 import userIcon from '../../resources/images/user__icon.png';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import "./productItem.scss";
 
 const SamplePrevArrow = (props) => {
@@ -166,17 +166,23 @@ const ProductItem = () => {
 
 const ProductCard = ({ card }) => {
     const [counter, setCounter] = useState(1);
-    
+    const basket = useSelector(state => state.basket);
+    const dispatch = useDispatch();
+
     const handleClick = (value) => {
         if (counter === 1 && value === -1) return;
         setCounter(() => counter + value);
     };
 
-    const { name, price, image, weight, ingredients } = card,
+    const { name, price, image, weight, ingredients, id } = card,
             img = require(`../../resources/${image}`),
-            ing = ingredients.join(", ");
+            ing = ingredients.join(", "),
+            checkDublicate = basket.find(item => item.id === id),
+            count = checkDublicate ? checkDublicate.quantity : counter,
+            summaryPrice = checkDublicate ? (count * price) : price,
+            summaryWeight = checkDublicate ? weight * count : weight;
 
-    return (
+    return (    
         <>
             <div className="product__row">
                 <div className="product__image">
@@ -185,24 +191,29 @@ const ProductCard = ({ card }) => {
                 <div className="product__content">
                     <div className="product__info">
                         <h1 className="product__content-title">
-                            {name} <span>({weight}g)</span>
+                            {name} <span>({summaryWeight}g)</span>
                         </h1>
                     </div>
                     <div className="product__controls">
                         <div className="product__controls_price">
-                            ${price.toFixed(2)}
+                            ${summaryPrice.toFixed(2)}
                         </div>
                         <div className="product__controls_buttons">
-                            <button onClick={() => handleClick(-1)}>-</button>
-                            <span>{counter}</span>
-                            <button onClick={() => handleClick(+1)}>+</button>
+                            <button onClick={() => dispatch(removeToBasket(card))}>-</button>
+                            <span>{count}</span>
+                            <button onClick={() => dispatch(addToBasket(card))}>+</button>
                         </div>
                     </div>
                     <div className="product__description">
                         <h3>Ingredients:</h3>
                         <p>{ing}</p>
                     </div>
-                    <button className="product__button">Add to cart</button>
+                    <button 
+                        className="product__button"
+                        onClick={() => dispatch(addToBasket(card))}
+                        >
+                        Add to cart
+                    </button>
                 </div>
             </div>
         </>

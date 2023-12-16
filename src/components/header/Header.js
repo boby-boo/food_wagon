@@ -1,19 +1,29 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 import menuButton from '../../resources/icons/header__menu_button.svg';
 import menuButtonClosed from '../../resources/icons/header__menu_button-closed.svg';
+import ModalAuth from '../modalAuth/ModalAuth';
+
+import { useSelector } from 'react-redux';
 
 import './header.scss'
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
+
+    const login = useSelector(state => state.login);
 
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
 
+    const toggleModalOpen = () => {
+        setIsOpenModalWindow(!isOpenModalWindow)
+    }
+    
     if (isOpen) {
         return (
             <div className='header__mobile-menu'>
@@ -75,7 +85,7 @@ const Header = () => {
                                     id='search__panel'
                                     placeholder='Search Food' 
                                     />
-                                <button>Login</button>
+                                <button onClick={toggleModalOpen}>{login ? `${login.email}` : 'Login'}</button>
                             </li>
                             <li className='header__menu-button'>
                                 <button onClick={handleClick}>
@@ -86,6 +96,7 @@ const Header = () => {
                     </nav>
                 </div>
             </header>
+            {isOpenModalWindow && <ModalAuth toggleModalOpen={toggleModalOpen}/>}
         </>
     );
 };

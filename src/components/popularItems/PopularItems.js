@@ -3,12 +3,14 @@ import Slider from "react-slick";
 import Spinner from '../spinner/Spinner';
 
 import { Link } from 'react-router-dom';
+import { useHttp } from '../../hooks/http.hook';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../../actions';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import './popularItems.scss';
-import { useHttp } from '../../hooks/http.hook';
 
 const SamplePrevArrow = (props) => {
     const { onClick } = props;
@@ -33,6 +35,8 @@ const SampleNextArrow = (props) => {
 const PopularItems = () => {
     const [cards, setCards] = useState();
     const { request } = useHttp();
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         request('http://localhost:3001/restaurant?_start=0&_end=3')
@@ -131,7 +135,7 @@ const PopularItems = () => {
             const cards = restaurant.data.map(card => {
                 const   {name, id, price, image} = card,
                         img = require(`../../resources/${image}`);
-    
+                    
                 return (
                     <div className='popular-item'>
                         <Link 
@@ -149,7 +153,11 @@ const PopularItems = () => {
                                     ${price.toFixed(2)}
                                 </div>
                         </Link>
-                        <button className="popular-item__button">Order Now</button>
+                        <button 
+                            onClick={() => dispatch(addToBasket(card))}
+                            className="popular-item__button">
+                                Order Now
+                        </button>
                     </div>
                 )
             })

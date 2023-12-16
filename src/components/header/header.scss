@@ -77,7 +77,7 @@
             min-height: 46px;
             min-width: 118px;
             width: 100%;
-            padding: 3px;
+            padding: 5px 12px;
             @include templateFlex(center, center);
             column-gap: 10px;
             @include templateFont(18, 700, 1.0);
@@ -141,7 +141,6 @@
             }
         }
     }
-
     @media (max-width: 830px) {
         display: block;
     }
