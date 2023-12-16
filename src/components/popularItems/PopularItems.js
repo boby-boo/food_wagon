@@ -35,7 +35,7 @@ const PopularItems = () => {
     const { request } = useHttp();
 
     useEffect(() => {
-        request('http://localhost:3001/restaurant')
+        request('http://localhost:3001/restaurant?_start=0&_end=3')
             .then(res => setCards(res));
     }, []);
 

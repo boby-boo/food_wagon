@@ -19,18 +19,14 @@ const RestaurantCards = () => {
     const { request } = useHttp();
 
     useEffect(() => {
-        getRequest();
-    }, [restaurantName]);
-
-    const getRequest = () => {
-        setCads(() => null);
-        request(`http://localhost:3001/restaurant`)
-            .then((res) => res.find((item) => item.products === restaurantName))
+        request(`http://localhost:3001/restaurant?products=${restaurantName}`)
+            .then(res => res[0])
             .then((res) => {
                 setInitialCards(JSON.parse(JSON.stringify(res)));
                 setCads(res);
             });
-    };
+
+    }, [restaurantName]);
 
     if (!cards) {
         return (
