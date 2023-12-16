@@ -11,7 +11,7 @@ import PopularItems from "../popularItems/PopularItems";
 const MainPage = () => {
     return (
         <>
-            {/* <DeliveryBanner /> */}
+            <DeliveryBanner />
             <PopularItems/>
             {/* <FlashDeals /> */}
             <FeatureRestaurants/>

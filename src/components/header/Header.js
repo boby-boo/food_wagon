@@ -15,6 +15,7 @@ const Header = () => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
     const login = useSelector(state => state.login);
+    const basket = useSelector(state => state.basket);
 
     const handleClick = () => {
         setIsOpen(!isOpen)
@@ -60,6 +61,13 @@ const Header = () => {
         )
     }
 
+    if (isOpenModalWindow) {
+        console.log(document.body)
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = 'visible'
+    }
+
     return (
         <>
             <header className='header'>
@@ -74,22 +82,24 @@ const Header = () => {
                                     </div>
                                 </Link>
                             </li>
-                            <li className='header__row_location location'>
-                                <div className='location__input'>
-                                Mohammadpur Bus Stand, Dhaka
-                                </div>
-                            </li>
-                            <li className='header__row_user-panel'>
+                            <li className='header__row_search-panel'>
                                 <input 
                                     type='text' 
                                     id='search__panel'
                                     placeholder='Search Food' 
                                     />
-                                <button onClick={toggleModalOpen}>{login ? `${login.email}` : 'Login'}</button>
                             </li>
-                            <li className='header__menu-button'>
-                                <button onClick={handleClick}>
-                                    {!isOpen && <img src={menuButton} alt='burger menu icon' />}
+                            <li className='header__row_user-panel user-panel'>
+                                <button className='user-panel__basket'>
+                                    <span>{basket.length}</span>
+                                    
+                                </button>
+                                <button 
+                                    onClick={toggleModalOpen}
+                                    className='user-panel__login'>
+                                    <span>
+                                        {login.email?.length > 1 ? `${login.email.substring(0, 10) + '...'}` : 'Login'}
+                                    </span>
                                 </button>
                             </li>
                         </ul>
