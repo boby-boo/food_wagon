@@ -15,7 +15,7 @@ const Header = () => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
     const login = useSelector(state => state.login);
-    const basket = useSelector(state => state.basket);
+    const cart = useSelector(state => state.cart);
 
     const handleClick = () => {
         setIsOpen(!isOpen)
@@ -62,7 +62,6 @@ const Header = () => {
     }
 
     if (isOpenModalWindow) {
-        console.log(document.body)
         document.body.style.overflow = 'hidden'
     } else {
         document.body.style.overflow = 'visible'
@@ -90,10 +89,9 @@ const Header = () => {
                                     />
                             </li>
                             <li className='header__row_user-panel user-panel'>
-                                <button className='user-panel__basket'>
-                                    <span>{basket.length}</span>
-                                    
-                                </button>
+                                <Link to='/cart' className='user-panel__basket'>
+                                    <span>{cart.length}</span>
+                                </Link>
                                 <button 
                                     onClick={toggleModalOpen}
                                     className='user-panel__login'>

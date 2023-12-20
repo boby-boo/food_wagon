@@ -2,19 +2,25 @@
 
 .header__row {
     padding: 16px 0;
-    @include templateFlex(space-between, center);
+    display: grid;
+    // grid-template-columns: repeat(3, auto);
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-between;
+    align-items: center;
     column-gap: 25px;
     @media (max-width: 830px) {
         .header__row {
-            &_location {
-                display: none;
-            }
             &_user-panel {
                 display: none;
             }
         }
     };
+    @media (max-width: 600px) {
+        gap: 30px 10px;
+        padding-bottom: 30px;
+    }
     &_logo {
+        justify-self: flex-start;
         @include templateFont(32, 700, 1.2);
         text-transform: lowercase;
         color: $secondary-color;
@@ -26,8 +32,6 @@
             color: $primary-color;
         }
         @media (max-width: 1000px) {
-            grid-column: 1/4;
-            grid-row: 1/2;
             font-size: 24px;
             img {
                 width: 25px;
@@ -58,8 +62,9 @@
         };
     }
     &_search-panel {
-        max-width: 400px;
+        max-width: 450px;
         width: 100%;
+        justify-self: center;
         input {
             width: 100%;
             padding: 14px 10px 14px 35px;
@@ -76,7 +81,7 @@
             &:hover {
                 box-shadow: $primary-shadow;
             }
-            @media(max-width: 900px) {
+            @media(max-width: 1000px) {
                 font-size: 16px;
                 &::placeholder {
                     font-size: 16px;
@@ -89,13 +94,19 @@
                 }
             }
         }
+        @media(max-width: 600px) {
+            grid-column: 1/4;
+            grid-row: 2/3;
+            max-width: 100%;
+        }
     }
     .user-panel {
-        @include templateFlex(space-between, center);
+        @include templateFlex(flex-end, center);
         column-gap: 20px;
         &__basket {
             max-width: 80px;
             width: 100%;
+            min-height: 46px;
             @include templateFlex(center, center);
             gap: 10px;
             @include templateFont(18, 700, 1.2);
@@ -112,7 +123,8 @@
         }
         &__login {
             min-height: 46px;
-            min-width: 118px;
+            max-width: 200px;
+            // min-width: 118px;
             width: 100%;
             padding: 5px 12px;
             @include templateFlex(center, center);
@@ -130,7 +142,8 @@
             }
         }
         button,
-        input {
+        input,
+        a {
             min-height: 46px;
             padding: 5px 12px;
             border-radius: 8px;
@@ -151,9 +164,10 @@
                 font-size: 16px;
             }
         }
-        @media (max-width: 660px) {
+        @media (max-width: 750px) {
             .user-panel__login {
-                min-width: 40px;
+                // min-width: 40px;
+                max-width: 80px;
                 justify-content: center;
                 &::before {
                     width: 20px;
@@ -171,6 +185,10 @@
             input::placeholder {
                 font-size: 14px;
             }
+        }
+        @media(max-width: 600px) {
+            grid-column: 2/4;
+            max-width: 100%;
         }
     }
 }

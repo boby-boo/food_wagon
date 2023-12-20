@@ -5,7 +5,7 @@ import Spinner from '../spinner/Spinner';
 import { Link } from 'react-router-dom';
 import { useHttp } from '../../hooks/http.hook';
 import { useDispatch } from 'react-redux';
-import { addToBasket } from '../../actions';
+import { addToCart } from '../../actions';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -154,7 +154,7 @@ const PopularItems = () => {
                                 </div>
                         </Link>
                         <button 
-                            onClick={() => dispatch(addToBasket(card))}
+                            onClick={() => dispatch(addToCart(card))}
                             className="popular-item__button">
                                 Order Now
                         </button>

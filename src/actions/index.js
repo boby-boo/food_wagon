@@ -12,8 +12,8 @@ export const userLogout = (user) => {
     }
 }
 
-export const addToBasket = (item) => {
-    const { id, name,  price, image, weight} = item;
+export const addToCart = (item) => {
+    const { id, name,  price, image, weight } = item;
 
     const updateData = {
         id,
@@ -25,15 +25,21 @@ export const addToBasket = (item) => {
     }
 
     return {
-        type: 'ADD_TO_BASKET',
+        type: 'ADD_TO_CART',
         payload: updateData
     }
 }
 
-export const removeToBasket = (item) => {
-
+export const removeFromCart = (item) => {
     return {
-        type: 'REMOVE_TO_BASKET',
+        type: 'REMOVE_FROM_CART',
+        payload: item
+    }
+}
+
+export const removeItem = (item) => {
+    return {
+        type: 'REMOVE_ITEM',
         payload: item
     }
 }
