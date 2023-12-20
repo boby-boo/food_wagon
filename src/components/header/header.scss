@@ -96,6 +96,7 @@
         &__basket {
             max-width: 80px;
             width: 100%;
+            min-height: 46px;
             @include templateFlex(center, center);
             gap: 10px;
             @include templateFont(18, 700, 1.2);

@@ -1,6 +1,6 @@
 const initialStore = {
     login: JSON.parse(localStorage.getItem('user')) || {},
-    basket: []
+    cart: JSON.parse(localStorage.getItem('cart')) || []
 }
 
 const reducer = (state = initialStore, action) => {
@@ -15,38 +15,55 @@ const reducer = (state = initialStore, action) => {
                 ...state,
                 login: action.payload
             };
-        case 'ADD_TO_BASKET':
-            const checkIndex = state.basket.find(item => item.id === action.payload.id);
+        case 'ADD_TO_CART':
+            const checkIndex = state.cart.find(item => item.id === action.payload.id);
 
             if (checkIndex) {
-                const updateBasket = state.basket.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity +1} : item);
+                const updateBasket = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity +1} : item);
+
+                localStorage.setItem('cart', JSON.stringify(updateBasket))
+
                 return {
                     ...state,
-                    basket: updateBasket
+                    cart: updateBasket
                 }
             }
+
+            localStorage.setItem('cart', JSON.stringify([...state.cart, action.payload]))
 
             return {
                 ...state,
-                basket: [...state.basket, action.payload]
+                cart: [...state.cart, action.payload]
             };
-        case 'REMOVE_TO_BASKET':
-            const checkIndex1 = state.basket.find(item => item.id === action.payload.id);
-
+        case 'REMOVE_FROM_CART':
+            const checkIndex1 = state.cart.find(item => item.id === action.payload.id);
+            
             if (checkIndex1) {
-                const updateBasket = state.basket.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity -1} : item);
+                const updateBasket = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity -1} : item);
                 const filteredBasket = updateBasket.filter(item => item.quantity > 0);
+
+                localStorage.setItem('cart', JSON.stringify(filteredBasket));
+
                 return {
                     ...state,
-                    basket: filteredBasket
+                    cart: filteredBasket
                 }
-            }
+            };
+
+            localStorage.setItem('cart', JSON.stringify([...state.cart]));
 
         return {
             ...state,
-            basket: [...state.basket]
+            cart: [...state.cart]
         };
-        
+        case 'REMOVE_ITEM':
+
+            localStorage.setItem('cart', JSON.stringify(state.cart.filter(item => item.id !== action.payload.id)));
+            
+            return {
+                ...state,
+                cart: state.cart.filter(item => item.id !== action.payload.id)
+            }
             default: return state;
     }
 }

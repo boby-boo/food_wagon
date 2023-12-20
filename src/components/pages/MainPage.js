@@ -5,7 +5,7 @@ import FeatureRestaurants from "../featureRestaurants/FeatureRestaurants";
 import SearchFood from "../searchFood/SearchFood";
 import FeaturesApp from "../featuresApp/FeaturesApp";
 import CardsOfOrders from "../cardsOfOrders/CardsOfOrders";
-import Banner from "../Banner/Banner";
+import Banner from "../banner/Banner";
 import PopularItems from "../popularItems/PopularItems";
 
 const MainPage = () => {
