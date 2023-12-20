@@ -6,8 +6,12 @@
     &__empty {
         max-width: 500px;
         width: 100%;
+        min-height: 65vh;
         margin: 0 auto;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         @include templateFont(20, 400, 1.6);
         text-transform: uppercase;
         color: $gray-color;

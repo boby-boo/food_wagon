@@ -13,13 +13,13 @@ const MainPage = () => {
         <>
             <DeliveryBanner />
             <PopularItems/>
-            {/* <FlashDeals /> */}
+            <FlashDeals />
             <FeatureRestaurants/>
-            {/* <AboutService /> */}
+            <AboutService />
             <SearchFood />
-            {/* <FeaturesApp /> */}
-            {/* <CardsOfOrders /> */}
-            {/* <Banner /> */}
+            <FeaturesApp />
+            <CardsOfOrders />
+            <Banner />
         </>
     )
 };
