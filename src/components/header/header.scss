@@ -65,10 +65,13 @@
         width: 100%;
         justify-self: center;
         position: relative;
+        @include templateFlex(center, center);
         z-index: 2;
         input {
+            padding: 0 10px 0 35px;
             width: 100%;
-            padding: 14px 10px 14px 35px;
+            height: 46px;
+            flex-shrink: 2;
             @include templateFont(18, 700, 1);
             color: $gray-color;
             text-align: left;
@@ -95,6 +98,15 @@
                 }
             }
         }
+        button {
+            height: 46px;
+            min-width: 26px;
+            @include templateFont(18, 700, 1);
+            background-color: transparentize($primary-color, .9);
+            border-radius: 0 10px 10px 0;
+            @include templateTransition(box-shadow);
+            background: url('../../resources/icons/remove__icon.svg') center/ 20px 20px no-repeat transparentize($primary-color, .9);
+        };
         @media(max-width: 600px) {
             grid-column: 1/4;
             grid-row: 2/3;

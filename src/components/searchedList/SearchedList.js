@@ -2,24 +2,13 @@ import React from 'react';
 import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 import Spinner from '../spinner/Spinner';
 
-import { updateFilteredProducts } from '../../actions';
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 
 import './searchedList.scss';
 
 const SearchedList = () => {
     const filteredProducts = useSelector(state => state.filteredProducts);
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        console.log('click')
-        dispatch(updateFilteredProducts(null))
-        navigate(-1)
-    }
-    
     return (
         <>
             <section className='searched-list'>
@@ -34,11 +23,11 @@ const SearchedList = () => {
                         <RestaurantItemCard data={filteredProducts} />
                     }
                 </div>
-                <div 
+                {/* <div 
                     className="overlay" 
                     onClick={handleClick}
                     >
-                </div>
+                </div> */}
             </section>
         </>
     );

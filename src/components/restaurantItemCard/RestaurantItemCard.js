@@ -7,7 +7,6 @@ import { addToCart } from '../../actions/index';
 import './restaurantItemCard.scss';
 
 const RestaurantItemCard = ({ data }) => {
-    console.log(data)
     const dispatch = useDispatch();
     const { restaurantName } = useParams();
 

@@ -65,7 +65,7 @@ const reducer = (state = initialStore, action) => {
                 ...state,
                 cart: state.cart.filter(item => item.id !== action.payload.id)
             }
-        case 'FILTERED_PRODUCTS':
+        case 'FILTERED_PRODUCTS_DATA':
             return {
                 ...state,
                 filteredProducts: action.payload ? [...action.payload] : null

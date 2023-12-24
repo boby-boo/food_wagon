@@ -44,9 +44,9 @@ export const removeItem = (item) => {
     }
 }
 
-export const updateFilteredProducts = (filteredData) => {
+export const filteredProductsData = (filteredData) => {
     return {
-        type:'FILTERED_PRODUCTS',
+        type:'FILTERED_PRODUCTS_DATA',
         payload: filteredData
     }
 }

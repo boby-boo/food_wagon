@@ -5,18 +5,19 @@ import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
 import { useHttp } from '../../hooks/http.hook';
 import { useNavigate } from "react-router-dom";
-import { updateFilteredProducts } from '../../actions/index';
+import { filteredProductsData } from '../../actions/index';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './header.scss'
 
 const Header = () => {
     const [data, setData] = useState(null);
+    const [value, setValue] = useState('as');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
-    const [value, setValue] = useState('');
 
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -32,29 +33,33 @@ const Header = () => {
         setIsOpenModalWindow(!isOpenModalWindow)
     }
 
+    const handleClick = () => {
+        dispatch(filteredProductsData(data));
+        setValue('');
+    }
     const handleChange = (e) => {
-        const value = e.target.value;
+        const valueTarget = e.target.value;
 
-        if (value === '') {
-            dispatch(updateFilteredProducts(null))
+        if (valueTarget === '') { 
+            dispatch(filteredProductsData(data));
             setValue('');
-            navigate(-1);
-            // navigate('/');
             return;
         }
 
-        setValue(value);
+        setValue(valueTarget);
 
-        const filteredData = data.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
-        dispatch(updateFilteredProducts(filteredData));
-        // navigate('/search')
-        // navigate('/search', {options: {replace: true}})
+        const filteredData = data.filter(item => item.name.toLowerCase().includes(valueTarget.toLowerCase()));
+        dispatch(filteredProductsData(filteredData));
     }
     
     if (isOpenModalWindow) {
         document.body.style.overflow = 'hidden'
     } else {
         document.body.style.overflow = 'visible'
+    }
+
+    const border = {
+        borderRadius: '10px 0 0 10px'
     }
 
     return (
@@ -72,14 +77,22 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className='header__row_search-panel'>
-                            <input 
-                                type='text'
-                                onChange={handleChange}
-                                onClick={() => navigate('/search')}
-                                value={value}
-                                id='search__panel'
-                                placeholder='Search Food' 
-                            />
+                                <input 
+                                    type='text'
+                                    onChange={handleChange}
+                                    style={ value ? border : null}
+                                    onFocus={() => {
+                                        navigate('/search')
+                                        dispatch(filteredProductsData(data));
+                                    }}
+                                    value={value}
+                                    id='search__panel'
+                                    placeholder='Search Food' 
+                                />
+                                {
+                                value && 
+                                <button onClick={handleClick}></button>
+                                }
                             </li>
                             <li className='header__row_user-panel user-panel'>
                                 <Link to='/cart' className='user-panel__basket'>
