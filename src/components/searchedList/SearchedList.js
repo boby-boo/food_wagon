@@ -10,12 +10,14 @@ import './searchedList.scss';
 
 const SearchedList = () => {
     const filteredProducts = useSelector(state => state.filteredProducts);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleClick = () => {
+        console.log('click')
         dispatch(updateFilteredProducts(null))
-        navigate('/')
+        navigate(-1)
     }
     
     return (
@@ -23,7 +25,7 @@ const SearchedList = () => {
             <section className='searched-list'>
                 <div className="container">
                     {
-                        filteredProducts.length === 0 ?
+                        filteredProducts?.length === 0 || !filteredProducts ?
                         <div className='searched-list__empty'>
                             <h1>No such product found</h1>
                             <Spinner />

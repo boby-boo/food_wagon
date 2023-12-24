@@ -32,14 +32,14 @@ const Header = () => {
         setIsOpenModalWindow(!isOpenModalWindow)
     }
 
-
     const handleChange = (e) => {
         const value = e.target.value;
 
         if (value === '') {
             dispatch(updateFilteredProducts(null))
             setValue('');
-            navigate('/');
+            navigate(-1);
+            // navigate('/');
             return;
         }
 
@@ -47,10 +47,10 @@ const Header = () => {
 
         const filteredData = data.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
         dispatch(updateFilteredProducts(filteredData));
-        navigate('/search')
+        // navigate('/search')
+        // navigate('/search', {options: {replace: true}})
     }
     
-
     if (isOpenModalWindow) {
         document.body.style.overflow = 'hidden'
     } else {
@@ -75,6 +75,7 @@ const Header = () => {
                             <input 
                                 type='text'
                                 onChange={handleChange}
+                                onClick={() => navigate('/search')}
                                 value={value}
                                 id='search__panel'
                                 placeholder='Search Food' 
