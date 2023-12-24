@@ -1,6 +1,7 @@
 const initialStore = {
     login: JSON.parse(localStorage.getItem('user')) || {},
-    cart: JSON.parse(localStorage.getItem('cart')) || []
+    cart: JSON.parse(localStorage.getItem('cart')) || [],
+    filteredProducts: null
 }
 
 const reducer = (state = initialStore, action) => {
@@ -63,6 +64,11 @@ const reducer = (state = initialStore, action) => {
             return {
                 ...state,
                 cart: state.cart.filter(item => item.id !== action.payload.id)
+            }
+        case 'FILTERED_PRODUCTS':
+            return {
+                ...state,
+                filteredProducts: action.payload ? [...action.payload] : null
             }
             default: return state;
     }

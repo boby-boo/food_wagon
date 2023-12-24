@@ -5,12 +5,12 @@ import ProductItem from "../productItem/ProductItem";
 import { useHttp } from "../../hooks/http.hook";
 import { Link, Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../actions";
 
-import "./restaurantCards.scss";
+import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 
-const RestaurantCards = () => {
+import "./restaurant.scss";
+
+const Restaurant = () => {
     const [cards, setCads] = useState(null);
     const [initialCards, setInitialCards] = useState(null);
 
@@ -18,7 +18,6 @@ const RestaurantCards = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const dispatch = useDispatch();
     const { request } = useHttp();
 
     useEffect(() => {
@@ -37,42 +36,7 @@ const RestaurantCards = () => {
     }
 
     const renderItems = (arr) => {
-        const content = arr.map((card) => {
-            const { name, id, price, description, image } = card,
-                img = require(`../../resources/${image}`);
-            return (
-                <li key={id} className="card">
-                    <Link
-                        className="card__main"
-                        to={`/${restaurantName}/${id}`}
-                    >
-                        <div className="card__image">
-                            <img src={img} alt={name}></img>
-                        </div>
-                        <div className="card__description">
-                            <h3>{name}</h3>
-                            <p>
-                                {description.length > 121
-                                    ? description.substring(0, 121) + "..."
-                                    : description}
-                            </p>
-                        </div>
-                    </Link>
-                    <div className="card__footer">
-                        <span>${price.toFixed(2)}</span>
-                        <button onClick={() => dispatch(addToCart(card))}>
-                            BUY
-                        </button>
-                    </div>
-                </li>
-            );
-        });
-
-        return (
-            <ul className="restaurant__cards_row">
-                {content}
-            </ul>
-        );
+        return <RestaurantItemCard data={arr}/>
     };
 
     const getAveragePrice = (data) => {
@@ -131,32 +95,23 @@ const RestaurantCards = () => {
     };
 
     const backToHistory = () => {
-        if (location.pathname.search(/\d/g) !== -1) {
-            navigate(`/${restaurantName}`);
-            return;
-        }
-        if (location.pathname.includes(`${restaurantName}`)) {
-            navigate('..');
-            return;
-        }
+        navigate(-1);
     }
 
     const restaurantLogo = require(`../../resources/${cards.logo}`),
         cardsList = renderItems(cards.data),
         averagePrice = getAveragePrice(cards.data);
-
     return (
         <section className="restaurant">
             <div className="container">
                 <button onClick={() => backToHistory()} className="back-btn">
                     <div className="back-btn__back"></div>
-                    <span>Back to {location.pathname.search(/\d/g) !== -1  ? `${cards.partnerName}` : 'Home Page'}</span>
+                    <span>Back</span>
                 </button>
                 <div className="restaurant__row">
                     <Link
                         className="restaurant__card"
-                        to={`/${restaurantName}`}
-                    >
+                        to={`/${restaurantName}`}>
                         <div className="restaurant__card_image">
                             <img src={restaurantLogo} alt={cards.partnerName} />
                         </div>
@@ -247,4 +202,4 @@ const Filter = (props) => {
     );
 };
 
-export default RestaurantCards;
+export default Restaurant;

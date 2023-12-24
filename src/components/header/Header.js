@@ -1,65 +1,55 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
-import menuButton from '../../resources/icons/header__menu_button.svg';
-import menuButtonClosed from '../../resources/icons/header__menu_button-closed.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
-
-import { useSelector } from 'react-redux';
+import { useHttp } from '../../hooks/http.hook';
+import { useNavigate } from "react-router-dom";
+import { updateFilteredProducts } from '../../actions/index';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './header.scss'
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [data, setData] = useState(null);
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
+    const [value, setValue] = useState('');
 
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleClick = () => {
-        setIsOpen(!isOpen)
-    }
+    const { request } = useHttp();
+
+    useEffect(() => {
+        request('http://localhost:3001/restaurant')
+            .then(res => res.map(item => item.data).flat(Infinity))
+            .then(res => setData(res))
+    }, []);
 
     const toggleModalOpen = () => {
         setIsOpenModalWindow(!isOpenModalWindow)
     }
-    
-    if (isOpen) {
-        return (
-            <div className='header__mobile-menu'>
-                <nav className='container'>
-                    <ul className='header__mobile-menu_row'>
-                        <li className='header__row_logo'>
-                            <a href='/'>
-                                <img src={logo__icon} alt='foodwagon logo' />
-                                <div>
-                                    food<span>wagon</span>  
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/'>How does it work</a>
-                        </li>
-                        <li>
-                            <a href='/'>Popular items</a>
-                        </li>
-                        <li>
-                            <a href='/'>Featured Restaurants</a>
-                        </li>
-                        <li>
-                            <a href='/'>Search by Food</a>
-                        </li>
-                        <li>
-                            <button onClick={handleClick}>
-                                <img src={menuButtonClosed} alt='burger menu icon closed' />
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        )
+
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+
+        if (value === '') {
+            dispatch(updateFilteredProducts(null))
+            setValue('');
+            navigate('/');
+            return;
+        }
+
+        setValue(value);
+
+        const filteredData = data.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
+        dispatch(updateFilteredProducts(filteredData));
+        navigate('/search')
     }
+    
 
     if (isOpenModalWindow) {
         document.body.style.overflow = 'hidden'
@@ -82,11 +72,13 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className='header__row_search-panel'>
-                                <input 
-                                    type='text' 
-                                    id='search__panel'
-                                    placeholder='Search Food' 
-                                    />
+                            <input 
+                                type='text'
+                                onChange={handleChange}
+                                value={value}
+                                id='search__panel'
+                                placeholder='Search Food' 
+                            />
                             </li>
                             <li className='header__row_user-panel user-panel'>
                                 <Link to='/cart' className='user-panel__basket'>

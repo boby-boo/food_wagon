@@ -43,3 +43,10 @@ export const removeItem = (item) => {
         payload: item
     }
 }
+
+export const updateFilteredProducts = (filteredData) => {
+    return {
+        type:'FILTERED_PRODUCTS',
+        payload: filteredData
+    }
+}

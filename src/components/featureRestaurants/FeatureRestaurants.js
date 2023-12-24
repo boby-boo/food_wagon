@@ -49,7 +49,10 @@ const FeatureRestaurants = () => {
 
             return (
                 <li key={name} className="primary__card restaurant__card">
-                    <Link to={`/${products}`}>
+                    <Link 
+                        to={`/${products}`}
+                        state={{page: 'home'}}
+                    >
                         <div className="primary__card_content restaurant__card_content">
                             <div className="primary__card_image">
                                 <img src={img} alt={name} />

@@ -5,9 +5,9 @@ import { useHttp } from '../../hooks/http.hook';
 import { Link } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 
-import './searchFood.scss';
+import './foodCategory.scss';
 
-const SearchFood = () => {
+const FoodCategory = () => {
     const [items, setItems] = useState();
     const sliderRef = useRef(null);
     const { request } = useHttp();
@@ -162,4 +162,4 @@ const SearchFood = () => {
     );
 };
 
-export default SearchFood;
+export default FoodCategory;

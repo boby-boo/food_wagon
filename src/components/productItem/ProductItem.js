@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Spinner from "../spinner/Spinner";
 import { useHttp } from "../../hooks/http.hook";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from '../../actions';
@@ -26,9 +26,9 @@ const SampleNextArrow = (props) => {
 
 const ProductItem = () => {
     const [data, setData] = useState(null);
+    const [updateProductId, setUpdateProductId] = useState(null)
 
     const { restaurantName, productId } = useParams();
-    const navigate = useNavigate();
 
     const { request } = useHttp();
 
@@ -38,10 +38,8 @@ const ProductItem = () => {
     }, []);
 
     const handleSlideChange = (index) => {
-        let newProductId;
         if (data) {
-            newProductId = data.data[index].id;
-            navigate(`/${restaurantName}/${newProductId}`);
+            setUpdateProductId(data.data[index].id)
         }
     };
 
@@ -51,9 +49,11 @@ const ProductItem = () => {
 
     const renderCards = (array) => {
         const { data } = array;
-
+        
+        const id = updateProductId || productId;
+        
         const cards = data.map(card => <ProductCard card={card} key={card.id} />);
-        const initialIndex = data.findIndex(item => item.id === productId);
+        const initialIndex = data.findIndex(item => item.id === id);
 
         return (
             <>
@@ -75,7 +75,8 @@ const ProductItem = () => {
     }
 
     const renderReview = (array) => {
-        const card = array.find(item => item.id === productId);
+        const id = updateProductId || productId;
+        const card = array.find(item => item.id === id);
 
         if (card.review.length === 0) {
             return (
@@ -167,7 +168,7 @@ const ProductItem = () => {
 };
 
 const ProductCard = ({ card }) => {
-    const [counter, setCounter] = useState(1);
+    const [counter, setCounter] = useState(0);
     const cart = useSelector(state => state.cart);
     const dispatch = useDispatch();
 
@@ -175,9 +176,7 @@ const ProductCard = ({ card }) => {
             img = require(`../../resources/${image}`),
             ing = ingredients.join(", "),
             checkDublicate = cart.find(item => item.id === id),
-            count = checkDublicate ? checkDublicate.quantity : counter,
-            summaryPrice = checkDublicate ? (count * price) : price,
-            summaryWeight = checkDublicate ? weight * count : weight;
+            count = checkDublicate ? checkDublicate.quantity : counter;
 
     return (    
         <>
@@ -188,12 +187,12 @@ const ProductCard = ({ card }) => {
                 <div className="product__content">
                     <div className="product__info">
                         <h1 className="product__content-title">
-                            {name} <span>({summaryWeight}g)</span>
+                            {name} <span>({weight}g)</span>
                         </h1>
                     </div>
                     <div className="product__controls">
                         <div className="product__controls_price">
-                            ${summaryPrice.toFixed(2)}
+                            ${price.toFixed(2)}
                         </div>
                         <div className="product__controls_buttons">
                             <button onClick={() => dispatch(removeFromCart(card))}>-</button>
