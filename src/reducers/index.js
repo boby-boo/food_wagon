@@ -1,7 +1,8 @@
 const initialStore = {
     login: JSON.parse(localStorage.getItem('user')) || {},
     cart: JSON.parse(localStorage.getItem('cart')) || [],
-    filteredProducts: null
+    filteredProducts: null,
+    dataCards: []
 }
 
 const reducer = (state = initialStore, action) => {
@@ -64,6 +65,11 @@ const reducer = (state = initialStore, action) => {
             return {
                 ...state,
                 cart: state.cart.filter(item => item.id !== action.payload.id)
+            };
+        case 'UPDATE_DATA_CARDS': 
+            return {
+                ...state,
+                dataCards: [...action.payload]
             }
         case 'FILTERED_PRODUCTS_DATA':
             return {

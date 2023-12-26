@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import Spinner from "../spinner/Spinner";
-import { useHttp } from "../../hooks/http.hook";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+import userIcon from '../../resources/images/user__icon.png';
+import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from '../../actions';
 
-import userIcon from '../../resources/images/user__icon.png';
-import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
+import Slider from "react-slick";
+import Spinner from "../spinner/Spinner";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,21 +24,14 @@ const SampleNextArrow = (props) => {
 };
 
 const ProductItem = () => {
-    const [data, setData] = useState(null);
     const [updateProductId, setUpdateProductId] = useState(null)
 
-    const { restaurantName, productId } = useParams();
-
-    const { request } = useHttp();
-
-    useEffect(() => {
-        request(`http://localhost:3001/restaurant?products=${restaurantName}`)
-            .then(res => setData(res[0]))
-    }, []);
+    const data = useSelector(state => state.dataCards);
+    const { productId } = useParams();
 
     const handleSlideChange = (index) => {
         if (data) {
-            setUpdateProductId(data.data[index].id)
+            setUpdateProductId(data[index].id)
         }
     };
 
@@ -47,9 +39,7 @@ const ProductItem = () => {
         return <Spinner />;
     }
 
-    const renderCards = (array) => {
-        const { data } = array;
-        
+    const renderCards = (data) => {
         const id = updateProductId || productId;
         
         const cards = data.map(card => <ProductCard card={card} key={card.id} />);
@@ -86,7 +76,7 @@ const ProductItem = () => {
             )
         }
 
-        const content = card.review.map(item => {
+        const content = card.review.map((item, index) => {
             const { author, rate, comment, date } = item,
                     rateStart = [];
 
@@ -95,7 +85,7 @@ const ProductItem = () => {
             }
 
             return (
-                <li className="review-card" key={comment}>
+                <li className="review-card" key={index}>
                     <div className="review-card__info">
                         <div className="review-card__author">
                             <div className="review-card__author_image">
@@ -108,11 +98,9 @@ const ProductItem = () => {
                             </div>
                         </div>
                     </div>
-                    {comment && 
                     <div className="review-card__message">
                         {comment}
                     </div>
-                    }
                 </li>
             )
         });
@@ -155,7 +143,7 @@ const ProductItem = () => {
     }
 
     const content = renderCards(data);
-    const review = renderReview(data.data);
+    const review = renderReview(data);
     
     return (
         <section className="product">

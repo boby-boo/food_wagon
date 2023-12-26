@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
-import ProductItem from "../productItem/ProductItem";
 
 import { useHttp } from "../../hooks/http.hook";
-import { Link, Route, Routes, useNavigate, useLocation } from "react-router-dom";
+
+import { Link, useNavigate, Outlet } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
+import { updateDataCards } from '../../actions';
+import { useDispatch } from "react-redux";
 
 import "./restaurant.scss";
 
 const Restaurant = () => {
-    const [cards, setCads] = useState(null);
+    const [cards, setCards] = useState(null);
     const [initialCards, setInitialCards] = useState(null);
 
     const { restaurantName } = useParams();
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { request } = useHttp();
+    const   navigate = useNavigate(),
+            { request } = useHttp(),
+            dispatch = useDispatch();
 
     useEffect(() => {
         request(`http://localhost:3001/restaurant?products=${restaurantName}`)
             .then(res => res[0])
             .then((res) => {
                 setInitialCards(JSON.parse(JSON.stringify(res)));
-                setCads(res);
+                setCards(res);
+                dispatch(updateDataCards(res.data))
             });
     }, [restaurantName]);
 
@@ -34,10 +36,6 @@ const Restaurant = () => {
             <Spinner />
         );
     }
-
-    const renderItems = (arr) => {
-        return <RestaurantItemCard data={arr}/>
-    };
 
     const getAveragePrice = (data) => {
         const averagePrice = (
@@ -60,10 +58,12 @@ const Restaurant = () => {
                 break;
         }
 
-        setCads({
+        setCards({
             ...cards,
             data: updateData,
         });
+
+        dispatch(updateDataCards(updateData))
 
         function filteredMore() {
             const updateData = cards.data.sort((a, b) => {
@@ -94,17 +94,13 @@ const Restaurant = () => {
         }
     };
 
-    const backToHistory = () => {
-        navigate(-1);
-    }
-
     const restaurantLogo = require(`../../resources/${cards.logo}`),
-        cardsList = renderItems(cards.data),
         averagePrice = getAveragePrice(cards.data);
+
     return (
         <section className="restaurant">
             <div className="container">
-                <button onClick={() => backToHistory()} className="back-btn">
+                <button onClick={() => navigate(-1)} className="back-btn">
                     <div className="back-btn__back"></div>
                     <span>Back</span>
                 </button>
@@ -125,10 +121,7 @@ const Restaurant = () => {
                     </div>
                     <Filter data={cards} filteredData={filteredData} />
                 </div>
-                <Routes>
-                    <Route index element={cardsList} />
-                    <Route exact path=":productId" element={<ProductItem />} />
-                </Routes>
+                <Outlet/>
             </div>
         </section>
     );

@@ -1,19 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
 import { addToCart } from '../../actions/index';
 
 import './restaurantItemCard.scss';
 
-const RestaurantItemCard = ({ data }) => {
-    const dispatch = useDispatch();
-    const { restaurantName } = useParams();
+const RestaurantItemCard = () => {
+    const   data = useSelector(state => state.dataCards),
+            dispatch = useDispatch(),
+            { restaurantName } = useParams();
 
     return (
         <ul className="restaurant__cards_row">
             {
-                data.map((card) => {
+                data.map(card => {
                     const { name, id, price, description, image } = card,
                         img = require(`../../resources/${image}`),
                         nameWithPath = image.replace(/restaurant\//, ' ').replace(/\_/g, '-');

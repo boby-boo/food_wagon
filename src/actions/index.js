@@ -44,6 +44,13 @@ export const removeItem = (item) => {
     }
 }
 
+export const updateDataCards = (data) => {
+    return {
+        type: 'UPDATE_DATA_CARDS',
+        payload: data
+    }
+}
+
 export const filteredProductsData = (filteredData) => {
     return {
         type:'FILTERED_PRODUCTS_DATA',

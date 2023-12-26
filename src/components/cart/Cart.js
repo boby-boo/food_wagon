@@ -11,6 +11,7 @@ const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const cart = useSelector(state => state.cart);
+    console.log(cart)
     const dispatch = useDispatch();
 
     useEffect(() => {
