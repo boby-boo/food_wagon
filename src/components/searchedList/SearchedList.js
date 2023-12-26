@@ -2,32 +2,32 @@ import React from 'react';
 import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 import Spinner from '../spinner/Spinner';
 
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './searchedList.scss';
 
 const SearchedList = () => {
-    // const filteredProducts = useSelector(state => state.filteredProducts);
+    const dataCards = useSelector(state => state.filteredProducts);
 
     return (
         <>
             <section className='searched-list'>
                 <div className="container">
-                    {/* {
-                        filteredProducts?.length === 0 || !filteredProducts ?
+                    {
+                        dataCards?.length === 0 || !dataCards ?
                         <div className='searched-list__empty'>
                             <h1>No such product found</h1>
                             <Spinner />
                         </div>
                         :
-                        <RestaurantItemCard data={filteredProducts} />
-                    } */}
+                        <RestaurantItemCard />
+                    }
                 </div>
-                {/* <div 
+                <div 
                     className="overlay" 
-                    onClick={handleClick}
+                    // onClick={handleClick}
                     >
-                </div> */}
+                </div>
             </section>
         </>
     );

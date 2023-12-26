@@ -7,8 +7,7 @@ import Footer from "../footer/Footer";
 import SearchedList from "../searchedList/SearchedList";
 import ProductItem from "../productItem/ProductItem";
 
-
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import '../../style/style.scss';
 

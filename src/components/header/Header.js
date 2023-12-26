@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
+
 import ModalAuth from '../modalAuth/ModalAuth';
 import { useHttp } from '../../hooks/http.hook';
+
 import { useNavigate } from "react-router-dom";
-import { filteredProductsData } from '../../actions/index';
+import { Link } from "react-router-dom";
+
 import { useSelector, useDispatch } from 'react-redux';
+import { filteredProductsData, updateDataCards} from '../../actions/index';
 
 import './header.scss'
 
@@ -26,7 +28,10 @@ const Header = () => {
     useEffect(() => {
         request('http://localhost:3001/restaurant')
             .then(res => res.map(item => item.data).flat(Infinity))
-            .then(res => setData(res))
+            .then(res => {
+                setData(res)
+                dispatch(filteredProductsData(res))
+            })
     }, []);
 
     const toggleModalOpen = () => {
@@ -37,11 +42,12 @@ const Header = () => {
         dispatch(filteredProductsData(data));
         setValue('');
     }
+
     const handleChange = (e) => {
         const valueTarget = e.target.value;
 
         if (valueTarget === '') { 
-            dispatch(filteredProductsData(data));
+            dispatch(filteredProductsData(null));
             setValue('');
             return;
         }
@@ -80,11 +86,8 @@ const Header = () => {
                                 <input 
                                     type='text'
                                     onChange={handleChange}
-                                    style={ value ? border : null}
-                                    onFocus={() => {
-                                        navigate('/search')
-                                        dispatch(filteredProductsData(data));
-                                    }}
+                                    style={ value ? border : null }
+                                    onFocus={() => navigate('/search')}
                                     value={value}
                                     id='search__panel'
                                     placeholder='Search Food' 
