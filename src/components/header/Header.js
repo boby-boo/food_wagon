@@ -12,7 +12,7 @@ import './header.scss'
 
 const Header = () => {
     const [data, setData] = useState(null);
-    const [value, setValue] = useState('as');
+    const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
     const login = useSelector(state => state.login);

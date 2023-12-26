@@ -67,7 +67,6 @@ const Cart = () => {
                                         <button
                                             onClick={() => dispatch(removeItem(item))}
                                             className="card__controls_remove">
-                                            X
                                         </button>
                                     </div>
                                 </li>
