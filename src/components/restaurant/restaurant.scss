@@ -98,8 +98,7 @@
     max-width: 220px;
     width: 100%;
     &__header {
-        // @include templateFlex(center, center);
-        @include templateFlex(center, center);
+        @include templateFlex(flex-start, center);
         @include templateFont(20, 400, 1.2);
         column-gap: 8px;
         font-size: 20px;

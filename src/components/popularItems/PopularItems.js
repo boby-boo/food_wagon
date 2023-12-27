@@ -138,21 +138,23 @@ const PopularItems = () => {
                     
                 return (
                     <div className='popular-item'>
-                        <Link 
-                            key={id}
-                            className="popular-item__body"
-                            to={`/${restaurant.products}/${id}`}>
-                                <div className="popular-item__image">
-                                    <img src={img} alt={name} />
-                                </div>
-                                <div className="popular-item__description">
-                                    <h3>{name}</h3>
-                                    <div className='popular-item__description_location'>
-                                        {restaurant.partnerName}
+                        <div className="popular-item__body">
+                            <Link 
+                                to={`/${restaurant.products}/${id}`}>
+                                    <div className="popular-item__image">
+                                        <img src={img} alt={name} />
                                     </div>
-                                    ${price.toFixed(2)}
-                                </div>
-                        </Link>
+                            </Link>
+                            <div className="popular-item__description">
+                                <h3>{name}</h3>
+                                <Link
+                                    to={`/${restaurant.products}`}
+                                    className='popular-item__description_location'>
+                                    {restaurant.partnerName}
+                                </Link>
+                                ${price.toFixed(2)}
+                            </div>
+                        </div>
                         <button 
                             onClick={() => dispatch(addToCart(card))}
                             className="popular-item__button">

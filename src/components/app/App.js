@@ -6,6 +6,7 @@ import Cart from "../cart/Cart";
 import Footer from "../footer/Footer";
 import SearchedList from "../searchedList/SearchedList";
 import ProductItem from "../productItem/ProductItem";
+import Signup from "../signup/Signup";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -20,6 +21,7 @@ const App = () => {
                         <Routes>
                             <Route exact path='/' element={<MainPage/>}/>
                             <Route path='/search' element={<SearchedList/>}/>
+                            <Route path='/signup' element={<Signup/>}/>
                             <Route path='/:restaurantName' element={<Restaurant/>}>
                                 <Route index element={<RestaurantItemCard/>} />
                                 <Route path=':productId' element={<ProductItem />}/>
