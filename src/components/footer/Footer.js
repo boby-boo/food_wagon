@@ -7,7 +7,6 @@ const Footer = () => {
     const listRef = useRef();
 
     const handleClick = (e) => {
-        console.log(window.innerWidth)
         if (e.target.tagName === 'H3' && window.innerWidth <= 1200) {
             const display = e.target.nextElementSibling.style.display;
     

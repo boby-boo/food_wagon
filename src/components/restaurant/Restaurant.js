@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
 
-import { useHttp } from "../../hooks/http.hook";
-
+import useFoodWagonService from "../../services/FoodWagonService";
 import { Link, useNavigate, Outlet } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -18,12 +17,11 @@ const Restaurant = () => {
     const { restaurantName } = useParams();
 
     const   navigate = useNavigate(),
-            { request } = useHttp(),
+            { getRestaurant } = useFoodWagonService(),
             dispatch = useDispatch();
 
     useEffect(() => {
-        request(`http://localhost:3001/restaurant?products=${restaurantName}`)
-            .then(res => res[0])
+        getRestaurant(restaurantName)
             .then((res) => {
                 setInitialCards(JSON.parse(JSON.stringify(res)));
                 setCards(res);
@@ -38,8 +36,7 @@ const Restaurant = () => {
     }
 
     const getAveragePrice = (data) => {
-        const averagePrice = (
-            data.reduce((acc, cur) => acc + cur.price, 0) / data.length).toFixed(2);
+        const averagePrice = (data.reduce((acc, cur) => acc + cur.price, 0) / data.length).toFixed(2);
         return averagePrice;
     };
 
@@ -94,8 +91,8 @@ const Restaurant = () => {
         }
     };
 
-    const restaurantLogo = require(`../../resources/${cards.logo}`),
-        averagePrice = getAveragePrice(cards.data);
+    const   restaurantLogo = require(`../../resources/${cards.logo}`),
+            averagePrice = getAveragePrice(cards.data);
 
     return (
         <section className="restaurant">

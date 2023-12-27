@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useHttp } from '../../hooks/http.hook';
+
 import { Link } from 'react-router-dom';
+import useFoodWagonService from '../../services/FoodWagonService';
 
 import Spinner from '../spinner/Spinner';
 
@@ -8,20 +9,18 @@ import './featureRestaurants.scss';
 
 const FeatureRestaurants = () => {
     const [data, setData] = useState(null);
-    const [restaurantQty, setRestaurantQty] = useState(3);
-
-    const { request } = useHttp();
+    const [restaurantOffset, setRestaurantOffset] = useState(4);
+    const { getAllRestaurant } = useFoodWagonService();
 
     useEffect(() => {
-        request(`http://localhost:3001/partners?_limit=${restaurantQty}`)
-            .then(res => setData(res))
-            .then(() => setRestaurantQty(restaurantQty + 3))
+        getRestaurants()
     }, []);
 
-    const req = (qty=3) => {
-        request(`http://localhost:3001/partners?_limit=${qty}`)
+
+    const getRestaurants = (offset) => {
+        getAllRestaurant(offset)
             .then(res => setData(res))
-            .then(() => setRestaurantQty(restaurantQty + 3))
+            .then(setRestaurantOffset(restaurantOffset + 4));
     }
 
     const checkOpenRestaurant = (workingHours) => {
@@ -103,9 +102,13 @@ const FeatureRestaurants = () => {
                 <h2 className='primary-title'>Featured Restaurants</h2>
                     {restaurantRow}
                 <div>
-                    <button onClick={() => req(restaurantQty)} className='restaurants__button primary__button'>
-                        View All
-                    </button>
+                    {restaurantOffset < 9 ?
+                        <button onClick={() => getRestaurants(restaurantOffset)} className='restaurants__button primary__button'>
+                            View All
+                        </button>
+                        :
+                        null
+                    }
                 </div>
             </div>
         </section>

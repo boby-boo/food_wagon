@@ -3,6 +3,7 @@ import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 
 import ModalAuth from '../modalAuth/ModalAuth';
 import { useHttp } from '../../hooks/http.hook';
+import useFoodWagonService from '../../services/FoodWagonService';
 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -19,15 +20,12 @@ const Header = () => {
 
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
-
+    const { getAllProducts } = useFoodWagonService();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { request } = useHttp();
-
     useEffect(() => {
-        request('http://localhost:3001/restaurant')
-            .then(res => res.map(item => item.data).flat(Infinity))
+        getAllProducts()
             .then(res => {
                 setData(res)
                 dispatch(filteredProductsData(res))

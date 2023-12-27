@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import Spinner from '../spinner/Spinner';
 
 import { Link } from 'react-router-dom';
-import { useHttp } from '../../hooks/http.hook';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../actions';
+import useFoodWagonService from '../../services/FoodWagonService';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -34,12 +34,12 @@ const SampleNextArrow = (props) => {
 
 const PopularItems = () => {
     const [cards, setCards] = useState();
-    const { request } = useHttp();
 
+    const { getPopularProducts } = useFoodWagonService();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        request('http://localhost:3001/restaurant?_start=0&_end=3')
+        getPopularProducts()
             .then(res => setCards(res));
     }, []);
 
