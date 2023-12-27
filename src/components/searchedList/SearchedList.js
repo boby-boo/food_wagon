@@ -23,11 +23,7 @@ const SearchedList = () => {
                         <RestaurantItemCard />
                     }
                 </div>
-                <div 
-                    className="overlay" 
-                    // onClick={handleClick}
-                    >
-                </div>
+                <div className="overlay"></div>
             </section>
         </>
     );

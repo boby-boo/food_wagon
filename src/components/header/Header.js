@@ -47,7 +47,7 @@ const Header = () => {
         const valueTarget = e.target.value;
 
         if (valueTarget === '') { 
-            dispatch(filteredProductsData(null));
+            dispatch(filteredProductsData(data));
             setValue('');
             return;
         }
