@@ -1,9 +1,8 @@
 import { useHttp } from '../hooks/http.hook';
 
 const useFoodWagonService = () => {
-    const { request } = useHttp();
-
     const _baseOffset = 4;
+    const { request } = useHttp();
 
     const getAllRestaurant = async (offset = _baseOffset) => {
         const res = await request(`http://localhost:3001/partners?_limit=${offset}`);

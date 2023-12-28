@@ -193,6 +193,9 @@ input::-webkit-inner-spin-button {
     &:active {
         opacity: .9;
     }
+    &:disabled {
+        filter: grayscale(.3);
+    }
 }
 
 .custom-arrow {

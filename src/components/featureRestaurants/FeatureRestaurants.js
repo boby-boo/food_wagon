@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import useFoodWagonService from '../../services/FoodWagonService';
@@ -9,6 +9,7 @@ import './featureRestaurants.scss';
 
 const FeatureRestaurants = () => {
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [restaurantOffset, setRestaurantOffset] = useState(4);
     const { getAllRestaurant } = useFoodWagonService();
 
@@ -16,12 +17,13 @@ const FeatureRestaurants = () => {
         getRestaurants()
     }, []);
 
-
     const getRestaurants = (offset) => {
+        setLoading(true)
         getAllRestaurant(offset)
             .then(res => setData(res))
-            .then(setRestaurantOffset(restaurantOffset + 4));
-    }
+            .then(setRestaurantOffset(restaurantOffset + 4))
+            .then(() => setLoading(false));
+    };
 
     const checkOpenRestaurant = (workingHours) => {
         const   hoursNow = new Date(),
@@ -103,7 +105,9 @@ const FeatureRestaurants = () => {
                     {restaurantRow}
                 <div>
                     {restaurantOffset < 9 ?
-                        <button onClick={() => getRestaurants(restaurantOffset)} className='restaurants__button primary__button'>
+                        <button onClick={() => getRestaurants(restaurantOffset)} 
+                                disabled={loading} 
+                                className='restaurants__button primary__button'>
                             View All
                         </button>
                         :

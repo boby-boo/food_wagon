@@ -9,19 +9,26 @@ import './searchedList.scss';
 const SearchedList = () => {
     const dataCards = useSelector(state => state.filteredProducts);
 
-    return (
-        <>
+    if (dataCards?.length === 0 || !dataCards) {
+        return (
             <section className='searched-list'>
-                <div className="container">
-                    {
-                        dataCards?.length === 0 || !dataCards ?
+                    <div className="container">
                         <div className='searched-list__empty'>
                             <h1>No such product found</h1>
                             <Spinner />
                         </div>
-                        :
-                        <RestaurantItemCard />
-                    }
+                    </div>
+                <div className="overlay"></div>
+            </section>
+        )
+    }
+    
+    return (
+        <>
+            <section className='searched-list'>
+                <div className="container">
+                    <RestaurantItemCard />
+                    <button>MORE</button>
                 </div>
                 <div className="overlay"></div>
             </section>

@@ -21,6 +21,7 @@ const Header = () => {
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
     const { getAllProducts } = useFoodWagonService();
+    
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
