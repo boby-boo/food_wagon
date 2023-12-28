@@ -57,3 +57,12 @@ export const filteredProductsData = (filteredData) => {
         payload: filteredData
     }
 }
+export const searchingState = (currentValue, isEmpty) => {
+    return {
+        type:'SEARCHED_STATE',
+        payload: {
+            currentValue,
+            isEmpty
+        }
+    }
+}

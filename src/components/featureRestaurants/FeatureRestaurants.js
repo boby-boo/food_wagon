@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import useFoodWagonService from '../../services/FoodWagonService';
-
+import Button from '../button/Button';
 import Spinner from '../spinner/Spinner';
 
 import './featureRestaurants.scss';
@@ -104,15 +104,11 @@ const FeatureRestaurants = () => {
                 <h2 className='primary-title'>Featured Restaurants</h2>
                     {restaurantRow}
                 <div>
-                    {restaurantOffset < 9 ?
-                        <button onClick={() => getRestaurants(restaurantOffset)} 
-                                disabled={loading} 
-                                className='restaurants__button primary__button'>
-                            View All
-                        </button>
-                        :
-                        null
-                    }
+                    <Button 
+                        classNameComponent='restaurants__button'
+                        onclickFunction={() => getRestaurants(restaurantOffset)}
+                        isDisabled={loading}
+                    />
                 </div>
             </div>
         </section>

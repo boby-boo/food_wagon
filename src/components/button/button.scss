@@ -1,0 +1,21 @@
+@import '../../style/variables.scss';
+@import '../../style/style.scss';
+
+
+.button {
+    @extend .primary__button;
+    padding: 21px 48px;
+    @include templateFlex(center, center);
+    column-gap: 10px;
+    margin: 0 auto;
+    &:after {
+        content: '';
+        display: block;
+        width: 9px;
+        height: 14px;
+        background: url(../../resources/icons/restaurants__button_arrow-icon.svg);
+    }
+    &:disabled {
+        filter: grayscale(.3);
+    }
+}

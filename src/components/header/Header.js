@@ -1,60 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 
 import ModalAuth from '../modalAuth/ModalAuth';
-import { useHttp } from '../../hooks/http.hook';
-import useFoodWagonService from '../../services/FoodWagonService';
 
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { filteredProductsData, updateDataCards} from '../../actions/index';
+import { searchingState } from '../../actions/index';
 
 import './header.scss'
 
 const Header = () => {
-    const [data, setData] = useState(null);
     const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
-    const { getAllProducts } = useFoodWagonService();
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        getAllProducts()
-            .then(res => {
-                setData(res)
-                dispatch(filteredProductsData(res))
-            })
-    }, []);
 
     const toggleModalOpen = () => {
         setIsOpenModalWindow(!isOpenModalWindow)
     }
 
     const handleClick = () => {
-        dispatch(filteredProductsData(data));
         setValue('');
+        dispatch(searchingState('', true));
     }
 
     const handleChange = (e) => {
         const valueTarget = e.target.value;
 
         if (valueTarget === '') { 
-            dispatch(filteredProductsData(data));
             setValue('');
+            dispatch(searchingState('', true));
             return;
         }
 
         setValue(valueTarget);
-
-        const filteredData = data.filter(item => item.name.toLowerCase().includes(valueTarget.toLowerCase()));
-        dispatch(filteredProductsData(filteredData));
+        dispatch(searchingState(valueTarget, false));
     }
     
     if (isOpenModalWindow) {

@@ -2,6 +2,10 @@ const initialStore = {
     login: JSON.parse(localStorage.getItem('user')) || {},
     cart: JSON.parse(localStorage.getItem('cart')) || [],
     filteredProducts: null,
+    searchState: {
+        currentValue: '',
+        isEmpty: false
+    },
     dataCards: []
 }
 
@@ -75,6 +79,15 @@ const reducer = (state = initialStore, action) => {
             return {
                 ...state,
                 filteredProducts: action.payload ? [...action.payload] : null
+            }
+        case 'SEARCHED_STATE':
+            const { currentValue, isEmpty } = action.payload;
+            return {
+                ...state,
+                searchState: {
+                    currentValue,
+                    isEmpty
+                }
             }
             default: return state;
     }

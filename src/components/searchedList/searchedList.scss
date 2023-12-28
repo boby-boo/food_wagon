@@ -8,16 +8,7 @@
         margin: 20vh 0 ;
         text-align: center;
     }
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    z-index: 1;
+    &__btn {
+        margin: 60px auto 10px;
+    }
 }
