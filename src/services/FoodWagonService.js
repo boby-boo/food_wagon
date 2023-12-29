@@ -6,8 +6,8 @@ const useFoodWagonService = () => {
     const _baseURL = 'http://localhost:3001/';
     const { request } = useHttp();
 
-    const getAllRestaurant = async (offset = _baseOffsetRestaurant) => {
-        const res = await request(`${_baseURL}partners?_limit=${offset}`);
+    const getAllRestaurant = async (offset = _baseOffsetRestaurant, url = `${_baseURL}restaurant?`) => {
+        const res = await request(`${url}_limit=${offset}`);
         return res;
     }
 
@@ -27,8 +27,8 @@ const useFoodWagonService = () => {
     //     return res
     // }
 
-    const getRestaurant = async(restaurant) => {
-        const res = await request(`http://localhost:3001/restaurant?products=${restaurant}`)
+    const getRestaurant = async(restaurant = '', url = `${_baseURL}restaurant?`) => {
+        const res = await request(`${url}products=${restaurant}`)
                             .then(res => res[0]);
         return res;
     }

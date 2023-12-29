@@ -50,21 +50,21 @@ const FeatureRestaurants = () => {
 
     const rerenderItems = (data) => {
         const items = data.map(item => {
-            const   {name, logo, rate, image, working_hours, products} = item,
+            const   {partnerName, logo, rate, image, working_hours, products} = item,
                     img = require(`../../resources/${image}`),
                     logotype = require(`../../resources/${logo}`);
 
             const [text, isWork] = checkOpenRestaurant(working_hours);
 
             return (
-                <li key={name} className="primary__card restaurant__card">
+                <li key={partnerName} className="primary__card restaurant__card">
                     <Link 
                         to={`/${products}`}
                         state={{page: 'home'}}
                     >
                         <div className="primary__card_content restaurant__card_content">
                             <div className="primary__card_image">
-                                <img src={img} alt={name} />
+                                <img src={img} alt={partnerName} />
                             </div>
                             <div className="restaurant__card_items">
                                 <div className="restaurant__card_discount">20% off</div>
@@ -73,10 +73,10 @@ const FeatureRestaurants = () => {
                         </div>
                         <div className="restaurant__card_review card__review">
                             <div className="card__review_logo">
-                                <img src={logotype} alt={name} />
+                                <img src={logotype} alt={partnerName} />
                             </div>
                             <div className="card__review_about">
-                                <h3>{name}</h3>
+                                <h3>{partnerName}</h3>
                                 <span>{rate}</span>
                             </div>
                         </div>
