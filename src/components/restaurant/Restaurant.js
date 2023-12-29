@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import Spinner from "../spinner/Spinner";
+import React, { useEffect, useState } from 'react';
+import Filter from '../filter/Filter';
+import Spinner from '../spinner/Spinner';
 
-import useFoodWagonService from "../../services/FoodWagonService";
-import { Link, useNavigate, Outlet } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import useFoodWagonService from '../../services/FoodWagonService';
+import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { updateDataCards } from '../../actions';
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
-import "./restaurant.scss";
+import './restaurant.scss';
 
 const Restaurant = () => {
     const [cards, setCards] = useState(null);
@@ -18,6 +19,12 @@ const Restaurant = () => {
     const   navigate = useNavigate(),
             { getRestaurant } = useFoodWagonService(),
             dispatch = useDispatch();
+
+    const options = [
+        { value: '0', label: 'Featured' },
+        { value: '1', label: 'High to Low' },
+        { value: '2', label: 'Low to High' },
+    ];
 
     useEffect(() => {
         getRestaurant(restaurantName)
@@ -39,14 +46,14 @@ const Restaurant = () => {
         return averagePrice;
     };
 
-    const filteredData = (cards, value) => {
+    const filterLogic = (cards, value) => {
         let updateData;
 
         switch (value) {
-            case "1":
+            case '1':
                 updateData = filteredMore();
                 break;
-            case "2":
+            case '2':
                 updateData = filteredLess();
                 break;
             default:
@@ -94,28 +101,34 @@ const Restaurant = () => {
             averagePrice = getAveragePrice(cards.data);
 
     return (
-        <section className="restaurant">
-            <div className="container">
-                <button onClick={() => navigate(-1)} className="back-btn">
-                    <div className="back-btn__back"></div>
+        <section className='restaurant'>
+            <div className='container'>
+                <button onClick={() => navigate(-1)} className='back-btn'>
+                    <div className='back-btn__back'></div>
                     <span>Back</span>
                 </button>
-                <div className="restaurant__row">
+                <div className='restaurant__row'>
                     <Link
-                        className="restaurant__card"
+                        className='restaurant__card'
                         to={`/${restaurantName}`}>
-                        <div className="restaurant__card_image">
+                        <div className='restaurant__card_image'>
                             <img src={restaurantLogo} alt={cards.partnerName} />
                         </div>
-                        <div className="restaurant__card_description">
+                        <div className='restaurant__card_description'>
                             <h1>{cards.partnerName}</h1>
                             <span>{cards.rate}</span>
                         </div>
                     </Link>
-                    <div className="restaurant__card_price">
+                    <div className='restaurant__card_price'>
                         Average price: <span>${averagePrice}</span>
                     </div>
-                    <Filter data={cards} filteredData={filteredData} />
+                    <Filter 
+                        data={cards} 
+                        filterLogic={filterLogic} 
+                        options={options} 
+                        currentSelect='Featured'
+                        headerText='Filter by:'
+                        />
                 </div>
                 <Outlet/>
             </div>
@@ -123,72 +136,71 @@ const Restaurant = () => {
     );
 };
 
-const Filter = (props) => {
-    const [selectedValue, setSelectedValue] = useState("Featured");
-    const [isVisible, setIsVisible] = useState(false);
+// const Filter = ({ data, filteredData }) => {
+//     const [selectedValue, setSelectedValue] = useState('Featured');
+//     const [isVisible, setIsVisible] = useState(false);
 
-    const { data, filteredData } = props;
 
-    const clickHandler = (e) => {
-        setSelectedValue(e.target.textContent);
-    };
+//     const clickHandler = (e) => {
+//         setSelectedValue(e.target.textContent);
+//     };
 
-    const options = [
-        { value: "0", label: "Featured" },
-        { value: "1", label: "High to Low" },
-        { value: "2", label: "Low to High" },
-        // { value: '3', label: 'value3' },
-        // { value: '4', label: 'value4' },
-        // { value: '5', label: 'value5' },
-    ];
+//     const options = [
+//         { value: '0', label: 'Featured' },
+//         { value: '1', label: 'High to Low' },
+//         { value: '2', label: 'Low to High' },
+//         // { value: '3', label: 'value3' },
+//         // { value: '4', label: 'value4' },
+//         // { value: '5', label: 'value5' },
+//     ];
 
-    const renderItems = (arr) => {
-        const items = arr.map((item, index) => {
-            const { value, label } = item;
+//     const renderItems = (arr) => {
+//         const items = arr.map((item, index) => {
+//             const { value, label } = item;
 
-            return (
-                <li
-                    onClick={(e) => {
-                        clickHandler(e);
-                        setIsVisible(false);
-                        filteredData(data, value);
-                    }}
-                    key={index}
-                    value={value}
-                >
-                    {label}
-                </li>
-            );
-        });
+//             return (
+//                 <li
+//                     onClick={(e) => {
+//                         clickHandler(e);
+//                         setIsVisible(false);
+//                         filteredData(data, value);
+//                     }}
+//                     key={index}
+//                     value={value}
+//                 >
+//                     {label}
+//                 </li>
+//             );
+//         });
 
-        return <ul className="filter__body">{items}</ul>;
-    };
+//         return <ul className='filter__body'>{items}</ul>;
+//     };
 
-    const content = renderItems(options);
+//     const content = renderItems(options);
 
-    return (
-        <>
-            <div className="filter">
-                <div className="filter__header">
-                    Filter by:
-                    <div
-                        className="filter__header_value"
-                        onClick={() => setIsVisible(!isVisible)}
-                    >
-                        {selectedValue}
-                        <span className="filter__icon"></span>
-                    </div>
-                </div>
-                {isVisible && content}
-            </div>
-            {isVisible && (
-                <div
-                    className="overflow"
-                    onClick={() => setIsVisible(false)}
-                ></div>
-            )}
-        </>
-    );
-};
+//     return (
+//         <>
+//             <div className='filter'>
+//                 <div className='filter__header'>
+//                     Filter by:
+//                     <div
+//                         className='filter__header_value'
+//                         onClick={() => setIsVisible(!isVisible)}
+//                     >
+//                         {selectedValue}
+//                         <span className='filter__icon'></span>
+//                     </div>
+//                 </div>
+//                 {isVisible && content}
+//             </div>
+//             {isVisible && (
+//                 <div
+//                     className='overflow'
+//                     onClick={() => setIsVisible(false)}
+//                 ></div>
+//             )}
+//         </>
+//     );
+// };
 
 export default Restaurant;

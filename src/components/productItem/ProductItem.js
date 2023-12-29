@@ -28,7 +28,7 @@ const ProductItem = () => {
 
     const data = useSelector(state => state.dataCards);
     const { productId } = useParams();
-    console.log(data)
+
     const handleSlideChange = (index) => {
         if (data) {
             setUpdateProductId(data[index].id)

@@ -27,6 +27,7 @@
           "name": "Calf Sauce",
           "id": "01",
           "price": 3,
+          "category": "world",
           "description": "Delicious calf sauce with a perfect blend of spices.",
           "image": "restaurant/food_world/calf-sauce.jpg",
           "ingredients": [
@@ -54,6 +55,7 @@
           "name": "Chick",
           "id": "02",
           "price": 6,
+          "category": "world",
           "description": "Tender and juicy chicken cooked to perfection.",
           "image": "restaurant/food_world/chick.jpg",
           "ingredients": [
@@ -75,6 +77,7 @@
           "name": "Chicken Soup",
           "id": "03",
           "price": 3,
+          "category": "world",
           "description": "Warm and comforting chicken soup to soothe your soul.",
           "image": "restaurant/food_world/chicken-soup.jpg",
           "ingredients": [
@@ -102,6 +105,7 @@
           "name": "Dumplings",
           "id": "04",
           "price": 5.2,
+          "category": "world",
           "description": "Savory dumplings filled with a delightful mixture of ingredients.",
           "image": "restaurant/food_world/dumplings.jpg",
           "ingredients": [
@@ -129,6 +133,7 @@
           "name": "Ear",
           "id": "05",
           "price": 2,
+          "category": "world",
           "description": "A classic dish known for its unique taste and texture.",
           "image": "restaurant/food_world/ear.jpg",
           "ingredients": [
@@ -143,6 +148,7 @@
           "name": "Pig-chop",
           "id": "06",
           "price": 4.4,
+          "category": "world",
           "description": "Tasty and succulent pig chop cooked to perfection.",
           "image": "restaurant/food_world/pig-chop.jpg",
           "ingredients": [
@@ -157,6 +163,7 @@
           "name": "Plov",
           "id": "07",
           "price": 3.3,
+          "category": "world",
           "description": "A flavorful rice dish with a mix of meat and vegetables.",
           "image": "restaurant/food_world/plov.jpg",
           "ingredients": [
@@ -178,6 +185,7 @@
           "name": "Squid",
           "id": "08",
           "price": 3.2,
+          "category": "world",
           "description": "Tender and delicious squid prepared with a special touch.",
           "image": "restaurant/food_world/squid.jpg",
           "ingredients": [
@@ -192,6 +200,7 @@
           "name": "Zander",
           "id": "09",
           "price": 5,
+          "category": "world",
           "description": "Mouthwatering zander dish with a perfect blend of flavors.",
           "image": "restaurant/food_world/zander.jpg",
           "ingredients": [
