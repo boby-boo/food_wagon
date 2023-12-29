@@ -3,7 +3,7 @@ import logo__icon from '../../resources/icons/foodwagon__logo.svg';
 
 import ModalAuth from '../modalAuth/ModalAuth';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +17,7 @@ const Header = () => {
 
     const login = useSelector(state => state.login);
     const cart = useSelector(state => state.cart);
+    const location = useLocation();
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -41,6 +42,11 @@ const Header = () => {
 
         setValue(valueTarget);
         dispatch(searchingState(valueTarget, false));
+    }
+
+    const handleNavigate = () => {
+        console.log()
+        if (location.pathname.search(/search/) === -1 ) navigate('/search/all')
     }
     
     if (isOpenModalWindow) {
@@ -72,7 +78,7 @@ const Header = () => {
                                     type='text'
                                     onChange={handleChange}
                                     style={ value ? border : null }
-                                    onFocus={() => navigate('/search/all')}
+                                    onFocus={handleNavigate}
                                     value={value}
                                     id='search__panel'
                                     placeholder='Search Food' 

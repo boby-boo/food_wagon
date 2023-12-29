@@ -61,7 +61,6 @@ const SearchedList = () => {
     }   
 
     const filterLogic = (data, value) => {
-        console.log(value)
         let updateCategory
         
         switch (value) {
@@ -107,12 +106,15 @@ const SearchedList = () => {
         <>
             <section className='searched-list'>
                 <div className='container'>
-                <Filter 
-                    filterLogic={filterLogic} 
-                    options={options}
-                    headerText='Culinary style:'
-                    currentSelect={category.charAt(0).toUpperCase() + category.slice(1)}
-                />
+                    <div className="searched-list__row">
+                        <h1>Search you culinary</h1>
+                        <Filter 
+                            filterLogic={filterLogic} 
+                            options={options}
+                            headerText='Culinary style:'
+                            currentSelect={category.charAt(0).toUpperCase() + category.slice(1)}
+                        />
+                    </div>
                     <RestaurantItemCard />
                     {
                     dataCards?.length % 12 === 0 &&
