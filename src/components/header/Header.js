@@ -72,7 +72,7 @@ const Header = () => {
                                     type='text'
                                     onChange={handleChange}
                                     style={ value ? border : null }
-                                    onFocus={() => navigate('/search')}
+                                    onFocus={() => navigate('/search/all')}
                                     value={value}
                                     id='search__panel'
                                     placeholder='Search Food' 

@@ -16,16 +16,11 @@ const useFoodWagonService = () => {
         return res;
     }
 
-    const getAllProducts = async(value = '', limit = _baseOffsetProducts, url = `${_baseURL}allProducts?`) => {
-        const res = await request(`${url}name_like=${value}&_limit=${limit}`)
+    const getAllProducts = async(category = '', value = '', limit = _baseOffsetProducts, url = `${_baseURL}allProducts?`) => {
+        const res = await request(`${url}${category === 'all' ? null : `category=${category}`}&name_like=${value}&_limit=${limit}`)
                             .then(res => res);
         return res
     }
-    // const getAllProducts = async(url = 'http://localhost:3001/restaurant') => {
-    //     const res = await request(url)
-    //                         .then(res => res.map(item => item.data).flat(Infinity));
-    //     return res
-    // }
 
     const getRestaurant = async(restaurant = '', url = `${_baseURL}restaurant?`) => {
         const res = await request(`${url}products=${restaurant}`)

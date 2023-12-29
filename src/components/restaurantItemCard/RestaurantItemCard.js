@@ -51,7 +51,7 @@ const RestaurantItemCard = () => {
         return cards
     }
 
-    const cardsList = renderItems(location.pathname === '/search' ? filteredProductsData : dataCards)
+    const cardsList = renderItems(location.pathname.search(/search/) !== -1 ? filteredProductsData : dataCards)
 
     return (
         <ul className="restaurant__cards_row">

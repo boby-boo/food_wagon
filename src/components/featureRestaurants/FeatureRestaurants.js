@@ -50,7 +50,7 @@ const FeatureRestaurants = () => {
 
     const rerenderItems = (data) => {
         const items = data.map(item => {
-            const   {partnerName, logo, rate, image, working_hours, products} = item,
+            const   { partnerName, logo, rate, image, working_hours, products } = item,
                     img = require(`../../resources/${image}`),
                     logotype = require(`../../resources/${logo}`);
 
@@ -97,7 +97,7 @@ const FeatureRestaurants = () => {
     }
 
     const restaurantRow = rerenderItems(data);
-    
+
     return (
         <section className='feature-restaurants restaurants'>
             <div className="container">
@@ -105,6 +105,7 @@ const FeatureRestaurants = () => {
                     {restaurantRow}
                 <div>
                     <Button 
+                        text='View More'
                         classNameComponent='restaurants__button'
                         onclickFunction={() => getRestaurants(restaurantOffset)}
                         isDisabled={loading}

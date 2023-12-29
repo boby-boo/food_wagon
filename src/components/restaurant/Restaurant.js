@@ -15,7 +15,6 @@ const Restaurant = () => {
     const [initialCards, setInitialCards] = useState(null);
 
     const { restaurantName } = useParams();
-
     const   navigate = useNavigate(),
             { getRestaurant } = useFoodWagonService(),
             dispatch = useDispatch();

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filteredProductsData, searchingState } from '../../actions/index';
 
 import './searchedList.scss';
+import { useParams } from 'react-router-dom';
 
 const SearchedList = () => {
     const [offset, setOffset] = useState(12);
@@ -16,6 +17,7 @@ const SearchedList = () => {
     const dispatch = useDispatch();
     const dataCards = useSelector(state => state.filteredProducts);
     const { currentValue, isEmpty } = useSelector(state => state.searchState);
+    const { category } = useParams();
 
     const { getAllProducts } = useFoodWagonService();
 
@@ -31,7 +33,8 @@ const SearchedList = () => {
             dispatch(searchingState('', false))
         }
         
-        getAllProducts(currentValue, offset)
+        // getAllProducts(currentValue, offset)
+        getAllProducts(category, currentValue, offset)
             .then(res => {
                 dispatch(filteredProductsData(res));
                 setIsLoading(false)
