@@ -15,13 +15,17 @@ export const userLogout = (user) => {
 export const addToCart = (item) => {
     const { id, name,  price, image, weight } = item;
 
+    // const updateData = {
+    //     id,
+    //     name, 
+    //     price,
+    //     quantity: 1,
+    //     image,
+    //     weight
+    // }
     const updateData = {
-        id,
-        name, 
-        price,
+        ...item,
         quantity: 1,
-        image,
-        weight
     }
 
     return {

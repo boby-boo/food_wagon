@@ -66,7 +66,6 @@ const Header = () => {
     const scrollWidth = calcScroll();
     
     if (isOpenModalWindow) {
-        console.log(scrollWidth)
         document.body.style.overflow = 'hidden';
         document.body.style.marginRight = `${scrollWidth}px`;
     } else {

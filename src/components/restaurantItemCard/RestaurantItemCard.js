@@ -18,7 +18,7 @@ const RestaurantItemCard = () => {
             const { name, id, price, description, image } = card,
                 img = require(`../../resources/${image}`),
                 nameWithPath = image.replace(/restaurant\//, ' ').replace(/\_/g, '-');
-
+                
             return (
                 <li key={id} className="card">
                     <Link

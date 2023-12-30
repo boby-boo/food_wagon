@@ -11,7 +11,7 @@ const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const cart = useSelector(state => state.cart);
-    
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,28 +32,32 @@ const Cart = () => {
 
     return (
         <section className='cart'>
-            <div className="container">
+            <div className='container'>
                 <h1>Order</h1>
-                <div className="order__row">
-                    <ul className="cart__row">
+                <div className='order__row'>
+                    <ul className='cart__row'>
                         {cart.map(item => {
-                        const {name, id, image, weight, quantity, price} = item;
-                        const src = require(`../../resources/${image}`)
+                        const   { name, id, image, weight, quantity, price } = item,
+                                src = require(`../../resources/${image}`),
+                                nameWithPath = image.match(/\/([^\/]+)\//)[1].replace(/\_/g, '-');
                             return (
                                 <li 
-                                    className="cart__card card"
+                                    className='cart__card card'
                                     key={id}>
-                                    <div className="card__info">
-                                        <div className="card__image">
+                                    <Link 
+                                        className='card__info'
+                                        to={`/${nameWithPath}/${id}`}
+                                    >
+                                        <div className='card__image'>
                                             <img src={src} alt={name} />
                                         </div>
-                                        <div className="card__description">
+                                        <div className='card__description'>
                                             <h2>{name}</h2>
                                             <span>{weight} g</span>
                                         </div>
-                                    </div>
-                                    <div className="card__controls">
-                                        <div className="card__controls_btns">
+                                    </Link>
+                                    <div className='card__controls'>
+                                        <div className='card__controls_btns'>
                                             <button onClick={() => dispatch(removeFromCart(item))}>
                                                 -
                                             </button>
@@ -62,21 +66,21 @@ const Cart = () => {
                                                 +
                                             </button>
                                         </div>
-                                        <div className="card__controls_price">
+                                        <div className='card__controls_price'>
                                             ${price.toFixed(2)}
                                         </div>
                                         <button
                                             onClick={() => dispatch(removeItem(item))}
-                                            className="card__controls_remove">
+                                            className='card__controls_remove'>
                                         </button>
                                     </div>
                                 </li>
-                                )
+                            )
                         })}
                     </ul>
-                    <div className="order__info">
+                    <div className='order__info'>
                         <h2>Total price: ${totalPrice}</h2>
-                        <span className="order__info_quantity">Product: {cart.length} qty</span>
+                        <span className='order__info_quantity'>Product: {cart.length} qty</span>
                         <button className='cart__button'>
                             order
                         </button>
