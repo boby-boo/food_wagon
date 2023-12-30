@@ -11,8 +11,17 @@ const useFoodWagonService = () => {
         return res;
     }
 
-    const getPopularProducts = async(start = 3, end = 7) => {
-        const res = await request(`${_baseURL}restaurant?_start=${start}&_end=${end}`);
+    const getPopularProducts = async() => {
+        const res = await request(`${_baseURL}restaurant?`)
+        return res;
+    }
+
+    const getCategoryRestaurant = async() => {
+        const res = await request(`${_baseURL}restaurant?`)
+                            .then(res => {
+                                return Array.from(new Set(res.map(partner => partner.category)))
+                                        .map(kitchen => res.find(partner => partner.category === kitchen));
+                            })
         return res;
     }
 
@@ -29,6 +38,6 @@ const useFoodWagonService = () => {
     }
 
 
-    return { getAllRestaurant, getPopularProducts, getAllProducts, getRestaurant }
+    return { getAllRestaurant, getPopularProducts, getAllProducts, getRestaurant, getCategoryRestaurant }
 }
 export default useFoodWagonService;

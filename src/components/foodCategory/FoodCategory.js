@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import { useHttp } from '../../hooks/http.hook';
 
 import { Link } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
+
+import useFoodWagonService from '../../services/FoodWagonService';
 
 import './foodCategory.scss';
 
 const FoodCategory = () => {
     const [items, setItems] = useState();
     const sliderRef = useRef(null);
-    const { request } = useHttp();
+    const { getCategoryRestaurant } = useFoodWagonService();
 
     useEffect(() => {
-        request('http://localhost:3001/partners')
+        getCategoryRestaurant()
             .then(res => setItems(res))
     }, []);
 
@@ -108,25 +109,27 @@ const FoodCategory = () => {
 
     const renderItems = (arr) => {
         const items = arr.map(item => {
-            const {partnerName, kitchen, image, products} = item,
+
+            const { category, image } = item,
                     img = require(`../../resources/${image}`);
 
             return (
                 <Link 
-                    className="search__food_card food__card" 
-                    to={`/${products}`}
+                    className='search__food_card food__card' 
+                    to={`/search/${category}`}
                     key={img}>
-                    <div className="food__card_image">
-                        <img src={img} alt={partnerName} />
+                    <div className='food__card_image'>
+                        <img src={img} alt={category} />
                     </div>
-                    <h3>{kitchen}</h3>
+                    <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
                 </Link>
             )
         })
 
         return (
-            <ul className="search__food_slider">
+            <ul className='search__food_slider'>
                 <Slider ref={sliderRef} {...settings}>
+                    {items}
                     {items}
                 </Slider>
             </ul>
@@ -137,14 +140,16 @@ const FoodCategory = () => {
 
     return (
         <section className='search__food'>
-            <div className="container">
-                <div className="search__food_content">
+            <div className='container'>
+                <div className='search__food_content'>
                     <h2 className='primary-title'>Search by Food</h2>
-                    <div className="search__food_buttons">
-                        <button className='search__food_buttons_view'>
+                    <div className='search__food_buttons'>
+                        <Link 
+                            to='/search/all'
+                            className='search__food_buttons_view'>
                             View All
-                        </button>
-                        <div className="search__food_buttons_slider">
+                        </Link>
+                        <div className='search__food_buttons_slider'>
                             <button 
                                 onClick={handlePrevClick} 
                                 className='search__food_buttons_slider__prev_item' />
@@ -154,7 +159,7 @@ const FoodCategory = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="search__food_slider">
+                <ul className='search__food_slider'>
                     {contentItems}
                 </ul>
             </div>

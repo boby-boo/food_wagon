@@ -45,8 +45,7 @@ const Header = () => {
     }
 
     const handleNavigate = () => {
-        console.log()
-        if (location.pathname.search(/search/) === -1 ) navigate('/search/all')
+        if (location.pathname.search(/search/) === -1) navigate('/search/all')
     }
     
     if (isOpenModalWindow) {

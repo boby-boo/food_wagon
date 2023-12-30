@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 import Spinner from '../spinner/Spinner';
 
 import { Link } from 'react-router-dom';
@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../actions';
 import useFoodWagonService from '../../services/FoodWagonService';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import './popularItems.scss';
 
@@ -40,7 +40,9 @@ const PopularItems = () => {
 
     useEffect(() => {
         getPopularProducts()
-            .then(res => setCards(res));
+            .then(res => {
+                setCards(res)
+            });
     }, []);
 
     const settings = {
@@ -138,14 +140,14 @@ const PopularItems = () => {
                     
                 return (
                     <div className='popular-item'>
-                        <div className="popular-item__body">
+                        <div className='popular-item__body'>
                             <Link 
                                 to={`/${restaurant.products}/${id}`}>
-                                    <div className="popular-item__image">
+                                    <div className='popular-item__image'>
                                         <img src={img} alt={name} />
                                     </div>
                             </Link>
-                            <div className="popular-item__description">
+                            <div className='popular-item__description'>
                                 <h3>{name}</h3>
                                 <Link
                                     to={`/${restaurant.products}`}
@@ -157,7 +159,7 @@ const PopularItems = () => {
                         </div>
                         <button 
                             onClick={() => dispatch(addToCart(card))}
-                            className="popular-item__button">
+                            className='popular-item__button'>
                                 Order Now
                         </button>
                     </div>
@@ -177,7 +179,7 @@ const PopularItems = () => {
 
     return (
         <section className='popular-items'>
-            <div className="container">
+            <div className='container'>
                 <h2 className='primary-title'>Popular items</h2> 
                 {cardsRow}
             </div>

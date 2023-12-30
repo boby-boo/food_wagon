@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 
 import Spinner from '../spinner/Spinner';
@@ -8,9 +8,9 @@ import Filter from '../filter/Filter';
 import useFoodWagonService from '../../services/FoodWagonService';
 import { useDispatch, useSelector } from 'react-redux';
 import { filteredProductsData, searchingState } from '../../actions/index';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import './searchedList.scss';
-import { useParams, useNavigate } from 'react-router-dom';
 
 const SearchedList = () => {
     const [offset, setOffset] = useState(12);
@@ -24,8 +24,6 @@ const SearchedList = () => {
             { category } = useParams(),
             navigate = useNavigate();
 
-    const memoCategory = useMemo(() => setOffset(12), [category])
-
     const options = [
         { value: '0', label: 'All' },
         { value: '1', label: 'Pizza' },
@@ -38,7 +36,11 @@ const SearchedList = () => {
         const currentCategory = options.find(item => item.label.toLowerCase() === category).value;
         filterLogic([], currentCategory);
         getProducts()
-    },  [currentValue, offset, memoCategory]);
+    },  [currentValue, offset]);
+
+    useEffect(() => {
+        setOffset(12)
+    }, [category])
 
     const getProducts = () => {
         setIsLoading(true);
