@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart, removeItem } from '../../actions';
+import { addToCart, removeFromCart, removeItem } from '../../reducers/cartSlice';
 
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import './cart.scss';
 const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
 
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector(state => state.cart.cart);
 
     const dispatch = useDispatch();
 

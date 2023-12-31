@@ -7,7 +7,9 @@ import Filter from '../filter/Filter';
 
 import useFoodWagonService from '../../services/FoodWagonService';
 import { useDispatch, useSelector } from 'react-redux';
-import { filteredProductsData, searchingState } from '../../actions/index';
+import { filteredProductsData } from '../../reducers/filteredDataSlice';
+import { searchedState } from '../../reducers/searchStateSlice';
+
 import { useParams, useNavigate } from 'react-router-dom';
 
 import './searchedList.scss';
@@ -19,11 +21,11 @@ const SearchedList = () => {
     const { getAllProducts } = useFoodWagonService();
 
     const   dispatch = useDispatch(),
-            dataCards = useSelector(state => state.filteredProducts),
-            { currentValue, isEmpty } = useSelector(state => state.searchState),
+            dataCards = useSelector(state => state.filteredData.filteredData),
+            { currentValue, isEmpty } = useSelector(state => state.searchState.searchState),
             { category } = useParams(),
             navigate = useNavigate();
-
+    
     const options = [
         { value: '0', label: 'All' },
         { value: '1', label: 'Pizza' },
@@ -47,7 +49,13 @@ const SearchedList = () => {
 
         if (currentValue === '' && isEmpty) {
             setOffset(12)
-            dispatch(searchingState('', false))
+            const data = {
+                currentValue,
+                isEmpty: false
+            }
+
+            dispatch(searchedState(data))
+            // dispatch(searchedState('', false))
         }
         
         getAllProducts(category, currentValue, offset)

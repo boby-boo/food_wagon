@@ -4,7 +4,7 @@ import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../actions';
+import { addToCart, removeFromCart } from '../../reducers/cartSlice';
 
 import Slider from 'react-slick';
 import Spinner from '../spinner/Spinner';
@@ -26,7 +26,7 @@ const SampleNextArrow = (props) => {
 const ProductItem = () => {
     const [updateProductId, setUpdateProductId] = useState(null)
 
-    const data = useSelector(state => state.dataCards);
+    const data = useSelector(state => state.dataCards.dataCards);
     const { productId } = useParams();
 
     const handleSlideChange = (index) => {
@@ -153,7 +153,7 @@ const ProductItem = () => {
 };
 
 const ProductCard = ({ card }) => {
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     const { name, price, image, weight, ingredients, id } = card,

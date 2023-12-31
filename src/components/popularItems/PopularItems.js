@@ -4,7 +4,7 @@ import Spinner from '../spinner/Spinner';
 
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../actions';
+import { addToCart } from '../../reducers/cartSlice';
 import useFoodWagonService from '../../services/FoodWagonService';
 
 import 'slick-carousel/slick/slick.css';

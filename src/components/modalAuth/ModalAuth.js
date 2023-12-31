@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { userLogin } from '../../actions/index';
+import { userLogin } from '../../reducers/loginSlice';
 import { Link } from 'react-router-dom';
 
 import './modalAuth.scss';
@@ -53,9 +53,8 @@ const ModalAuth = ({ toggleModalOpen }) => {
         }
 
         dispatch(userLogin(user));
-        localStorage.setItem('user', JSON.stringify(user));
-        request('http://localhost:3001/users', 'POST', JSON.stringify(user));
         
+        request('http://localhost:3001/users', 'POST', JSON.stringify(user));
         setUserData({});
         toggleModalOpen();
     }

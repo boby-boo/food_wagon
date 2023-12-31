@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { searchingState } from '../../actions/index';
+import { searchedState } from '../../reducers/searchStateSlice';
 
 import './header.scss'
 
@@ -15,8 +15,9 @@ const Header = () => {
     const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
-    const login = useSelector(state => state.login);
-    const cart = useSelector(state => state.cart);
+    const login = useSelector(state => state.login.login);
+    const cart = useSelector(state => state.cart.cart);
+
     const location = useLocation();
     
     const navigate = useNavigate();
@@ -28,20 +29,34 @@ const Header = () => {
 
     const handleClick = () => {
         setValue('');
-        dispatch(searchingState('', true));
+        const data = {
+            currentValue: '',
+            isEmpty: true
+        }
+        dispatch(searchedState(data));
     }
 
     const handleChange = (e) => {
-        const valueTarget = e.target.value;
+        const currentValue = e.target.value;
 
-        if (valueTarget === '') { 
+        if (currentValue === '') { 
             setValue('');
-            dispatch(searchingState('', true));
+            const data = {
+                valueTarget: '',
+                isEmpty: true
+            }
+            dispatch(searchedState(data));
             return;
         }
 
-        setValue(valueTarget);
-        dispatch(searchingState(valueTarget, false));
+        setValue(currentValue);
+
+        const data = {
+            currentValue,
+            isEmpty: false
+        }
+
+        dispatch(searchedState(data));
     }
 
     const handleNavigate = () => {

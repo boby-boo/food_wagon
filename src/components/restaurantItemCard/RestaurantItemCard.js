@@ -2,14 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useLocation } from 'react-router-dom';
 
-import { addToCart } from '../../actions/index';
+import { addToCart } from '../../reducers/cartSlice';
 
 import './restaurantItemCard.scss';
 
 const RestaurantItemCard = () => {
     const   location = useLocation(),
-            dataCards = useSelector(state => state.dataCards),
-            filteredProductsData = useSelector(state => state.filteredProducts),
+            dataCards = useSelector(state => state.dataCards.dataCards),
+            filteredProductsData = useSelector(state => state.filteredData.filteredData),
             dispatch = useDispatch(),
             { restaurantName } = useParams();
 

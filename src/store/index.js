@@ -1,6 +1,17 @@
-import { createStore } from 'redux';
-import reducer from '../reducers';
+import { configureStore } from '@reduxjs/toolkit';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+import cartReducer from '../reducers/cartSlice';
+import dataCardsReducer from '../reducers/dataCardsSlice';
+import filteredDataReducer from '../reducers/filteredDataSlice';
+import loginSliceReducer from '../reducers/loginSlice';
+import searchStateSliceReducer from '../reducers/searchStateSlice';
 
-export default store;
+export const store = configureStore({
+    reducer: {
+        cart: cartReducer,
+        dataCards: dataCardsReducer, 
+        filteredData: filteredDataReducer,
+        login: loginSliceReducer,
+        searchState: searchStateSliceReducer
+    },
+})

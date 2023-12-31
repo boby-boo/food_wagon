@@ -7,7 +7,8 @@ import useFoodWagonService from '../../services/FoodWagonService';
 import { Link, Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-import { updateDataCards } from '../../actions';
+
+import { updateDataCards } from '../../reducers/dataCardsSlice';
 import { useDispatch } from 'react-redux';
 
 import './restaurant.scss';
@@ -47,6 +48,7 @@ const Restaurant = () => {
     };
 
     const filterLogic = (cards, value) => {
+
         let updateData;
 
         switch (value) {
@@ -69,30 +71,14 @@ const Restaurant = () => {
         dispatch(updateDataCards(updateData))
 
         function filteredMore() {
-            const updateData = cards.data.sort((a, b) => {
-                if (a.price < b.price) {
-                    return 1;
-                } else if (a.price > b.price) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
-
+            const updateData = [...cards.data];
+            updateData.sort((a, b) => a.price - b.price)
             return updateData;
         }
 
         function filteredLess() {
-            const updateData = cards.data.sort((a, b) => {
-                if (a.price > b.price) {
-                    return 1;
-                } else if (a.price < b.price) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
-
+            const updateData = [...cards.data];
+            updateData.sort((a, b) => b.price - a.price)
             return updateData;
         }
     };
