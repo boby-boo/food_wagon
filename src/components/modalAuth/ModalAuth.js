@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from '../../reducers/loginSlice';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +13,10 @@ const ModalAuth = ({ toggleModalOpen }) => {
     const   passwordRef = useRef(),
             emailRef = useRef();
 
+    const { login } = useSelector(state => state.login);
     const dispatch = useDispatch();
     const { request } = useHttp();
+
 
     const handleChange = (e) => {
         const   value = e.target.value,
@@ -54,7 +56,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
 
         dispatch(userLogin(user));
         
-        request('http://localhost:3001/users', 'POST', JSON.stringify(user));
+        // request('http://localhost:3001/users', 'POST', JSON.stringify(user));
         setUserData({});
         toggleModalOpen();
     }
