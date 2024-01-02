@@ -105,7 +105,7 @@
             background-color: transparentize($primary-color, .9);
             border-radius: 0 10px 10px 0;
             @include templateTransition(box-shadow);
-            background: url('../../resources/icons/remove__icon.svg') center/ 20px 20px no-repeat transparentize($primary-color, .9);
+            background: url('../../resources/icons/remove__icon.svg') center / 20px 20px no-repeat transparentize($primary-color, .9);
         };
         @media(max-width: 600px) {
             grid-column: 1/4;
@@ -131,7 +131,7 @@
                 display: block;
                 width: 25px;
                 height: 25px;
-                background: url(../../resources/icons/basket__icon.svg) center/cover no-repeat;
+                background: url(../../resources/icons/basket__icon.svg) center / cover no-repeat;
             }
         }
         &__login {
@@ -149,9 +149,9 @@
             &::before {
                 content: '';
                 display: block;
-                width: 28px;
-                height: 18px;
-                background: no-repeat url(../../resources/icons/user__icon.svg);
+                width: 25px;
+                height: 25px;
+                background:  url(../../resources/icons/user__icon.svg) center / 23px 23px no-repeat ;
             }
         }
         button,

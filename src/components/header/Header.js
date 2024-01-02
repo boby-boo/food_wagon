@@ -15,10 +15,11 @@ const Header = () => {
     const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
-    const login = useSelector(state => state.login.login);
-    const cart = useSelector(state => state.cart.cart);
-
-    const location = useLocation();
+    let currentLogin;
+    
+    const   user = JSON.parse(localStorage.getItem('user')),
+            cart = useSelector(state => state.cart.cart),
+            location = useLocation();
     
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -91,6 +92,11 @@ const Header = () => {
     const border = {
         borderRadius: '10px 0 0 10px'
     }
+    
+    if (user?.login) {
+        const { login } = user;
+        currentLogin = login.length > 10 ? login.substring(0, 6) + '...' : login;
+    }
 
     return (
         <>
@@ -129,7 +135,7 @@ const Header = () => {
                                     onClick={toggleModalOpen}
                                     className='user-panel__login'>
                                     <span>
-                                        {login.email?.length > 1 ? `${login.email.substring(0, 10) + '...'}` : 'Login'}
+                                        {currentLogin || 'Login'}
                                     </span>
                                 </button>
                             </li>

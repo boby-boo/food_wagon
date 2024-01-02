@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from '../reducers/cartSlice';
 import dataCardsReducer from '../reducers/dataCardsSlice';
 import filteredDataReducer from '../reducers/filteredDataSlice';
-import loginSliceReducer from '../reducers/loginSlice';
+import userSlice from '../reducers/userSlice';
 import searchStateSliceReducer from '../reducers/searchStateSlice';
 
 export const store = configureStore({
@@ -11,7 +11,7 @@ export const store = configureStore({
         cart: cartReducer,
         dataCards: dataCardsReducer, 
         filteredData: filteredDataReducer,
-        login: loginSliceReducer,
+        user: userSlice,
         searchState: searchStateSliceReducer
     },
 })

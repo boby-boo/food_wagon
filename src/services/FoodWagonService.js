@@ -37,7 +37,21 @@ const useFoodWagonService = () => {
         return res;
     }
 
+    const postUser = async(body, url = `${_baseURL}users`, method = 'POST') => {
+        const res = await request(`${url}`, method, body);
+        return res;
+    }
+    const getUser = async(value, url = `${_baseURL}users`) => {
+        const res = await request(`${url}`)
+                            .then(res => {
+                                const postUser = JSON.parse(value);
+                                return res.find(item => item.email === postUser.email && item.password === postUser.password);
+                            });
+        return res;
+    }
 
-    return { getAllRestaurant, getPopularProducts, getAllProducts, getRestaurant, getCategoryRestaurant }
-}
+
+    return { getAllRestaurant, getPopularProducts, getAllProducts, getRestaurant, getCategoryRestaurant, postUser, getUser };
+};
+
 export default useFoodWagonService;

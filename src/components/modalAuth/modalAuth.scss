@@ -43,46 +43,6 @@
     button {
         margin-bottom: 30px;
     }
-    .input {
-        &__inner {
-            position: relative;
-            margin-bottom: 60px;
-            width: 100%;
-            @include templateFlex(space-between, center);
-            column-gap: 20px;
-            &_elements {
-                width: 100%;
-            }
-        }
-        &__label_email,
-        &__label_password {
-            position: absolute;
-            top: 50%;
-            left: 5px;
-            transform: translateY(-50%);
-            @include templateFont(18, 400, 1.2);
-            color: transparentize($gray-color, .5);
-            @include templateTransition(all);
-            z-index: 99;
-        }
-        &__field {
-            padding: 10px 0 10px 5px;
-            width: 100%;
-            display: flex;
-            flex-grow: 4;
-            @include templateFont(18, 400, 1.2);
-            color: $gray-color;
-            @include templateTransition(all);
-            border-bottom: 1px dashed $gray-color;
-        }
-        &__icon {
-            svg {
-                width: 18px;
-                height: 18px;
-                @include templateTransition(all);
-            }
-        }
-    }
     &__footer {
         text-align: center;
         align-self: center;
