@@ -1955,41 +1955,5 @@
     }
   ],
   "users": [
-    {
-      "id": "adbf727e-3aaf-4bcb-bc27-0d43a6ece6c6",
-      "login": "Volodymyr",
-      "email": "volodka.isyk.95@gmail.com",
-      "password": "Volodymyr1994"
-    },
-    {
-      "id": "0534343e-14aa-4609-909b-68bc501dc244"
-    },
-    {
-      "id": "27070847-6a34-41c5-afc6-f66695d60eeb",
-      "email": "iiii"
-    },
-    {
-      "id": "e7087083-bfa3-44f7-a3a9-57cb64103225",
-      "email": "oo"
-    },
-    {
-      "id": "3e6a5c95-3e89-4471-a9fe-46d1f1de0a76",
-      "login": "eew"
-    },
-    {
-      "id": "762abfdf-9a9f-486a-a22b-c284dd5c303a",
-      "login": "23",
-      "email": "3"
-    },
-    {
-      "id": "685fb389-ef9d-41ba-a8fc-36b44d015a23",
-      "password": "23"
-    },
-    {
-      "id": "42b12b3a-2fe6-453d-8cd4-3f6e7bf250eb",
-      "login": "ds",
-      "email": "d",
-      "password": "d"
-    }
   ]
 }

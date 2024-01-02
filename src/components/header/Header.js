@@ -17,10 +17,10 @@ const Header = () => {
 
     let currentLogin;
     
-    const   user = JSON.parse(localStorage.getItem('user')),
+    const   user = useSelector(state => state.user.user),
             cart = useSelector(state => state.cart.cart),
             location = useLocation();
-    
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

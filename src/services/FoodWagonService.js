@@ -9,12 +9,12 @@ const useFoodWagonService = () => {
     const getAllRestaurant = async (offset = _baseOffsetRestaurant, url = `${_baseURL}restaurant?`) => {
         const res = await request(`${url}_limit=${offset}`);
         return res;
-    }
+    };
 
     const getPopularProducts = async() => {
         const res = await request(`${_baseURL}restaurant?`)
         return res;
-    }
+    };
 
     const getCategoryRestaurant = async() => {
         const res = await request(`${_baseURL}restaurant?`)
@@ -23,24 +23,25 @@ const useFoodWagonService = () => {
                                         .map(kitchen => res.find(partner => partner.category === kitchen));
                             })
         return res;
-    }
+    };
 
     const getAllProducts = async(category = '', value = '', limit = _baseOffsetProducts, url = `${_baseURL}allProducts?`) => {
         const res = await request(`${url}${category === 'all' ? null : `category=${category}`}&name_like=${value}&_limit=${limit}`)
                             .then(res => res);
-        return res
-    }
+        return res;
+    };
 
     const getRestaurant = async(restaurant = '', url = `${_baseURL}restaurant?`) => {
         const res = await request(`${url}products=${restaurant}`)
                             .then(res => res[0]);
         return res;
-    }
+    };
 
     const postUser = async(body, url = `${_baseURL}users`, method = 'POST') => {
         const res = await request(`${url}`, method, body);
         return res;
-    }
+    };
+
     const getUser = async(value, url = `${_baseURL}users`) => {
         const res = await request(`${url}`)
                             .then(res => {
@@ -48,8 +49,7 @@ const useFoodWagonService = () => {
                                 return res.find(item => item.email === postUser.email && item.password === postUser.password);
                             });
         return res;
-    }
-
+    };
 
     return { getAllRestaurant, getPopularProducts, getAllProducts, getRestaurant, getCategoryRestaurant, postUser, getUser };
 };
