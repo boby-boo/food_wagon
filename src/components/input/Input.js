@@ -20,7 +20,6 @@ const Input = ({ elementType, valueElement, handleChange, userData, icon }) => {
         }
     }, [valueElement])
 
-
     return (
         <div className='input__inner'>
             <div className='input__inner_elements'>
@@ -30,7 +29,7 @@ const Input = ({ elementType, valueElement, handleChange, userData, icon }) => {
                     onChange={handleChange}
                     value={valueElement || ''}
                     type={elementType}
-                    id={elementType}
+                    name={elementType}
                     className='input__field'
                     required />
             </div>

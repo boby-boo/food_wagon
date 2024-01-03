@@ -14,11 +14,11 @@ const Signup = () => {
 
     const handleChange = (e) => {
         const value = e.target.value,
-            target = e.target.id;
+            name = e.target.name;
 
         setUserData({
             ...userData,
-            [target]: value,
+            [name]: value,
         });
     };
 

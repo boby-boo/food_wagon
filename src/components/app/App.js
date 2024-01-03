@@ -12,7 +12,7 @@ const Footer = lazy(() => import('../footer/Footer'));
 const SearchedList = lazy(() => import('../searchedList/SearchedList')) ;
 const ProductItem = lazy(() => import('../productItem/ProductItem'));
 const Signup = lazy(() => import('../signup/Signup'));
-
+const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 
 const App = () => {
     return (
@@ -29,7 +29,11 @@ const App = () => {
                                     <Route index element={<RestaurantItemCard/>} />
                                     <Route path=':productId' element={<ProductItem />}/>
                                 </Route>
-                                <Route path='/cart' element={<Cart/>} />
+                                <Route path='/cart' element={
+                                    <PrivateRoute>
+                                        <Cart/>
+                                    </PrivateRoute>
+                                } />
                             </Routes>
                         </Suspense>
                     </main>

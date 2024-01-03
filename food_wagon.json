@@ -1955,5 +1955,11 @@
     }
   ],
   "users": [
+    {
+      "id": "ace51093-f3de-48e0-9902-3c1b193ab526",
+      "login": "volodymyr",
+      "email": "volodka.isyk.95@gmail.com",
+      "password": "volodymyr1"
+    }
   ]
 }

@@ -1,0 +1,18 @@
+@import '../../style/variables.scss';
+
+.private {
+    &__inner {
+        max-width: 1000px;
+        margin: 10vh auto;
+        @include templateFont(28, 600, 1.2);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__text {
+        span, a {
+            cursor: pointer;
+            color: $primary-color;
+            text-decoration: underline;
+        }
+    }
+}

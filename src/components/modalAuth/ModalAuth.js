@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
 import Input from '../input/Input';
+import Button from '../button/Button';
 import FoodWagonService from '../../services/FoodWagonService'; 
-
-import './modalAuth.scss';
 import { useDispatch } from 'react-redux';
 import { userLogin, userLogout } from '../../reducers/userSlice';
+import { Link } from 'react-router-dom';
+
+import './modalAuth.scss';
 
 const ModalAuth = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('user')) || '');
     const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('user') ? true : false));
-    
+    const [isLoginError, setIsLoginError] = useState(true);
+
     const { getUser } = FoodWagonService();
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setIsLoginError(true)
+        }, 3000);
+
+        return () => clearInterval(intervalId);
+    }, [isLoginError]);
+
     const handleChange = (e) => {
-        const value = e.target.value,
-            target = e.target.id;
+        const   value = e.target.value,
+                name = e.target.name;
 
         setUserData({
             ...userData,
-            [target]: value,
+            [name]: value,
         });
     };
 
@@ -34,11 +44,12 @@ const ModalAuth = ({ toggleModalOpen }) => {
 
         if (res) {
             dispatch(userLogin(res));
-            setUserData({});
+            setUserData('');
             toggleModalOpen();
+            setIsLoginError(true);
             setIsAuth(true);
         } else {
-            return;
+            setIsLoginError(false);
         }
     };
 
@@ -54,6 +65,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
     return (
         <div className='modal__auth'>
             <form className='form' onSubmit={onsubmitForm}>
+                {!isLoginError && <p className='modal__auth_error'>The user name and password provided do not correspond to any account at Food Wagon.</p>}
                 {isAuth ?
                     <h2>
                         <span>Your </span>account
@@ -100,15 +112,18 @@ const ModalAuth = ({ toggleModalOpen }) => {
                 />
                 {isAuth 
                     ?
-                    <button 
-                        onClick={logoutForm}
-                        className='restaurants__button primary__button'>
-                        Log out
-                    </button> 
+                    <Button 
+                        text='Log out' 
+                        onclickFunction={logoutForm} 
+                        isDisabled={false} 
+                        classNameComponent='restaurants__button' />
                     :
-                    <button className='restaurants__button primary__button'>
-                        Sign in
-                    </button>
+                    <Button 
+                        text='Sign in' 
+                        onclickFunction={null} 
+                        isDisabled={false} 
+                        classNameComponent='restaurants__button' 
+                        />
                 }
 
                 <div className='form__footer'>
