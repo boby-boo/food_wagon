@@ -13,6 +13,7 @@ const SearchedList = lazy(() => import('../searchedList/SearchedList')) ;
 const ProductItem = lazy(() => import('../productItem/ProductItem'));
 const Signup = lazy(() => import('../signup/Signup'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
+const Page404 = lazy(() => import('../page404/Page404'));
 
 const App = () => {
     return (
@@ -23,17 +24,18 @@ const App = () => {
                         <Suspense fallback={<Spinner/>}>
                             <Routes>
                                 <Route exact path='/' element={<MainPage/>}/>
-                                <Route path='/search/:category' element={<SearchedList/>}/>
-                                <Route path='/signup' element={<Signup/>}/>
-                                <Route path='/:restaurantName' element={<Restaurant/>}>
-                                    <Route index element={<RestaurantItemCard/>} />
+                                <Route exact path='/search/:category' element={<SearchedList/>}/>
+                                <Route exact path='/signup' element={<Signup/>}/>
+                                <Route exact path='/:restaurantName' element={<Restaurant/>}>
+                                    <Route index element={<RestaurantItemCard/>}/>
                                     <Route path=':productId' element={<ProductItem />}/>
                                 </Route>
-                                <Route path='/cart' element={
+                                <Route exact path='/cart' element={
                                     <PrivateRoute>
                                         <Cart/>
                                     </PrivateRoute>
-                                } />
+                                }/>
+                                <Route path='*' element={<Page404/>}/>
                             </Routes>
                         </Suspense>
                     </main>
