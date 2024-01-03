@@ -80,6 +80,23 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; 
 }
+::-webkit-scrollbar{
+	background-color: $gray-color;
+	border-radius: 8px;
+    width: 12px;
+    &:horizontal{
+        background-color: $primary-color;
+    }
+}
+::-webkit-scrollbar {
+    &-thumb{ 
+        background-color: $primary-color;
+        border-radius: 8px;
+    }
+    &-track {
+        background-color: #FEFAF1;
+    }
+}
 
 .container {
     max-width: 1500px;
