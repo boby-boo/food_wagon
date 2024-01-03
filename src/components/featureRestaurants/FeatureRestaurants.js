@@ -59,7 +59,7 @@ const FeatureRestaurants = () => {
             return (
                 <li key={partnerName} className="primary__card restaurant__card">
                     <Link 
-                        to={`/${products}`}
+                        to={`restaurant/${products}`}
                         state={{page: 'home'}}
                     >
                         <div className="primary__card_content restaurant__card_content">

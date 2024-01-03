@@ -46,7 +46,7 @@ const Cart = () => {
                                     key={id}>
                                     <Link 
                                         className='card__info'
-                                        to={`/${nameWithPath}/${id}`}
+                                        to={`/restaurant/${nameWithPath}/${id}`}
                                     >
                                         <div className='card__image'>
                                             <img src={src} alt={name} />

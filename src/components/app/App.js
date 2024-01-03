@@ -24,13 +24,13 @@ const App = () => {
                         <Suspense fallback={<Spinner/>}>
                             <Routes>
                                 <Route exact path='/' element={<MainPage/>}/>
-                                <Route exact path='/search/:category' element={<SearchedList/>}/>
-                                <Route exact path='/signup' element={<Signup/>}/>
-                                <Route exact path='/:restaurantName' element={<Restaurant/>}>
+                                <Route exact path='search/:category' element={<SearchedList/>}/>
+                                <Route exact path='signup' element={<Signup/>}/>
+                                <Route exact path='/restaurant/:restaurantName' element={<Restaurant/>}>
                                     <Route index element={<RestaurantItemCard/>}/>
                                     <Route path=':productId' element={<ProductItem />}/>
                                 </Route>
-                                <Route exact path='/cart' element={
+                                <Route exact path='cart' element={
                                     <PrivateRoute>
                                         <Cart/>
                                     </PrivateRoute>

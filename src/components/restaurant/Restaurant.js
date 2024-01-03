@@ -93,7 +93,7 @@ const Restaurant = () => {
                 <div className='restaurant__row'>
                     <Link
                         className='restaurant__card'
-                        to={`/${restaurantName}`}>
+                        to={`/restaurant/${restaurantName}`}>
                         <div className='restaurant__card_image'>
                             <img src={restaurantLogo} alt={cards.partnerName} />
                         </div>

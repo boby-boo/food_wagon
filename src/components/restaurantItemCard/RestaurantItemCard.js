@@ -20,26 +20,26 @@ const RestaurantItemCard = () => {
                 nameWithPath = image.replace(/restaurant\//, ' ').replace(/\_/g, '-');
                 
             return (
-                <li key={id} className="card">
+                <li key={id} className='card'>
                     <Link
-                        className="card__main"
-                        to={`/${restaurantName ? restaurantName : 
+                        className='card__main'
+                        to={`/restaurant/${restaurantName ? restaurantName : 
                                 nameWithPath
                                     .substring(0, nameWithPath.search(/\//))
                                     .trim()}/${id}`}>
-                        <div className="card__image">
+                        <div className='card__image'>
                             <img src={img} alt={name}></img>
                         </div>
-                        <div className="card__description">
+                        <div className='card__description'>
                             <h3>{name}</h3>
                             <p>
                                 {description.length > 121
-                                    ? description.substring(0, 121) + "..."
+                                    ? description.substring(0, 121) + '...'
                                     : description}
                             </p>
                         </div>
                     </Link>
-                    <div className="card__footer">
+                    <div className='card__footer'>
                         <span>${price.toFixed(2)}</span>
                         <button onClick={() => dispatch(addToCart(card))}>
                             BUY
@@ -54,7 +54,7 @@ const RestaurantItemCard = () => {
     const cardsList = renderItems(location.pathname.search(/search/) !== -1 ? filteredProductsData : dataCards)
 
     return (
-        <ul className="restaurant__cards_row">
+        <ul className='restaurant__cards_row'>
             {cardsList}
         </ul>
     );
