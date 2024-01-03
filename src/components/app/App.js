@@ -13,7 +13,7 @@ const SearchedList = lazy(() => import('../searchedList/SearchedList')) ;
 const ProductItem = lazy(() => import('../productItem/ProductItem'));
 const Signup = lazy(() => import('../signup/Signup'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
-const Page404 = lazy(() => import('../page404/Page404'));
+const Page404 = lazy(() => import('../pages/Page404'));
 
 const App = () => {
     return (

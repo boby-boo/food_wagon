@@ -15,8 +15,8 @@ const FoodCategory = () => {
 
     useEffect(() => {
         getCategoryRestaurant()
-            .then(res => setItems(res))
-    }, []);
+            .then(res => setItems(res));
+    }, []); 
 
     const handlePrevClick = () => {
         if (sliderRef.current) {

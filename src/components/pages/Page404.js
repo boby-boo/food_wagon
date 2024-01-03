@@ -1,6 +1,6 @@
 import React from 'react';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 import { Link } from 'react-router-dom';
-import errorIcon from '../../resources/icons/page404.gif';
 
 import './page404.scss';
 
@@ -10,8 +10,8 @@ const Page404 = () => {
             <div className='container'>
                 <div className='error-page__row'>
                     <h1>Oops! Page not found</h1>
-                    <img src={errorIcon} alt='pizza icon'/>
                     <Link to='/'> Go to main page </Link>
+                    <ErrorMessage />
                 </div>  
             </div>
         </section>

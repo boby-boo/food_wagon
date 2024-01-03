@@ -131,7 +131,7 @@ const PopularItems = () => {
             <Spinner/>
         )
     }
-    
+
     const renderItems = (data) => {
         const cardsRow = data.map(restaurant => {
             const cards = restaurant.data.map(card => {
