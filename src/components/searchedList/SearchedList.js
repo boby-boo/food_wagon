@@ -136,7 +136,10 @@ const SearchedList = () => {
                         classNameComponent='searched-list__btn'
                         isDisabled={isLoading}
                         onclickFunction={changeOffset}
-                    />
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ amount: 0.2 }}
+                        />
                     } 
                 </div>
                 <ScrollToTopButton scrollTopValue={1400}/>

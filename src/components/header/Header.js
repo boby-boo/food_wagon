@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchedState } from '../../reducers/searchStateSlice';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import './header.scss'
 
 const Header = () => {

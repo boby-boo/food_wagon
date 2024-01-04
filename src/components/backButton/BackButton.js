@@ -11,7 +11,9 @@ const BackButton = () => {
     }
 
     return (
-        <button onClick={handleClick} className='back-btn'>
+        <button 
+            onClick={handleClick} 
+            className='back-btn'>
             <div className='back-btn__back'></div>
             <span>Back</span>
         </button>

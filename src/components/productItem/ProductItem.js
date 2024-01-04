@@ -11,8 +11,9 @@ import Spinner from '../spinner/Spinner';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import { motion, AnimatePresence } from 'framer-motion'; 
 import './productItem.scss';
-import { motion } from 'framer-motion';
 
 const SamplePrevArrow = (props) => {
     const { onClick } = props;
@@ -57,9 +58,19 @@ const ProductItem = () => {
                         {cards}
                     </Slider>
                 </div>
-                <div className='product__about'>
-                    <h2>Description: </h2>
-                    {data[initialIndex].description}
+                    <div className='product__about'>
+                        <h2>Description: </h2>
+                <AnimatePresence mode='popLayout'>
+                        <motion.div
+                            key={initialIndex}  
+                            initial={{ y: 10, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 10, opacity: 0 }}
+                            transition={{ duration: .2 }}
+                            >
+                            {data[initialIndex].description}
+                        </motion.div>
+                </AnimatePresence>
                 </div>
             </>
         )
@@ -71,9 +82,14 @@ const ProductItem = () => {
 
         if (card.review.length === 0) {
             return (
-                <section className='review'>
+                <motion.div 
+                    className='review'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, }}
+                    viewport={{ amount: 0.1 }}
+                >
                     <h2 className='review__title'>There are no reviews for this product yet.</h2>
-                </section>
+                </motion.div>
             )
         }
 
@@ -86,7 +102,13 @@ const ProductItem = () => {
             }
 
             return (
-                <li className='review-card' key={index}>
+                <motion.li 
+                    key={author+comment+date}
+                    className='review-card'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, }}
+                    transition={{ duration: .3 }}
+                >
                     <div className='review-card__info'>
                         <div className='review-card__author'>
                             <div className='review-card__author_image'>
@@ -102,17 +124,17 @@ const ProductItem = () => {
                     <div className='review-card__message'>
                         {comment}
                     </div>
-                </li>
+                </motion.li>
             )
         });
 
         return (
-            <section className='review'>
-            <h2 className='review__title'>Review</h2>
-            <ul className='review__row'>
-                {content}
-            </ul>
-        </section>
+            <div className='review'>
+                <h2 className='review__title'>Review</h2>
+                <ul className='review__row'>
+                    {content}
+                </ul>
+            </div>
         )
     }
 

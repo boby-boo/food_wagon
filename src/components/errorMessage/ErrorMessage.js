@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+
+import { motion } from 'framer-motion';
 import errorGif from '../../resources/icons/page404.gif';
 
-const ErrorMessage = () => {
+const ErrorMessage = forwardRef((props, ref) => {
     return (
-        <img style={{ textAlign: 'center', objectFit: 'cover', width: '100%' }} src={errorGif} alt='Error'/>
+        <motion.img ref={ref} style={{ textAlign: 'center', objectFit: 'cover', width: '100%' }} src={errorGif} alt='Error'/>
     );
-};
+});
 
-export default ErrorMessage;
+export default motion(ErrorMessage);

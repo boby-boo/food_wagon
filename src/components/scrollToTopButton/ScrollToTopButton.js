@@ -11,6 +11,7 @@ const ScrollToTopButton = ({ scrollTopValue }) => {
 
         return (() => window.removeEventListener('scroll', handleScroll));
     })
+    
     const handleScroll = () => {
         document.documentElement.scrollTop >= scrollTopValue ? setIsVisible(true) : setIsVisible(false);
     }

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
+import { motion } from 'framer-motion';
 import './button.scss';
 
-const Button = ({ text = 'View All', onclickFunction, isDisabled, classNameComponent }) => {
+const Button = forwardRef(({ text = 'View All', onclickFunction, isDisabled, classNameComponent }, ref) => {
     return (
-        <button 
+        <button
+            ref={ref}
             onClick={onclickFunction} 
-            disabled={isDisabled} 
+            disabled={isDisabled}
             className={`button ${classNameComponent}`}>
             {text}
         </button>
     );
-};
+});
 
-export default Button;
+export default motion(Button);

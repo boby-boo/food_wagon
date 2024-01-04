@@ -23,12 +23,16 @@ const Cart = () => {
     
     if (cart.length === 0) {
         return (
-            <div className='cart__empty'>
+            <motion.div 
+                className='cart__empty'
+                initial={{ opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+            >
                 <p>Cart is empty, add something from the menu</p>
                 <Link to='/' className='cart__button'>
                     Select products
                 </Link>
-            </div>
+            </motion.div>
         )
     }
 
@@ -47,11 +51,11 @@ const Cart = () => {
                                 return (
                                     <motion.li
                                         key={id}
+                                        className='cart__card card'
                                         initial={{ opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         exit={{ scale: .97, opacity: 0 }}
                                         transition={{ duration: .3 }}
-                                        className='cart__card card'
                                     >
                                         <Link 
                                             className='card__info'
