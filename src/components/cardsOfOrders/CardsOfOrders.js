@@ -3,11 +3,16 @@ import orderCardImage1 from '../../resources/images/order__card_image-1.png';
 import orderCardImage2 from '../../resources/images/order__card_image-2.png';
 import orderCardImage3 from '../../resources/images/order__card_image-3.png';
 
+import { motion } from 'framer-motion';
 import './cardsOfOrders.scss';
 
 const CardsOfOrders = () => {
     return (
-        <section className='cards-of-orders orders'>
+        <motion.section
+            className='cards-of-orders orders'
+            initial={{ opacity: 0 }}
+            viewport={{ amount: 0.1 }}
+            whileInView={{ opacity: 1}}>
             <div className='container'>
                 <ul className='orders__row'>
                     <li className='orders__row_card order__card'>
@@ -54,7 +59,7 @@ const CardsOfOrders = () => {
                     </li>
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

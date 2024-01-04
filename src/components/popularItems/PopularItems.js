@@ -10,6 +10,8 @@ import useFoodWagonService from '../../services/FoodWagonService';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { motion } from 'framer-motion';
+
 import './popularItems.scss';
 
 const SamplePrevArrow = (props) => {
@@ -178,12 +180,16 @@ const PopularItems = () => {
     const cardsRow = renderItems(cards);
 
     return (
-        <section className='popular-items'>
+        <motion.section 
+            className='popular-items'
+            initial={{ opacity: 0 }}
+            viewport={{ amount: 0.2 }}
+            whileInView={{ opacity: 1}}>
             <div className='container'>
                 <h2 className='primary-title'>Popular items</h2> 
                 {cardsRow}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

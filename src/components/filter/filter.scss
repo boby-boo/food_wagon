@@ -56,3 +56,14 @@
         }
     }
 }
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    top: -200px;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 10;
+}

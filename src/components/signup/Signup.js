@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { userLogin } from '../../reducers/userSlice';
 import FoodWagonService from '../../services/FoodWagonService';
 
+import { motion } from 'framer-motion';
 import './signup.scss';
 
 const Signup = () => {
@@ -37,7 +38,12 @@ const Signup = () => {
     };
 
     return (
-        <section className='signup'>
+        <motion.section 
+            className='signup'
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0}}
+            transition={{ duration: .2 }}>
             <div className='container'>
                 <form onSubmit={onsubmitForm} className='signup__form'>
                     <h1>PERSONAL DETAILS</h1>
@@ -99,7 +105,7 @@ const Signup = () => {
                     </button>
                 </form>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

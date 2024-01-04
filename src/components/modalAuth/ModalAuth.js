@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { userLogin, userLogout } from '../../reducers/userSlice';
 import { Link } from 'react-router-dom';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import './modalAuth.scss';
 
 const ModalAuth = ({ toggleModalOpen }) => {
@@ -63,9 +64,26 @@ const ModalAuth = ({ toggleModalOpen }) => {
     }
 
     return (
-        <div className='modal__auth'>
+        <motion.div
+            className='modal__auth'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: .2 }}
+        >
             <form className='form' onSubmit={onsubmitForm}>
-                {!isLoginError && <p className='modal__auth_error'>The user name and password provided do not correspond to any account at Food Wagon.</p>}
+                <AnimatePresence mode='popLayout'>
+                {!isLoginError 
+                    && 
+                        <motion.p 
+                            initial={{ opacity: 0, scale: .6 }} 
+                            animate={{ opacity: 1, scale: 1}}
+                            exit={{ opacity: 0, scale: .6 }}
+                            transition={{ duration: .2 }}
+                            className='modal__auth_error'>
+                            The user name and password provided do not correspond to any account at Food Wagon
+                        </motion.p>}
+                    </AnimatePresence>
                 {isAuth ?
                     <h2>
                         <span>Your </span>account
@@ -139,7 +157,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
                 className='modal__auth_overlay'
                 onClick={toggleModalOpen}>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

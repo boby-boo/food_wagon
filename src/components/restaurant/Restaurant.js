@@ -7,7 +7,6 @@ import useFoodWagonService from '../../services/FoodWagonService';
 import { Link, Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-
 import { updateDataCards } from '../../reducers/dataCardsSlice';
 import { useDispatch } from 'react-redux';
 

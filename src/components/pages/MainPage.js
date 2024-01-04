@@ -22,7 +22,7 @@ const MainPage = () => {
                 <FeatureRestaurants />
             </ErrorBoundary>
             <AboutService />
-            <ScrollToTopButton />
+            <ScrollToTopButton scrollTopValue={3000}/>
             <ErrorBoundary>
                 <FoodCategory />
             </ErrorBoundary>

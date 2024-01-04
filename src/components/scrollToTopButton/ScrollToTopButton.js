@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import './scrollToTopButton.scss';
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton = ({ scrollTopValue }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
-        return (() => window.removeEventListener('scroll', handleScroll))
+        return (() => window.removeEventListener('scroll', handleScroll));
     })
     const handleScroll = () => {
-        document.documentElement.scrollTop >= 3000 ? setIsVisible(true) : setIsVisible(false);
+        document.documentElement.scrollTop >= scrollTopValue ? setIsVisible(true) : setIsVisible(false);
     }
 
     const scrollToTop = () => {
@@ -21,7 +22,21 @@ const ScrollToTopButton = () => {
         });
     };
 
-    return isVisible && <button className='scrollToTopButton' onClick={scrollToTop}></button>
+    return (
+        <AnimatePresence>
+        {isVisible && 
+            <motion.button 
+                className='scrollToTopButton'
+                onClick={scrollToTop}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: .4 }}
+                whileTap={{ scale: .9 }} 
+            >
+            </motion.button>}
+        </AnimatePresence>
+    )
 };
 
 export default ScrollToTopButton;

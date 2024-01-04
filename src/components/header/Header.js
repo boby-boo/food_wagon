@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchedState } from '../../reducers/searchStateSlice';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import './header.scss'
 
 const Header = () => {
@@ -143,7 +144,9 @@ const Header = () => {
                     </nav>
                 </div>
             </header>
-            {isOpenModalWindow && <ModalAuth toggleModalOpen={toggleModalOpen}/>}
+            <AnimatePresence>
+                {isOpenModalWindow && <ModalAuth toggleModalOpen={toggleModalOpen}/>}
+            </AnimatePresence>
         </>
     );
 };

@@ -4,11 +4,16 @@ import img2 from '../../resources/icons/about__service/about__service_icon-2.svg
 import img3 from '../../resources/icons/about__service/about__service_icon-3.svg';
 import img4 from '../../resources/icons/about__service/about__service_icon-4.svg';
 
+import { motion } from 'framer-motion';
 import './aboutService.scss';
 
 const OurService = () => {
     return (
-        <section className='about-service'>
+        <motion.section 
+            className='about-service'
+            initial={{ opacity: 0 }}
+            viewport={{ amount: 0.3 }}
+            whileInView={{ opacity: 1}}>
             <div className='container'>
                 <h2 className='primary-title'>How does it work</h2>
                 <ul className='about-service__row'>
@@ -50,7 +55,7 @@ const OurService = () => {
                     </li>
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

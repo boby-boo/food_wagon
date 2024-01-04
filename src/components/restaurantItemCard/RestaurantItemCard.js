@@ -4,6 +4,7 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 
 import { addToCart } from '../../reducers/cartSlice';
 
+import { motion } from 'framer-motion';
 import './restaurantItemCard.scss';
 
 const RestaurantItemCard = () => {
@@ -20,7 +21,13 @@ const RestaurantItemCard = () => {
                 nameWithPath = image.replace(/restaurant\//, ' ').replace(/\_/g, '-');
                 
             return (
-                <li key={id} className='card'>
+                <motion.li 
+                    key={id} 
+                    className='card'
+                    initial={{ opacity: 0}}
+                    viewport={{ amount: 0.1 }}
+                    whileInView={{ opacity: 1}}
+                >
                     <Link
                         className='card__main'
                         to={`/restaurant/${restaurantName ? restaurantName : 
@@ -45,7 +52,7 @@ const RestaurantItemCard = () => {
                             BUY
                         </button>
                     </div>
-                </li>
+                </motion.li>
             );
         })
         return cards

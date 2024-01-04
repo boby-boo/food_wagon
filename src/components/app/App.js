@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Spinner from '../spinner/Spinner';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import '../../style/style.scss';
 
 const Header = lazy(() => import('../header/Header'));

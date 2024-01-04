@@ -6,6 +6,7 @@ import Spinner from '../spinner/Spinner';
 
 import useFoodWagonService from '../../services/FoodWagonService';
 
+import { motion } from 'framer-motion';
 import './foodCategory.scss';
 
 const FoodCategory = () => {
@@ -139,7 +140,11 @@ const FoodCategory = () => {
     const contentItems = renderItems(items);
 
     return (
-        <section className='search__food'>
+        <motion.section 
+            className='search__food'
+            initial={{ opacity: 0 }}
+            viewport={{ amount: 0.3 }}
+            whileInView={{ opacity: 1}}>
             <div className='container'>
                 <div className='search__food_content'>
                     <h2 className='primary-title'>Search by Food</h2>
@@ -163,7 +168,7 @@ const FoodCategory = () => {
                     {contentItems}
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

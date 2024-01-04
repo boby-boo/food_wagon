@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence  } from 'framer-motion';
 
 import './filter.scss';
 
 const Filter = (props) => {
-
     const { data, filterLogic, options, currentSelect, headerText} = props;
 
     const [selectedValue, setSelectedValue] = useState(currentSelect);
@@ -32,7 +32,15 @@ const Filter = (props) => {
             );
         });
 
-        return <ul className='filter__body'>{items}</ul>;
+        return <motion.ul 
+                className='filter__body'
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                exit={{ opacity: 0}}
+                transition={{ duration: .2 }}
+                >
+                {items}
+            </motion.ul>;
     };
 
     const content = renderItems(options);
@@ -50,13 +58,16 @@ const Filter = (props) => {
                         <span className='filter__icon'></span>
                     </div>
                 </div>
-                {isVisible && content}
+                <AnimatePresence>
+                    {isVisible && content}
+                </AnimatePresence>
             </div>
             {isVisible && (
                 <div
-                    className='overflow'
+                    className='overlay'
                     onClick={() => setIsVisible(false)}
-                ></div>
+                >
+                </div>
             )}
         </>
     );

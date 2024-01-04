@@ -5,11 +5,16 @@ import dealCardImage1 from '../../resources/images/deal__card_img2.png';
 import dealCardImage2 from '../../resources/images/deal__card_img3.png';
 import dealCardImage3 from '../../resources/images/deal__card_img4.png';
 
+import { motion } from 'framer-motion';
 import './flashDeals.scss';
 
 const FlashDeals = () => {
     return (
-        <section className='flash__deals'>
+        <motion.section 
+            className='flash__deals'
+            initial={{ opacity: 0 }}
+            viewport={{ amount: 0.3 }}
+            whileInView={{ opacity: 1}}>
             <div className='container'>
                 <ul className='deal__cards_row'>
                     <li className='primary__card deal__card'>
@@ -98,7 +103,7 @@ const FlashDeals = () => {
                     </li>
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

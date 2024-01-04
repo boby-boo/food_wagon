@@ -5,6 +5,8 @@ import { addToCart, removeFromCart, removeItem } from '../../reducers/cartSlice'
 
 import { Link } from 'react-router-dom';
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 import './cart.scss';
 
 const Cart = () => {
@@ -36,47 +38,55 @@ const Cart = () => {
                 <h1>Order</h1>
                 <div className='order__row'>
                     <ul className='cart__row'>
-                        {cart.map(item => {
-                        const   { name, id, image, weight, quantity, price } = item,
-                                src = require(`../../resources/${image}`),
-                                nameWithPath = image.match(/\/([^\/]+)\//)[1].replace(/\_/g, '-');
-                            return (
-                                <li 
-                                    className='cart__card card'
-                                    key={id}>
-                                    <Link 
-                                        className='card__info'
-                                        to={`/restaurant/${nameWithPath}/${id}`}
+                        <AnimatePresence mode='sync'>
+                            {cart.map(item => {
+                                const   { name, id, image, weight, quantity, price } = item,
+                                        src = require(`../../resources/${image}`),
+                                        nameWithPath = image.match(/\/([^\/]+)\//)[1].replace(/\_/g, '-');
+                                
+                                return (
+                                    <motion.li
+                                        key={id}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        exit={{ scale: .97, opacity: 0 }}
+                                        transition={{ duration: .3 }}
+                                        className='cart__card card'
                                     >
-                                        <div className='card__image'>
-                                            <img src={src} alt={name} />
-                                        </div>
-                                        <div className='card__description'>
-                                            <h2>{name}</h2>
-                                            <span>{weight} g</span>
-                                        </div>
-                                    </Link>
-                                    <div className='card__controls'>
-                                        <div className='card__controls_btns'>
-                                            <button onClick={() => dispatch(removeFromCart(item))}>
-                                                -
+                                        <Link 
+                                            className='card__info'
+                                            to={`/restaurant/${nameWithPath}/${id}`}
+                                        >
+                                            <div className='card__image'>
+                                                <img src={src} alt={name} />
+                                            </div>
+                                            <div className='card__description'>
+                                                <h2>{name}</h2>
+                                                <span>{weight} g</span>
+                                            </div>
+                                        </Link>
+                                        <div className='card__controls'>
+                                            <div className='card__controls_btns'>
+                                                <button onClick={() => dispatch(removeFromCart(item))}>
+                                                    -
+                                                </button>
+                                                <span>{quantity}</span>
+                                                <button onClick={() => dispatch(addToCart(item))}>
+                                                    +
+                                                </button>
+                                            </div>
+                                            <div className='card__controls_price'>
+                                                ${price.toFixed(2)}
+                                            </div>
+                                            <button
+                                                onClick={() => dispatch(removeItem(item))}
+                                                className='card__controls_remove'>
                                             </button>
-                                            <span>{quantity}</span>
-                                            <button onClick={() => dispatch(addToCart(item))}>
-                                                +
-                                            </button>
                                         </div>
-                                        <div className='card__controls_price'>
-                                            ${price.toFixed(2)}
-                                        </div>
-                                        <button
-                                            onClick={() => dispatch(removeItem(item))}
-                                            className='card__controls_remove'>
-                                        </button>
-                                    </div>
-                                </li>
-                            )
-                        })}
+                                    </motion.li>
+                                )
+                            })}
+                        </AnimatePresence>  
                     </ul>
                     <div className='order__info'>
                         <h2>Total price: ${totalPrice}</h2>

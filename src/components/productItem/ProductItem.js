@@ -12,6 +12,7 @@ import Spinner from '../spinner/Spinner';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './productItem.scss';
+import { motion } from 'framer-motion';
 
 const SamplePrevArrow = (props) => {
     const { onClick } = props;

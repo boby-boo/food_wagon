@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ModalAuth from '../modalAuth/ModalAuth';
+
+import { AnimatePresence } from 'framer-motion';
+
 import './privateRoute.scss';
 
 const PrivateRoute = ({ children }) => {
@@ -10,7 +13,9 @@ const PrivateRoute = ({ children }) => {
 
     return (
         <>
+        <AnimatePresence>
             {user.login ? {...children} : isOpenModalWindow && <ModalAuth toggleModalOpen={() => setIsOpenModalWindow(!isOpenModalWindow)}/>}
+        </AnimatePresence>
             {!isOpenModalWindow &&
                 <div className='private__inner'>
                     <p className='private__text'>

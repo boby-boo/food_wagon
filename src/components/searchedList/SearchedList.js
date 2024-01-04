@@ -4,6 +4,7 @@ import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 import Spinner from '../spinner/Spinner';
 import Button from '../button/Button';
 import Filter from '../filter/Filter';
+import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
 
 import useFoodWagonService from '../../services/FoodWagonService';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +12,8 @@ import { filteredProductsData } from '../../reducers/filteredDataSlice';
 import { searchedState } from '../../reducers/searchStateSlice';
 
 import { useParams, useNavigate } from 'react-router-dom';
+
+import { motion } from 'framer-motion';
 
 import './searchedList.scss';
 
@@ -55,7 +58,6 @@ const SearchedList = () => {
             }
 
             dispatch(searchedState(data))
-            // dispatch(searchedState('', false))
         }
         
         getAllProducts(category, currentValue, offset)
@@ -100,15 +102,17 @@ const SearchedList = () => {
 
     if (dataCards?.length === 0 || !dataCards) {
         return (
-            <section className='searched-list'>
+            <motion.section 
+                className='searched-list'
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}>
                     <div className='container'>
                         <div className='searched-list__empty'>
                             {dataCards && <h1>No such product found</h1>}
                             <Spinner />
                         </div>
                     </div>
-                <div className='overlay'></div>
-            </section>
+            </motion.section>
         )
     }
     
@@ -116,7 +120,7 @@ const SearchedList = () => {
         <>
             <section className='searched-list'>
                 <div className='container'>
-                    <div className="searched-list__row">
+                    <div className='searched-list__row'>
                         <h1>Search you culinary</h1>
                         <Filter 
                             filterLogic={filterLogic} 
@@ -135,6 +139,7 @@ const SearchedList = () => {
                     />
                     } 
                 </div>
+                <ScrollToTopButton scrollTopValue={1400}/>
             </section>
         </>
     );
