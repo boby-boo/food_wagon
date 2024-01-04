@@ -8,6 +8,7 @@
         h1 {
             @include templateFont(40, 600, 1.5);
             text-transform: uppercase;
+            text-align: center;
         }
         img {
             max-width: 400px;

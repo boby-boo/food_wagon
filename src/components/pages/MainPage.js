@@ -8,25 +8,27 @@ import CardsOfOrders from '../cardsOfOrders/CardsOfOrders';
 import Banner from '../banner/Banner';
 import PopularItems from '../popularItems/PopularItems';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
+import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
 
 const MainPage = () => {
     return (
         <>  
-                <DeliveryBanner />
-                <ErrorBoundary>
-                    <PopularItems/>
-                </ErrorBoundary>
-                <FlashDeals />
-                <ErrorBoundary>
-                    <FeatureRestaurants/>
-                </ErrorBoundary>
-                <AboutService />
-                <ErrorBoundary>
-                    <FoodCategory />
-                </ErrorBoundary>
-                <FeaturesApp />
-                <CardsOfOrders />
-                <Banner />
+            <DeliveryBanner />
+            <ErrorBoundary>
+                <PopularItems />
+            </ErrorBoundary>
+            <FlashDeals />
+            <ErrorBoundary>
+                <FeatureRestaurants />
+            </ErrorBoundary>
+            <AboutService />
+            <ScrollToTopButton />
+            <ErrorBoundary>
+                <FoodCategory />
+            </ErrorBoundary>
+            <FeaturesApp />
+            <CardsOfOrders />
+            <Banner />
         </>
     )
 };
