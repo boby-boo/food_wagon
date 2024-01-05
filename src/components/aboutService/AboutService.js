@@ -17,7 +17,7 @@ const OurService = () => {
             <div className='container'>
                 <h2 className='primary-title'>How does it work</h2>
                 <ul className='about-service__row'>
-                    <li className='about-service__row_item row__item'>
+                    <motion.li className='about-service__row_item row__item'>
                         <div className='row__item_image'>
                             <img src={img1} alt='Select location icon' />
                         </div>
@@ -25,7 +25,7 @@ const OurService = () => {
                             <h3>Select location</h3>
                             <p>Choose the location where your food will be delivered.</p>
                         </div>
-                    </li>
+                    </motion.li>
                     <li className='about-service__row_item row__item'>
                         <div className='row__item_image'>
                             <img src={img2} alt='Choose order icon' />
