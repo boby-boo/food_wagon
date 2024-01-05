@@ -108,7 +108,7 @@ const FeatureRestaurants = () => {
         <motion.section
             className='feature-restaurants restaurants' 
             initial={{ opacity: 0 }}
-            viewport={{ amount: 0.3 }}
+            viewport={{ amount: 0.1 }}
             whileInView={{ opacity: 1}}>
             <div className='container'>
                 <h2 className='primary-title'>Featured Restaurants</h2>

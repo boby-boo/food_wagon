@@ -134,6 +134,7 @@ const SearchedList = () => {
                     dataCards?.length % 12 === 0 &&
                     <Button 
                         classNameComponent='searched-list__btn'
+                        text='View More'
                         isDisabled={isLoading}
                         onclickFunction={changeOffset}
                         initial={{ opacity: 0 }}

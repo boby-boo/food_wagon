@@ -30,7 +30,7 @@ const FoodCategory = () => {
     }
 
     const settings = {
-        autoplay: true,
+        autoplay: false,
         infinite: true,
         autoplaySpeed: 3000,
         speed: 900,
@@ -84,9 +84,9 @@ const FoodCategory = () => {
             }
             },
             {
-            breakpoint: 590,
+            breakpoint: 600,
             settings: {
-                slidesToShow: 1.22,
+                slidesToShow: 1.55,
                 centerMode: true,
                 slidesToScroll: 1
             }
@@ -94,8 +94,17 @@ const FoodCategory = () => {
             {
             breakpoint: 500,
             settings: {
-                slidesToShow: 1.1,
+                slidesToShow: 1.14,
                 centerMode: true,
+                slidesToScroll: 1
+            }
+            },
+            {
+            breakpoint: 400,
+            settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: '45px',
                 slidesToScroll: 1
             }
             }
@@ -164,9 +173,7 @@ const FoodCategory = () => {
                         </div>
                     </div>
                 </div>
-                <ul className='search__food_slider'>
-                    {contentItems}
-                </ul>
+                {contentItems}
             </div>
         </motion.section>
     );

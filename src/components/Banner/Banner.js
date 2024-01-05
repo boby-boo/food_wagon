@@ -10,8 +10,8 @@ const Banner = () => {
             initial={{ opacity: 0 }}
             viewport={{ amount: 0.1 }}
             whileInView={{ opacity: 1}}>
-            <div className="container">
-                <div className="banner__row">
+            <div className='container'>
+                <div className='banner__row'>
                     <h2>Are you ready to order with the best deals?</h2>
                     <button className='restaurants__button'>Proceed to order</button>
                 </div>

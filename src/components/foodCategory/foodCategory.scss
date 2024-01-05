@@ -10,10 +10,18 @@
         h2 {
             margin-bottom: 0;
         }
+        @media (max-width: 640px) {
+            flex-direction: column;
+            row-gap: 30px;
+        }
     }
     &_buttons {
         @include templateFlex(space-between, center);
         column-gap: 26px;
+        @media (max-width: 640px) {
+            flex-direction: column;
+            row-gap: 30px;
+        }
         &_view {
             padding: 6px;
             @include templateFlex(center, center);
