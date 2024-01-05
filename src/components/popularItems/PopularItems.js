@@ -48,7 +48,7 @@ const PopularItems = () => {
     }, []);
 
     const settings = {
-        // autoplay: true,
+        autoplay: true,
         infinite: true,
         autoplaySpeed: 3000,
         speed: 800,
@@ -93,22 +93,25 @@ const PopularItems = () => {
             {
             breakpoint: 800,
             settings: {
-                slidesToShow: 2.10,
+                slidesToShow: 2,
                 slidesToScroll: 2,
+                centerMode: true,
+                centerPadding: '20px',
                 arrows: false
             }
             },
             {
             breakpoint: 670,
             settings: {
-                slidesToShow: 1.55,
+                slidesToShow: 1,
                 centerMode: true,
+                centerPadding: '150px',
                 slidesToScroll: 1,
                 arrows: false,
             }
             },
             {
-            breakpoint: 600,
+            breakpoint: 620,
             settings: {
                 slidesToShow: 1.12,
                 centerMode: true,
