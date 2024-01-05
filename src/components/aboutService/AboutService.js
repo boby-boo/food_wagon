@@ -11,9 +11,9 @@ const OurService = () => {
     return (
         <motion.section 
             className='about-service'
-            initial={{ opacity: 0 }}
-            viewport={{ amount: 0.3 }}
-            whileInView={{ opacity: 1}}>
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1}}
+            viewport={{ amount: 0.3 }}>
             <div className='container'>
                 <h2 className='primary-title'>How does it work</h2>
                 <ul className='about-service__row'>
