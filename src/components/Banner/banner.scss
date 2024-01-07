@@ -1,7 +1,8 @@
 @import '../../style/variables.scss';
 
 .banner {
-    background: url(../../resources/images/banner__image.png) center / cover no-repeat;
+    background: url(../../resources/images/banner__image.png) center / cover
+        no-repeat;
     &__row {
         padding: 91px 0 75px;
         margin: 0 auto;
@@ -16,11 +17,11 @@
             @include templateFont(18, 900, 1);
             color: $light-color;
             border-radius: 8px;
-            background: linear-gradient(93deg, #F17228 -5.63%, #F15E28 100.8%);
+            background: linear-gradient(93deg, #f17228 -5.63%, #f15e28 100.8%);
             box-shadow: $primary-shadow;
             @include templateTransition(opacity);
             &:hover {
-                opacity: .8;
+                opacity: 0.8;
             }
         }
         @media (max-width: 870px) {

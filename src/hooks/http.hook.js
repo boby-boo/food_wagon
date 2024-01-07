@@ -1,7 +1,13 @@
-import { useCallback } from "react";
+import { useCallback } from 'react';
 
 export const useHttp = () => {
-    const request = useCallback( async ( url, method = "GET", body = null, headers = { "Content-Type": "application/json" }) => {
+    const request = useCallback(
+        async (
+            url,
+            method = 'GET',
+            body = null,
+            headers = { 'Content-Type': 'application/json' },
+        ) => {
             try {
                 const res = await fetch(url, { method, body, headers });
 
@@ -13,9 +19,13 @@ export const useHttp = () => {
 
                 return data;
             } catch (error) {
-                console.error("Error: ", error);
+                // eslint-disable-next-line no-console
+                console.error('Error: ', error);
+                return error;
             }
-        }, []);
+        },
+        [],
+    );
 
     return { request };
 };

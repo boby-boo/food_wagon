@@ -15,6 +15,6 @@
         background: url(../../resources/icons/restaurants__button_arrow-icon.svg);
     }
     &:disabled {
-        filter: grayscale(.3);
+        filter: grayscale(0.3);
     }
 }

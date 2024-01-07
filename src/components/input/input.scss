@@ -17,7 +17,7 @@
         left: 5px;
         transform: translateY(-50%);
         @include templateFont(18, 400, 1.2);
-        color: transparentize($gray-color, .5);
+        color: transparentize($gray-color, 0.5);
         text-transform: uppercase;
         @include templateTransition(all);
         z-index: 99;

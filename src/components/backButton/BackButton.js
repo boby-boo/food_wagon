@@ -7,14 +7,12 @@ const BackButton = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(-1)
-    }
+        navigate(-1);
+    };
 
     return (
-        <button 
-            onClick={handleClick} 
-            className='back-btn'>
-            <div className='back-btn__back'></div>
+        <button onClick={handleClick} className="back-btn">
+            <div className="back-btn__back"></div>
             <span>Back</span>
         </button>
     );

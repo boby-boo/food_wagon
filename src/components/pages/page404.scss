@@ -2,7 +2,7 @@
 
 .error-page {
     margin: 15vh 0;
-    &__row {        
+    &__row {
         @include templateFlex(center, center);
         flex-direction: column;
         h1 {

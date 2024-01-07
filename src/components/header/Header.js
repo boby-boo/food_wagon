@@ -1,52 +1,48 @@
-import { useState } from 'react';
-import logo__icon from '../../resources/icons/foodwagon__logo.svg';
-
+import React, { useState } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { AnimatePresence } from 'framer-motion';
+import { searchedState } from '../../reducers/searchStateSlice';
+import logoIcon from '../../resources/icons/foodwagon__logo.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
 
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { searchedState } from '../../reducers/searchStateSlice';
-
-import { AnimatePresence } from 'framer-motion';
-import './header.scss'
+import './header.scss';
 
 const Header = () => {
     const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);
 
     let currentLogin;
-    
-    const   user = useSelector(state => state.user.user),
-            cart = useSelector(state => state.cart.cart),
-            location = useLocation();
+
+    const user = useSelector(state => state.user.user);
+    const cart = useSelector(state => state.cart.cart);
+    const location = useLocation();
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const toggleModalOpen = () => {
-        setIsOpenModalWindow(!isOpenModalWindow)
-    }
+        setIsOpenModalWindow(!isOpenModalWindow);
+    };
 
     const handleClick = () => {
         setValue('');
         const data = {
             currentValue: '',
-            isEmpty: true
-        }
+            isEmpty: true,
+        };
         dispatch(searchedState(data));
-    }
+    };
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         const currentValue = e.target.value;
 
-        if (currentValue === '') { 
+        if (currentValue === '') {
             setValue('');
             const data = {
                 valueTarget: '',
-                isEmpty: true
-            }
+                isEmpty: true,
+            };
             dispatch(searchedState(data));
             return;
         }
@@ -55,18 +51,18 @@ const Header = () => {
 
         const data = {
             currentValue,
-            isEmpty: false
-        }
+            isEmpty: false,
+        };
 
         dispatch(searchedState(data));
-    }
+    };
 
     const handleNavigate = () => {
-        if (location.pathname.search(/search/) === -1) navigate('/search/all')
-    }
+        if (location.pathname.search(/search/) === -1) navigate('/search/all');
+    };
 
     const calcScroll = () => {
-        let div = document.createElement('div');
+        const div = document.createElement('div');
 
         div.style.width = '50px';
         div.style.height = '50px';
@@ -74,14 +70,14 @@ const Header = () => {
         div.style.visibility = 'hidden';
 
         document.body.appendChild(div);
-        let scrollWidth = div.offsetWidth - div.clientWidth;
+        const scrollWidth = div.offsetWidth - div.clientWidth;
         div.remove();
 
         return scrollWidth;
-    }
+    };
 
     const scrollWidth = calcScroll();
-    
+
     if (isOpenModalWindow) {
         document.body.style.overflow = 'hidden';
         document.body.style.marginRight = `${scrollWidth}px`;
@@ -91,53 +87,52 @@ const Header = () => {
     }
 
     const border = {
-        borderRadius: '10px 0 0 10px'
-    }
-    
+        borderRadius: '10px 0 0 10px',
+    };
+
     if (user?.login) {
         const { login } = user;
-        currentLogin = login.length > 10 ? login.substring(0, 6) + '...' : login;
+        currentLogin =
+            login.length > 10 ? `${login.substring(0, 6)} ...` : login;
     }
 
     return (
         <>
-            <header className='header'>
-                <div className='container'>
+            <header className="header">
+                <div className="container">
                     <nav>
-                        <ul className='header__row'>
-                            <li className='header__row_logo'>
-                                <Link to='/'>
-                                    <img src={logo__icon} alt='foodwagon logo' />
+                        <ul className="header__row">
+                            <li className="header__row_logo">
+                                <Link to="/">
+                                    <img src={logoIcon} alt="foodwagon logo" />
                                     <div>
-                                        food<span>wagon</span>  
+                                        food<span>wagon</span>
                                     </div>
                                 </Link>
                             </li>
-                            <li className='header__row_search-panel'>
-                                <input 
-                                    type='text'
+                            <li className="header__row_search-panel">
+                                <input
+                                    type="text"
                                     onChange={handleChange}
-                                    style={ value ? border : null }
+                                    style={value ? border : null}
                                     onFocus={handleNavigate}
                                     value={value}
-                                    id='search__panel'
-                                    placeholder='Search Food' 
+                                    id="search__panel"
+                                    placeholder="Search Food"
                                 />
-                                {
-                                value && 
-                                <button onClick={handleClick}></button>
-                                }
+                                {value && (
+                                    <button onClick={handleClick}></button>
+                                )}
                             </li>
-                            <li className='header__row_user-panel user-panel'>
-                                <Link to='/cart' className='user-panel__basket'>
+                            <li className="header__row_user-panel user-panel">
+                                <Link to="/cart" className="user-panel__basket">
                                     <span>{cart.length}</span>
                                 </Link>
-                                <button 
+                                <button
                                     onClick={toggleModalOpen}
-                                    className='user-panel__login'>
-                                    <span>
-                                        {currentLogin || 'Login'}
-                                    </span>
+                                    className="user-panel__login"
+                                >
+                                    <span>{currentLogin || 'Login'}</span>
                                 </button>
                             </li>
                         </ul>
@@ -145,7 +140,9 @@ const Header = () => {
                 </div>
             </header>
             <AnimatePresence>
-                {isOpenModalWindow && <ModalAuth toggleModalOpen={toggleModalOpen}/>}
+                {isOpenModalWindow && (
+                    <ModalAuth toggleModalOpen={toggleModalOpen} />
+                )}
             </AnimatePresence>
         </>
     );

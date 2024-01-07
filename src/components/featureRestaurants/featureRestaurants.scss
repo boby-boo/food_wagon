@@ -23,13 +23,13 @@
     }
     .restaurant__card {
         @include templateTransition(box-shadow);
-        box-shadow: 2px 2px 15px 2px transparentize($dark-color, .9);
+        box-shadow: 2px 2px 15px 2px transparentize($dark-color, 0.9);
         &:hover {
             box-shadow: $secondary-shadow;
             .restaurant__card_discount,
             .restaurant__card_speed,
             .card__review {
-                opacity: .9;
+                opacity: 0.9;
             }
         }
         &_items {
@@ -45,7 +45,8 @@
                 @include templateFont(14, 700, 1.2);
             }
         }
-        &_discount, &_speed {
+        &_discount,
+        &_speed {
             padding: 8px 16px;
             @include templateFlex(center, center);
             column-gap: 10px;
@@ -70,14 +71,16 @@
         &_discount {
             background-color: $secondary-color;
             &:before {
-                background: no-repeat url(../../resources/icons/restaurant__card_discount-icon.svg);
+                background: no-repeat
+                    url(../../resources/icons/restaurant__card_discount-icon.svg);
                 background-size: cover;
             }
         }
         &_speed {
             background-color: $primary-color;
             &:before {
-                background: $primary-color no-repeat url(../../resources/icons/restaurant__card_speed-icon.svg);
+                background: $primary-color no-repeat
+                    url(../../resources/icons/restaurant__card_speed-icon.svg);
                 background-size: cover;
             }
         }
@@ -126,7 +129,8 @@
                     display: block;
                     width: 25px;
                     height: 23px;
-                    background: no-repeat url(../../resources/icons/restaurant__card_rating.svg);
+                    background: no-repeat
+                        url(../../resources/icons/restaurant__card_rating.svg);
                     background-size: cover;
                 }
             }

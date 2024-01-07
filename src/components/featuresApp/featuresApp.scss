@@ -1,7 +1,7 @@
 @import '../../style/style.scss';
 
 .gradient-text {
-    background: linear-gradient(93deg, #FB3C00 -47.72%, #FFB800 136.81%);
+    background: linear-gradient(93deg, #fb3c00 -47.72%, #ffb800 136.81%);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: space-around;
     overflow: hidden;
-    background: linear-gradient(261deg, #FFAE00 63.85%, #FF8A00 111.94%);
+    background: linear-gradient(261deg, #ffae00 63.85%, #ff8a00 111.94%);
     z-index: 1;
     &:before {
         content: '';
@@ -22,7 +22,7 @@
         transform: translate(-50%, -101%);
         width: 7216px;
         height: 7216px;
-        background-color: #FEEFD0;
+        background-color: #feefd0;
         border-radius: 50%;
         z-index: -1;
     }
@@ -41,19 +41,22 @@
         border-radius: 46px;
         background-color: #fff;
         overflow: hidden;
-        box-shadow: 0px 27px 82px 0px rgba(255, 174, 0, 0.28), 0px 14px 15px 0px rgba(255, 174, 0, 0.01);
+        box-shadow:
+            0px 27px 82px 0px rgba(255, 174, 0, 0.28),
+            0px 14px 15px 0px rgba(255, 174, 0, 0.01);
         &_item {
             @extend .gradient-text;
             @include templateFont(35, 700, 1.2);
             @include templateTransition(all);
             &:nth-child(2) {
                 @include templateFlex(space-between, center);
-                &:before, &:after {
+                &:before,
+                &:after {
                     content: '';
                     display: block;
                     width: 2px;
                     height: 96px;
-                    background-color: #CFCFCF;
+                    background-color: #cfcfcf;
                     @media (max-width: 1230px) {
                         display: none;
                     }
@@ -82,7 +85,7 @@
             width: 100%;
             @include templateFlex(space-between, center);
             column-gap: 20px;
-            @media(max-width: 1270px) {
+            @media (max-width: 1270px) {
                 align-items: center;
                 justify-content: center;
                 flex-direction: column-reverse;
@@ -94,7 +97,14 @@
             max-width: 603px;
             height: 760px;
             img {
-                filter: drop-shadow(0px 24.810802459716797px 75.35132598876953px rgba(255, 174, 0, 0.28)) drop-shadow(0px 12.864860534667969px 13.783780097961426px rgba(255, 174, 0, 0.01));
+                filter: drop-shadow(
+                        0px 24.810802459716797px 75.35132598876953px
+                            rgba(255, 174, 0, 0.28)
+                    )
+                    drop-shadow(
+                        0px 12.864860534667969px 13.783780097961426px
+                            rgba(255, 174, 0, 0.01)
+                    );
                 @include templateObject();
             }
         }
@@ -105,7 +115,10 @@
                 h2 {
                     margin-bottom: 16px;
                     @include templateFont(68, 700, 1.06);
-                    background: var(--yellow-button, linear-gradient(93deg, #FFB800 -47.72%, #FF8A00 136.81%));
+                    background: var(
+                        --yellow-button,
+                        linear-gradient(93deg, #ffb800 -47.72%, #ff8a00 136.81%)
+                    );
                     background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -114,7 +127,7 @@
                     @include templateFont(18, 400, 1.4);
                 }
             }
-            @media(max-width: 1270px) {
+            @media (max-width: 1270px) {
                 flex-direction: column;
                 text-align: center;
             }
@@ -133,12 +146,13 @@
                 box-shadow: $primary-shadow;
                 @include templateTransition(all);
                 &:hover {
-                    background-color: transparentize($primary-color, .5);
-                    span, h4 {
-                        color: #fff
+                    background-color: transparentize($primary-color, 0.5);
+                    span,
+                    h4 {
+                        color: #fff;
                     }
                     img {
-                        opacity: 1
+                        opacity: 1;
                     }
                 }
                 &:nth-child(2) {
@@ -160,7 +174,8 @@
                     text-transform: capitalize;
                     @include templateFont(18, 600, 1.2);
                 }
-                span, h4 {
+                span,
+                h4 {
                     @include templateTransition(color);
                 }
             }
@@ -170,11 +185,11 @@
                 height: 35px;
                 img {
                     @include templateObject();
-                    opacity: .7;
+                    opacity: 0.7;
                     @include templateTransition(opacity);
                 }
             }
-            @media(max-width: 1270px) {
+            @media (max-width: 1270px) {
                 justify-content: center;
                 gap: 20px;
                 flex-wrap: wrap;
@@ -182,5 +197,3 @@
         }
     }
 }
-
-

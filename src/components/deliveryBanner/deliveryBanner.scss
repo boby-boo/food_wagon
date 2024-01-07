@@ -1,7 +1,8 @@
 @import '../../style/variables.scss';
 
 .delivery-banner {
-    background: url(../../resources/images/banner__food-image.png) center / cover no-repeat;
+    background: url(../../resources/images/banner__food-image.png) center /
+        cover no-repeat;
     &__row {
         padding: 132px 0;
         @media (max-width: 1000px) {
@@ -21,7 +22,8 @@
                 @include templateFont(22, 400, 1.2);
             }
             @media (max-width: 1000px) {
-                h1, p {
+                h1,
+                p {
                     text-align: center;
                 }
                 h1 {
@@ -50,7 +52,7 @@
             padding: 24px;
             @include templateFlex(flex-start, center);
             column-gap: 8px;
-            border-bottom: 1px solid transparentize($gray-color, .8);
+            border-bottom: 1px solid transparentize($gray-color, 0.8);
             @media (max-width: 1000px) {
                 justify-content: center;
             }
@@ -79,7 +81,7 @@
                     background: #f172281a;
                     cursor: pointer;
                     path {
-                        fill: $secondary-color
+                        fill: $secondary-color;
                     }
                 }
             }
@@ -98,7 +100,9 @@
                 min-height: 49px;
                 font-size: 18px;
                 color: $gray-color;
-                background: #F5F5F5 url(../../resources/icons/form-location__icon.svg) 16px center / 18px 34px no-repeat;
+                background: #f5f5f5
+                    url(../../resources/icons/form-location__icon.svg) 16px
+                    center / 18px 34px no-repeat;
                 border-radius: 8px;
                 @include templateTransition(box-shadow);
                 &::placeholder {
@@ -106,9 +110,12 @@
                     color: $gray-color;
                 }
                 &:hover {
-                    background-color: transparentize($primary-color, $amount: .9);
+                    background-color: transparentize(
+                        $primary-color,
+                        $amount: 0.9
+                    );
                     box-shadow: $primary-shadow;
-                } 
+                }
             }
             button {
                 max-width: 199px;
@@ -119,10 +126,14 @@
                 @include templateFont(18, 700, 1);
                 color: $light-color;
                 border-radius: 8px;
-                background: linear-gradient(96deg, #FF7A7A -39.64%, #F65900 135.31%);
+                background: linear-gradient(
+                    96deg,
+                    #ff7a7a -39.64%,
+                    #f65900 135.31%
+                );
                 @include templateTransition(opacity);
                 &:hover {
-                    opacity: .9;
+                    opacity: 0.9;
                 }
                 &::before {
                     content: '';

@@ -1,11 +1,10 @@
 import React from 'react';
-
+import { motion } from 'framer-motion';
 import dealCardImage from '../../resources/images/deal__card_img1.png';
 import dealCardImage1 from '../../resources/images/deal__card_img2.png';
 import dealCardImage2 from '../../resources/images/deal__card_img3.png';
 import dealCardImage3 from '../../resources/images/deal__card_img4.png';
 
-import { motion } from 'framer-motion';
 import './flashDeals.scss';
 
 const FlashDeals = () => {

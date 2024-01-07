@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, Link, Outlet } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Filter from '../filter/Filter';
 import Spinner from '../spinner/Spinner';
 import BackButton from '../backButton/BackButton';
-
 import useFoodWagonService from '../../services/FoodWagonService';
-import { Link, Outlet } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-
 import { updateDataCards } from '../../reducers/dataCardsSlice';
-import { useDispatch } from 'react-redux';
 
 import './restaurant.scss';
 
@@ -17,8 +14,8 @@ const Restaurant = () => {
     const [initialCards, setInitialCards] = useState(null);
 
     const { restaurantName } = useParams();
-    const   { getRestaurant } = useFoodWagonService(),
-            dispatch = useDispatch();
+    const { getRestaurant } = useFoodWagonService(),
+        dispatch = useDispatch();
 
     const options = [
         { value: '0', label: 'Featured' },
@@ -27,27 +24,25 @@ const Restaurant = () => {
     ];
 
     useEffect(() => {
-        getRestaurant(restaurantName)
-            .then((res) => {
-                setInitialCards(JSON.parse(JSON.stringify(res)));
-                setCards(res);
-                dispatch(updateDataCards(res.data))
-            });
+        getRestaurant(restaurantName).then(res => {
+            setInitialCards(JSON.parse(JSON.stringify(res)));
+            setCards(res);
+            dispatch(updateDataCards(res.data));
+        });
     }, [restaurantName]);
 
     if (!cards) {
-        return (
-            <Spinner />
-        );
+        return <Spinner />;
     }
 
-    const getAveragePrice = (data) => {
-        const averagePrice = (data.reduce((acc, cur) => acc + cur.price, 0) / data.length).toFixed(2);
+    const getAveragePrice = data => {
+        const averagePrice = (
+            data.reduce((acc, cur) => acc + cur.price, 0) / data.length
+        ).toFixed(2);
         return averagePrice;
     };
 
-    const filterLogic = (cards, value) => {
-
+    const filterLogic = (arr, value) => {
         let updateData;
 
         switch (value) {
@@ -63,56 +58,57 @@ const Restaurant = () => {
         }
 
         setCards({
-            ...cards,
+            ...arr,
             data: updateData,
         });
 
-        dispatch(updateDataCards(updateData))
+        dispatch(updateDataCards(updateData));
 
         function filteredMore() {
-            const updateData = [...cards.data];
-            updateData.sort((a, b) => a.price - b.price)
-            return updateData;
+            const updateNewData = [...cards.data];
+            updateNewData.sort((a, b) => a.price - b.price);
+            return updateNewData;
         }
 
         function filteredLess() {
-            const updateData = [...cards.data];
-            updateData.sort((a, b) => b.price - a.price)
-            return updateData;
+            const updateNewData = [...cards.data];
+            updateNewData.sort((a, b) => b.price - a.price);
+            return updateNewData;
         }
     };
 
-    const   restaurantLogo = require(`../../resources/${cards.logo}`),
-            averagePrice = getAveragePrice(cards.data);
+    const restaurantLogo = require(`../../resources/${cards.logo}`),
+        averagePrice = getAveragePrice(cards.data);
 
     return (
-        <section className='restaurant'>
-            <div className='container'>
+        <section className="restaurant">
+            <div className="container">
                 <BackButton />
-                <div className='restaurant__row'>
+                <div className="restaurant__row">
                     <Link
-                        className='restaurant__card'
-                        to={`/restaurant/${restaurantName}`}>
-                        <div className='restaurant__card_image'>
+                        className="restaurant__card"
+                        to={`/restaurant/${restaurantName}`}
+                    >
+                        <div className="restaurant__card_image">
                             <img src={restaurantLogo} alt={cards.partnerName} />
                         </div>
-                        <div className='restaurant__card_description'>
+                        <div className="restaurant__card_description">
                             <h1>{cards.partnerName}</h1>
                             <span>{cards.rate}</span>
                         </div>
                     </Link>
-                    <div className='restaurant__card_price'>
+                    <div className="restaurant__card_price">
                         Average price: <span>${averagePrice}</span>
                     </div>
-                    <Filter 
-                        data={cards} 
-                        filterLogic={filterLogic} 
-                        options={options} 
-                        currentSelect='Featured'
-                        headerText='Filter by:'
-                        />
+                    <Filter
+                        data={cards}
+                        filterLogic={filterLogic}
+                        options={options}
+                        currentSelect="Featured"
+                        headerText="Filter by:"
+                    />
                 </div>
-                <Outlet/>
+                <Outlet />
             </div>
         </section>
     );

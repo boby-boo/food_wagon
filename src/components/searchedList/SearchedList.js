@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
-
 import Spinner from '../spinner/Spinner';
 import Button from '../button/Button';
 import Filter from '../filter/Filter';
 import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
-
 import useFoodWagonService from '../../services/FoodWagonService';
-import { useDispatch, useSelector } from 'react-redux';
 import { filteredProductsData } from '../../reducers/filteredDataSlice';
 import { searchedState } from '../../reducers/searchStateSlice';
-
-import { useParams, useNavigate } from 'react-router-dom';
-
-import { motion } from 'framer-motion';
 
 import './searchedList.scss';
 
@@ -23,13 +19,13 @@ const SearchedList = () => {
 
     const { getAllProducts } = useFoodWagonService();
 
-    const dispatch = useDispatch(),
-        dataCards = useSelector(state => state.filteredData.filteredData),
-        { currentValue, isEmpty } = useSelector(
-            state => state.searchState.searchState,
-        ),
-        { category } = useParams(),
-        navigate = useNavigate();
+    const dispatch = useDispatch();
+    const dataCards = useSelector(state => state.filteredData.filteredData);
+    const { currentValue, isEmpty } = useSelector(
+        state => state.searchState.searchState,
+    );
+    const { category } = useParams();
+    const navigate = useNavigate();
 
     const options = [
         { value: '0', label: 'All' },
@@ -43,8 +39,8 @@ const SearchedList = () => {
         const currentCategory = options.find(
             item => item.label.toLowerCase() === category,
         ).value;
-        filterLogic([], currentCategory);
         getProducts();
+        filterLogic([], currentCategory);
     }, [currentValue, offset]);
 
     useEffect(() => {
@@ -136,7 +132,7 @@ const SearchedList = () => {
                         />
                     </div>
                     <RestaurantItemCard />
-                    {dataCards?.length % 12 === 0 && (
+                    {dataCards && dataCards.length % 12 === 0 && (
                         <Button
                             classNameComponent="searched-list__btn"
                             text="View More"
@@ -148,7 +144,7 @@ const SearchedList = () => {
                         />
                     )}
                 </div>
-                <ScrollToTopButton scrollTopValue={1400} />
+                <ScrollToTopButton scrollTopValue={300} />
             </section>
         </>
     );

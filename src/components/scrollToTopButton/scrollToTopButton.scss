@@ -10,7 +10,7 @@
     // height: 120px;
     @include templateFlex(center, center);
     border-radius: 50%;
-    background-color: transparentize($primary-color, .2);
+    background-color: transparentize($primary-color, 0.2);
     @include templateTransition(background-color);
     z-index: 100;
     &:hover {
@@ -22,11 +22,12 @@
         width: 60px;
         height: 40px;
         transform: rotate(-90deg);
-        background: url(../../resources/icons/restaurants__button_arrow-icon.svg) center / contain no-repeat;
+        background: url(../../resources/icons/restaurants__button_arrow-icon.svg)
+            center / contain no-repeat;
     }
     @media (max-width: 1000px) {
         width: 90px;
-        height: 90px; 
+        height: 90px;
         &:after {
             width: 60px;
             height: 40px;
@@ -34,7 +35,7 @@
     }
     @media (max-width: 600px) {
         width: 80px;
-        height: 80px; 
+        height: 80px;
         bottom: 1%;
         &:after {
             width: 60px;

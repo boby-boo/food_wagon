@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    dataCards: []
-}  
+    dataCards: [],
+};
 
 export const dataCardsSlice = createSlice({
     name: 'dataCards',
     initialState,
     reducers: {
         updateDataCards: (state, action) => {
-            state.dataCards = action.payload
-        }
-    }
-})
+            state.dataCards = action.payload;
+        },
+    },
+});
 
 export const { updateDataCards } = dataCardsSlice.actions;
 

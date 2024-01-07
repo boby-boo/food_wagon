@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    filteredData: null
-}
+    filteredData: null,
+};
 
 export const filteredDataSlice = createSlice({
     name: 'filteredData',
@@ -10,14 +10,13 @@ export const filteredDataSlice = createSlice({
     reducers: {
         filteredProductsData: (state, action) => {
             if (action.payload) {
-                state.filteredData = action.payload
+                state.filteredData = action.payload;
             } else {
-                state.filteredData = null
+                state.filteredData = null;
             }
-            // state.filteredProducts = action.payload ? action.payload : null;
-        }
-    }
-})
+        },
+    },
+});
 
 export const { filteredProductsData } = filteredDataSlice.actions;
 

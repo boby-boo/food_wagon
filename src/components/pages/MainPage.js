@@ -1,3 +1,4 @@
+import React from 'react';
 import DeliveryBanner from '../deliveryBanner/DeliveryBanner';
 import AboutService from '../aboutService/AboutService';
 import FlashDeals from '../flashDeals/FlashDeals';
@@ -12,7 +13,7 @@ import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
 
 const MainPage = () => {
     return (
-        <>  
+        <>
             <DeliveryBanner />
             <ErrorBoundary>
                 <PopularItems />
@@ -22,7 +23,7 @@ const MainPage = () => {
                 <FeatureRestaurants />
             </ErrorBoundary>
             <AboutService />
-            <ScrollToTopButton scrollTopValue={3000}/>
+            <ScrollToTopButton scrollTopValue={500} />
             <ErrorBoundary>
                 <FoodCategory />
             </ErrorBoundary>
@@ -30,7 +31,7 @@ const MainPage = () => {
             <CardsOfOrders />
             <Banner />
         </>
-    )
+    );
 };
 
 export default MainPage;

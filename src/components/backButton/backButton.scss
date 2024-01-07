@@ -5,12 +5,12 @@
     @include templateFlex(flex-start, center);
     column-gap: 10px;
     margin-bottom: 20px;
-    color: transparentize($gray-color, .1);
+    color: transparentize($gray-color, 0.1);
     @include templateTransition(color);
     &:hover {
         color: $gray-color;
         .back-btn__back {
-            background-color: transparentize($gray-color, .4);
+            background-color: transparentize($gray-color, 0.4);
         }
     }
     &__back {
@@ -18,15 +18,16 @@
         height: 30px;
         @include templateFlex(center, center);
         border-radius: 50%;
-        background-color: transparentize($gray-color, .7);
+        background-color: transparentize($gray-color, 0.7);
         @include templateTransition(background-color);
         &:before {
             content: '';
             display: block;
             width: 20px;
             height: 20px;
-            background-color: transparentize($gray-color, .7);
-            background: url(../../resources/icons/slick__icon_arrow.svg) center/contain no-repeat;
+            background-color: transparentize($gray-color, 0.7);
+            background: url(../../resources/icons/slick__icon_arrow.svg)
+                center/contain no-repeat;
         }
     }
 }

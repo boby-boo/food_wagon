@@ -13,7 +13,7 @@
                 display: none;
             }
         }
-    };
+    }
     @media (max-width: 600px) {
         gap: 30px 10px;
         padding-bottom: 30px;
@@ -39,7 +39,7 @@
     }
     &_location {
         @include templateFlex(center, center);
-        @include templateFont(18, 700, 1.0);
+        @include templateFont(18, 700, 1);
         column-gap: 12px;
         color: $gray-color;
         .location__input {
@@ -58,7 +58,7 @@
         }
         @media (max-width: 900px) {
             font-size: 14px;
-        };
+        }
     }
     &_search-panel {
         max-width: 450px;
@@ -76,7 +76,9 @@
             color: $gray-color;
             text-align: left;
             border-radius: 10px;
-            background: transparentize($primary-color, .9) url(../../resources/icons/search-food__icon.svg) 7px/18px 18px no-repeat;
+            background: transparentize($primary-color, 0.9)
+                url(../../resources/icons/search-food__icon.svg) 7px/18px 18px
+                no-repeat;
             @include templateTransition(box-shadow);
             &::placeholder {
                 @include templateFont(18, 700, 1);
@@ -85,13 +87,13 @@
             &:hover {
                 box-shadow: $primary-shadow;
             }
-            @media(max-width: 1000px) {
+            @media (max-width: 1000px) {
                 font-size: 16px;
                 &::placeholder {
                     font-size: 16px;
                 }
             }
-            @media(max-width: 600px) {
+            @media (max-width: 600px) {
                 font-size: 14px;
                 &::placeholder {
                     font-size: 14px;
@@ -102,12 +104,13 @@
             height: 46px;
             min-width: 26px;
             @include templateFont(18, 700, 1);
-            background-color: transparentize($primary-color, .9);
+            background-color: transparentize($primary-color, 0.9);
             border-radius: 0 10px 10px 0;
             @include templateTransition(box-shadow);
-            background: url('../../resources/icons/remove__icon.svg') center / 20px 20px no-repeat transparentize($primary-color, .9);
-        };
-        @media(max-width: 600px) {
+            background: url('../../resources/icons/remove__icon.svg') center /
+                20px 20px no-repeat transparentize($primary-color, 0.9);
+        }
+        @media (max-width: 600px) {
             grid-column: 1/4;
             grid-row: 2/3;
             max-width: 100%;
@@ -131,7 +134,8 @@
                 display: block;
                 width: 25px;
                 height: 25px;
-                background: url(../../resources/icons/basket__icon.svg) center / cover no-repeat;
+                background: url(../../resources/icons/basket__icon.svg) center /
+                    cover no-repeat;
             }
         }
         &__login {
@@ -142,7 +146,7 @@
             padding: 5px 12px;
             @include templateFlex(center, center);
             column-gap: 10px;
-            @include templateFont(18, 700, 1.0);
+            @include templateFont(18, 700, 1);
             text-align: center;
             color: $primary-color;
             box-shadow: $primary-shadow;
@@ -151,7 +155,8 @@
                 display: block;
                 width: 25px;
                 height: 25px;
-                background:  url(../../resources/icons/user__icon.svg) center / 23px 23px no-repeat ;
+                background: url(../../resources/icons/user__icon.svg) center /
+                    23px 23px no-repeat;
             }
         }
         button,
@@ -162,7 +167,7 @@
             border-radius: 8px;
             @include templateTransition(all);
             &:hover {
-                background-color: transparentize($primary-color, .9);
+                background-color: transparentize($primary-color, 0.9);
             }
         }
         @media (max-width: 1240px) {
@@ -199,7 +204,7 @@
                 font-size: 14px;
             }
         }
-        @media(max-width: 600px) {
+        @media (max-width: 600px) {
             grid-column: 2/4;
             max-width: 100%;
         }
@@ -217,7 +222,7 @@
             height: 100%;
             @include templateTransition(opacity);
             &:hover {
-                opacity: .9;
+                opacity: 0.9;
             }
         }
     }

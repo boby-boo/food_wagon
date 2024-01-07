@@ -12,7 +12,7 @@
         border-radius: 14px;
         overflow: hidden;
         box-shadow: 2px 2px 15px 2px rgba(66, 66, 66, 0.1);
-        background-color: transparentize($gray-color, .95);
+        background-color: transparentize($gray-color, 0.95);
         @media (max-width: 768px) {
             flex-direction: column-reverse;
         }
@@ -104,7 +104,7 @@
                 background-color: $primary-color;
                 @include templateTransition(background-color);
                 &:hover {
-                    background-color: transparentize($primary-color, .2);
+                    background-color: transparentize($primary-color, 0.2);
                 }
             }
             span {
@@ -160,7 +160,7 @@
         background-color: $primary-color;
         @include templateTransition(background-color);
         &:hover {
-            background-color: transparentize($primary-color, .2);
+            background-color: transparentize($primary-color, 0.2);
         }
         @media (max-width: 768px) {
             margin: 0 auto;
@@ -197,7 +197,7 @@
             flex-wrap: wrap;
             border-radius: 14px;
             box-shadow: 2px 2px 15px 2px rgba(66, 66, 66, 0.1);
-            @media (max-width: 900px){
+            @media (max-width: 900px) {
                 flex-direction: column;
             }
             &__info {
@@ -243,7 +243,7 @@
                 @include templateFont(20, 400, 1.4);
                 max-width: 410px;
                 width: 100%;
-                @media (max-width: 900px){
+                @media (max-width: 900px) {
                     text-align: center;
                 }
             }
