@@ -82,8 +82,10 @@ const Header = () => {
         document.body.style.overflow = 'hidden';
         document.body.style.marginRight = `${scrollWidth}px`;
     } else {
-        document.body.style.overflow = 'visible';
-        document.body.style.marginRight = `0px`;
+        setTimeout(() => {
+            document.body.style.overflow = 'visible';
+            document.body.style.marginRight = '0px';
+        }, 190);
     }
 
     const border = {
