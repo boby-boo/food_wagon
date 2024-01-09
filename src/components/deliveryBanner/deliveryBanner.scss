@@ -70,17 +70,11 @@
                 color: #757575;
                 border-radius: 8px;
                 @include templateTransition(all);
-                .input__delivery_icon {
-                    path {
-                        @include templateTransition(fill);
-                        fill: #757575;
-                    }
-                }
                 &:hover {
                     color: $secondary-color;
                     background: #f172281a;
                     cursor: pointer;
-                    path {
+                    .icon {
                         fill: $secondary-color;
                     }
                 }

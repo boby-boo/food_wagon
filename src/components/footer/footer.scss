@@ -83,14 +83,12 @@
             @include templateFlex(space-between, center);
             gap: 16px;
             &_icon {
-                path {
-                    fill: #bbb;
-                    @include templateTransition(fill);
-                }
+                width: 21px;
+                height: 24px;
+                fill: #bbb;
+                @include templateTransition(fill);
                 &:hover {
-                    path {
-                        fill: $primary-color;
-                    }
+                    fill: $primary-color;
                 }
             }
         }

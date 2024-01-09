@@ -260,3 +260,11 @@ input::-webkit-inner-spin-button {
         background: url(../resources/icons/restaurants__button_arrow-icon.svg);
     }
 }
+
+.icon {
+    fill: #757575;
+    @include templateTransition(fill);
+    &:hover {
+        fill: $secondary-color;
+    }
+}
