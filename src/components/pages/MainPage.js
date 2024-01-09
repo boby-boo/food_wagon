@@ -23,13 +23,13 @@ const MainPage = () => {
                 <FeatureRestaurants />
             </ErrorBoundary>
             <AboutService />
-            <ScrollToTopButton scrollTopValue={500} />
             <ErrorBoundary>
                 <FoodCategory />
             </ErrorBoundary>
             <FeaturesApp />
             <CardsOfOrders />
             <Banner />
+            <ScrollToTopButton scrollTopValue={500} />
         </>
     );
 };
