@@ -37,22 +37,16 @@ export const cartSlice = createSlice({
             state.cart.push(updateData);
         },
         removeFromCart: (state, action) => {
-            const checkIndex = state.cart.find(
-                item => item.id === action.payload.id,
-            );
-
-            if (checkIndex) {
-                const updateBasket = state.cart.map(item =>
+            const updateBasket = state.cart
+                .map(item =>
                     item.id === action.payload.id
                         ? { ...item, quantity: item.quantity - 1 }
                         : item,
-                );
-                const filteredBasket = updateBasket.filter(
-                    item => item.quantity > 0,
-                );
-                localStorage.setItem('cart', JSON.stringify(filteredBasket));
-                state.cart = filteredBasket;
-            }
+                )
+                .filter(item => item.quantity > 0);
+
+            localStorage.setItem('cart', JSON.stringify(updateBasket));
+            state.cart = updateBasket;
         },
         removeItem: (state, action) => {
             localStorage.setItem(

@@ -9,11 +9,9 @@ export const filteredDataSlice = createSlice({
     initialState,
     reducers: {
         filteredProductsData: (state, action) => {
-            if (action.payload) {
-                state.filteredData = action.payload;
-            } else {
-                state.filteredData = null;
-            }
+            action.payload
+                ? (state.filteredData = action.payload)
+                : (state.filteredData = null);
         },
     },
 });
