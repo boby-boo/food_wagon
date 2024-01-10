@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import {
     addToCart,
     removeFromCart,
     removeItem,
 } from '../../reducers/cartSlice';
+import { ReactComponent as BtnMinusIcon } from '../../resources/icons/minus__icon.svg';
+import { ReactComponent as BtnPlusIcon } from '../../resources/icons/plus__icon.svg';
 
 import './cart.scss';
 
@@ -93,7 +96,7 @@ const Cart = () => {
                                                         )
                                                     }
                                                 >
-                                                    -
+                                                    <BtnMinusIcon className="cart-btn" />
                                                 </button>
                                                 <span>{quantity}</span>
                                                 <button
@@ -103,7 +106,7 @@ const Cart = () => {
                                                         )
                                                     }
                                                 >
-                                                    +
+                                                    <BtnPlusIcon className="cart-btn" />
                                                 </button>
                                             </div>
                                             <div className="card__controls_price">

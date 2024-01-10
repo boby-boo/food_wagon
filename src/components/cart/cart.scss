@@ -109,6 +109,7 @@
                 button {
                     width: 30px;
                     height: 100%;
+                    @include templateFlex(center, center);
                     color: $light-color;
                     background-color: $primary-color;
                     @include templateTransition(background-color);
@@ -203,4 +204,9 @@
     &:hover {
         opacity: 0.8;
     }
+}
+.cart-btn {
+    width: 16px;
+    height: 16px;
+    fill: $light-color;
 }

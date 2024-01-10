@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import icon1 from '../../resources/icons/features__row_icon-1.svg';
 import icon2 from '../../resources/icons/features__row_icon-2.svg';
 import icon3 from '../../resources/icons/features__row_icon-3.svg';
@@ -81,14 +82,18 @@ const FeaturesApp = () => {
                             <div className="features__bottom_content_text">
                                 <h2>Install the app</h2>
                                 <p>
-                                    It`&apos;`s never been easier to order food.
+                                    It&apos;s never been easier to order food.
                                     Look for the finest discounts and
-                                    you`&apos;`ll be lost in a world of
-                                    delectable food.
+                                    you&apos;ll be lost in a world of delectable
+                                    food.
                                 </p>
                             </div>
                             <div className="features__bottom_content_buttons content__buttons">
-                                <a href="/" className="content__buttons_link">
+                                <Link
+                                    to="https://play.google.com"
+                                    target="_blank"
+                                    className="content__buttons_link"
+                                >
                                     <div className="content__buttons_image">
                                         <img
                                             src={googleIcon}
@@ -99,8 +104,12 @@ const FeaturesApp = () => {
                                         <span>get it on</span>
                                         <h4>google play</h4>
                                     </div>
-                                </a>
-                                <a href="/" className="content__buttons_link">
+                                </Link>
+                                <Link
+                                    to="https://www.apple.com"
+                                    target="_blank"
+                                    className="content__buttons_link"
+                                >
                                     <div className="content__buttons_image">
                                         <img src={appleIcon} alt="Apple icon" />
                                     </div>
@@ -108,7 +117,7 @@ const FeaturesApp = () => {
                                         <span>Download on the</span>
                                         <h4>app store</h4>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
