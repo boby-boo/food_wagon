@@ -36,6 +36,7 @@ const Input = ({ elementType, valueElement, handleChange, userData, icon }) => {
                     value={valueElement || ''}
                     type={elementType}
                     name={elementType}
+                    id={elementType}
                     className="input__field"
                     required
                 />

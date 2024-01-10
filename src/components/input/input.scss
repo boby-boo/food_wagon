@@ -20,7 +20,7 @@
         color: transparentize($gray-color, 0.5);
         text-transform: uppercase;
         @include templateTransition(all);
-        z-index: 99;
+        z-index: 2;
     }
     &__field {
         padding: 10px 0 10px 5px;
@@ -37,6 +37,7 @@
             width: 18px;
             height: 18px;
             @include templateTransition(all);
+            fill: #adadad;
         }
     }
 }
