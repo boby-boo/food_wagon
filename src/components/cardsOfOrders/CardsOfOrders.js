@@ -30,12 +30,7 @@ const CardsOfOrders = () => {
     ];
 
     return (
-        <motion.section
-            className="cards-of-orders orders"
-            initial={{ opacity: 0 }}
-            viewport={{ amount: 0.1 }}
-            whileInView={{ opacity: 1 }}
-        >
+        <section className="cards-of-orders orders">
             <div className="container">
                 <ul className="orders__row">
                     {items.map((item, index) => {
@@ -46,8 +41,11 @@ const CardsOfOrders = () => {
                                 }.png`,
                             );
                         return (
-                            <li
+                            <motion.li
                                 key={index}
+                                initial={{ y: 10, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ amount: 0.2 }}
                                 className="orders__row_card order__card"
                             >
                                 <div className="order__card_description">
@@ -67,12 +65,12 @@ const CardsOfOrders = () => {
                                 <div className="order__card_image">
                                     <img src={currentImage} alt="Order card" />
                                 </div>
-                            </li>
+                            </motion.li>
                         );
                     })}
                 </ul>
             </div>
-        </motion.section>
+        </section>
     );
 };
 
