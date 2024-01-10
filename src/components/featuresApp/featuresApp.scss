@@ -149,7 +149,7 @@
                     background-color: transparentize($primary-color, 0.5);
                     span,
                     h4 {
-                        color: #fff;
+                        color: $light-color;
                     }
                     img {
                         opacity: 1;

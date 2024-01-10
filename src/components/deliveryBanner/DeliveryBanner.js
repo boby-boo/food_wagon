@@ -33,7 +33,7 @@ const DeliveryBanner = () => {
     const [userMail, setUserMail] = useState('');
 
     const handleChange = e => {
-        e.preventDefault();
+        e.stopPropagation();
         setDeliveryMethod(e.target.value);
     };
 
@@ -45,6 +45,7 @@ const DeliveryBanner = () => {
             userMail,
         };
         console.log(userData);
+        setUserMail('');
     };
 
     return (
@@ -80,6 +81,7 @@ const DeliveryBanner = () => {
                                     id="input__delivery"
                                     name="input__delivery"
                                     value="delivery"
+                                    defaultChecked
                                 />
                                 <label
                                     className="form__top_input label__delivery"

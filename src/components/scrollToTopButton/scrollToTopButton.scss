@@ -6,8 +6,6 @@
     right: 2%;
     width: 100px;
     height: 100px;
-    // width: 120px;
-    // height: 120px;
     @include templateFlex(center, center);
     border-radius: 50%;
     background-color: transparentize($primary-color, 0.2);

@@ -80,8 +80,8 @@
                         }
                     }
                 }
-                .form__top_input-pickup:checked,
-                .form__top_input-delivery:checked {
+                .form__top_input-delivery:checked,
+                .form__top_input-pickup:checked {
                     & + label {
                         color: $secondary-color;
                         background: #f172281a;
