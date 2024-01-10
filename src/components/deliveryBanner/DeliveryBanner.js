@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ReactComponent as IconDelivery } from '../../resources/icons/delivery__icon.svg';
 import { ReactComponent as IconPickup } from '../../resources/icons/pickup__icon.svg';
@@ -29,6 +29,24 @@ const formAnimation = {
 };
 
 const DeliveryBanner = () => {
+    const [deliveryMethod, setDeliveryMethod] = useState(null);
+    const [userMail, setUserMail] = useState('');
+
+    const handleChange = e => {
+        e.preventDefault();
+        setDeliveryMethod(e.target.value);
+    };
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+        const userData = {
+            deliveryMethod,
+            userMail,
+        };
+        console.log(userData);
+    };
+
     return (
         <motion.section
             className="delivery-banner"
@@ -48,42 +66,51 @@ const DeliveryBanner = () => {
                         </motion.p>
                     </div>
                     <motion.form
+                        onSubmit={onSubmit}
                         className="delivery-banner__form"
                         custom={3}
                         variants={formAnimation}
                     >
                         <div className="delivery-banner__form_top">
-                            <label
-                                className="form__top_input"
-                                htmlFor="input__delivery"
-                            >
+                            <div className="input__wrapper">
                                 <input
+                                    onChange={handleChange}
                                     type="radio"
-                                    className="form__top_input-delivery"
+                                    className="form__top_input-delivery input__delivery"
                                     id="input__delivery"
                                     name="input__delivery"
-                                    value="1"
+                                    value="delivery"
                                 />
-                                <IconDelivery className="icon input__delivery_icon" />
-                                Delivery
-                            </label>
-                            <input
-                                type="radio"
-                                className="form__top_input-pickup"
-                                id="input__pickup"
-                                name="input__delivery"
-                                value="2"
-                            />
-                            <label
-                                className="form__top_input"
-                                htmlFor="input__pickup"
-                            >
-                                <IconPickup className="icon input__delivery_icon" />
-                                Pickup
-                            </label>
+                                <label
+                                    className="form__top_input label__delivery"
+                                    htmlFor="input__delivery"
+                                >
+                                    <IconDelivery className="icon input__delivery_icon" />
+                                    Delivery
+                                </label>
+                            </div>
+                            <div className="input__wrapper">
+                                <input
+                                    onChange={handleChange}
+                                    type="radio"
+                                    className="form__top_input-pickup"
+                                    id="input__pickup"
+                                    name="input__delivery"
+                                    value="pickup"
+                                />
+                                <label
+                                    className="form__top_input"
+                                    htmlFor="input__pickup"
+                                >
+                                    <IconPickup className="icon input__delivery_icon" />
+                                    Pickup
+                                </label>
+                            </div>
                         </div>
                         <div className="delivery-banner__form_bottom">
                             <input
+                                onChange={e => setUserMail(e.target.value)}
+                                value={userMail}
                                 type="email"
                                 required
                                 placeholder="Enter Your Address"
