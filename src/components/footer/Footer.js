@@ -1,24 +1,11 @@
 /* eslint-disable no-return-assign */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram__icon.svg';
 import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
 import { ReactComponent as FacebookIcon } from '../../resources/icons/facebook__icon.svg';
 
 import './footer.scss';
-
-const itemsAnimation = {
-    hidden: {
-        y: -10,
-        opacity: 0,
-    },
-    visible: custom => ({
-        y: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.1 },
-    }),
-};
 
 const Footer = () => {
     const listRef = useRef();
@@ -71,26 +58,19 @@ const Footer = () => {
                             onClick={handleClick}
                             ref={listRef}
                         >
-                            {footerContent.map((item, index) => {
+                            {footerContent.map(item => {
                                 const { title, items } = item;
                                 return (
-                                    <motion.li
-                                        key={title}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                    >
+                                    <li key={title}>
                                         <h3>{title}</h3>
-                                        <motion.ul
-                                            custom={index + 1}
-                                            variants={itemsAnimation}
-                                        >
+                                        <ul>
                                             {items.map(li => (
                                                 <li key={li + title}>
                                                     <Link to="/">{li}</Link>
                                                 </li>
                                             ))}
-                                        </motion.ul>
-                                    </motion.li>
+                                        </ul>
+                                    </li>
                                 );
                             })}
                         </ul>
