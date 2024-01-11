@@ -33,7 +33,8 @@ const FeaturesApp = () => {
         });
 
         if (items.length - 1 > index) {
-            index + 1;
+            // eslint-disable-next-line no-plusplus
+            index++;
         } else {
             index = 0;
         }

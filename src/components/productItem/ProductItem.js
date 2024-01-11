@@ -6,8 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import userIcon from '../../resources/images/user__icon.png';
 import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 import { addToCart, removeFromCart } from '../../reducers/cartSlice';
-import { ReactComponent as BtnMinusIcon } from '../../resources/icons/minus__icon.svg';
-import { ReactComponent as BtnPlusIcon } from '../../resources/icons/plus__icon.svg';
 import Spinner from '../spinner/Spinner';
 
 import 'slick-carousel/slick/slick.css';
@@ -204,16 +202,14 @@ const ProductCard = ({ card }) => {
                         </div>
                         <div className="product__controls_buttons">
                             <button
+                                className="btn__icon_minus"
                                 onClick={() => dispatch(removeFromCart(card))}
-                            >
-                                {/* - */}
-                                <BtnMinusIcon className="btn-icon" />
-                            </button>
+                            />
                             <span>{count}</span>
-                            <button onClick={() => dispatch(addToCart(card))}>
-                                {/* + */}
-                                <BtnPlusIcon className="btn-icon" />
-                            </button>
+                            <button
+                                className="btn__icon_plus"
+                                onClick={() => dispatch(addToCart(card))}
+                            />
                         </div>
                     </div>
                     <div className="product__description">

@@ -266,11 +266,32 @@
     z-index: 2;
 }
 .btn-icon {
-    width: 25px;
-    height: 25px;
     fill: $light-color;
-    @media (max-width: 1030px) {
-        width: 20px;
-        height: 20px;
+}
+.btn__icon {
+    &_minus,
+    &_plus {
+        &:before {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            @media (max-width: 1030px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_minus {
+        &:before {
+            background: url('../../resources/icons/minus__icon.svg')
+                center/cover no-repeat;
+        }
+    }
+    &_plus {
+        &:before {
+            background: url('../../resources/icons/plus__icon.svg') center/cover
+                no-repeat;
+        }
     }
 }
