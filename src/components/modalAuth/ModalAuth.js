@@ -13,7 +13,10 @@ import './modalAuth.scss';
 
 const ModalAuth = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(
-        JSON.parse(localStorage.getItem('user')) || '',
+        JSON.parse(localStorage.getItem('user')) || {
+            email: '',
+            password: '',
+        },
     );
     const [isAuth, setIsAuth] = useState(Object.keys(userData).length !== 0);
     const [isLoginError, setIsLoginError] = useState(true);

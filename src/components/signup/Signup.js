@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
@@ -14,16 +14,27 @@ import './signup.scss';
 
 const Signup = () => {
     const [userData, setUserData] = useState({
-        login: '',
+        name: '',
         email: '',
         password: '',
         phone: '',
     });
+    const [isValid, setIsValid] = useState(false);
+
     const { postUser } = FoodWagonService();
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        const isEmpty =
+            Object.values(userData).findIndex(item => item === '') !== -1;
+
+        setIsValid(isEmpty);
+    }, [userData]);
+
     const onsubmitForm = e => {
         e.preventDefault();
+
+        if (userData.phone.length !== 10) return;
 
         const user = {
             id: uuidv4(),
@@ -49,8 +60,8 @@ const Signup = () => {
                     <h1>PERSONAL DETAILS</h1>
                     <Input
                         elementType="login"
-                        elementName="login"
-                        valueElement={userData.login}
+                        elementName="name"
+                        valueElement={userData.name}
                         onChangeFunction={setUserData}
                         userData={userData}
                         icon={<UserIcon />}
@@ -79,7 +90,10 @@ const Signup = () => {
                         userData={userData}
                         icon={<PhoneIcon />}
                     />
-                    <button className="restaurants__button primary__button">
+                    <button
+                        disabled={isValid}
+                        className="restaurants__button primary__button"
+                    >
                         REGISTER
                     </button>
                 </form>

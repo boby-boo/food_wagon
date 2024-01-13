@@ -92,10 +92,9 @@ const Header = () => {
         borderRadius: '10px 0 0 10px',
     };
 
-    if (user?.login) {
-        const { login } = user;
-        currentLogin =
-            login.length > 10 ? `${login.substring(0, 6)} ...` : login;
+    if (user?.name) {
+        const { name } = user;
+        currentLogin = name.length > 10 ? `${name.substring(0, 6)} ...` : name;
     }
 
     return (
@@ -134,7 +133,7 @@ const Header = () => {
                                     onClick={toggleModalOpen}
                                     className="user-panel__login"
                                 >
-                                    <span>{currentLogin || 'Login'}</span>
+                                    <span>{currentLogin || 'Name'}</span>
                                 </button>
                             </li>
                         </ul>

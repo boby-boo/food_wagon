@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(true);
     const user = useSelector(state => state.user.user);
 
-    if (user.login) {
+    if (user.name) {
         return { ...children };
     }
 

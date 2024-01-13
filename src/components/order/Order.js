@@ -39,12 +39,12 @@ const stepAnimation = {
 const Order = () => {
     const {
         email: userEmail,
-        login,
+        name: userName,
         id,
     } = JSON.parse(localStorage.getItem('user'));
     const [delivery, setDelivery] = useState({
         id: id || '',
-        name: login || '',
+        name: userName || '',
         email: userEmail || '',
         phone: '0662046820',
         city: 'ds',
@@ -146,7 +146,7 @@ const Order = () => {
 
         setDelivery({
             id: id || '',
-            name: login || '',
+            name: name || '',
             email: userEmail || '',
             phone: '',
             city: '',
