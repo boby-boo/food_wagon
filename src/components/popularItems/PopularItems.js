@@ -142,7 +142,7 @@ const PopularItems = () => {
                     <div className="popular-item" key={id}>
                         <div className="popular-item__body">
                             <Link
-                                to={`restaurant/${restaurant.products}/${id}`}
+                                to={`/restaurant/${restaurant.products}/${id}`}
                             >
                                 <div className="popular-item__image">
                                     <img src={img} alt={name} />
@@ -151,7 +151,7 @@ const PopularItems = () => {
                             <div className="popular-item__description">
                                 <h3>{name}</h3>
                                 <Link
-                                    to={`restaurant/${restaurant.products}`}
+                                    to={`/restaurant/${restaurant.products}`}
                                     className="popular-item__description_location"
                                 >
                                     {restaurant.partnerName}

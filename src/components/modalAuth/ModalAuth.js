@@ -105,7 +105,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
                     userData={userData}
                     icon={<PasswordIcon />}
                 />
-                {isAuth ? (
+                {!isAuth ? (
                     <Button
                         text="Log out"
                         onclickFunction={logoutForm}

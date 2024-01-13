@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -101,7 +102,10 @@ const Cart = () => {
                                                 <button
                                                     onClick={() =>
                                                         dispatch(
-                                                            addToCart(item),
+                                                            addToCart({
+                                                                ...item,
+                                                                quantity: 1,
+                                                            }),
                                                         )
                                                     }
                                                 >

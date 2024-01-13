@@ -45,13 +45,13 @@ const App = () => {
                                     element={<ProductItem />}
                                 />
                             </Route>
-                            <Route path="/order" element={<Order />} />
+                            <Route exact path="cart" element={<Cart />} />
                             <Route
                                 exact
-                                path="cart"
+                                path="/order"
                                 element={
                                     <PrivateRoute>
-                                        <Cart />
+                                        <Order />
                                     </PrivateRoute>
                                 }
                             />

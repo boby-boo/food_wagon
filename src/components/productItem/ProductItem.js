@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import { motion, AnimatePresence } from 'framer-motion';
 import userIcon from '../../resources/images/user__icon.png';
 import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
-import { addToCart, removeFromCart } from '../../reducers/cartSlice';
+import { addToCart } from '../../reducers/cartSlice';
 import Spinner from '../spinner/Spinner';
 
 import 'slick-carousel/slick/slick.css';
@@ -175,15 +175,34 @@ const ProductItem = () => {
 };
 
 const ProductCard = ({ card }) => {
+    const [product, setProduct] = useState(null);
     const cart = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     const { name, price, image, weight, ingredients, id } = card;
     const img = require(`../../resources/${image}`);
     const ing = ingredients.join(', ');
-    const checkDuplicate = cart.find(item => item.id === id);
-    const count = checkDuplicate ? checkDuplicate.quantity : 0;
+    // const checkDuplicate = cart.find(item => item.id === id);
+    // const count = checkDuplicate ? checkDuplicate.quantity : 0;
+    useEffect(() => {
+        const checkDuplicate = cart.find(item => item.id === id);
+        const count = checkDuplicate ? checkDuplicate.quantity : 0;
 
+        setProduct({
+            ...card,
+            quantity: count,
+        });
+    }, []);
+
+    const handleClick = value => {
+        if (product.quantity <= 0 && value === -1) return;
+
+        const currentQty = product.quantity + value;
+        setProduct({
+            ...product,
+            quantity: currentQty,
+        });
+    };
     return (
         <>
             <div className="product__row">
@@ -203,12 +222,12 @@ const ProductCard = ({ card }) => {
                         <div className="product__controls_buttons">
                             <button
                                 className="btn__icon_minus"
-                                onClick={() => dispatch(removeFromCart(card))}
+                                onClick={() => handleClick(-1)}
                             />
-                            <span>{count}</span>
+                            <span>{product?.quantity}</span>
                             <button
                                 className="btn__icon_plus"
-                                onClick={() => dispatch(addToCart(card))}
+                                onClick={() => handleClick(+1)}
                             />
                         </div>
                     </div>
@@ -218,7 +237,7 @@ const ProductCard = ({ card }) => {
                     </div>
                     <button
                         className="product__button"
-                        onClick={() => dispatch(addToCart(card))}
+                        onClick={() => dispatch(addToCart(product))}
                     >
                         Add to cart
                     </button>

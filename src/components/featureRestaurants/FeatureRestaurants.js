@@ -37,7 +37,7 @@ const FeatureRestaurants = () => {
 
         const isOpen = hoursNow >= startWorkHours && hoursNow <= endWorkHours;
 
-        const text = isOpen ? 'Open now' : 'Closed now';
+        const text = isOpen ? 'Open now' : 'Close now';
         const isWork = isOpen ? '_open' : '';
 
         return [text, isWork];

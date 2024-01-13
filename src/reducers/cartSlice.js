@@ -11,25 +11,32 @@ export const cartSlice = createSlice({
         addToCart: (state, action) => {
             const updateData = {
                 ...action.payload,
-                quantity: 1,
+                quantity: action.payload.hasOwnProperty('quantity')
+                    ? action.payload.quantity
+                    : 1,
             };
 
-            const checkIndex = state.cart.find(
-                item => item.id === updateData.id,
+            const checkIndex = state.cart.some(
+                item => item.id === action.payload.id,
             );
 
             if (checkIndex) {
-                const updateBasket = state.cart.map(item =>
-                    item.id === updateData.id
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item,
-                );
+                const updateBasket = state.cart.map(item => {
+                    if (item.id === updateData.id) {
+                        return {
+                            ...item,
+                            quantity: item.quantity + updateData.quantity,
+                        };
+                    }
+                    return item;
+                });
 
                 localStorage.setItem('cart', JSON.stringify(updateBasket));
 
                 state.cart = updateBasket;
                 return;
             }
+
             localStorage.setItem(
                 'cart',
                 JSON.stringify([...state.cart, updateData]),
