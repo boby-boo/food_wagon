@@ -3,15 +3,34 @@
 
 .order-info {
     padding: 60px 0;
+    @media (max-width: 600px) {
+        padding: 20px;
+    }
     &__row {
-        padding: 50px;
+        padding: 110px 20px 50px;
         max-width: 1000px;
         margin: 0 auto;
         @include templateFlex(center, center);
         flex-direction: column;
         gap: 20px;
         border-radius: 10px;
-        box-shadow: 0 20px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 32px #0000001a;
+        @media (max-width: 600px) {
+            padding: 60px 20px 20px;
+        }
+    }
+    &__title {
+        margin: 30px 0;
+        @include templateFont(28, 400, 1.5);
+        color: $gray-color;
+        text-align: center;
+        text-transform: uppercase;
+        @media (max-width: 400px) {
+            font-size: 23px;
+        }
+        @media (max-width: 600px) {
+            margin: 25px 0;
+        }
     }
     &__inputs-inner {
         width: 100%;
@@ -42,8 +61,11 @@
 
 .input-address__inner {
     width: 100%;
-    @include templateFlex(space-between, center);
+    @include templateFlex(space-between, flex-start);
     column-gap: 20px;
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+    }
 }
 
 .steps__row {
@@ -93,6 +115,7 @@
         }
     }
 }
+
 .step__complete {
     .circle {
         background-color: $primary-color;
@@ -126,9 +149,14 @@
         width: 100%;
     }
     &__buttons {
+        margin-bottom: 60px;
         width: 100%;
         @include templateFlex(center, center);
         column-gap: 10px;
+        @media (max-width: 600px) {
+            flex-direction: column;
+            row-gap: 40px;
+        }
         input {
             display: none;
         }

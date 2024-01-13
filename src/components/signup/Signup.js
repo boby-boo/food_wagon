@@ -16,15 +16,6 @@ const Signup = () => {
     const { postUser } = FoodWagonService();
     const dispatch = useDispatch();
 
-    const handleChange = e => {
-        const { value, name } = e.target;
-
-        setUserData({
-            ...userData,
-            [name]: value,
-        });
-    };
-
     const onsubmitForm = e => {
         e.preventDefault();
 
@@ -54,7 +45,7 @@ const Signup = () => {
                         elementType="login"
                         elementName="login"
                         valueElement={userData.login}
-                        handleChange={handleChange}
+                        onChangeFunction={setUserData}
                         userData={userData}
                         icon={<UserIcon />}
                     />
@@ -63,7 +54,7 @@ const Signup = () => {
                         elementType="email"
                         elementName="email"
                         valueElement={userData.email}
-                        handleChange={handleChange}
+                        onChangeFunction={setUserData}
                         userData={userData}
                         icon={<EmailIcon />}
                     />
@@ -72,7 +63,7 @@ const Signup = () => {
                         elementType="password"
                         elementName="password"
                         valueElement={userData.password}
-                        handleChange={handleChange}
+                        onChangeFunction={setUserData}
                         userData={userData}
                         icon={<PasswordIcon />}
                     />

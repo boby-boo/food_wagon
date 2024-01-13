@@ -74,6 +74,11 @@ const useFoodWagonService = () => {
         return res;
     };
 
+    const postOrder = async (body, url = `${_baseURL}orders/`) => {
+        const res = await request(`${url}`, 'POST', body);
+        return res;
+    };
+
     return {
         getAllRestaurant,
         getPopularProducts,
@@ -82,6 +87,7 @@ const useFoodWagonService = () => {
         getCategoryRestaurant,
         postUser,
         getUser,
+        postOrder,
     };
 };
 

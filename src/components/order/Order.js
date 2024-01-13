@@ -1,22 +1,52 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
 import Input from '../input/Input';
+import useFoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
 import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';
 import { ReactComponent as MapIcon } from '../../resources/icons/map__icon.svg';
 import { ReactComponent as StreetIcon } from '../../resources/icons/street__icon.svg';
 import { ReactComponent as HouseIcon } from '../../resources/icons/house__icon.svg';
 import { ReactComponent as LevelIcon } from '../../resources/icons/level__icon.svg';
+import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
 import { ReactComponent as ApartmentIcon } from '../../resources/icons/apartment__icon.svg';
 import { ReactComponent as CardIcon } from '../../resources/icons/credit-card__icon.svg';
 import { ReactComponent as WalletIcon } from '../../resources/icons/wallet__icon.svg';
 
 import './order.scss';
 
+const stepAnimation = {
+    hidden: {
+        y: -20,
+        opacity: 0,
+    },
+    visible: {
+        y: 0,
+        opacity: 1,
+    },
+    titleHidden: {
+        y: 40,
+        opacity: 0,
+    },
+    titleVisible: {
+        y: 0,
+        opacity: 1,
+    },
+};
+
 const Order = () => {
+    const {
+        email: userEmail,
+        login,
+        id,
+    } = JSON.parse(localStorage.getItem('user'));
     const [delivery, setDelivery] = useState({
-        name: 's',
-        email: '12ed@gmail.com',
-        phone: '',
+        id: id || '',
+        name: login || '',
+        email: userEmail || '',
+        phone: '0662046820',
         city: 'ds',
         street: '1',
         house: '2',
@@ -30,7 +60,8 @@ const Order = () => {
         deliveryInfo: false,
         paymentInfo: false,
     });
-
+    const { postOrder } = useFoodWagonService();
+    const cart = useSelector(state => state.cart.cart);
     const steps = ['personal-data', 'address-data', 'type-delivery'];
 
     useEffect(() => {
@@ -41,25 +72,6 @@ const Order = () => {
         checkComplete();
     }, [delivery]);
 
-    const handleChange = e => {
-        const { name, value, type } = e.target;
-
-        if (type === 'tel') {
-            const updValue = value.replace(/[^0-9]/g, ' ').trim();
-            // /^\d+$/.test(value)) ? console.log('true') : console.log('false');
-            setDelivery({
-                ...delivery,
-                [name]: updValue,
-            });
-
-            return;
-        }
-        setDelivery({
-            ...delivery,
-            [name]: value,
-        });
-    };
-
     const changeStepOrder = e => {
         const { type, value } = e.target;
 
@@ -68,12 +80,13 @@ const Order = () => {
             (value === 'type-delivery' && !isCompleteStep.deliveryInfo)
         )
             return;
+
         if (stepActive === 'address-data' && !isCompleteStep.deliveryInfo) {
             if (value === 'personal-data') {
                 setStepActive(value);
-            } else {
-                return;
             }
+
+            return;
         }
 
         if (type === 'button') {
@@ -91,7 +104,58 @@ const Order = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log('submit');
+
+        const {
+            name,
+            email,
+            phone,
+            city,
+            street,
+            house,
+            level,
+            apartment,
+            payment,
+        } = delivery;
+
+        const totalPrice = cart
+            .reduce((acc, item) => item.price * item.quantity + acc, 0)
+            .toFixed(2);
+
+        const orderInfo = {
+            id: uuidv4(),
+            infoAboutUser: {
+                id,
+                name,
+                email,
+                phone,
+            },
+            infoAboutDelivery: {
+                city,
+                street,
+                house,
+                level,
+                apartment,
+            },
+            typePayment: payment,
+            totalPrice,
+            order: [...cart],
+            dateOrder: new Date(),
+        };
+
+        postOrder(JSON.stringify(orderInfo));
+
+        setDelivery({
+            id: id || '',
+            name: login || '',
+            email: userEmail || '',
+            phone: '',
+            city: '',
+            street: '',
+            house: '',
+            level: '',
+            apartment: '',
+            payment: '',
+        });
     };
 
     const handlePaymentType = e => {
@@ -119,15 +183,19 @@ const Order = () => {
             payment,
         } = delivery;
 
-        const personal = name !== '' && email !== '' && phone !== '';
-        const deliveryInfo =
-            city !== '' &&
-            street !== '' &&
-            house !== '' &&
-            level !== '' &&
-            apartment !== '';
-
-        const paymentInfo = payment !== '';
+        const personal =
+                name !== '' &&
+                email !== '' &&
+                /@.*\./.test(email) &&
+                phone !== '' &&
+                phone.length === 10,
+            deliveryInfo =
+                city !== '' &&
+                street !== '' &&
+                house !== '' &&
+                level !== '' &&
+                apartment !== '',
+            paymentInfo = payment !== '';
 
         setIsCompleteStep({
             ...isCompleteStep,
@@ -211,34 +279,92 @@ const Order = () => {
                         </div>
                     </label>
                 </div>
-                <form className="order-info__row">
+                {stepActive === 'personal-data' && (
+                    <motion.h2
+                        key="Personal details"
+                        className="order-info__title"
+                        initial="titleHidden"
+                        animate="titleVisible"
+                        variants={stepAnimation}
+                    >
+                        Personal details
+                    </motion.h2>
+                )}
+                {stepActive === 'address-data' && (
+                    <motion.h2
+                        key="Delivery address"
+                        className="order-info__title"
+                        initial="titleHidden"
+                        animate="titleVisible"
+                        variants={stepAnimation}
+                    >
+                        Delivery address
+                    </motion.h2>
+                )}
+                {stepActive === 'type-delivery' && (
+                    <motion.h2
+                        key="Choose payment type"
+                        className="order-info__title"
+                        initial="titleHidden"
+                        animate="titleVisible"
+                        variants={stepAnimation}
+                    >
+                        Choose payment type
+                    </motion.h2>
+                )}
+                <motion.form
+                    className="order-info__row"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                >
                     {stepActive === 'personal-data' && (
-                        <div className="delivery__info_personal">
+                        <motion.div
+                            key="delivery__info_personal"
+                            className="delivery__info_personal"
+                            initial="hidden"
+                            animate="visible"
+                            variants={stepAnimation}
+                        >
                             <Input
                                 elementType="login"
                                 elementName="name"
                                 valueElement={delivery.name}
-                                handleChange={handleChange}
+                                onChangeFunction={setDelivery}
                                 userData={delivery}
                                 icon={<UserIcon />}
+                            />
+                            <Input
+                                elementType="email"
+                                elementName="email"
+                                onChangeFunction={setDelivery}
+                                valueElement={delivery.email}
+                                userData={delivery}
+                                icon={<EmailIcon />}
                             />
                             <Input
                                 elementType="tel"
                                 elementName="phone"
                                 valueElement={delivery.phone}
-                                handleChange={handleChange}
+                                onChangeFunction={setDelivery}
                                 userData={delivery}
                                 icon={<PhoneIcon />}
                             />
-                        </div>
+                        </motion.div>
                     )}
                     {stepActive === 'address-data' && (
-                        <div className="delivery__info_address">
+                        <motion.div
+                            key="delivery__info_address"
+                            className="delivery__info_address"
+                            initial="hidden"
+                            animate="visible"
+                            variants={stepAnimation}
+                        >
                             <Input
                                 elementType="text"
                                 elementName="city"
                                 valueElement={delivery.city}
-                                handleChange={handleChange}
+                                onChangeFunction={setDelivery}
                                 userData={delivery}
                                 icon={<MapIcon />}
                             />
@@ -247,7 +373,7 @@ const Order = () => {
                                     elementType="text"
                                     elementName="street"
                                     valueElement={delivery.street}
-                                    handleChange={handleChange}
+                                    onChangeFunction={setDelivery}
                                     userData={delivery}
                                     icon={<StreetIcon />}
                                 />
@@ -255,7 +381,7 @@ const Order = () => {
                                     elementType="text"
                                     elementName="house"
                                     valueElement={delivery.house}
-                                    handleChange={handleChange}
+                                    onChangeFunction={setDelivery}
                                     userData={delivery}
                                     icon={<HouseIcon />}
                                 />
@@ -265,7 +391,7 @@ const Order = () => {
                                     elementType="number"
                                     elementName="level"
                                     valueElement={delivery.level}
-                                    handleChange={handleChange}
+                                    onChangeFunction={setDelivery}
                                     userData={delivery}
                                     icon={<LevelIcon />}
                                 />
@@ -273,15 +399,21 @@ const Order = () => {
                                     elementType="text"
                                     elementName="apartment"
                                     valueElement={delivery.apartment}
-                                    handleChange={handleChange}
+                                    onChangeFunction={setDelivery}
                                     userData={delivery}
                                     icon={<ApartmentIcon />}
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     )}
                     {stepActive === 'type-delivery' && (
-                        <div className="delivery__buttons">
+                        <motion.div
+                            key="delivery__info_buttons delivery__buttons"
+                            className="delivery__info_buttons delivery__buttons"
+                            initial="hidden"
+                            animate="visible"
+                            variants={stepAnimation}
+                        >
                             <div className="delivery__buttons_inner">
                                 <input
                                     onChange={handlePaymentType}
@@ -312,7 +444,7 @@ const Order = () => {
                                     <WalletIcon className="delivery__icon" />
                                 </label>
                             </div>
-                        </div>
+                        </motion.div>
                     )}
                     {isCompleteStep.deliveryInfo &&
                     isCompleteStep.personal &&
@@ -331,7 +463,7 @@ const Order = () => {
                             onClick={changeStepOrder}
                         />
                     )}
-                </form>
+                </motion.form>
             </div>
         </section>
     );

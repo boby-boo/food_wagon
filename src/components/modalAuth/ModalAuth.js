@@ -28,14 +28,6 @@ const ModalAuth = ({ toggleModalOpen }) => {
         return () => clearInterval(intervalId);
     }, [isLoginError]);
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setUserData({
-            ...userData,
-            [name]: value,
-        });
-    };
-
     const onsubmitForm = async e => {
         e.preventDefault();
 
@@ -97,17 +89,16 @@ const ModalAuth = ({ toggleModalOpen }) => {
                 <Input
                     elementType="email"
                     elementName="email"
+                    onChangeFunction={setUserData}
                     valueElement={userData.email}
-                    handleChange={handleChange}
                     userData={userData}
                     icon={<EmailIcon />}
                 />
-
                 <Input
                     elementType="password"
                     elementName="password"
+                    onChangeFunction={setUserData}
                     valueElement={userData.password}
-                    handleChange={handleChange}
                     userData={userData}
                     icon={<PasswordIcon />}
                 />
