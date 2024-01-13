@@ -2,7 +2,14 @@ import React, { useRef, useEffect } from 'react';
 
 import './input.scss';
 
-const Input = ({ elementType, valueElement, handleChange, userData, icon }) => {
+const Input = ({
+    elementType,
+    elementName,
+    valueElement,
+    handleChange,
+    userData,
+    icon,
+}) => {
     const labelRef = useRef();
 
     const style = {
@@ -25,25 +32,26 @@ const Input = ({ elementType, valueElement, handleChange, userData, icon }) => {
             <div className="input__inner_elements">
                 <label
                     ref={labelRef}
-                    htmlFor={elementType}
+                    htmlFor={elementName}
                     className="input__label"
                 >
-                    {elementType}
+                    {elementName}
                 </label>
                 <input
+                    type={elementType}
                     style={valueElement ? style : null}
                     onChange={handleChange}
                     value={valueElement || ''}
-                    type={elementType}
-                    name={elementType}
-                    id={elementType}
+                    name={elementName}
+                    id={elementName}
                     className="input__field"
                     required
                 />
             </div>
             <div
+                onClick={() => labelRef.current.focus()}
                 className={`input__icon ${
-                    userData[elementType] ? 'animate__color' : null
+                    userData[elementName] ? 'animate__color' : null
                 }`}
             >
                 {icon}

@@ -129,7 +129,9 @@ const Cart = () => {
                         <span className="order__info_quantity">
                             Product: {cart.length} qty
                         </span>
-                        <button className="cart__button">order</button>
+                        <Link to="/order" className="cart__button">
+                            order
+                        </Link>
                     </div>
                 </div>
             </div>

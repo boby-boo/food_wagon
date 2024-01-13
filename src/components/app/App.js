@@ -17,6 +17,7 @@ const ProductItem = lazy(() => import('../productItem/ProductItem'));
 const Signup = lazy(() => import('../signup/Signup'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 const Page404 = lazy(() => import('../pages/Page404'));
+const Order = lazy(() => import('../order/Order'));
 
 const App = () => {
     return (
@@ -44,6 +45,7 @@ const App = () => {
                                     element={<ProductItem />}
                                 />
                             </Route>
+                            <Route path="/order" element={<Order />} />
                             <Route
                                 exact
                                 path="cart"

@@ -52,6 +52,7 @@ const Signup = () => {
                     <h1>PERSONAL DETAILS</h1>
                     <Input
                         elementType="login"
+                        elementName="login"
                         valueElement={userData.login}
                         handleChange={handleChange}
                         userData={userData}
@@ -60,6 +61,7 @@ const Signup = () => {
 
                     <Input
                         elementType="email"
+                        elementName="email"
                         valueElement={userData.email}
                         handleChange={handleChange}
                         userData={userData}
@@ -68,6 +70,7 @@ const Signup = () => {
 
                     <Input
                         elementType="password"
+                        elementName="password"
                         valueElement={userData.password}
                         handleChange={handleChange}
                         userData={userData}
