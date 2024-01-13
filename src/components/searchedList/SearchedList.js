@@ -106,6 +106,18 @@ const SearchedList = () => {
                 animate={{ opacity: 1 }}
             >
                 <div className="container">
+                    <div className="searched-list__row">
+                        <h1>Search you culinary</h1>
+                        <Filter
+                            filterLogic={filterLogic}
+                            options={options}
+                            headerText="Culinary style:"
+                            currentSelect={
+                                category.charAt(0).toUpperCase() +
+                                category.slice(1)
+                            }
+                        />
+                    </div>
                     <div className="searched-list__empty">
                         {dataCards && <h1>No such product found</h1>}
                         <Spinner />

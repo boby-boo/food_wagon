@@ -37,7 +37,7 @@ const FeatureRestaurants = () => {
 
         const isOpen = hoursNow >= startWorkHours && hoursNow <= endWorkHours;
 
-        const text = isOpen ? 'Open now' : 'Open tomorrow';
+        const text = isOpen ? 'Open now' : 'Closed now';
         const isWork = isOpen ? '_open' : '';
 
         return [text, isWork];
@@ -116,12 +116,16 @@ const FeatureRestaurants = () => {
                 <h2 className="primary-title">Featured Restaurants</h2>
                 {restaurantRow}
                 <div>
-                    <Button
-                        text="View More"
-                        classNameComponent="restaurants__button"
-                        onclickFunction={() => getRestaurants(restaurantOffset)}
-                        isDisabled={loading}
-                    />
+                    {data.length % 4 === 0 && (
+                        <Button
+                            text="View More"
+                            classNameComponent="restaurants__button"
+                            onclickFunction={() =>
+                                getRestaurants(restaurantOffset)
+                            }
+                            isDisabled={loading}
+                        />
+                    )}
                 </div>
             </div>
         </motion.section>
