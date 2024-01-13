@@ -47,8 +47,9 @@
         }
     }
     &__error_message {
-        text-transform: uppercase;
+        padding-left: 5px;
         font-size: 14px;
+        text-transform: uppercase;
         @media (max-width: 600px) {
             font-size: 12px;
         }

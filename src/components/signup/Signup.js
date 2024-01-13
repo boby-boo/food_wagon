@@ -8,11 +8,17 @@ import FoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
 import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
 import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';
+import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';
 
 import './signup.scss';
 
 const Signup = () => {
-    const [userData, setUserData] = useState('');
+    const [userData, setUserData] = useState({
+        login: '',
+        email: '',
+        password: '',
+        phone: '',
+    });
     const { postUser } = FoodWagonService();
     const dispatch = useDispatch();
 
@@ -49,7 +55,6 @@ const Signup = () => {
                         userData={userData}
                         icon={<UserIcon />}
                     />
-
                     <Input
                         elementType="email"
                         elementName="email"
@@ -58,7 +63,6 @@ const Signup = () => {
                         userData={userData}
                         icon={<EmailIcon />}
                     />
-
                     <Input
                         elementType="password"
                         elementName="password"
@@ -66,6 +70,14 @@ const Signup = () => {
                         onChangeFunction={setUserData}
                         userData={userData}
                         icon={<PasswordIcon />}
+                    />
+                    <Input
+                        elementType="tel"
+                        elementName="phone"
+                        valueElement={userData.phone}
+                        onChangeFunction={setUserData}
+                        userData={userData}
+                        icon={<PhoneIcon />}
                     />
                     <button className="restaurants__button primary__button">
                         REGISTER
