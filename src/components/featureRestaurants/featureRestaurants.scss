@@ -40,7 +40,7 @@
             column-gap: 8px;
             @include templateFont(22, 700, 1.2);
             color: $light-color;
-            z-index: 112;
+            z-index: 2;
             @media (max-width: 830px) {
                 @include templateFont(14, 700, 1.2);
             }

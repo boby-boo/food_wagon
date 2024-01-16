@@ -53,9 +53,6 @@
     input[type='button'] {
         @extend .primary__button;
         letter-spacing: 1px;
-        &:disabled {
-            background: red !important;
-        }
     }
 }
 

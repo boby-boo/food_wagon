@@ -26,7 +26,8 @@ const Signup = () => {
 
     useEffect(() => {
         const isEmpty =
-            Object.values(userData).findIndex(item => item === '') !== -1;
+            Object.values(userData).some(item => item === '') ||
+            userData?.phone.length !== 10;
 
         setIsValid(isEmpty);
     }, [userData]);

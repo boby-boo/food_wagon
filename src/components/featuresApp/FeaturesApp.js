@@ -26,7 +26,7 @@ const FeaturesApp = () => {
     let index = 0;
 
     function selectTiming() {
-        const items = Array.from(itemsRef.current.children);
+        const items = Array.from(itemsRef.current?.children);
 
         items.forEach(item => {
             item.classList.remove('features__row_item-active');

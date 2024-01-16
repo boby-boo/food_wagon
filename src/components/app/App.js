@@ -18,6 +18,7 @@ const Signup = lazy(() => import('../signup/Signup'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 const Page404 = lazy(() => import('../pages/Page404'));
 const Order = lazy(() => import('../order/Order'));
+const Notification = lazy(() => import('../notification/Notification'));
 
 const App = () => {
     return (
@@ -59,6 +60,7 @@ const App = () => {
                         </Routes>
                     </Suspense>
                 </main>
+                <Notification />
                 <Footer />
             </div>
         </Router>

@@ -173,7 +173,7 @@ input::-webkit-inner-spin-button {
             border-radius: 15px;
             background-color: transparentize(#000, 0.6);
             @include templateTransition(opacity);
-            z-index: 111;
+            z-index: 1;
         }
         @media (max-width: 830px) {
             height: 200px;

@@ -23,7 +23,6 @@ const SampleNextArrow = props => {
 
 const PopularItems = () => {
     const [cards, setCards] = useState();
-
     const { getPopularProducts } = useFoodWagonService();
     const dispatch = useDispatch();
 
@@ -178,17 +177,19 @@ const PopularItems = () => {
     const cardsRow = renderItems(cards);
 
     return (
-        <motion.section
-            className="popular-items"
-            initial={{ opacity: 0 }}
-            viewport={{ amount: 0.2 }}
-            whileInView={{ opacity: 1 }}
-        >
-            <div className="container">
-                <h2 className="primary-title">Popular items</h2>
-                {cardsRow}
-            </div>
-        </motion.section>
+        <>
+            <motion.section
+                className="popular-items"
+                initial={{ opacity: 0 }}
+                viewport={{ amount: 0.2 }}
+                whileInView={{ opacity: 1 }}
+            >
+                <div className="container">
+                    <h2 className="primary-title">Popular items</h2>
+                    {cardsRow}
+                </div>
+            </motion.section>
+        </>
     );
 };
 
