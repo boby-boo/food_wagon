@@ -182,8 +182,7 @@ const ProductCard = ({ card }) => {
     const { name, price, image, weight, ingredients, id } = card;
     const img = require(`../../resources/${image}`);
     const ing = ingredients.join(', ');
-    // const checkDuplicate = cart.find(item => item.id === id);
-    // const count = checkDuplicate ? checkDuplicate.quantity : 0;
+
     useEffect(() => {
         const checkDuplicate = cart.find(item => item.id === id);
         const count = checkDuplicate ? checkDuplicate.quantity : 0;
