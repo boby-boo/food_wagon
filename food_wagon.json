@@ -1963,5 +1963,166 @@
       "phone": "0662046820"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "76e99c99-06fe-453f-a152-761dc946cadd",
+      "infoAboutUser": {
+        "id": "73882783-d21e-415d-90c3-fb76b1938f93",
+        "name": "Volodymyr",
+        "email": "volodka.isyk.95@gmail.com",
+        "phone": "0662046820"
+      },
+      "infoAboutDelivery": {
+        "city": "Київ",
+        "street": "1221",
+        "house": "1212",
+        "level": "1212",
+        "apartment": "121"
+      },
+      "typePayment": "",
+      "totalPrice": "9.00",
+      "order": [
+        {
+          "name": "Fusion",
+          "id": "37",
+          "price": 2.4,
+          "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
+          "image": "restaurant/taco_bell/fusion.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Grilled chicken",
+            "Mango salsa",
+            "Cilantro",
+            "Lime crema",
+            "Red cabbage"
+          ],
+          "weight": "350",
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 5,
+              "comment": "Awesome fusion! Loved the mango salsa.",
+              "date": "2024-01-02"
+            },
+            {
+              "author": "Stanley Hudson",
+              "rate": 3,
+              "comment": "Decent burrito, but could use more seasoning.",
+              "date": "2023-12-31"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "name": "Pizza chef",
+          "id": "17",
+          "price": 3.3,
+          "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
+          "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
+          "ingredients": [
+            "Premium ingredients",
+            "Special chef's sauce",
+            "Cheese blend"
+          ],
+          "weight": 410,
+          "review": [
+            {
+              "author": "Dwight Schrute",
+              "rate": 3,
+              "comment": "Decent pizza, but I've had better.",
+              "date": "2023-12-21"
+            },
+            {
+              "author": "Pam Beesly",
+              "rate": 4,
+              "comment": "The chef's sauce is the highlight! Delicious.",
+              "date": "2023-12-22"
+            }
+          ],
+          "quantity": 2
+        }
+      ],
+      "dateOrder": "2024-01-17T20:21:56.353Z"
+    },
+    {
+      "id": "a53e1150-744e-4b89-bff7-526a978e501a",
+      "infoAboutUser": {
+        "id": "73882783-d21e-415d-90c3-fb76b1938f93",
+        "name": "ВЛАДИМИР",
+        "email": "volodka.isyk.95@gmail.com",
+        "phone": "0662046820"
+      },
+      "infoAboutDelivery": {
+        "city": "12",
+        "street": "12",
+        "house": "12",
+        "level": "12",
+        "apartment": "12"
+      },
+      "typePayment": "",
+      "totalPrice": "9.00",
+      "order": [
+        {
+          "name": "Fusion",
+          "id": "37",
+          "price": 2.4,
+          "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
+          "image": "restaurant/taco_bell/fusion.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Grilled chicken",
+            "Mango salsa",
+            "Cilantro",
+            "Lime crema",
+            "Red cabbage"
+          ],
+          "weight": "350",
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 5,
+              "comment": "Awesome fusion! Loved the mango salsa.",
+              "date": "2024-01-02"
+            },
+            {
+              "author": "Stanley Hudson",
+              "rate": 3,
+              "comment": "Decent burrito, but could use more seasoning.",
+              "date": "2023-12-31"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "name": "Pizza chef",
+          "id": "17",
+          "price": 3.3,
+          "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
+          "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
+          "ingredients": [
+            "Premium ingredients",
+            "Special chef's sauce",
+            "Cheese blend"
+          ],
+          "weight": 410,
+          "review": [
+            {
+              "author": "Dwight Schrute",
+              "rate": 3,
+              "comment": "Decent pizza, but I've had better.",
+              "date": "2023-12-21"
+            },
+            {
+              "author": "Pam Beesly",
+              "rate": 4,
+              "comment": "The chef's sauce is the highlight! Delicious.",
+              "date": "2023-12-22"
+            }
+          ],
+          "quantity": 2
+        }
+      ],
+      "dateOrder": "2024-01-17T20:22:06.564Z"
+    }
+  ]
 }

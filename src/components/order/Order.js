@@ -86,7 +86,6 @@ const Order = () => {
             if (value === 'personal-data') {
                 setStepActive(value);
             }
-
             return;
         }
 
@@ -449,12 +448,13 @@ const Order = () => {
                     )}
                     {isCompleteStep.deliveryInfo &&
                     isCompleteStep.personal &&
-                    isCompleteStep.paymentInfo ? (
+                    stepActive === 'type-delivery' ? (
                         <input
                             type="button"
                             value="Send Form"
                             className="restaurants__button"
                             onClick={handleSubmit}
+                            disabled={!isCompleteStep.paymentInfo}
                         />
                     ) : (
                         <input
@@ -462,6 +462,14 @@ const Order = () => {
                             value="Next Step"
                             className="restaurants__button"
                             onClick={changeStepOrder}
+                            disabled={
+                                (!isCompleteStep.personal &&
+                                    stepActive === 'personal-data') ||
+                                (!isCompleteStep.deliveryInfo &&
+                                    stepActive === 'address-data') ||
+                                (!isCompleteStep.paymentInfo &&
+                                    stepActive === 'type-delivery')
+                            }
                         />
                     )}
                 </motion.form>

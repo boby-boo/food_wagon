@@ -19,8 +19,8 @@ const Restaurant = () => {
 
     const options = [
         { value: '0', label: 'Featured' },
-        { value: '1', label: 'High to Low' },
-        { value: '2', label: 'Low to High' },
+        { value: '1', label: 'Low to High' },
+        { value: '2', label: 'High to Low' },
     ];
 
     useEffect(() => {

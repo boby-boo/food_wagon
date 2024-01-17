@@ -28,6 +28,8 @@ const FeaturesApp = () => {
     function selectTiming() {
         const items = Array.from(itemsRef.current?.children);
 
+        if (!items) return;
+
         items.forEach(item => {
             item.classList.remove('features__row_item-active');
         });
