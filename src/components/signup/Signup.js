@@ -18,6 +18,11 @@ const Signup = () => {
         email: '',
         password: '',
         phone: '',
+        city: '',
+        street: '',
+        house: '',
+        level: '',
+        apartment: '',
     });
     const [isValid, setIsValid] = useState(false);
 
