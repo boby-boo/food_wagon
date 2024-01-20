@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Input from '../input/Input';
 import Button from '../button/Button';
 import FoodWagonService from '../../services/FoodWagonService';
-import { userLogin, userLogout } from '../../reducers/userSlice';
+import { userLogin } from '../../reducers/userSlice';
 import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';
 import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
 
@@ -18,7 +18,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
             password: '',
         },
     );
-    const [isAuth, setIsAuth] = useState(Object.keys(userData).length !== 0);
+
     const [isLoginError, setIsLoginError] = useState(true);
     const { getUser } = FoodWagonService();
     const dispatch = useDispatch();
@@ -42,19 +42,9 @@ const ModalAuth = ({ toggleModalOpen }) => {
             setUserData('');
             toggleModalOpen();
             setIsLoginError(true);
-            setIsAuth(true);
         } else {
             setIsLoginError(false);
         }
-    };
-
-    const logoutForm = e => {
-        e.preventDefault();
-
-        dispatch(userLogout());
-        setUserData({});
-        toggleModalOpen();
-        setIsAuth(false);
     };
 
     return (
@@ -80,15 +70,9 @@ const ModalAuth = ({ toggleModalOpen }) => {
                         </motion.p>
                     )}
                 </AnimatePresence>
-                {isAuth ? (
-                    <h2>
-                        <span>Your </span>account
-                    </h2>
-                ) : (
-                    <h2>
-                        Log in to <span>your</span> account
-                    </h2>
-                )}
+                <h2>
+                    Log in to <span>your</span> account
+                </h2>
                 <Input
                     elementType="email"
                     elementName="email"
@@ -105,22 +89,12 @@ const ModalAuth = ({ toggleModalOpen }) => {
                     userData={userData}
                     icon={<PasswordIcon />}
                 />
-                {!isAuth ? (
-                    <Button
-                        text="Log out"
-                        onclickFunction={logoutForm}
-                        isDisabled={false}
-                        classNameComponent="restaurants__button"
-                    />
-                ) : (
-                    <Button
-                        text="Sign in"
-                        onclickFunction={null}
-                        isDisabled={false}
-                        classNameComponent="restaurants__button"
-                    />
-                )}
-
+                <Button
+                    text="Sign in"
+                    onclickFunction={null}
+                    isDisabled={false}
+                    classNameComponent="restaurants__button"
+                />
                 <div className="form__footer">
                     Need an account?
                     <span>

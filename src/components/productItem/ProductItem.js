@@ -202,10 +202,12 @@ const ProductCard = ({ card }) => {
             quantity: currentQty,
         });
     };
+
     const addProductToCart = item => {
         if (item.quantity === 0) return;
         dispatch(addToCart(item));
     };
+
     return (
         <>
             <div className="product__row">

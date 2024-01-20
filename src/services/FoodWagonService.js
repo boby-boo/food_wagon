@@ -79,6 +79,11 @@ const useFoodWagonService = () => {
         return res;
     };
 
+    const updateUserInfo = async (id, body, url = `${_baseURL}users/`) => {
+        const res = await request(`${url}${id}`, 'PATCH', body);
+        return res;
+    };
+
     return {
         getAllRestaurant,
         getPopularProducts,
@@ -88,6 +93,7 @@ const useFoodWagonService = () => {
         postUser,
         getUser,
         postOrder,
+        updateUserInfo,
     };
 };
 

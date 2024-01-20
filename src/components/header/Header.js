@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 import { searchedState } from '../../reducers/searchStateSlice';
+import UserPopup from '../userPopup/UserPopup';
 import logoIcon from '../../resources/icons/foodwagon__logo.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
 
@@ -141,9 +142,12 @@ const Header = () => {
                 </div>
             </header>
             <AnimatePresence>
-                {isOpenModalWindow && (
-                    <ModalAuth toggleModalOpen={toggleModalOpen} />
-                )}
+                {isOpenModalWindow &&
+                    (!user.name ? (
+                        <ModalAuth toggleModalOpen={toggleModalOpen} />
+                    ) : (
+                        <UserPopup toggleModalOpen={toggleModalOpen} />
+                    ))}
             </AnimatePresence>
         </>
     );

@@ -18,13 +18,8 @@ const Signup = () => {
         email: '',
         password: '',
         phone: '',
-        city: '',
-        street: '',
-        house: '',
-        level: '',
-        apartment: '',
     });
-    const [isValid, setIsValid] = useState(false);
+    const [isValid, setIsValid] = useState(true);
 
     const { postUser } = FoodWagonService();
     const dispatch = useDispatch();
@@ -45,12 +40,17 @@ const Signup = () => {
         const user = {
             id: uuidv4(),
             ...userData,
+            city: '',
+            street: '',
+            house: '',
+            level: '',
+            apartment: '',
         };
 
         postUser(JSON.stringify(user));
         dispatch(userLogin(user));
-
-        setUserData({});
+        localStorage.setItem('user', JSON.stringify(user));
+        setUserData({ name: '', email: '', password: '', phone: '' });
     };
 
     return (

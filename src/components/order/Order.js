@@ -41,6 +41,11 @@ const Order = () => {
         email: userEmail,
         name: userName,
         phone: userPhone,
+        city: userCity,
+        street: userStreet,
+        house: userHouse,
+        level: userLevel,
+        apartment: userApartment,
         id,
     } = JSON.parse(localStorage.getItem('user'));
     const [delivery, setDelivery] = useState({
@@ -48,11 +53,11 @@ const Order = () => {
         name: userName || '',
         email: userEmail || '',
         phone: userPhone || '',
-        city: '',
-        street: '',
-        house: '',
-        level: '',
-        apartment: '',
+        city: userCity || '',
+        street: userStreet || '',
+        house: userHouse || '',
+        level: userLevel || '',
+        apartment: userApartment || '',
         payment: '',
     });
     const [stepActive, setStepActive] = useState(null);

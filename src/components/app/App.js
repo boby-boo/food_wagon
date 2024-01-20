@@ -19,14 +19,12 @@ const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 const Page404 = lazy(() => import('../pages/Page404'));
 const Order = lazy(() => import('../order/Order'));
 const Notification = lazy(() => import('../notification/Notification'));
-// const UserPopup = lazy(() => import('../userPopup/UserPopup'));
 
 const App = () => {
     return (
         <Router>
             <div className="wrapper">
                 <Header />
-                {/* <UserPopup /> */}
                 <main className="main">
                     <Suspense fallback={<Spinner />}>
                         <Routes>
