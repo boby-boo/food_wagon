@@ -1968,5 +1968,162 @@
       "apartment": "1"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "54dfc6e5-cc5d-4066-a42c-820f41e84069",
+      "infoAboutUser": {
+        "id": "535f28b9-6706-489d-8b34-7d668182be7c",
+        "name": "Volodymyr",
+        "email": "volodka.isyk.95@gmail.com",
+        "phone": "0662046820"
+      },
+      "infoAboutDelivery": {
+        "city": "Kharkiv",
+        "street": "Arhitectoriv",
+        "house": "18",
+        "level": "5",
+        "apartment": "1"
+      },
+      "typePayment": "card",
+      "totalPrice": "34.40",
+      "order": [
+        {
+          "name": "Pizza chef",
+          "id": "17",
+          "price": 3.3,
+          "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
+          "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
+          "ingredients": [
+            "Premium ingredients",
+            "Special chef's sauce",
+            "Cheese blend"
+          ],
+          "weight": 410,
+          "review": [
+            {
+              "author": "Dwight Schrute",
+              "rate": 3,
+              "comment": "Decent pizza, but I've had better.",
+              "date": "2023-12-21"
+            },
+            {
+              "author": "Pam Beesly",
+              "rate": 4,
+              "comment": "The chef's sauce is the highlight! Delicious.",
+              "date": "2023-12-22"
+            }
+          ],
+          "quantity": 2
+        },
+        {
+          "name": "Pizza village",
+          "id": "21",
+          "price": 4.6,
+          "description": "Transport yourself to a charming village with this pizza, showcasing a delightful mix of traditional flavors and wholesome ingredients.",
+          "image": "restaurant/ruby_tuesday/pizza-village.jpg",
+          "ingredients": [
+            "Traditional village flavors",
+            "Wholesome ingredients",
+            "Special sauce"
+          ],
+          "weight": 420,
+          "review": [
+            {
+              "author": "Phyllis Vance",
+              "rate": 5,
+              "comment": "Charming and delicious!",
+              "date": "2023-12-23"
+            },
+            {
+              "author": "Kevin Malone",
+              "rate": 5,
+              "comment": "Good, but could use more sauce.",
+              "date": "2023-12-24"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "name": "Cheeseburger",
+          "id": "35",
+          "price": 4.2,
+          "description": "Indulge in the cheesy goodness of our Cheeseburger Taco. A fusion of taco and classic cheeseburger flavors in every bite.",
+          "image": "restaurant/taco_bell/cheeseburger.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Seasoned beef",
+            "Cheese",
+            "Lettuce",
+            "Tomatoes",
+            "Pickles",
+            "Ketchup",
+            "Mustard"
+          ],
+          "weight": "300",
+          "review": [
+            {
+              "author": "Phyllis Vance",
+              "rate": 5,
+              "comment": "Interesting combination! Loved the cheeseburger twist.",
+              "date": "2024-01-01"
+            }
+          ],
+          "quantity": 4
+        },
+        {
+          "name": "Burrito",
+          "id": "34",
+          "price": 2.4,
+          "description": "A savory and satisfying Burrito filled with a delicious blend of ingredients. A classic choice for a hearty and flavorful meal.",
+          "image": "restaurant/taco_bell/burrito.jpg",
+          "ingredients": [
+            "Flour tortilla",
+            "Seasoned beef",
+            "Black beans",
+            "Rice",
+            "Cheese",
+            "Lettuce",
+            "Tomatoes",
+            "Sour cream"
+          ],
+          "weight": "400",
+          "review": [
+            {
+              "author": "Stanley Hudson",
+              "rate": 5,
+              "comment": "Decent burrito, but could use more seasoning.",
+              "date": "2023-12-31"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "name": "Rome pizza",
+          "id": "38",
+          "price": 4,
+          "description": "Embark on a culinary journey with our Rome Pizza Taco. A taco inspired by the classic flavors of Rome, bringing a taste of Italy to your taco experience.",
+          "image": "restaurant/taco_bell/rome.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Italian sausage",
+            "Marinara sauce",
+            "Mozzarella cheese",
+            "Basil",
+            "Parmesan"
+          ],
+          "weight": "320",
+          "review": [
+            {
+              "author": "Kelly Kapoor",
+              "rate": 5,
+              "comment": "Italian flavors in a taco! Loved it!",
+              "date": "2024-01-03"
+            }
+          ],
+          "quantity": 1
+        }
+      ],
+      "dateOrder": "2024-01-20T20:30:15.669Z"
+    }
+  ]
 }

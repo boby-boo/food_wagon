@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import Input from '../input/Input';
@@ -14,6 +15,7 @@ import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.s
 import { ReactComponent as ApartmentIcon } from '../../resources/icons/apartment__icon.svg';
 import { ReactComponent as CardIcon } from '../../resources/icons/credit-card__icon.svg';
 import { ReactComponent as WalletIcon } from '../../resources/icons/wallet__icon.svg';
+import deliveryIcon from '../../resources/icons/features__row_icon-3.svg';
 
 import './order.scss';
 
@@ -66,13 +68,28 @@ const Order = () => {
         deliveryInfo: false,
         paymentInfo: false,
     });
+    const [isSubmit, setIsSubmit] = useState(false);
     const { postOrder } = useFoodWagonService();
     const cart = useSelector(state => state.cart.cart);
     const steps = ['personal-data', 'address-data', 'type-delivery'];
+    const navigate = useNavigate();
 
     useEffect(() => {
         setStepActive(steps[0]);
     }, []);
+
+    useEffect(() => {
+        let timerId;
+
+        if (isSubmit) {
+            timerId = setTimeout(() => {
+                setIsSubmit(false);
+                navigate('/');
+            }, 4000);
+        }
+
+        return () => clearInterval(timerId);
+    }, [isSubmit]);
 
     useEffect(() => {
         checkComplete();
@@ -147,6 +164,7 @@ const Order = () => {
             dateOrder: new Date(),
         };
 
+        notificationOnSubmit();
         postOrder(JSON.stringify(orderInfo));
 
         setDelivery({
@@ -209,6 +227,27 @@ const Order = () => {
             paymentInfo,
         });
     };
+
+    const notificationOnSubmit = () => {
+        setIsSubmit(true);
+    };
+
+    if (isSubmit) {
+        return (
+            <motion.div
+                className="notification-order"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+            >
+                <h2>
+                    <span>Your order</span> is accepted
+                </h2>
+                <p>We will call you when the order will done</p>
+                <img src={deliveryIcon} alt="icon" />
+            </motion.div>
+        );
+    }
 
     return (
         <section className="order-info">
