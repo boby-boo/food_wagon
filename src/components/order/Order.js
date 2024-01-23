@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
+import { removeAllItem } from '../../reducers/cartSlice';
 import Input from '../input/Input';
 import useFoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
@@ -69,10 +70,14 @@ const Order = () => {
         paymentInfo: false,
     });
     const [isSubmit, setIsSubmit] = useState(false);
-    const { postOrder } = useFoodWagonService();
-    const cart = useSelector(state => state.cart.cart);
+
     const steps = ['personal-data', 'address-data', 'type-delivery'];
+
+    const { postOrder } = useFoodWagonService();
+
     const navigate = useNavigate();
+    const cart = useSelector(state => state.cart.cart);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setStepActive(steps[0]);
@@ -164,9 +169,7 @@ const Order = () => {
             dateOrder: new Date(),
         };
 
-        notificationOnSubmit();
         postOrder(JSON.stringify(orderInfo));
-
         setDelivery({
             id: id || '',
             name: name || '',
@@ -179,6 +182,9 @@ const Order = () => {
             apartment: '',
             payment: '',
         });
+
+        setIsSubmit(true);
+        dispatch(removeAllItem());
     };
 
     const handlePaymentType = e => {
@@ -226,10 +232,6 @@ const Order = () => {
             personal,
             paymentInfo,
         });
-    };
-
-    const notificationOnSubmit = () => {
-        setIsSubmit(true);
     };
 
     if (isSubmit) {

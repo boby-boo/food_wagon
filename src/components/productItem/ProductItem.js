@@ -40,12 +40,18 @@ const ProductItem = () => {
 
     const renderCards = arr => {
         const id = updateProductId || productId;
-
+        console.log('__________________________');
+        console.log('updateProductId ', updateProductId);
+        console.log('productId ', productId);
+        console.log('__________________________');
         const cards = arr.map(card => (
             <ProductCard card={card} key={card.id} />
         ));
         const initialIndex = arr.findIndex(item => item.id === id);
-
+        console.log(id);
+        console.log(initialIndex);
+        console.log(arr);
+        console.log(arr[initialIndex].description);
         return (
             <>
                 <div className="product__slider">
