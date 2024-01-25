@@ -49,7 +49,7 @@ const App = () => {
                             <Route exact path="cart" element={<Cart />} />
                             <Route
                                 exact
-                                path="/order"
+                                path="order"
                                 element={
                                     <PrivateRoute>
                                         <Order />

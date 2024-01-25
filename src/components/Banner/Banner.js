@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 import './banner.scss';
 
@@ -16,6 +17,8 @@ const textAnimation = {
 };
 
 const Banner = () => {
+    const navigate = useNavigate();
+
     return (
         <motion.section
             className="banner"
@@ -30,6 +33,7 @@ const Banner = () => {
                     </motion.h2>
                     <motion.button
                         className="restaurants__button"
+                        onClick={() => navigate('/order')}
                         variants={textAnimation}
                         custom={2}
                     >

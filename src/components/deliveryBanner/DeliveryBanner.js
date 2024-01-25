@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as IconDelivery } from '../../resources/icons/delivery__icon.svg';
 import { ReactComponent as IconPickup } from '../../resources/icons/pickup__icon.svg';
 import './deliveryBanner.scss';
@@ -29,23 +30,18 @@ const formAnimation = {
 };
 
 const DeliveryBanner = () => {
-    const [deliveryMethod, setDeliveryMethod] = useState(null);
     const [userMail, setUserMail] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = e => {
         e.stopPropagation();
-        setDeliveryMethod(e.target.value);
     };
 
     const onSubmit = e => {
         e.preventDefault();
 
-        const userData = {
-            deliveryMethod,
-            userMail,
-        };
-        console.log(userData);
         setUserMail('');
+        navigate('search/all');
     };
 
     return (

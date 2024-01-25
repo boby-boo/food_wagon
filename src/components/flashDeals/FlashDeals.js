@@ -1,13 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import dealCardImage from '../../resources/images/deal__card_img1.png';
-import dealCardImage1 from '../../resources/images/deal__card_img2.png';
-import dealCardImage2 from '../../resources/images/deal__card_img3.png';
-import dealCardImage3 from '../../resources/images/deal__card_img4.png';
+import { Link } from 'react-router-dom';
 
 import './flashDeals.scss';
 
 const FlashDeals = () => {
+    const items = [
+        {
+            name: 'Greys Vage',
+            description: '6 Days Remaining',
+            discount: 15,
+        },
+        {
+            name: 'Greys Vage',
+            description: '6 Days Remaining',
+            discount: 10,
+        },
+        {
+            name: 'Greys Vage',
+            description: '7 Days Remaining',
+            discount: 25,
+        },
+        {
+            name: 'Greys Vage',
+            description: '8 Days Remaining',
+            discount: 20,
+        },
+    ];
     return (
         <motion.section
             className="flash__deals"
@@ -17,90 +36,40 @@ const FlashDeals = () => {
         >
             <div className="container">
                 <ul className="deal__cards_row">
-                    <li className="primary__card deal__card">
-                        <a href="/">
-                            <div className="primary__card_content deal__card_content card__content">
-                                <div className="primary__card_image">
-                                    <img src={dealCardImage} alt="deal card" />
-                                </div>
-                                <div className="card__content_discount">
-                                    15
-                                    <div className="card__content_discount-items">
-                                        %<span>Off</span>
+                    {items.map((item, index) => {
+                        const { name, description, discount } = item;
+                        const image = require(
+                            `../../resources/images/deal__card_img${
+                                index + 1
+                            }.png`,
+                        );
+                        return (
+                            <li
+                                key={name + index}
+                                className="primary__card deal__card"
+                            >
+                                <Link to="*">
+                                    <div className="primary__card_content deal__card_content card__content">
+                                        <div className="primary__card_image">
+                                            <img src={image} alt="deal card" />
+                                        </div>
+                                        <div className="card__content_discount">
+                                            {discount}
+                                            <div className="card__content_discount-items">
+                                                %<span>Off</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="deal__card_description">
-                                <h3>Greys Vage</h3>
-                                <div className="deal__card_description-remaining main__footnote">
-                                    6 Days Remaining
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="primary__card deal__card">
-                        <a href="/">
-                            <div className="primary__card_content deal__card_content card__content">
-                                <div className="primary__card_image">
-                                    <img src={dealCardImage1} alt="deal card" />
-                                </div>
-                                <div className="card__content_discount">
-                                    10
-                                    <div className="card__content_discount-items">
-                                        %<span>Off</span>
+                                    <div className="deal__card_description">
+                                        <h3>{name}</h3>
+                                        <div className="deal__card_description-remaining main__footnote">
+                                            {description}
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="deal__card_description">
-                                <h3>Greys Vage</h3>
-                                <div className="deal__card_description-remaining main__footnote">
-                                    6 Days Remaining
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="primary__card deal__card">
-                        <a href="/">
-                            <div className="primary__card_content deal__card_content card__content">
-                                <div className="primary__card_image">
-                                    <img src={dealCardImage2} alt="deal card" />
-                                </div>
-                                <div className="card__content_discount">
-                                    25
-                                    <div className="card__content_discount-items">
-                                        %<span>Off</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="deal__card_description">
-                                <h3>Greys Vage</h3>
-                                <div className="deal__card_description-remaining main__footnote">
-                                    7 Days Remaining
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="primary__card deal__card">
-                        <a href="/">
-                            <div className="primary__card_content deal__card_content card__content">
-                                <div className="primary__card_image ">
-                                    <img src={dealCardImage3} alt="deal card" />
-                                </div>
-                                <div className="card__content_discount">
-                                    20
-                                    <div className="card__content_discount-items">
-                                        %<span>Off</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="deal__card_description">
-                                <h3>Greys Vage</h3>
-                                <div className="deal__card_description-remaining main__footnote">
-                                    8 Days Remaining
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                                </Link>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         </motion.section>
