@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import './input.scss';
 
 const Input = ({

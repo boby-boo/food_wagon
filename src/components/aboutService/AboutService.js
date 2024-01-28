@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { aboutServiceItems } from '../constants';
+import { aboutServiceData } from '../constants';
 
 import './aboutService.scss';
 
@@ -14,7 +14,7 @@ const OurService = () => {
             <div className="container">
                 <h2 className="primary-title">How does it work</h2>
                 <ul className="about-service__row">
-                    {aboutServiceItems.map((item, index) => {
+                    {aboutServiceData.map((item, index) => {
                         const { title, description } = item,
                             image = require(
                                 `../../resources/icons/about__service/about__service_icon-${

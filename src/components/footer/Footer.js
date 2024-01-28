@@ -1,8 +1,7 @@
 /* eslint-disable no-return-assign */
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { footerContent } from '../constants';
-
+import { footerData } from '../constants';
 import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram__icon.svg';
 import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
 import { ReactComponent as FacebookIcon } from '../../resources/icons/facebook__icon.svg';
@@ -40,7 +39,7 @@ const Footer = () => {
                             onClick={handleClick}
                             ref={listRef}
                         >
-                            {footerContent.map(item => {
+                            {footerData.map(item => {
                                 const { title, items } = item;
                                 return (
                                     <li key={title}>

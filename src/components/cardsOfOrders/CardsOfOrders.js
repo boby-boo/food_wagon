@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { cardsOfOrdersItems } from '../constants';
+import { cardsOfOrdersData } from '../constants';
 
 import './cardsOfOrders.scss';
 
@@ -9,7 +9,7 @@ const CardsOfOrders = () => {
         <section className="cards-of-orders orders">
             <div className="container">
                 <ul className="orders__row">
-                    {cardsOfOrdersItems.map((item, index) => {
+                    {cardsOfOrdersData.map((item, index) => {
                         const { title, subtitle, description, link } = item,
                             currentImage = require(
                                 `../../resources/images/order__card_image-${

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import Spinner from '../spinner/Spinner';
+import { popularItemsSliderSettings } from '../utils';
 import { addToCart } from '../../reducers/cartSlice';
 import useFoodWagonService from '../../services/FoodWagonService';
 
@@ -22,114 +23,22 @@ const SampleNextArrow = props => {
 };
 
 const PopularItems = () => {
-    const [cards, setCards] = useState();
+    const [cardsData, setCardsData] = useState();
     const { getPopularProducts } = useFoodWagonService();
     const dispatch = useDispatch();
 
     useEffect(() => {
         getPopularProducts().then(res => {
-            setCards(res);
+            setCardsData(res);
         });
     }, []);
 
-    const settings = {
-        autoplay: true,
-        infinite: true,
-        autoplaySpeed: 3000,
-        speed: 800,
-        arrows: true,
-        prevArrow: <SamplePrevArrow />,
-        nextArrow: <SampleNextArrow />,
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1824,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 2,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 1300,
-                settings: {
-                    slidesToShow: 3.6,
-                    slidesToScroll: 2,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 1100,
-                settings: {
-                    slidesToShow: 3.1,
-                    slidesToScroll: 2,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 950,
-                settings: {
-                    slidesToShow: 2.55,
-                    slidesToScroll: 2,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1.22,
-                    slidesToScroll: 1,
-                    centerMode: true,
-                    centerPadding: '120px',
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 670,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: '150px',
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 620,
-                settings: {
-                    slidesToShow: 1.12,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: '20px',
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 400,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: '10px',
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-        ],
-    };
-
-    if (!cards) {
+    if (!cardsData) {
         return <Spinner />;
     }
+
+    popularItemsSliderSettings.prevArrow = <SamplePrevArrow />;
+    popularItemsSliderSettings.nextArrow = <SampleNextArrow />;
 
     const renderItems = data => {
         const cardsRow = data.map(restaurant => {
@@ -171,10 +80,10 @@ const PopularItems = () => {
             return slide;
         });
 
-        return <Slider {...settings}>{cardsRow}</Slider>;
+        return <Slider {...popularItemsSliderSettings}>{cardsRow}</Slider>;
     };
 
-    const cardsRow = renderItems(cards);
+    const cardsRow = renderItems(cardsData);
 
     return (
         <>

@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-
 import { motion } from 'framer-motion';
 import errorGif from '../../resources/icons/page404.gif';
 

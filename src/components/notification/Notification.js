@@ -10,7 +10,7 @@ const Notification = () => {
     const [isFirstRender, setIsFirstRender] = useState(true);
     const [duplicateCart, setDuplicateCart] = useState(null);
     const [productName, setIsProductName] = useState('');
-    const cart = useSelector(state => state.cart.cart);
+    const cartData = useSelector(state => state.cart.cart);
 
     useEffect(() => {
         if (isFirstRender) {
@@ -18,18 +18,18 @@ const Notification = () => {
             return;
         }
 
-        cart.forEach((originalObj, index) => {
+        cartData.forEach((originalObj, index) => {
             originalObj !== duplicateCart[index]
                 ? setIsProductName(originalObj.name)
                 : null;
         });
 
-        const hasChanges = cart.some((originalObj, index) => {
+        const hasChanges = cartData.some((originalObj, index) => {
             const copyObj = duplicateCart[index];
             return originalObj.quantity < copyObj?.quantity;
         });
 
-        if (cart.length < duplicateCart?.length || hasChanges) {
+        if (cartData.length < duplicateCart?.length || hasChanges) {
             toggleState(false);
             return;
         }
@@ -42,11 +42,11 @@ const Notification = () => {
 
         // eslint-disable-next-line consistent-return
         return () => clearTimeout(timerId);
-    }, [cart]);
+    }, [cartData]);
 
     const toggleState = (visibleState, firstRender = false) => {
         isSetVisibleNotifications(visibleState);
-        setDuplicateCart([...cart]);
+        setDuplicateCart([...cartData]);
         setIsFirstRender(firstRender);
     };
 

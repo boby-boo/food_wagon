@@ -8,9 +8,9 @@ import './privateRoute.scss';
 
 const PrivateRoute = ({ children }) => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(true);
-    const user = useSelector(state => state.user.user);
+    const userData = useSelector(state => state.user.user);
 
-    if (user.name) {
+    if (userData.name) {
         return { ...children };
     }
 

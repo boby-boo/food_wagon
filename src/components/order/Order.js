@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import { removeAllItem } from '../../reducers/cartSlice';
 import Input from '../input/Input';
+import { orderAnimationSettings } from '../utils';
 import useFoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
 import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';
@@ -19,25 +20,6 @@ import { ReactComponent as WalletIcon } from '../../resources/icons/wallet__icon
 import deliveryIcon from '../../resources/icons/features__row_icon-3.svg';
 
 import './order.scss';
-
-const stepAnimation = {
-    hidden: {
-        y: -20,
-        opacity: 0,
-    },
-    visible: {
-        y: 0,
-        opacity: 1,
-    },
-    titleHidden: {
-        y: 40,
-        opacity: 0,
-    },
-    titleVisible: {
-        y: 0,
-        opacity: 1,
-    },
-};
 
 const Order = () => {
     const {
@@ -76,7 +58,7 @@ const Order = () => {
     const { postOrder } = useFoodWagonService();
 
     const navigate = useNavigate();
-    const cart = useSelector(state => state.cart.cart);
+    const cartData = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -144,7 +126,7 @@ const Order = () => {
             payment,
         } = delivery;
 
-        const totalPrice = cart
+        const totalPrice = cartData
             .reduce((acc, item) => item.price * item.quantity + acc, 0)
             .toFixed(2);
 
@@ -165,7 +147,7 @@ const Order = () => {
             },
             typePayment: payment,
             totalPrice,
-            order: [...cart],
+            order: [...cartData],
             dateOrder: new Date(),
         };
 
@@ -331,7 +313,7 @@ const Order = () => {
                         className="order-info__title"
                         initial="titleHidden"
                         animate="titleVisible"
-                        variants={stepAnimation}
+                        variants={orderAnimationSettings}
                     >
                         Personal details
                     </motion.h2>
@@ -342,7 +324,7 @@ const Order = () => {
                         className="order-info__title"
                         initial="titleHidden"
                         animate="titleVisible"
-                        variants={stepAnimation}
+                        variants={orderAnimationSettings}
                     >
                         Delivery address
                     </motion.h2>
@@ -353,7 +335,7 @@ const Order = () => {
                         className="order-info__title"
                         initial="titleHidden"
                         animate="titleVisible"
-                        variants={stepAnimation}
+                        variants={orderAnimationSettings}
                     >
                         Choose payment type
                     </motion.h2>
@@ -370,7 +352,7 @@ const Order = () => {
                             className="delivery__info_personal"
                             initial="hidden"
                             animate="visible"
-                            variants={stepAnimation}
+                            variants={orderAnimationSettings}
                         >
                             <Input
                                 elementType="login"
@@ -404,7 +386,7 @@ const Order = () => {
                             className="delivery__info_address"
                             initial="hidden"
                             animate="visible"
-                            variants={stepAnimation}
+                            variants={orderAnimationSettings}
                         >
                             <Input
                                 elementType="text"
@@ -458,7 +440,7 @@ const Order = () => {
                             className="delivery__info_buttons delivery__buttons"
                             initial="hidden"
                             animate="visible"
-                            variants={stepAnimation}
+                            variants={orderAnimationSettings}
                         >
                             <div className="delivery__buttons_inner">
                                 <input

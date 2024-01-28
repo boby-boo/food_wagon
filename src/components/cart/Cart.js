@@ -15,20 +15,20 @@ import './cart.scss';
 
 const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
-    const cart = useSelector(state => state.cart.cart);
+    const cartData = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const price = cart
+        const price = cartData
             .reduce(
                 (acc, currPrice) => acc + currPrice.price * currPrice.quantity,
                 0,
             )
             .toFixed(2);
         setTotalPrice(price);
-    }, [cart]);
+    }, [cartData]);
 
-    if (cart.length === 0) {
+    if (cartData.length === 0) {
         return (
             <motion.div
                 className="cart__empty"
@@ -50,7 +50,7 @@ const Cart = () => {
                 <div className="order__row">
                     <ul className="cart__row">
                         <AnimatePresence mode="sync">
-                            {cart.map(item => {
+                            {cartData.map(item => {
                                 const {
                                         name,
                                         id,
@@ -130,7 +130,7 @@ const Cart = () => {
                     <div className="order__info">
                         <h2>Total price: ${totalPrice}</h2>
                         <span className="order__info_quantity">
-                            Product: {cart.length} qty
+                            Product: {cartData.length} qty
                         </span>
                         <Link to="/order" className="cart__button">
                             order

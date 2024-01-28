@@ -10,6 +10,7 @@ import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
 import useFoodWagonService from '../../services/FoodWagonService';
 import { filteredProductsData } from '../../reducers/filteredDataSlice';
 import { searchedState } from '../../reducers/searchStateSlice';
+import { searchedListOptions } from '../constants';
 
 import './searchedList.scss';
 
@@ -27,16 +28,8 @@ const SearchedList = () => {
     const { category } = useParams();
     const navigate = useNavigate();
 
-    const options = [
-        { value: '0', label: 'All' },
-        { value: '1', label: 'Pizza' },
-        { value: '2', label: 'World' },
-        { value: '3', label: 'Sushi' },
-        { value: '4', label: 'Taco' },
-    ];
-
     useEffect(() => {
-        const currentCategory = options.find(
+        const currentCategory = searchedListOptions.find(
             item => item.label.toLowerCase() === category,
         ).value;
         getProducts();
@@ -110,7 +103,7 @@ const SearchedList = () => {
                         <h1>Search you culinary</h1>
                         <Filter
                             filterLogic={filterLogic}
-                            options={options}
+                            options={searchedListOptions}
                             headerText="Culinary style:"
                             currentSelect={
                                 category.charAt(0).toUpperCase() +
@@ -135,7 +128,7 @@ const SearchedList = () => {
                         <h1>Search you culinary</h1>
                         <Filter
                             filterLogic={filterLogic}
-                            options={options}
+                            options={searchedListOptions}
                             headerText="Culinary style:"
                             currentSelect={
                                 category.charAt(0).toUpperCase() +

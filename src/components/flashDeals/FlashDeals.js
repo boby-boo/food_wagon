@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { flashDealsItems } from '../constants';
+import { flashDealsData } from '../constants';
 
 import './flashDeals.scss';
 
@@ -14,7 +14,7 @@ const FlashDeals = () => {
         >
             <div className="container">
                 <ul className="deal__cards_row">
-                    {flashDealsItems.map((item, index) => {
+                    {flashDealsData.map((item, index) => {
                         const { name, description, discount } = item;
                         const image = require(
                             `../../resources/images/deal__card_img${

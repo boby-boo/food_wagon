@@ -6,32 +6,27 @@ import Spinner from '../spinner/Spinner';
 import BackButton from '../backButton/BackButton';
 import useFoodWagonService from '../../services/FoodWagonService';
 import { updateDataCards } from '../../reducers/dataCardsSlice';
+import { restaurantFilterOptions } from '../constants';
 
 import './restaurant.scss';
 
 const Restaurant = () => {
-    const [cards, setCards] = useState(null);
+    const [cardData, setCardData] = useState(null);
     const [initialCards, setInitialCards] = useState(null);
 
     const { restaurantName } = useParams();
-    const { getRestaurant } = useFoodWagonService(),
-        dispatch = useDispatch();
-
-    const options = [
-        { value: '0', label: 'Featured' },
-        { value: '1', label: 'Low to High' },
-        { value: '2', label: 'High to Low' },
-    ];
+    const { getRestaurant } = useFoodWagonService();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         getRestaurant(restaurantName).then(res => {
             setInitialCards(JSON.parse(JSON.stringify(res)));
-            setCards(res);
+            setCardData(res);
             dispatch(updateDataCards(res.data));
         });
     }, [restaurantName]);
 
-    if (!cards) {
+    if (!cardData) {
         return <Spinner />;
     }
 
@@ -57,7 +52,7 @@ const Restaurant = () => {
                 break;
         }
 
-        setCards({
+        setCardData({
             ...arr,
             data: updateData,
         });
@@ -65,20 +60,20 @@ const Restaurant = () => {
         dispatch(updateDataCards(updateData));
 
         function filteredMore() {
-            const updateNewData = [...cards.data];
+            const updateNewData = [...cardData.data];
             updateNewData.sort((a, b) => a.price - b.price);
             return updateNewData;
         }
 
         function filteredLess() {
-            const updateNewData = [...cards.data];
+            const updateNewData = [...cardData.data];
             updateNewData.sort((a, b) => b.price - a.price);
             return updateNewData;
         }
     };
 
-    const restaurantLogo = require(`../../resources/${cards.logo}`),
-        averagePrice = getAveragePrice(cards.data);
+    const restaurantLogo = require(`../../resources/${cardData.logo}`),
+        averagePrice = getAveragePrice(cardData.data);
 
     return (
         <section className="restaurant">
@@ -90,20 +85,23 @@ const Restaurant = () => {
                         to={`/restaurant/${restaurantName}`}
                     >
                         <div className="restaurant__card_image">
-                            <img src={restaurantLogo} alt={cards.partnerName} />
+                            <img
+                                src={restaurantLogo}
+                                alt={cardData.partnerName}
+                            />
                         </div>
                         <div className="restaurant__card_description">
-                            <h1>{cards.partnerName}</h1>
-                            <span>{cards.rate}</span>
+                            <h1>{cardData.partnerName}</h1>
+                            <span>{cardData.rate}</span>
                         </div>
                     </Link>
                     <div className="restaurant__card_price">
                         Average price: <span>${averagePrice}</span>
                     </div>
                     <Filter
-                        data={cards}
+                        data={cardData}
                         filterLogic={filterLogic}
-                        options={options}
+                        options={restaurantFilterOptions}
                         currentSelect="Featured"
                         headerText="Filter by:"
                     />

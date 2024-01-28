@@ -15,8 +15,8 @@ const Header = () => {
 
     let currentLogin;
 
-    const user = useSelector(state => state.user.user);
-    const cart = useSelector(state => state.cart.cart);
+    const userData = useSelector(state => state.user.user);
+    const cartData = useSelector(state => state.cart.cart);
     const location = useLocation();
 
     const navigate = useNavigate();
@@ -93,8 +93,8 @@ const Header = () => {
         borderRadius: '10px 0 0 10px',
     };
 
-    if (user?.name) {
-        const { name } = user;
+    if (userData?.name) {
+        const { name } = userData;
         currentLogin = name.length > 10 ? `${name.substring(0, 6)} ...` : name;
     }
 
@@ -128,7 +128,7 @@ const Header = () => {
                             </li>
                             <li className="header__row_user-panel user-panel">
                                 <Link to="/cart" className="user-panel__basket">
-                                    <span>{cart.length}</span>
+                                    <span>{cartData.length}</span>
                                 </Link>
                                 <button
                                     onClick={toggleModalOpen}
@@ -143,7 +143,7 @@ const Header = () => {
             </header>
             <AnimatePresence>
                 {isOpenModalWindow &&
-                    (!user.name ? (
+                    (!userData.name ? (
                         <ModalAuth toggleModalOpen={toggleModalOpen} />
                     ) : (
                         <UserPopup toggleModalOpen={toggleModalOpen} />

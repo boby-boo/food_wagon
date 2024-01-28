@@ -1,33 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import {
+    deliveryBannerAnimationTextSettings,
+    deliveryBannerAnimationFormSettings,
+} from '../utils';
 import { ReactComponent as IconDelivery } from '../../resources/icons/delivery__icon.svg';
 import { ReactComponent as IconPickup } from '../../resources/icons/pickup__icon.svg';
+
 import './deliveryBanner.scss';
-
-const textAnimation = {
-    hidden: {
-        x: -100,
-        opacity: 0,
-    },
-    visible: custom => ({
-        x: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.2 },
-    }),
-};
-
-const formAnimation = {
-    hidden: {
-        y: 50,
-        opacity: 0,
-    },
-    visible: custom => ({
-        y: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.2 },
-    }),
-};
 
 const DeliveryBanner = () => {
     const [userMail, setUserMail] = useState('');
@@ -54,10 +35,16 @@ const DeliveryBanner = () => {
             <div className="container">
                 <div className="delivery-banner__row">
                     <div className="delivery-banner__row_text">
-                        <motion.h1 custom={1} variants={textAnimation}>
+                        <motion.h1
+                            custom={1}
+                            variants={deliveryBannerAnimationTextSettings}
+                        >
                             Are you starving?
                         </motion.h1>
-                        <motion.p custom={2} variants={textAnimation}>
+                        <motion.p
+                            custom={2}
+                            variants={deliveryBannerAnimationTextSettings}
+                        >
                             Within a few clicks, find meals that are accessible
                             near you
                         </motion.p>
@@ -66,7 +53,7 @@ const DeliveryBanner = () => {
                         onSubmit={onSubmit}
                         className="delivery-banner__form"
                         custom={3}
-                        variants={formAnimation}
+                        variants={deliveryBannerAnimationFormSettings}
                     >
                         <div className="delivery-banner__form_top">
                             <div className="input__wrapper">

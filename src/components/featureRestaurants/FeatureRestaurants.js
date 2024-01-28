@@ -9,7 +9,7 @@ import './featureRestaurants.scss';
 
 const FeatureRestaurants = () => {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [restaurantOffset, setRestaurantOffset] = useState(4);
     const { getAllRestaurant } = useFoodWagonService();
 
@@ -18,11 +18,11 @@ const FeatureRestaurants = () => {
     }, []);
 
     const getRestaurants = offset => {
-        setLoading(true);
+        setIsLoading(true);
         getAllRestaurant(offset)
             .then(res => setData(res))
             .then(setRestaurantOffset(restaurantOffset + 4))
-            .then(() => setLoading(false));
+            .then(() => setIsLoading(false));
     };
 
     const checkOpenRestaurant = workingHours => {
@@ -123,7 +123,7 @@ const FeatureRestaurants = () => {
                             onclickFunction={() =>
                                 getRestaurants(restaurantOffset)
                             }
-                            isDisabled={loading}
+                            isDisabled={isLoading}
                         />
                     )}
                 </div>

@@ -1,19 +1,8 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { bannerAnimationSettings } from '../utils';
 
 import './banner.scss';
-
-const textAnimation = {
-    hidden: {
-        y: 50,
-        opacity: 0,
-    },
-    visible: custom => ({
-        y: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.2 },
-    }),
-};
 
 const Banner = () => {
     const navigate = useNavigate();
@@ -27,13 +16,13 @@ const Banner = () => {
         >
             <div className="container">
                 <div className="banner__row">
-                    <motion.h2 variants={textAnimation} custom={1}>
+                    <motion.h2 variants={bannerAnimationSettings} custom={1}>
                         Are you ready to order with the best deals?
                     </motion.h2>
                     <motion.button
                         className="restaurants__button"
                         onClick={() => navigate('/order')}
-                        variants={textAnimation}
+                        variants={bannerAnimationSettings}
                         custom={2}
                     >
                         Proceed to order

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+import { foodCategorySliderSettings } from '../utils';
 import useFoodWagonService from '../../services/FoodWagonService';
 import Spinner from '../spinner/Spinner';
 
@@ -24,88 +25,6 @@ const FoodCategory = () => {
 
     const handleNextClick = () => {
         sliderRef.current.slickNext();
-    };
-
-    const settings = {
-        autoplay: false,
-        infinite: true,
-        autoplaySpeed: 3000,
-        speed: 900,
-        arrows: false,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1824,
-                settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 1300,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 1100,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 950,
-                settings: {
-                    slidesToShow: 2.55,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 2,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 670,
-                settings: {
-                    slidesToShow: 1.8,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1.55,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1.14,
-                    centerMode: true,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 400,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: '45px',
-                    slidesToScroll: 1,
-                },
-            },
-        ],
     };
 
     if (!items) {
@@ -135,7 +54,7 @@ const FoodCategory = () => {
 
         return (
             <ul className="search__food_slider">
-                <Slider ref={sliderRef} {...settings}>
+                <Slider ref={sliderRef} {...foodCategorySliderSettings}>
                     {content}
                     {content}
                 </Slider>

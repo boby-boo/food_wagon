@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { userLogin } from '../../reducers/userSlice';
 import {
-    userPopupNavPanel as navPanel,
-    userPopupInputsPersonal as inputsPersonal,
-    userPopupInputsAddress as inputsAddress,
+    userPopupNavPanelData as navPanel,
+    userPopupInputsPersonalData as inputsPersonal,
+    userPopupInputsAddressData as inputsAddress,
 } from '../constants';
 import FoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as RenameIcon } from '../../resources/icons/rename__icon.svg';

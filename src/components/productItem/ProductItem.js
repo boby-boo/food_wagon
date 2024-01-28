@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import { motion, AnimatePresence } from 'framer-motion';
+import { productItemSliderSettings } from '../utils';
 import userIcon from '../../resources/images/user__icon.png';
 import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 import { addToCart } from '../../reducers/cartSlice';
@@ -38,6 +39,9 @@ const ProductItem = () => {
         return <Spinner />;
     }
 
+    productItemSliderSettings.prevArrow = <SamplePrevArrow />;
+    productItemSliderSettings.nextArrow = <SampleNextArrow />;
+
     const renderCards = arr => {
         const id = updateProductId || productId;
 
@@ -51,7 +55,7 @@ const ProductItem = () => {
             <>
                 <div className="product__slider">
                     <Slider
-                        {...settings}
+                        {...productItemSliderSettings}
                         afterChange={handleSlideChange}
                         initialSlide={initialIndex}
                     >
@@ -136,30 +140,6 @@ const ProductItem = () => {
                 <ul className="review__row">{content}</ul>
             </div>
         );
-    };
-
-    const settings = {
-        autoplay: false,
-        infinite: true,
-        arrows: true,
-        speed: 1000,
-        prevArrow: <SamplePrevArrow />,
-        nextArrow: <SampleNextArrow />,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1218,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    className: 'center',
-                    centerMode: true,
-                    centerPadding: '0px',
-                    arrows: false,
-                },
-            },
-        ],
     };
 
     const content = renderCards(data);
