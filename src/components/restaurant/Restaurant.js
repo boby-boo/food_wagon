@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Filter from '../filter/Filter';

@@ -1,5 +1,5 @@
 /* eslint-disable no-return-assign */
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram__icon.svg';
 import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
