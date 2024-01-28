@@ -41,7 +41,7 @@ const CardsOfOrders = () => {
                             );
                         return (
                             <motion.li
-                                key={index}
+                                key={`${title}${description}`}
                                 initial={{ y: 10, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ amount: 0.2 }}

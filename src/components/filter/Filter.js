@@ -14,7 +14,7 @@ const Filter = props => {
     };
 
     const renderItems = arr => {
-        const items = arr.map((item, index) => {
+        const items = arr.map(item => {
             const { value, label } = item;
 
             return (
@@ -24,7 +24,7 @@ const Filter = props => {
                         setIsVisible(false);
                         filterLogic(data, value);
                     }}
-                    key={index}
+                    key={label}
                     value={value}
                 >
                     {label}

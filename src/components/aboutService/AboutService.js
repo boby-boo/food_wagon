@@ -43,7 +43,7 @@ const OurService = () => {
                             );
                         return (
                             <li
-                                key={index}
+                                key={`${title}${description}`}
                                 className="about-service__row_item row__item"
                             >
                                 <div className="row__item_image">
