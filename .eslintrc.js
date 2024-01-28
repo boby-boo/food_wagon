@@ -9,6 +9,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:prettier/recommended',
+        'plugin:react/jsx-runtime',
     ],
     overrides: [],
     parserOptions: {
@@ -17,6 +18,7 @@ module.exports = {
     },
     plugins: ['react'],
     rules: {
+        'react/react-in-jsx-scope': 'off',
         'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
         'import/prefer-default-export': 'off',
         'react/display-name': 'off',
