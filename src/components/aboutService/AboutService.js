@@ -1,29 +1,9 @@
 import { motion } from 'framer-motion';
+import { aboutServiceItems } from '../constants';
 
 import './aboutService.scss';
 
 const OurService = () => {
-    const items = [
-        {
-            title: 'Select location',
-            description:
-                'Choose the location where your food will be delivered.',
-        },
-        {
-            title: 'Choose order',
-            description:
-                'Check over hundreds of menus to pick your favorite food',
-        },
-        {
-            title: 'Pay advanced',
-            description:
-                'It`s quick, safe, and simple. Select several methods of payment',
-        },
-        {
-            title: 'Enjoy meals',
-            description: 'Food is made and delivered directly to your home.',
-        },
-    ];
     return (
         <motion.section
             className="about-service"
@@ -34,7 +14,7 @@ const OurService = () => {
             <div className="container">
                 <h2 className="primary-title">How does it work</h2>
                 <ul className="about-service__row">
-                    {items.map((item, index) => {
+                    {aboutServiceItems.map((item, index) => {
                         const { title, description } = item,
                             image = require(
                                 `../../resources/icons/about__service/about__service_icon-${

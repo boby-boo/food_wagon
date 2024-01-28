@@ -4,6 +4,11 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { userLogin } from '../../reducers/userSlice';
+import {
+    userPopupNavPanel as navPanel,
+    userPopupInputsPersonal as inputsPersonal,
+    userPopupInputsAddress as inputsAddress,
+} from '../constants';
 import FoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as RenameIcon } from '../../resources/icons/rename__icon.svg';
 import './userPopup.scss';
@@ -21,40 +26,6 @@ const UserPopup = ({ toggleModalOpen }) => {
     const mainBlockRef = useRef();
     const personalRefs = [];
     const addressRefs = [];
-
-    const navPanel = [
-        {
-            id: 'personal__data',
-            name: 'user__info',
-            label: 'Personal Data',
-            value: '1',
-        },
-        {
-            id: 'address__data',
-            name: 'user__info',
-            label: 'Address Data',
-            value: '2',
-        },
-        {
-            id: 'order-history__data',
-            name: 'user__info',
-            label: 'Order History',
-            value: '3',
-        },
-    ];
-    const inputsPersonal = [
-        { name: 'name', value: 'name', type: 'text' },
-        { name: 'email', value: 'email', type: 'email' },
-        { name: 'password', value: 'password', type: 'password' },
-        { name: 'phone', value: 'phone', type: 'tel' },
-    ];
-    const inputsAddress = [
-        { name: 'city', value: 'city', type: 'text' },
-        { name: 'street', value: 'street', type: 'text' },
-        { name: 'house', value: 'house', type: 'text' },
-        { name: 'level', value: 'level', type: 'number' },
-        { name: 'apartment', value: 'apartment', type: 'text' },
-    ];
 
     useEffect(() => {
         fetch('http://localhost:3001/orders')

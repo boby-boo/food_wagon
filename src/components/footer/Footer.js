@@ -1,6 +1,8 @@
 /* eslint-disable no-return-assign */
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { footerContent } from '../constants';
+
 import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram__icon.svg';
 import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
 import { ReactComponent as FacebookIcon } from '../../resources/icons/facebook__icon.svg';
@@ -27,26 +29,6 @@ const Footer = () => {
             e.target.nextElementSibling.style.display = 'flex';
         }
     };
-
-    const footerContent = [
-        {
-            title: 'Company',
-            items: ['About us', 'Team', 'Careers', 'Blog'],
-        },
-        {
-            title: 'Contact',
-            items: ['Help & Support', 'Partner with us', 'Ride with us'],
-        },
-        {
-            title: 'Legal',
-            items: [
-                'Terms & Conditions',
-                'Refund & Cancellation',
-                'Privacy Policy',
-                'Cookie Policy',
-            ],
-        },
-    ];
 
     return (
         <footer className="footer">

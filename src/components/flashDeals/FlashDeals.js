@@ -1,31 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { flashDealsItems } from '../constants';
 
 import './flashDeals.scss';
 
 const FlashDeals = () => {
-    const items = [
-        {
-            name: 'Greys Vage',
-            description: '6 Days Remaining',
-            discount: 15,
-        },
-        {
-            name: 'Greys Vage',
-            description: '6 Days Remaining',
-            discount: 10,
-        },
-        {
-            name: 'Greys Vage',
-            description: '7 Days Remaining',
-            discount: 25,
-        },
-        {
-            name: 'Greys Vage',
-            description: '8 Days Remaining',
-            discount: 20,
-        },
-    ];
     return (
         <motion.section
             className="flash__deals"
@@ -35,7 +14,7 @@ const FlashDeals = () => {
         >
             <div className="container">
                 <ul className="deal__cards_row">
-                    {items.map((item, index) => {
+                    {flashDealsItems.map((item, index) => {
                         const { name, description, discount } = item;
                         const image = require(
                             `../../resources/images/deal__card_img${
