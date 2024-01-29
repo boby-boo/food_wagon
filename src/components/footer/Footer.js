@@ -6,8 +6,6 @@ import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram
 import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
 import { ReactComponent as FacebookIcon } from '../../resources/icons/facebook__icon.svg';
 
-import './footer.scss';
-
 const Footer = () => {
     const listRef = useRef();
 

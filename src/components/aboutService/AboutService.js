@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { aboutServiceData } from '../constants';
 
-import './aboutService.scss';
-
 const OurService = () => {
     return (
         <motion.section

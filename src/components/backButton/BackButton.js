@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-import './backButton.scss';
-
 const BackButton = () => {
     const navigate = useNavigate();
 

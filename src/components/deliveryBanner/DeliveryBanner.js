@@ -8,8 +8,6 @@ import {
 import { ReactComponent as IconDelivery } from '../../resources/icons/delivery__icon.svg';
 import { ReactComponent as IconPickup } from '../../resources/icons/pickup__icon.svg';
 
-import './deliveryBanner.scss';
-
 const DeliveryBanner = () => {
     const [userMail, setUserMail] = useState('');
     const navigate = useNavigate();

@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { dataOfCart } from '../../reducers/selectors';
 
-import './notification.scss';
-
 const Notification = () => {
     const [isVisibleNotifications, isSetVisibleNotifications] = useState(false);
     const [isFirstRender, setIsFirstRender] = useState(true);

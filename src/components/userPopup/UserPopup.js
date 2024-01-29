@@ -11,7 +11,6 @@ import {
 } from '../constants';
 import FoodWagonService from '../../services/FoodWagonService';
 import { ReactComponent as RenameIcon } from '../../resources/icons/rename__icon.svg';
-import './userPopup.scss';
 
 const UserPopup = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(

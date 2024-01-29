@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import './scrollToTopButton.scss';
-
 const ScrollToTopButton = ({ scrollTopValue }) => {
     const [isVisible, setIsVisible] = useState(false);
 

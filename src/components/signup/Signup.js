@@ -11,8 +11,6 @@ import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.s
 import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';
 import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';
 
-import './signup.scss';
-
 const Signup = () => {
     const [userData, setUserData] = useState({
         name: '',

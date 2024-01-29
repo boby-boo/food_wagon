@@ -8,8 +8,6 @@ import useFoodWagonService from '../../services/FoodWagonService';
 import { updateDataCards } from '../../reducers/dataCardsSlice';
 import { restaurantFilterOptions } from '../constants';
 
-import './restaurant.scss';
-
 const Restaurant = () => {
     const [cardData, setCardData] = useState(null);
     const [initialCards, setInitialCards] = useState(null);

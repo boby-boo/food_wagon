@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { cardsOfOrdersData } from '../constants';
 
-import './cardsOfOrders.scss';
-
 const CardsOfOrders = () => {
     return (
         <section className="cards-of-orders orders">

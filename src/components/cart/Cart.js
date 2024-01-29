@@ -12,8 +12,6 @@ import { dataOfCart } from '../../reducers/selectors';
 import { ReactComponent as BtnMinusIcon } from '../../resources/icons/minus__icon.svg';
 import { ReactComponent as BtnPlusIcon } from '../../resources/icons/plus__icon.svg';
 
-import './cart.scss';
-
 const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const cartData = useSelector(dataOfCart);

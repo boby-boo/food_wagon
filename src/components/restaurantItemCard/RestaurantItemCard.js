@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 import { dataOfCards, dataOfFilteredCards } from '../../reducers/selectors';
 import { addToCart } from '../../reducers/cartSlice';
 
-import './restaurantItemCard.scss';
-
 const RestaurantItemCard = () => {
     const location = useLocation();
     const dataCards = useSelector(dataOfCards);

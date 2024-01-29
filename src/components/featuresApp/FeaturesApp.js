@@ -8,8 +8,6 @@ import featuresImage from '../../resources/images/features__image.png';
 import googleIcon from '../../resources/icons/google-play__icon.svg';
 import appleIcon from '../../resources/icons/apple__icon.svg';
 
-import './featuresApp.scss';
-
 const FeaturesApp = () => {
     const itemsRef = useRef(null);
 

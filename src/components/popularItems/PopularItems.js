@@ -10,7 +10,6 @@ import useFoodWagonService from '../../services/FoodWagonService';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './popularItems.scss';
 
 const SamplePrevArrow = props => {
     const { onClick } = props;

@@ -8,8 +8,6 @@ import UserPopup from '../userPopup/UserPopup';
 import logoIcon from '../../resources/icons/foodwagon__logo.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
 
-import './header.scss';
-
 const Header = () => {
     const [value, setValue] = useState('');
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(false);

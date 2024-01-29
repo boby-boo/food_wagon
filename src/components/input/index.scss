@@ -1,5 +1,3 @@
-@import '../../style/variables.scss';
-
 .input {
     &__row {
         @include templateFlex(center, flex-start);

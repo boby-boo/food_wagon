@@ -1,5 +1,3 @@
-@import '../../style/variables.scss';
-
 .modal__auth {
     @include templateFlex(center, center);
     position: absolute;

@@ -20,8 +20,6 @@ import { ReactComponent as CardIcon } from '../../resources/icons/credit-card__i
 import { ReactComponent as WalletIcon } from '../../resources/icons/wallet__icon.svg';
 import deliveryIcon from '../../resources/icons/features__row_icon-3.svg';
 
-import './order.scss';
-
 const Order = () => {
     const {
         email: userEmail,

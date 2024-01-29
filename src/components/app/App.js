@@ -2,8 +2,6 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 
-import '../../style/style.scss';
-
 const Header = lazy(() => import('../header/Header'));
 const MainPage = lazy(() => import('../pages/MainPage'));
 const Restaurant = lazy(() => import('../restaurant/Restaurant'));

@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import './filter.scss';
-
 const Filter = props => {
     const { data, filterLogic, options, currentSelect, headerText } = props;
 

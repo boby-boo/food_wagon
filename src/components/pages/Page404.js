@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { page404AnimationSettings } from '../utils';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
-import './page404.scss';
-
 const Page404 = () => {
     return (
         <motion.section

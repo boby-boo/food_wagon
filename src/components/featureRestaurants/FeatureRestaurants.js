@@ -5,8 +5,6 @@ import useFoodWagonService from '../../services/FoodWagonService';
 import Button from '../button/Button';
 import Spinner from '../spinner/Spinner';
 
-import './featureRestaurants.scss';
-
 const FeatureRestaurants = () => {
     const [restaurantsData, setRestaurantsData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);

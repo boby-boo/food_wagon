@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { bannerAnimationSettings } from '../utils';
 
-import './banner.scss';
-
 const Banner = () => {
     const navigate = useNavigate();
 

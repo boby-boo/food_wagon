@@ -5,8 +5,6 @@ import { AnimatePresence } from 'framer-motion';
 import { dataOfUser } from '../../reducers/selectors';
 import ModalAuth from '../modalAuth/ModalAuth';
 
-import './privateRoute.scss';
-
 const PrivateRoute = ({ children }) => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(true);
     const userData = useSelector(dataOfUser);

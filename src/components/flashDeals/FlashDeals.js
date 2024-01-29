@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { flashDealsData } from '../constants';
 
-import './flashDeals.scss';
-
 const FlashDeals = () => {
     return (
         <motion.section

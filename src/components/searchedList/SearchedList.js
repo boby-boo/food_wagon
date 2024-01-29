@@ -16,8 +16,6 @@ import { filteredProductsData } from '../../reducers/filteredDataSlice';
 import { searchedState } from '../../reducers/searchStateSlice';
 import { searchedListOptions } from '../constants';
 
-import './searchedList.scss';
-
 const SearchedList = () => {
     const [offset, setOffset] = useState(12);
     const [isLoading, setIsLoading] = useState(false);

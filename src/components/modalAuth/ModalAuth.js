@@ -9,8 +9,6 @@ import { userLogin } from '../../reducers/userSlice';
 import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';
 import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
 
-import './modalAuth.scss';
-
 const ModalAuth = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(
         JSON.parse(localStorage.getItem('user')) || {

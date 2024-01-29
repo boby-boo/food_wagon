@@ -6,8 +6,6 @@ import { foodCategorySliderSettings } from '../utils';
 import useFoodWagonService from '../../services/FoodWagonService';
 import Spinner from '../spinner/Spinner';
 
-import './foodCategory.scss';
-
 const FoodCategory = () => {
     const [categoriesData, setCategoriesData] = useState();
 
