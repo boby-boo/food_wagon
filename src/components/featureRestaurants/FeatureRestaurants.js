@@ -8,7 +8,7 @@ import Spinner from '../spinner/Spinner';
 import './featureRestaurants.scss';
 
 const FeatureRestaurants = () => {
-    const [data, setData] = useState(null);
+    const [restaurantsData, setRestaurantsData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [restaurantOffset, setRestaurantOffset] = useState(4);
     const { getAllRestaurant } = useFoodWagonService();
@@ -20,7 +20,7 @@ const FeatureRestaurants = () => {
     const getRestaurants = offset => {
         setIsLoading(true);
         getAllRestaurant(offset)
-            .then(res => setData(res))
+            .then(res => setRestaurantsData(res))
             .then(setRestaurantOffset(restaurantOffset + 4))
             .then(() => setIsLoading(false));
     };
@@ -43,7 +43,7 @@ const FeatureRestaurants = () => {
         return [text, isWork];
     };
 
-    if (!data) {
+    if (!restaurantsData) {
         return <Spinner />;
     }
 
@@ -103,7 +103,7 @@ const FeatureRestaurants = () => {
         return <ul className="restaurants__row">{items}</ul>;
     };
 
-    const restaurantRow = rerenderItems(data);
+    const restaurantRow = rerenderItems(restaurantsData);
 
     return (
         <motion.section
@@ -116,7 +116,7 @@ const FeatureRestaurants = () => {
                 <h2 className="primary-title">Featured Restaurants</h2>
                 {restaurantRow}
                 <div>
-                    {data.length % 4 === 0 && (
+                    {restaurantsData.length % 4 === 0 && (
                         <Button
                             text="View More"
                             classNameComponent="restaurants__button"

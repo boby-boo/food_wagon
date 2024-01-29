@@ -26,16 +26,16 @@ const SampleNextArrow = props => {
 const ProductItem = () => {
     const [updateProductId, setUpdateProductId] = useState(null);
 
-    const data = useSelector(state => state.dataCards.dataCards);
+    const cardsData = useSelector(state => state.dataCards.dataCards);
     const { productId } = useParams();
 
     const handleSlideChange = index => {
-        if (data) {
-            setUpdateProductId(data[index].id);
+        if (cardsData) {
+            setUpdateProductId(cardsData[index].id);
         }
     };
 
-    if (!data) {
+    if (!cardsData) {
         return <Spinner />;
     }
 
@@ -142,8 +142,8 @@ const ProductItem = () => {
         );
     };
 
-    const content = renderCards(data);
-    const review = renderReview(data);
+    const content = renderCards(cardsData);
+    const review = renderReview(cardsData);
 
     return (
         <section className="product">
@@ -156,8 +156,8 @@ const ProductItem = () => {
 };
 
 const ProductCard = ({ card }) => {
-    const [product, setProduct] = useState(null);
-    const cart = useSelector(state => state.cart.cart);
+    const [productData, setProductData] = useState(null);
+    const cartData = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     const { name, price, image, weight, ingredients, id } = card;
@@ -165,21 +165,21 @@ const ProductCard = ({ card }) => {
     const ing = ingredients.join(', ');
 
     useEffect(() => {
-        const checkDuplicate = cart.find(item => item.id === id);
+        const checkDuplicate = cartData.find(item => item.id === id);
         const count = checkDuplicate ? checkDuplicate.quantity : 0;
 
-        setProduct({
+        setProductData({
             ...card,
             quantity: count,
         });
     }, []);
 
     const handleClick = value => {
-        if (product.quantity <= 0 && value === -1) return;
+        if (productData.quantity <= 0 && value === -1) return;
 
-        const currentQty = product.quantity + value;
-        setProduct({
-            ...product,
+        const currentQty = productData.quantity + value;
+        setProductData({
+            ...productData,
             quantity: currentQty,
         });
     };
@@ -210,7 +210,7 @@ const ProductCard = ({ card }) => {
                                 className="btn__icon_minus"
                                 onClick={() => handleClick(-1)}
                             />
-                            <span>{product?.quantity}</span>
+                            <span>{productData?.quantity}</span>
                             <button
                                 className="btn__icon_plus"
                                 onClick={() => handleClick(+1)}

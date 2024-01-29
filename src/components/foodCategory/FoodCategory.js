@@ -9,12 +9,13 @@ import Spinner from '../spinner/Spinner';
 import './foodCategory.scss';
 
 const FoodCategory = () => {
-    const [items, setItems] = useState();
+    const [categoriesData, setCategoriesData] = useState();
+
     const sliderRef = useRef(null);
     const { getCategoryRestaurant } = useFoodWagonService();
 
     useEffect(() => {
-        getCategoryRestaurant().then(res => setItems(res));
+        getCategoryRestaurant().then(res => setCategoriesData(res));
     }, []);
 
     const handlePrevClick = () => {
@@ -27,7 +28,7 @@ const FoodCategory = () => {
         sliderRef.current.slickNext();
     };
 
-    if (!items) {
+    if (!categoriesData) {
         return <Spinner />;
     }
 
@@ -62,7 +63,7 @@ const FoodCategory = () => {
         );
     };
 
-    const contentItems = renderItems(items);
+    const contentItems = renderItems(categoriesData);
 
     return (
         <motion.section

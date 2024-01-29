@@ -22,6 +22,7 @@ const SearchedList = () => {
 
     const dispatch = useDispatch();
     const dataCards = useSelector(state => state.filteredData.filteredData);
+
     const { currentValue, isEmpty } = useSelector(
         state => state.searchState.searchState,
     );
