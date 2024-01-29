@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
+import { dataOfCart } from '../../reducers/selectors';
 
 import './notification.scss';
 
@@ -10,7 +11,7 @@ const Notification = () => {
     const [isFirstRender, setIsFirstRender] = useState(true);
     const [duplicateCart, setDuplicateCart] = useState(null);
     const [productName, setIsProductName] = useState('');
-    const cartData = useSelector(state => state.cart.cart);
+    const cartData = useSelector(dataOfCart);
 
     useEffect(() => {
         if (isFirstRender) {

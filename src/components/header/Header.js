@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 import { searchedState } from '../../reducers/searchStateSlice';
+import { dataOfCart, dataOfUser } from '../../reducers/selectors';
 import UserPopup from '../userPopup/UserPopup';
 import logoIcon from '../../resources/icons/foodwagon__logo.svg';
 import ModalAuth from '../modalAuth/ModalAuth';
@@ -15,8 +16,8 @@ const Header = () => {
 
     let currentLogin;
 
-    const userData = useSelector(state => state.user.user);
-    const cartData = useSelector(state => state.cart.cart);
+    const userData = useSelector(dataOfUser);
+    const cartData = useSelector(dataOfCart);
     const location = useLocation();
 
     const navigate = useNavigate();

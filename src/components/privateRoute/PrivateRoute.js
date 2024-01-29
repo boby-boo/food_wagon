@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { dataOfUser } from '../../reducers/selectors';
 import ModalAuth from '../modalAuth/ModalAuth';
 
 import './privateRoute.scss';
 
 const PrivateRoute = ({ children }) => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(true);
-    const userData = useSelector(state => state.user.user);
+    const userData = useSelector(dataOfUser);
 
     if (userData.name) {
         return { ...children };

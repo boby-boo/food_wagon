@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import RestaurantItemCard from '../restaurantItemCard/RestaurantItemCard';
 import Spinner from '../spinner/Spinner';
 import Button from '../button/Button';
+import {
+    dataOfFilteredCards,
+    dataOfSearchState,
+} from '../../reducers/selectors';
 import Filter from '../filter/Filter';
 import ScrollToTopButton from '../scrollToTopButton/ScrollToTopButton';
 import useFoodWagonService from '../../services/FoodWagonService';
@@ -21,11 +25,9 @@ const SearchedList = () => {
     const { getAllProducts } = useFoodWagonService();
 
     const dispatch = useDispatch();
-    const dataCards = useSelector(state => state.filteredData.filteredData);
+    const dataCards = useSelector(dataOfFilteredCards);
 
-    const { currentValue, isEmpty } = useSelector(
-        state => state.searchState.searchState,
-    );
+    const { currentValue, isEmpty } = useSelector(dataOfSearchState);
     const { category } = useParams();
     const navigate = useNavigate();
 

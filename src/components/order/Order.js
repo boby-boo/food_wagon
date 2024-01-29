@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import { removeAllItem } from '../../reducers/cartSlice';
+import { dataOfCart } from '../../reducers/selectors';
 import Input from '../input/Input';
 import { orderAnimationSettings } from '../utils';
 import useFoodWagonService from '../../services/FoodWagonService';
@@ -58,7 +59,7 @@ const Order = () => {
     const { postOrder } = useFoodWagonService();
 
     const navigate = useNavigate();
-    const cartData = useSelector(state => state.cart.cart);
+    const cartData = useSelector(dataOfCart);
     const dispatch = useDispatch();
 
     useEffect(() => {

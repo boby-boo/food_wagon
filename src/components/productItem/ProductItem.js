@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import { motion, AnimatePresence } from 'framer-motion';
 import { productItemSliderSettings } from '../utils';
+import { dataOfCards, dataOfCart } from '../../reducers/selectors';
 import userIcon from '../../resources/images/user__icon.png';
 import rateIcon from '../../resources/icons/restaurant__card_rating.svg';
 import { addToCart } from '../../reducers/cartSlice';
@@ -26,7 +27,7 @@ const SampleNextArrow = props => {
 const ProductItem = () => {
     const [updateProductId, setUpdateProductId] = useState(null);
 
-    const cardsData = useSelector(state => state.dataCards.dataCards);
+    const cardsData = useSelector(dataOfCards);
     const { productId } = useParams();
 
     const handleSlideChange = index => {
@@ -157,7 +158,7 @@ const ProductItem = () => {
 
 const ProductCard = ({ card }) => {
     const [productData, setProductData] = useState(null);
-    const cartData = useSelector(state => state.cart.cart);
+    const cartData = useSelector(dataOfCart);
     const dispatch = useDispatch();
 
     const { name, price, image, weight, ingredients, id } = card;
@@ -223,7 +224,7 @@ const ProductCard = ({ card }) => {
                     </div>
                     <button
                         className="product__button"
-                        onClick={() => addProductToCart(product)}
+                        onClick={() => addProductToCart(productData)}
                     >
                         Add to cart
                     </button>

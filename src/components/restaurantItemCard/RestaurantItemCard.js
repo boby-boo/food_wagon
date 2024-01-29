@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { dataOfCards, dataOfFilteredCards } from '../../reducers/selectors';
 import { addToCart } from '../../reducers/cartSlice';
 
 import './restaurantItemCard.scss';
 
 const RestaurantItemCard = () => {
     const location = useLocation();
-    const dataCards = useSelector(state => state.dataCards.dataCards);
-    const filteredProductsData = useSelector(
-        state => state.filteredData.filteredData,
-    );
+    const dataCards = useSelector(dataOfCards);
+    const filteredProductsData = useSelector(dataOfFilteredCards);
     const dispatch = useDispatch();
     const { restaurantName } = useParams();
 
