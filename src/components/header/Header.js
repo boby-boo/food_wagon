@@ -122,7 +122,10 @@ const Header = () => {
                                     placeholder="Search Food"
                                 />
                                 {value && (
-                                    <button onClick={handleClick}></button>
+                                    <button
+                                        type="button"
+                                        onClick={handleClick}
+                                    ></button>
                                 )}
                             </li>
                             <li className="header__row_user-panel user-panel">
@@ -130,6 +133,7 @@ const Header = () => {
                                     <span>{cartData.length}</span>
                                 </Link>
                                 <button
+                                    type="button"
                                     onClick={toggleModalOpen}
                                     className="user-panel__login"
                                 >

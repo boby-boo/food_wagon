@@ -23,7 +23,7 @@ const FeaturesApp = () => {
 
     let index = 0;
 
-    function selectTiming() {
+    const selectTiming = () => {
         const items = Array.from(itemsRef.current?.children);
 
         if (!items) return;
@@ -33,13 +33,12 @@ const FeaturesApp = () => {
         });
 
         if (items.length - 1 > index) {
-            // eslint-disable-next-line no-plusplus
             index++;
         } else {
             index = 0;
         }
         items[index].classList.add('features__row_item-active');
-    }
+    };
 
     return (
         <motion.section

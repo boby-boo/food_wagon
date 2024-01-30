@@ -67,6 +67,7 @@ const PopularItems = () => {
                             </div>
                         </div>
                         <button
+                            type="button"
                             onClick={() => dispatch(addToCart(card))}
                             className="popular-item__button"
                         >

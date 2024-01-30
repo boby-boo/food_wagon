@@ -27,7 +27,7 @@ const FlashDeals = () => {
                                 <Link to="*">
                                     <div className="primary__card_content deal__card_content card__content">
                                         <div className="primary__card_image">
-                                            <img src={image} alt="deal card" />
+                                            <img src={image} alt={name} />
                                         </div>
                                         <div className="card__content_discount">
                                             {discount}

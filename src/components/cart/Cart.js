@@ -87,6 +87,7 @@ const Cart = () => {
                                         <div className="card__controls">
                                             <div className="card__controls_btns">
                                                 <button
+                                                    type="button"
                                                     onClick={() =>
                                                         dispatch(
                                                             removeFromCart(
@@ -99,6 +100,7 @@ const Cart = () => {
                                                 </button>
                                                 <span>{quantity}</span>
                                                 <button
+                                                    type="button"
                                                     onClick={() =>
                                                         dispatch(
                                                             addToCart({
@@ -115,6 +117,7 @@ const Cart = () => {
                                                 ${price.toFixed(2)}
                                             </div>
                                             <button
+                                                type="button"
                                                 onClick={() =>
                                                     dispatch(removeItem(item))
                                                 }

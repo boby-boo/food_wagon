@@ -116,7 +116,7 @@ const UserPopup = ({ toggleModalOpen }) => {
                             required
                             disabled={true}
                         />
-                        <button>
+                        <button type="button">
                             <RenameIcon
                                 className="rename__icon"
                                 onClick={() => toggleDisabled(index)}
@@ -250,6 +250,7 @@ const UserPopup = ({ toggleModalOpen }) => {
                         {activePanel === 'order-history__data' && ordersItems}
                         {activePanel === 'order-history__data' ? null : (
                             <button
+                                type="button"
                                 className="popup__main_btn"
                                 onClick={saveChanged}
                             >

@@ -227,7 +227,7 @@ const Order = () => {
                     <span>Your order</span> is accepted
                 </h2>
                 <p>We will call you when the order will done</p>
-                <img src={deliveryIcon} alt="icon" />
+                <img src={deliveryIcon} alt="notification" />
             </motion.div>
         );
     }

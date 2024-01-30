@@ -207,11 +207,13 @@ const ProductCard = ({ card }) => {
                         </div>
                         <div className="product__controls_buttons">
                             <button
+                                type="button"
                                 className="btn__icon_minus"
                                 onClick={() => handleClick(-1)}
                             />
                             <span>{productData?.quantity}</span>
                             <button
+                                type="button"
                                 className="btn__icon_plus"
                                 onClick={() => handleClick(+1)}
                             />
@@ -222,6 +224,7 @@ const ProductCard = ({ card }) => {
                         <p>{ing}</p>
                     </div>
                     <button
+                        type="button"
                         className="product__button"
                         onClick={() => addProductToCart(productData)}
                     >

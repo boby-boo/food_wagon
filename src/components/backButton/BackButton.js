@@ -8,7 +8,7 @@ const BackButton = () => {
     };
 
     return (
-        <button onClick={handleClick} className="back-btn">
+        <button type="button" onClick={handleClick} className="back-btn">
             <div className="back-btn__back"></div>
             <span>Back</span>
         </button>

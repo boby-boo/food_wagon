@@ -134,3 +134,9 @@ export const restaurantFilterOptions = [
     { value: '1', label: 'Low to High' },
     { value: '2', label: 'High to Low' },
 ];
+
+export const templateErrorMessagesOfInput = {
+    basic: 'is the required field',
+    phone: 'must be 10 length symbols',
+    email: 'your email must contain symbols @ and .',
+};

@@ -18,8 +18,9 @@ const Banner = () => {
                         Are you ready to order with the best deals?
                     </motion.h2>
                     <motion.button
+                        type="button"
                         className="restaurants__button"
-                        onClick={() => navigate('/order')}
+                        onClick={() => navigate('/cart')}
                         variants={bannerAnimationSettings}
                         custom={2}
                     >

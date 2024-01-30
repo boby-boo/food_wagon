@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { templateErrorMessagesOfInput } from '../constants';
 
 const Input = ({
     elementType,
@@ -32,12 +33,6 @@ const Input = ({
         borderBottom: '1px dashed #0000',
     };
 
-    const templateErrorMessages = {
-        basic: 'is the required field',
-        phone: 'must be 10 length symbols',
-        email: 'your email must contain symbols @ and .',
-    };
-
     const handleChange = e => {
         const { name, value, type } = e.target;
         checkValue(name, type, value);
@@ -48,7 +43,9 @@ const Input = ({
             const updValue = value.replace(/[^0-9]/g, ' ').trim();
 
             if (value.length < 10 || value.length > 10) {
-                setErrorMessage(`${name} ${templateErrorMessages.phone}`);
+                setErrorMessage(
+                    `${name} ${templateErrorMessagesOfInput.phone}`,
+                );
                 setIsInvalid(true);
             } else {
                 setIsInvalid(false);
@@ -63,7 +60,7 @@ const Input = ({
         }
 
         if (type === 'email' && !/@.*\./.test(value)) {
-            setErrorMessage(templateErrorMessages.email);
+            setErrorMessage(templateErrorMessagesOfInput.email);
             setIsInvalid(true);
             onChangeFunction({
                 ...userData,
@@ -75,7 +72,7 @@ const Input = ({
 
         if (!value) {
             setIsInvalid(true);
-            setErrorMessage(`${name} ${templateErrorMessages.basic}`);
+            setErrorMessage(`${name} ${templateErrorMessagesOfInput.basic}`);
         } else {
             setIsInvalid(false);
         }

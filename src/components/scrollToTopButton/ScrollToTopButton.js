@@ -27,6 +27,7 @@ const ScrollToTopButton = ({ scrollTopValue }) => {
         <AnimatePresence>
             {isVisible && (
                 <motion.button
+                    type="button"
                     className="scrollToTopButton"
                     onClick={scrollToTop}
                     initial={{ opacity: 0 }}

@@ -98,7 +98,7 @@ const DeliveryBanner = () => {
                                 required
                                 placeholder="Enter Your Address"
                             />
-                            <button>Find Food</button>
+                            <button type="submit">Find Food</button>
                         </div>
                     </motion.form>
                 </div>

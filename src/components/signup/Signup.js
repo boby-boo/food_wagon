@@ -113,6 +113,7 @@ const Signup = () => {
                             icon={<PhoneIcon />}
                         />
                         <button
+                            type="submit"
                             disabled={isValid}
                             className="restaurants__button primary__button"
                         >

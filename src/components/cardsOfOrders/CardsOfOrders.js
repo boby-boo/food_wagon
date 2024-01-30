@@ -37,7 +37,7 @@ const CardsOfOrders = () => {
                                     </Link>
                                 </div>
                                 <div className="order__card_image">
-                                    <img src={currentImage} alt="Order card" />
+                                    <img src={currentImage} alt={title} />
                                 </div>
                             </motion.li>
                         );

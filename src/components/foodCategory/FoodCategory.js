@@ -82,10 +82,12 @@ const FoodCategory = () => {
                         </Link>
                         <div className="search__food_buttons_slider">
                             <button
+                                type="button"
                                 onClick={handlePrevClick}
                                 className="search__food_buttons_slider__prev_item"
                             />
                             <button
+                                type="button"
                                 onClick={handleNextClick}
                                 className="search__food_buttons_slider__next_item"
                             />

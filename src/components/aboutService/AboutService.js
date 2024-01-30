@@ -25,7 +25,7 @@ const OurService = () => {
                                 className="about-service__row_item row__item"
                             >
                                 <div className="row__item_image">
-                                    <img src={image} alt="Choose order icon" />
+                                    <img src={image} alt={title} />
                                 </div>
                                 <div className="row__item_text">
                                     <h3>{title}</h3>

@@ -92,6 +92,7 @@ const ModalAuth = ({ toggleModalOpen }) => {
                     onclickFunction={null}
                     isDisabled={false}
                     classNameComponent="restaurants__button"
+                    type="submit"
                 />
                 <div className="form__footer">
                     Need an account?

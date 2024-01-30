@@ -50,7 +50,10 @@ const RestaurantItemCard = () => {
                     </Link>
                     <div className="card__footer">
                         <span>${price.toFixed(2)}</span>
-                        <button onClick={() => dispatch(addToCart(card))}>
+                        <button
+                            type="button"
+                            onClick={() => dispatch(addToCart(card))}
+                        >
                             BUY
                         </button>
                     </div>
