@@ -1,17 +1,4 @@
 {
-    "partners": [
-        {
-            "name": "Donuts hut",
-            "logo": "restaurant/partners/donuts_hut.png",
-            "time_of_delivery": 23,
-            "rate": 20,
-            "price": 4,
-            "kitchen": "Pizza",
-            "image": "restaurant/donuts_hut/preview.jpg",
-            "working_hours": "10:00 - 23:30",
-            "products": "donuts-hut"
-        }
-    ],
     "restaurant": [
         {
             "partnerName": "Food World",
@@ -958,6 +945,17 @@
                     "review": []
                 }
             ]
+        },
+        {
+            "partnerName": "Donuts hut",
+            "logo": "restaurant/partners/donuts_hut.png",
+            "time_of_delivery": 23,
+            "rate": 20,
+            "category": "donuts",
+            "image": "restaurant/donuts_hut/preview.jpg",
+            "working_hours": "10:00 - 23:30",
+            "products": "donuts-hut",
+            "data": []
         }
     ],
     "allProducts": [
@@ -1853,6 +1851,18 @@
             "house": "",
             "level": "",
             "apartment": ""
+        },
+        {
+            "id": "178e3671-e18e-42a5-b439-54f6ffdc9c0c",
+            "name": "TestName",
+            "email": "volodka.isyk.95@gmail.com",
+            "password": "12345",
+            "phone": "0662046820",
+            "city": "",
+            "street": "",
+            "house": "",
+            "level": "",
+            "apartment": ""
         }
     ],
     "orders": [
@@ -1974,6 +1984,244 @@
                 }
             ],
             "dateOrder": "2024-01-30T11:47:54.674Z"
+        },
+        {
+            "id": "3829224f-f3f4-4ddf-95a7-8a8713182523",
+            "infoAboutUser": {
+                "id": "178e3671-e18e-42a5-b439-54f6ffdc9c0c",
+                "name": "as",
+                "email": "volodka.isyk.95@gmail.com",
+                "phone": "0662046820"
+            },
+            "infoAboutDelivery": {
+                "city": "cs",
+                "street": "12",
+                "house": "12",
+                "level": "12",
+                "apartment": "2"
+            },
+            "typePayment": "card",
+            "totalPrice": "6.40",
+            "order": [
+                {
+                    "name": "Squid",
+                    "id": "08",
+                    "price": 3.2,
+                    "category": "world",
+                    "description": "Tender and delicious squid prepared with a special touch.",
+                    "image": "restaurant/food_world/squid.jpg",
+                    "ingredients": ["Squid", "Garlic", "Olive oil"],
+                    "weight": 150,
+                    "review": [],
+                    "quantity": 2
+                }
+            ],
+            "dateOrder": "2024-02-12T19:56:09.848Z"
+        },
+        {
+            "id": "3ba71746-e498-4217-b462-01a4800b5b99",
+            "infoAboutUser": {
+                "id": "178e3671-e18e-42a5-b439-54f6ffdc9c0c",
+                "name": "TestName",
+                "email": "volodka.isyk.95@gmail.com",
+                "phone": "0662046820"
+            },
+            "infoAboutDelivery": {
+                "city": "cs",
+                "street": "sdc",
+                "house": "12",
+                "level": "12",
+                "apartment": "d"
+            },
+            "typePayment": "card",
+            "totalPrice": "0.00",
+            "order": [],
+            "dateOrder": "2024-02-12T19:58:33.089Z"
+        },
+        {
+            "id": "8e59b4f0-6e8c-48dc-8a53-c3e2abe71977",
+            "infoAboutUser": {
+                "id": "178e3671-e18e-42a5-b439-54f6ffdc9c0c",
+                "name": "TestName",
+                "email": "volodka.isyk.95@gmail.com",
+                "phone": "0662046820"
+            },
+            "infoAboutDelivery": {
+                "city": "ve",
+                "street": "12",
+                "house": "12",
+                "level": "12",
+                "apartment": "21"
+            },
+            "typePayment": "cash",
+            "totalPrice": "9.00",
+            "order": [
+                {
+                    "name": "Calf Sauce",
+                    "id": "01",
+                    "price": 3,
+                    "category": "world",
+                    "description": "Delicious calf sauce with a perfect blend of spices.",
+                    "image": "restaurant/food_world/calf-sauce.jpg",
+                    "ingredients": ["Calf meat", "Spices", "Seasonings"],
+                    "weight": 200,
+                    "review": [
+                        {
+                            "author": "Michael Scott",
+                            "rate": 5,
+                            "comment": "This pizza is so good",
+                            "date": "2023-12-17"
+                        },
+                        {
+                            "author": "Dwight Schrute",
+                            "rate": 5,
+                            "comment": "Interesting flavor combination!",
+                            "date": "2023-12-20"
+                        }
+                    ],
+                    "quantity": 3
+                }
+            ],
+            "dateOrder": "2024-02-12T19:58:55.557Z"
+        },
+        {
+            "id": "3cf9f8ae-0b2f-4190-b08b-3a842545ba94",
+            "infoAboutUser": {
+                "id": "178e3671-e18e-42a5-b439-54f6ffdc9c0c",
+                "name": "TestName",
+                "email": "volodka.isyk.95@gmail.com",
+                "phone": "0662046820"
+            },
+            "infoAboutDelivery": {
+                "city": "efew",
+                "street": "12",
+                "house": "1",
+                "level": "12",
+                "apartment": "12"
+            },
+            "typePayment": "cash",
+            "totalPrice": "20.35",
+            "order": [
+                {
+                    "name": "Pizza oleole",
+                    "id": "25",
+                    "price": 2.1,
+                    "description": "An exotic pizza experience with the OleOle twist! Savor unique flavors and spices that make every bite a culinary adventure.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-oleole.jpg",
+                    "ingredients": [
+                        "Spicy sausage",
+                        "Chilies",
+                        "Olive oil",
+                        "Garlic"
+                    ],
+                    "weight": 450,
+                    "review": [],
+                    "quantity": 1
+                },
+                {
+                    "name": "Pizza plus",
+                    "id": "26",
+                    "price": 3.6,
+                    "description": "Take your pizza experience to the next level with Pizza Plus! Loaded with extra toppings and flavors, it's a taste sensation.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-plus.jpg",
+                    "ingredients": [
+                        "Pepperoni",
+                        "Sausage",
+                        "Bacon",
+                        "Onions",
+                        "Peppers"
+                    ],
+                    "weight": 430,
+                    "review": [
+                        {
+                            "author": "Ryan Howard",
+                            "rate": 5,
+                            "comment": "Amazing variety of toppings!",
+                            "date": "2023-12-26"
+                        }
+                    ],
+                    "quantity": 1
+                },
+                {
+                    "name": "Pizza vesuvius",
+                    "id": "27",
+                    "price": 4,
+                    "description": "Experience the fiery flavors of Vesuvius with this bold and spicy pizza. It's an eruption of taste that will leave you craving more.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-vesuvius.jpg",
+                    "ingredients": [
+                        "Spicy pepperoni",
+                        "Jalapenos",
+                        "Hot sauce",
+                        "Mozzarella cheese"
+                    ],
+                    "weight": 410,
+                    "review": [],
+                    "quantity": 1
+                },
+                {
+                    "name": "Pizza hawaiian",
+                    "id": "24",
+                    "price": 2.45,
+                    "description": "Transport your taste buds to the tropics with this Hawaiian-inspired pizza. Enjoy the perfect blend of ham, pineapple, and cheese.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-hawaiian.jpg",
+                    "ingredients": [
+                        "Ham",
+                        "Pineapple",
+                        "Mozzarella cheese",
+                        "Tomato sauce"
+                    ],
+                    "weight": 380,
+                    "review": [
+                        {
+                            "author": "Kelly Kapoor",
+                            "rate": 4,
+                            "comment": "Tropical paradise on a pizza!",
+                            "date": "2023-12-25"
+                        }
+                    ],
+                    "quantity": 1
+                },
+                {
+                    "name": "Pizza girls",
+                    "id": "23",
+                    "price": 5,
+                    "description": "A fun and vibrant pizza for the girls! Packed with colorful and delicious toppings, it's a party on every slice.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-girls.jpg",
+                    "ingredients": [
+                        "Colorful peppers",
+                        "Olives",
+                        "Mushrooms",
+                        "Cheese blend"
+                    ],
+                    "weight": 420,
+                    "review": [],
+                    "quantity": 1
+                },
+                {
+                    "name": "Pizza caesar",
+                    "id": "22",
+                    "price": 3.2,
+                    "description": "A classic pizza inspired by the timeless Caesar salad. Indulge in the perfect combination of fresh ingredients and savory flavors.",
+                    "image": "restaurant/kuakata_fried_chicken/pizza-classic.jpg",
+                    "ingredients": [
+                        "Fresh greens",
+                        "Chicken",
+                        "Caesar dressing",
+                        "Parmesan cheese"
+                    ],
+                    "weight": 400,
+                    "review": [
+                        {
+                            "author": "Oscar Martinez",
+                            "rate": 3,
+                            "comment": "A classic with a twist! Loved the freshness.",
+                            "date": "2023-12-24"
+                        }
+                    ],
+                    "quantity": 1
+                }
+            ],
+            "dateOrder": "2024-02-12T19:59:18.505Z"
         }
     ]
 }

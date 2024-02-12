@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { page404AnimationSettings } from '../utils';
-import ErrorMessage from '../errorMessage/ErrorMessage';
+import { page404AnimationSettings } from '../components/utils';
+import ErrorMessage from '../components/errorMessage/ErrorMessage';
 
 const Page404 = () => {
     return (

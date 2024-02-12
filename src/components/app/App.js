@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 
 const Header = lazy(() => import('../header/Header'));
-const MainPage = lazy(() => import('../pages/MainPage'));
+const MainPage = lazy(() => import('../../pages/MainPage'));
 const Restaurant = lazy(() => import('../restaurant/Restaurant'));
 const RestaurantItemCard = lazy(
     () => import('../restaurantItemCard/RestaurantItemCard'),
 );
-const Cart = lazy(() => import('../cart/Cart'));
+const CartPage = lazy(() => import('../../pages/CartPage'));
 const Footer = lazy(() => import('../footer/Footer'));
-const SearchedList = lazy(() => import('../searchedList/SearchedList'));
+const SearchPage = lazy(() => import('../../pages/SearchPage'));
 const ProductItem = lazy(() => import('../productItem/ProductItem'));
-const Signup = lazy(() => import('../signup/Signup'));
+const SignupPage = lazy(() => import('../../pages/SignupPage'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
-const Page404 = lazy(() => import('../pages/Page404'));
-const Order = lazy(() => import('../order/Order'));
+const Page404 = lazy(() => import('../../pages/Page404'));
+const OrderPage = lazy(() => import('../../pages/OrderPage'));
 const Notification = lazy(() => import('../notification/Notification'));
 
 const App = () => {
@@ -30,9 +30,13 @@ const App = () => {
                             <Route
                                 exact
                                 path="search/:category"
-                                element={<SearchedList />}
+                                element={<SearchPage />}
                             />
-                            <Route exact path="signup" element={<Signup />} />
+                            <Route
+                                exact
+                                path="signup"
+                                element={<SignupPage />}
+                            />
                             <Route
                                 exact
                                 path="/restaurant/:restaurantName"
@@ -44,13 +48,13 @@ const App = () => {
                                     element={<ProductItem />}
                                 />
                             </Route>
-                            <Route exact path="cart" element={<Cart />} />
+                            <Route exact path="cart" element={<CartPage />} />
                             <Route
                                 exact
                                 path="order"
                                 element={
                                     <PrivateRoute>
-                                        <Order />
+                                        <OrderPage />
                                     </PrivateRoute>
                                 }
                             />

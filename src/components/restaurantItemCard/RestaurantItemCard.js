@@ -3,6 +3,7 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { dataOfCards, dataOfFilteredCards } from '../../reducers/selectors';
 import { addToCart } from '../../reducers/cartSlice';
+import Spinner from '../spinner/Spinner';
 
 const RestaurantItemCard = () => {
     const location = useLocation();
@@ -60,6 +61,7 @@ const RestaurantItemCard = () => {
                 </motion.li>
             );
         });
+
         return cards;
     };
 
@@ -68,8 +70,19 @@ const RestaurantItemCard = () => {
             ? filteredProductsData
             : dataCards,
     );
-
-    return <ul className="restaurant__cards_row">{cardsList}</ul>;
+    console.log();
+    return (
+        <ul className="restaurant__cards_row">
+            {cardsList.length === 0 ? (
+                <div>
+                    <h1>Sorry products not found</h1>
+                    <Spinner />
+                </div>
+            ) : (
+                cardsList
+            )}
+        </ul>
+    );
 };
 
 export default RestaurantItemCard;

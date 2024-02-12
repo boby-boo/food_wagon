@@ -29,6 +29,10 @@ const Restaurant = () => {
     }
 
     const getAveragePrice = data => {
+        if (data.length === 0) {
+            return 0;
+        }
+
         const averagePrice = (
             data.reduce((acc, cur) => acc + cur.price, 0) / data.length
         ).toFixed(2);
