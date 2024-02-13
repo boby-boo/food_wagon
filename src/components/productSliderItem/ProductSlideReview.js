@@ -1,0 +1,68 @@
+import { motion } from 'framer-motion';
+import userIcon from '../../resources/images/user__icon.png';
+import { ReactComponent as RateIcon } from '../../resources/icons/restaurant__card_rating.svg';
+
+const ProductSlideReview = ({ cardsData, updateProductId, productId }) => {
+    const renderReview = array => {
+        const id = updateProductId || productId;
+        const card = array.find(item => item.id === id);
+
+        if (card.review.length === 0) {
+            return (
+                <motion.div
+                    className="review"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ amount: 0.1 }}
+                >
+                    <h2 className="review__title">
+                        There are no reviews for this product yet.
+                    </h2>
+                </motion.div>
+            );
+        }
+
+        const content = card.review.map(item => {
+            const { author, rate, comment, date } = item,
+                rateStart = [];
+
+            for (let i = 1; i <= rate; i++) {
+                rateStart.push(<RateIcon key={i} />);
+            }
+
+            return (
+                <motion.li
+                    key={author + comment + date}
+                    className="review-card"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className="review-card__info">
+                        <div className="review-card__author">
+                            <div className="review-card__author_image">
+                                <img src={userIcon} alt="logo user" />
+                            </div>
+                            <div className="review-card__author_desc">
+                                <h3>{author}</h3>
+                                <span>{date}</span>
+                                <div className="review-card__author_desc-rate">
+                                    {rateStart}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-card__message">{comment}</div>
+                </motion.li>
+            );
+        });
+
+        return content;
+    };
+
+    const content = renderReview(cardsData);
+
+    return <ul className="review__row">{content}</ul>;
+};
+
+export default ProductSlideReview;

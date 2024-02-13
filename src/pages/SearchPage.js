@@ -78,6 +78,9 @@ const SearchPage = () => {
             case '4':
                 updateCategory = 'taco';
                 break;
+            case '5':
+                updateCategory = 'donuts';
+                break;
             default:
                 updateCategory = 'all';
         }
@@ -132,7 +135,7 @@ const SearchPage = () => {
                         }
                     />
                 </div>
-                <RestaurantItemCard />
+                <RestaurantItemCard cardsArray={dataCards} />
                 {dataCards && dataCards.length % 12 === 0 && (
                     <Button
                         classNameComponent="searched-list__btn"

@@ -3,10 +3,10 @@
     padding: 20px 0;
     &__row {
         @include templateFlex(space-between, flex-start);
-        gap: 40px;
+        gap: 20px;
         flex-wrap: wrap;
         padding: 20px 0 40px;
-        @media (max-width: 720px) {
+        @media (max-width: 767px) {
             padding-bottom: 10px;
             margin-bottom: 20px;
             flex-direction: column;

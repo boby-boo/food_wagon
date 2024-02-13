@@ -4,14 +4,13 @@ import Spinner from '../spinner/Spinner';
 
 const Header = lazy(() => import('../header/Header'));
 const MainPage = lazy(() => import('../../pages/MainPage'));
-const Restaurant = lazy(() => import('../restaurant/Restaurant'));
-const RestaurantItemCard = lazy(
-    () => import('../restaurantItemCard/RestaurantItemCard'),
+const RestaurantPage = lazy(() => import('../../pages/RestaurantPage'));
+const RestaurantSliderPage = lazy(
+    () => import('../../pages/RestaurantSliderPage'),
 );
 const CartPage = lazy(() => import('../../pages/CartPage'));
 const Footer = lazy(() => import('../footer/Footer'));
 const SearchPage = lazy(() => import('../../pages/SearchPage'));
-const ProductItem = lazy(() => import('../productItem/ProductItem'));
 const SignupPage = lazy(() => import('../../pages/SignupPage'));
 const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 const Page404 = lazy(() => import('../../pages/Page404'));
@@ -40,14 +39,13 @@ const App = () => {
                             <Route
                                 exact
                                 path="/restaurant/:restaurantName"
-                                element={<Restaurant />}
-                            >
-                                <Route index element={<RestaurantItemCard />} />
-                                <Route
-                                    path=":productId"
-                                    element={<ProductItem />}
-                                />
-                            </Route>
+                                element={<RestaurantPage />}
+                            />
+                            <Route
+                                exact
+                                path="/restaurant/:restaurantName/:productId"
+                                element={<RestaurantSliderPage />}
+                            />
                             <Route exact path="cart" element={<CartPage />} />
                             <Route
                                 exact

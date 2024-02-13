@@ -55,6 +55,7 @@ const SearchedList = () => {
         }
 
         getAllProducts(category, currentValue, offset).then(res => {
+            console.log(res);
             dispatch(filteredProductsData(res));
             setIsLoading(false);
         });
@@ -80,6 +81,9 @@ const SearchedList = () => {
                 break;
             case '4':
                 updateCategory = 'taco';
+                break;
+            case '5':
+                updateCategory = 'donuts';
                 break;
             default:
                 updateCategory = 'all';

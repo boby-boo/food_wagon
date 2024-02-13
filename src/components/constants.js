@@ -127,6 +127,7 @@ export const searchedListOptions = [
     { value: '2', label: 'World' },
     { value: '3', label: 'Sushi' },
     { value: '4', label: 'Taco' },
+    { value: '5', label: 'Donuts' },
 ];
 
 export const restaurantFilterOptions = [

@@ -1,16 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { dataOfCards, dataOfFilteredCards } from '../../reducers/selectors';
 import { addToCart } from '../../reducers/cartSlice';
 import Spinner from '../spinner/Spinner';
 
-const RestaurantItemCard = () => {
-    const location = useLocation();
-    const dataCards = useSelector(dataOfCards);
-    const filteredProductsData = useSelector(dataOfFilteredCards);
+const RestaurantItemCard = ({ cardsArray }) => {
     const dispatch = useDispatch();
-    const { restaurantName } = useParams();
 
     const renderItems = arr => {
         const cards = arr.map(card => {
@@ -19,7 +14,7 @@ const RestaurantItemCard = () => {
                 nameWithPath = image
                     .replace(/restaurant\//, ' ')
                     .replace(/_/g, '-'),
-                defaultRestaurantName = nameWithPath
+                restaurantName = nameWithPath
                     .substring(0, nameWithPath.search(/\//))
                     .trim();
 
@@ -33,9 +28,7 @@ const RestaurantItemCard = () => {
                 >
                     <Link
                         className="card__main"
-                        to={`/restaurant/${
-                            restaurantName || defaultRestaurantName
-                        }/${id}`}
+                        to={`/restaurant/${restaurantName}/${id}`}
                     >
                         <div className="card__image">
                             <img src={img} alt={name}></img>
@@ -65,12 +58,8 @@ const RestaurantItemCard = () => {
         return cards;
     };
 
-    const cardsList = renderItems(
-        location.pathname.search(/search/) !== -1
-            ? filteredProductsData
-            : dataCards,
-    );
-    console.log();
+    const cardsList = renderItems(cardsArray);
+
     return (
         <ul className="restaurant__cards_row">
             {cardsList.length === 0 ? (
