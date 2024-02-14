@@ -1,16 +1,19 @@
 .banner {
-    background: url(../../resources/images/banner__image.png) center / cover
+    background: url("../../resources/images/banner__image.png") center / cover
         no-repeat;
+
     &__row {
         padding: 91px 0 75px;
         margin: 0 auto;
         max-width: 786px;
+
         h2 {
             margin-bottom: 62px;
             @include templateFont(57, 900, 1);
             color: $light-color;
             text-align: center;
         }
+
         button {
             @include templateFont(18, 900, 1);
             color: $light-color;
@@ -18,18 +21,20 @@
             background: linear-gradient(93deg, #f17228 -5.63%, #f15e28 100.8%);
             box-shadow: $primary-shadow;
             @include templateTransition(opacity);
+
             &:hover {
                 opacity: 0.8;
             }
         }
-        @media (max-width: 870px) {
+        @media (width <= 870px) {
             padding: 40px 0 32px;
+
             h2 {
                 margin-bottom: 31px;
                 font-size: 40px;
             }
         }
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             h2 {
                 margin-bottom: 16px;
                 line-height: 1.3;

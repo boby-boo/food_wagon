@@ -1,24 +1,28 @@
 .search__food {
-    padding: 80px 0 55px 0;
+    padding: 80px 0 55px;
     background-color: #fefaf1;
+
     &_content {
         @include templateFlex(space-between, center);
         margin-bottom: 80px;
+
         h2 {
             margin-bottom: 0;
         }
-        @media (max-width: 640px) {
+        @media (width <= 640px) {
             flex-direction: column;
             row-gap: 30px;
         }
     }
+
     &_buttons {
         @include templateFlex(space-between, center);
         column-gap: 26px;
-        @media (max-width: 640px) {
+        @media (width <= 640px) {
             flex-direction: column;
             row-gap: 30px;
         }
+
         &_view {
             padding: 6px;
             @include templateFlex(center, center);
@@ -26,26 +30,31 @@
             @include templateFont(18, 700, 1);
             color: $primary-color;
             @include templateTransition(opacity);
+
             &:hover {
                 opacity: 0.8;
             }
-            &:after {
+
+            &::after {
                 content: '';
-                display: block;
                 width: 10px;
                 height: 16px;
-                background: url(../../resources/icons/search__food_button_arrow-icon.svg)
+                display: block;
+                background: url("../../resources/icons/search__food_button_arrow-icon.svg")
                     center / cover no-repeat;
             }
         }
+
         &_slider {
             @include templateFlex(space-between, center);
             column-gap: 16px;
+
             &__prev_item {
                 @extend .custom-arrow__prev_item;
                 position: relative;
                 transform: translateY(0);
             }
+
             &__next_item {
                 @extend .custom-arrow__next_item;
                 position: relative;
@@ -53,29 +62,34 @@
             }
         }
     }
+
     .food__card {
         max-width: 218px;
+
         &:hover {
             .food__card_image {
-                &:after {
+                &::after {
                     opacity: 1;
                 }
+
                 img {
-                    transform: scale(1.03);
                     transform: scale(0.99);
                 }
             }
+
             h3 {
                 color: $primary-color;
             }
         }
+
         &_image {
             position: relative;
             height: 218px;
             margin-bottom: 26px;
             border-radius: 50%;
             overflow: hidden;
-            &:after {
+
+            &::after {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -86,6 +100,7 @@
                 background-color: transparentize(#000, 0.6);
                 @include templateTransition(opacity);
             }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -93,6 +108,7 @@
                 @include templateTransition(transform);
             }
         }
+
         h3 {
             padding: 0 4px;
             @include templateFont(22, 700, 1.2);

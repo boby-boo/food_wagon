@@ -1,0 +1,26 @@
+{
+    "extends": ["stylelint-config-standard-scss", "stylelint-order"],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "scss/no-global-function-names": null,
+        "selector-class-pattern": null,
+        "scss/at-extend-no-missing-placeholder": null,
+        "no-descending-specificity": null,
+        "declaration-empty-line-before": "never",
+        "at-rule-empty-line-before": "never",
+        "no-duplicate-selectors": true,
+        "color-no-invalid-hex": true,
+        "order/order": ["custom-properties", "declarations"],
+        "order/properties-order": [
+            "content",
+            "position",
+            "width",
+            "height",
+            "display",
+            "font-size",
+            "color",
+            "background-color",
+            "border"
+        ]
+    }
+}

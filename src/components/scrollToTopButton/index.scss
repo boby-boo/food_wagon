@@ -9,31 +9,35 @@
     background-color: transparentize($primary-color, 0.2);
     @include templateTransition(background-color);
     z-index: 100;
+
     &:hover {
         background-color: $primary-color;
     }
-    &:after {
+
+    &::after {
         content: '';
-        display: block;
         width: 60px;
         height: 40px;
+        display: block;
         transform: rotate(-90deg);
-        background: url(../../resources/icons/restaurants__button_arrow-icon.svg)
+        background: url("../../resources/icons/restaurants__button_arrow-icon.svg")
             center / contain no-repeat;
     }
-    @media (max-width: 1000px) {
+    @media (width <= 1000px) {
         width: 90px;
         height: 90px;
-        &:after {
+
+        &::after {
             width: 60px;
             height: 40px;
         }
     }
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
         width: 80px;
         height: 80px;
         bottom: 1%;
-        &:after {
+
+        &::after {
             width: 60px;
             height: 30px;
         }

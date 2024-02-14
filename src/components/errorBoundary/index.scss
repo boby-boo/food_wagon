@@ -1,10 +1,12 @@
-@import '../../style/variables.scss';
+@import '../../style/variables';
 
 .error__row {
     padding: 40px 0;
+
     h4 {
         text-align: center;
     }
+
     &_text {
         max-width: 300px;
         margin: 0 auto;

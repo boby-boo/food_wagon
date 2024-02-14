@@ -1,76 +1,88 @@
 .popular-items {
-    padding: 80px 0 40px 0;
-    @media (max-width: 830px) {
-        padding: 40px 0 20px 0;
+    padding: 80px 0 40px;
+    @media (width <= 830px) {
+        padding: 40px 0 20px;
     }
+
     .popular-item {
         max-width: 283px;
         @include templateFlex(center, flex-start);
         flex-direction: column;
         row-gap: 16px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include templateTransition(transform);
+        }
+
         &:hover {
-            .popular-item__image:before {
+            .popular-item__image::before {
                 opacity: 1;
             }
+
             .popular-item__image img {
                 transform: scale(1.01);
             }
         }
+
         &__body {
             @include templateFlex(center, flex-start);
             flex-direction: column;
             row-gap: 16px;
         }
+
         &__image {
             position: relative;
-            max-width: 283px;
             height: 283px;
+            max-width: 283px;
             border-radius: 16px;
             overflow: hidden;
-            &:before {
+
+            &::before {
                 content: '';
-                display: block;
                 position: absolute;
                 width: 100%;
                 height: 100%;
+                display: block;
                 background-color: transparentize(#000, 0.5);
                 opacity: 0;
-                @include templateTransition(opacity);
                 z-index: 111;
-            }
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                @include templateTransition(transform);
+                @include templateTransition(opacity);
             }
         }
+
         &__description {
             width: 100%;
             @include templateFlex(center, flex-start);
+            @include templateFont(22, 700, 1.2);
             flex-direction: column;
             row-gap: 8px;
             margin-bottom: 16px;
-            @include templateFont(22, 700, 1.2);
+
             h3 {
                 @include templateFont(22, 700, 1.2);
             }
+
             &_location {
                 @include templateFlex(flex-start, center);
                 column-gap: 8px;
                 @include templateFont(22, 400, 1.2);
                 color: $primary-color;
+
                 &::before {
                     content: '';
-                    display: block;
                     width: 14px;
                     height: 22px;
+                    display: block;
                     background: no-repeat
-                        url(../../resources/icons/popular__items_location-icon.svg)
+                        url('../../resources/icons/popular__items_location-icon.svg')
                         center;
                 }
             }
         }
+
         &__button {
             padding: 10px;
             width: 100%;
@@ -85,10 +97,12 @@
             );
             border-radius: 8px;
             @include templateTransition(all);
+
             &:hover {
                 letter-spacing: 2px;
                 background-color: transparentize($secondary-color, 0.1);
             }
+
             &:active {
                 background-color: transparentize($secondary-color, 0.2);
             }
@@ -102,6 +116,7 @@
         top: 50%;
         left: -143px;
     }
+
     &_next-btn {
         @extend .custom-arrow__next_item;
         top: 50%;

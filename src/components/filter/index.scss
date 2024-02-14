@@ -2,32 +2,38 @@
     position: relative;
     max-width: 226px;
     width: 100%;
+
     &__header {
         @include templateFlex(flex-start, center);
         @include templateFont(20, 400, 1.2);
         column-gap: 8px;
         font-size: 20px;
         opacity: 0.9;
+
         &_value {
             @include templateFlex(center, center);
             column-gap: 10px;
             cursor: pointer;
             opacity: 1;
             @include templateTransition(opacity);
+
             &:hover {
                 opacity: 0.9;
             }
         }
     }
+
     &__icon {
         @include templateFlex(center, center);
+
         &::before {
             content: '';
             width: 10px;
             height: 20px;
-            background: url(../../resources/icons/filter__icon.svg);
+            background: url("../../resources/icons/filter__icon.svg");
         }
     }
+
     &__body {
         position: absolute;
         top: 40px;
@@ -40,14 +46,16 @@
         row-gap: 8px;
         border-radius: 12px;
         background-color: $light-color;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 20px rgb(0 0 0 / 30%);
         z-index: 11;
+
         li {
             width: 100%;
             padding: 2px 0;
             text-align: center;
             @include templateTransition(color);
             cursor: pointer;
+
             &:hover {
                 color: $primary-color;
             }

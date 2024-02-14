@@ -1,5 +1,5 @@
 @import 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap';
 
 body {
     font:
@@ -15,23 +15,20 @@ button {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 
 ::-webkit-scrollbar {
+    width: 12px;
     background-color: $gray-color;
     border-radius: 8px;
-    width: 12px;
-    &:horizontal {
-        background-color: $primary-color;
-    }
-}
-::-webkit-scrollbar {
+
     &-thumb {
         background-color: $primary-color;
         border-radius: 8px;
     }
+
     &-track {
         background-color: #fefaf1;
     }
@@ -42,6 +39,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+
     &__fluid {
         @extend .container;
         max-width: 1250px;
@@ -53,7 +51,7 @@ input::-webkit-inner-spin-button {
     color: #212121;
     text-align: center;
     margin-bottom: 80px;
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         font-size: 35px;
         margin-bottom: 40px;
     }
@@ -66,12 +64,13 @@ input::-webkit-inner-spin-button {
     color: $secondary-color;
     background-color: transparentize($secondary-color, 0.8);
     border-radius: 16px;
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         border-radius: 0;
         display: block;
         font-size: 16px;
         text-align: center;
     }
+
     &_open {
         @extend .main__footnote;
         color: #79b93c;
@@ -83,52 +82,58 @@ input::-webkit-inner-spin-button {
     border-radius: 16px;
     max-width: 357px;
     overflow: hidden;
+
     &:hover {
-        .primary__card_content:before {
+        .primary__card_content::before {
             opacity: 1;
         }
+
         .primary__card_image {
             img {
                 transform: scale(0.99);
             }
         }
     }
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         max-width: 250px;
     }
+
     &_content {
         position: relative;
         height: 301px;
         margin-bottom: 26px;
-        &:before {
+
+        &::before {
             content: '';
-            display: block;
             position: absolute;
-            opacity: 0;
             width: 100%;
             height: 100%;
-            border-radius: 15px;
+            display: block;
             background-color: transparentize(#000, 0.6);
-            @include templateTransition(opacity);
+            opacity: 0;
+            border-radius: 15px;
             z-index: 1;
+            @include templateTransition(opacity);
         }
-        @media (max-width: 830px) {
+        @media (width <= 830px) {
             height: 200px;
             margin-bottom: 10px;
         }
     }
+
     &_image {
         max-width: 357px;
         height: 301px;
         overflow: hidden;
         border-radius: 0 0 16px 16px;
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             @include templateTransition(transform);
         }
-        @media (max-width: 830px) {
+        @media (width <= 830px) {
             height: 200px;
         }
     }
@@ -138,16 +143,19 @@ input::-webkit-inner-spin-button {
     @include templateFont(18, 700, 1);
     color: $light-color;
     border-radius: 14px;
-    background: linear-gradient(98deg, #ffba26 -8.95%, #ff9a0e 109.24%);
+    background: linear-gradient(98deg, #ffba24 -8.95%, #ff9a0e 109.24%);
     box-shadow: $primary-shadow;
     cursor: pointer;
     @include templateTransition(opacity);
+
     &:hover {
         opacity: 0.8;
     }
+
     &:active {
         opacity: 0.9;
     }
+
     &:disabled {
         opacity: 0.7;
         cursor: default;
@@ -165,24 +173,27 @@ input::-webkit-inner-spin-button {
         border-radius: 50%;
         background-color: $primary-color;
         box-shadow:
-            0px 14px 32px 0px #ffb20e4a,
-            0px 5px 8px 0px #de97003d;
+            0 14px 32px 0 #ffb20e4a,
+            0 5px 8px 0 #de97003d;
         @include templateTransition(all);
+
         &:hover {
             cursor: pointer;
             background-color: transparentize($primary-color, 0.2);
         }
-        &:before {
+
+        &::before {
             content: '';
             width: 56px;
             height: 56px;
             display: block;
-            background: no-repeat url(../resources/icons/slick__icon_arrow.svg)
-                center;
+            background: no-repeat
+                url('../resources/icons/slick__icon_arrow.svg') center;
         }
     }
+
     &__next_item {
-        &:before {
+        &::before {
             transform: rotate(-180deg);
         }
     }
@@ -193,18 +204,20 @@ input::-webkit-inner-spin-button {
     @include templateFlex(center, center);
     column-gap: 10px;
     margin: 0 auto;
-    &:after {
+
+    &::after {
         content: '';
-        display: block;
         width: 9px;
         height: 14px;
-        background: url(../resources/icons/restaurants__button_arrow-icon.svg);
+        display: block;
+        background: url('../resources/icons/restaurants__button_arrow-icon.svg');
     }
 }
 
 .icon {
     fill: #757575;
     @include templateTransition(fill);
+
     &:hover {
         fill: $secondary-color;
     }

@@ -6,10 +6,10 @@ import {
     addToCart,
     removeFromCart,
     removeItem,
-} from '../../reducers/cartSlice';
-import { dataOfCart } from '../../reducers/selectors';
-import { ReactComponent as BtnMinusIcon } from '../../resources/icons/minus__icon.svg';
-import { ReactComponent as BtnPlusIcon } from '../../resources/icons/plus__icon.svg';
+} from '../../../reducers/cartSlice';
+import { dataOfCart } from '../../../reducers/selectors';
+import { ReactComponent as BtnMinusIcon } from '../../../resources/icons/minus__icon.svg';
+import { ReactComponent as BtnPlusIcon } from '../../../resources/icons/plus__icon.svg';
 
 const CartProductsList = () => {
     const cartData = useSelector(dataOfCart);
@@ -20,7 +20,7 @@ const CartProductsList = () => {
             <AnimatePresence mode="sync">
                 {cartData.map(item => {
                     const { name, id, image, weight, quantity, price } = item,
-                        src = require(`../../resources/${image}`),
+                        src = require(`../../../resources/${image}`),
                         nameWithPath = image
                             .match(/\/([^/]+)\//)[1]
                             .replace(/_/g, '-');

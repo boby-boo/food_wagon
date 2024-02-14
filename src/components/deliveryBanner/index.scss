@@ -1,65 +1,76 @@
 .delivery-banner {
-    background: url(../../resources/images/banner__food-image.png) center /
+    background: url("../../resources/images/banner__food-image.png") center /
         cover no-repeat;
+
     &__row {
         padding: 132px 0;
-        @media (max-width: 1000px) {
+        @media (width <= 1000px) {
             padding: 64px 0;
         }
-        @media (max-width: 700px) {
+        @media (width <= 700px) {
             padding: 30px 0;
         }
+
         &_text {
             margin-bottom: 32px;
+
             h1 {
                 @include templateFont(88, 700, 1);
                 color: $light-color;
                 margin-bottom: 15px;
             }
+
             p {
                 @include templateFont(22, 400, 1.2);
             }
-            @media (max-width: 1000px) {
+            @media (width <= 1000px) {
                 h1,
                 p {
                     text-align: center;
                 }
+
                 h1 {
                     font-size: 69px;
                 }
             }
-            @media (max-width: 700px) {
+            @media (width <= 700px) {
                 h1 {
                     font-size: 40px;
                 }
+
                 p {
                     font-size: 16px;
                 }
             }
         }
     }
+
     &__form {
         max-width: 880px;
         background-color: $light-color;
         border-radius: 16px;
         box-shadow: $primary-shadow;
-        @media (max-width: 1000px) {
+        @media (width <= 1000px) {
             max-width: 100%;
         }
+
         &_top {
             padding: 24px;
             @include templateFlex(flex-start, center);
             column-gap: 8px;
             border-bottom: 1px solid transparentize($gray-color, 0.8);
-            @media (max-width: 1000px) {
+            @media (width <= 1000px) {
                 justify-content: center;
             }
+
             input {
                 display: none;
             }
+
             .input__wrapper {
                 max-width: 148px;
                 width: 100%;
+
                 .form__top_input {
                     padding: 5px;
                     min-height: 38px;
@@ -69,20 +80,24 @@
                     color: #757575;
                     border-radius: 8px;
                     @include templateTransition(all);
+
                     &:hover {
                         color: #f17228e5;
                         background: #f172280c;
                         cursor: pointer;
+
                         .icon {
                             fill: #f17228e5;
                         }
                     }
                 }
+
                 .form__top_input-delivery:checked,
                 .form__top_input-pickup:checked {
                     & + label {
                         color: $secondary-color;
                         background: #f172281a;
+
                         .input__delivery_icon {
                             fill: $secondary-color;
                         }
@@ -90,17 +105,19 @@
                 }
             }
         }
+
         &_bottom {
             padding: 24px;
             @include templateFlex(flex-start, center);
             column-gap: 16px;
-            @media (max-width: 1000px) {
+            @media (width <= 1000px) {
                 justify-content: center;
             }
-            @media (max-width: 600px) {
+            @media (width <= 600px) {
                 flex-direction: column;
                 row-gap: 20px;
             }
+
             input {
                 padding: 7px 7px 8px 46px;
                 max-width: 593px;
@@ -109,14 +126,16 @@
                 font-size: 18px;
                 color: $gray-color;
                 background: #f5f5f5
-                    url(../../resources/icons/form-location__icon.svg) 16px
+                    url("../../resources/icons/form-location__icon.svg") 16px
                     center / 18px 34px no-repeat;
                 border-radius: 8px;
                 @include templateTransition(box-shadow);
+
                 &::placeholder {
                     @include templateFont(18, 400, 1.4);
                     color: $gray-color;
                 }
+
                 &:hover {
                     background-color: transparentize(
                         $primary-color,
@@ -125,6 +144,7 @@
                     box-shadow: $primary-shadow;
                 }
             }
+
             button {
                 max-width: 199px;
                 width: 100%;
@@ -140,15 +160,17 @@
                     #f65900 135.31%
                 );
                 @include templateTransition(opacity);
+
                 &:hover {
                     opacity: 0.9;
                 }
+
                 &::before {
                     content: '';
-                    display: block;
                     width: 14px;
                     height: 14px;
-                    background: url(../../resources/icons/form-location__search_icon.svg);
+                    display: block;
+                    background: url("../../resources/icons/form-location__search_icon.svg");
                 }
             }
         }

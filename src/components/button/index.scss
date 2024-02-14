@@ -4,13 +4,15 @@
     @include templateFlex(center, center);
     column-gap: 10px;
     margin: 0 auto;
-    &:after {
+
+    &::after {
         content: '';
-        display: block;
         width: 9px;
         height: 14px;
-        background: url(../../resources/icons/restaurants__button_arrow-icon.svg);
+        display: block;
+        background: url("../../resources/icons/restaurants__button_arrow-icon.svg");
     }
+
     &:disabled {
         filter: grayscale(0.3);
     }

@@ -1,12 +1,13 @@
 .restaurant {
     position: relative;
     padding: 20px 0;
+
     &__row {
         @include templateFlex(space-between, flex-start);
         gap: 20px;
         flex-wrap: wrap;
         padding: 20px 0 40px;
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             padding-bottom: 10px;
             margin-bottom: 20px;
             flex-direction: column;
@@ -16,38 +17,46 @@
             background-color: transparentize($gray-color, 0.9);
         }
     }
+
     &__card {
         @include templateFlex(center, flex-start);
         column-gap: 10px;
+
         &_image {
             max-width: 55px;
             height: 55px;
+
             img {
                 @include templateObject;
             }
         }
+
         &_description {
             h1 {
                 @include templateFont(20, 500, 1.2);
                 color: $dark-color;
             }
+
             span {
                 @include templateFlex(flex-start, center);
                 column-gap: 6px;
                 @include templateFont(20, 400, 1.2);
                 color: $primary-color;
-                &:before {
+
+                &::before {
                     content: '';
-                    display: block;
                     width: 25px;
                     height: 25px;
-                    background: url(../../resources/icons/restaurant__card_rating.svg)
+                    display: block;
+                    background: url("../../resources/icons/restaurant__card_rating.svg")
                         center/cover no-repeat;
                 }
             }
         }
+
         &_price {
             @include templateFont(20, 400, 1.2);
+
             span {
                 color: $primary-color;
             }

@@ -1,21 +1,23 @@
 .signup {
     margin: 10vh 0;
     padding: 40px;
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
         padding: 0;
     }
+
     h1 {
         margin-bottom: 60px;
         text-align: center;
     }
+
     &__form {
         max-width: 800px;
         margin: auto;
         padding: 40px;
         border-radius: 10px;
         box-shadow: $secondary-shadow;
-        @media (max-width: 600px) {
-            padding: 10px 10px 30px 10px;
+        @media (width <= 600px) {
+            padding: 10px 10px 30px;
         }
     }
 }

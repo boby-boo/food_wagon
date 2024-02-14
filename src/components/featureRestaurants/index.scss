@@ -1,35 +1,41 @@
 .feature-restaurants {
     padding: 80px 0;
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         padding: 20px 0;
     }
+
     h2 {
         margin-bottom: 80px;
-        @media (max-width: 830px) {
+        @media (width <= 830px) {
             margin-bottom: 40px;
         }
     }
+
     .restaurants__row {
         @include templateFlex(center, flex-start);
         flex-wrap: wrap;
         gap: 64px 16px;
         margin-bottom: 88px;
-        @media (max-width: 830px) {
+        @media (width <= 830px) {
             margin-bottom: 44px;
             row-gap: 33px;
         }
     }
+
     .restaurant__card {
         @include templateTransition(box-shadow);
         box-shadow: 2px 2px 15px 2px transparentize($dark-color, 0.9);
+
         &:hover {
             box-shadow: $secondary-shadow;
+
             .restaurant__card_discount,
             .restaurant__card_speed,
             .card__review {
                 opacity: 0.9;
             }
         }
+
         &_items {
             position: absolute;
             top: 24px;
@@ -39,10 +45,11 @@
             @include templateFont(22, 700, 1.2);
             color: $light-color;
             z-index: 2;
-            @media (max-width: 830px) {
+            @media (width <= 830px) {
                 @include templateFont(14, 700, 1.2);
             }
         }
+
         &_discount,
         &_speed {
             padding: 8px 16px;
@@ -50,95 +57,110 @@
             column-gap: 10px;
             border-radius: 8px;
             @include templateTransition(opacity);
-            @media (max-width: 830px) {
+            @media (width <= 830px) {
                 column-gap: 5px;
             }
-            &:before {
+
+            &::before {
                 content: '';
                 width: 18px;
                 height: 18px;
-                @media (max-width: 830px) {
+                @media (width <= 830px) {
                     width: 10px;
                     height: 10px;
                 }
             }
-            @media (max-width: 830px) {
+            @media (width <= 830px) {
                 padding: 4px 10px;
             }
         }
+
         &_discount {
             background-color: $secondary-color;
-            &:before {
+
+            &::before {
                 background: no-repeat
-                    url(../../resources/icons/restaurant__card_discount-icon.svg);
+                    url("../../resources/icons/restaurant__card_discount-icon.svg");
                 background-size: cover;
             }
         }
+
         &_speed {
             background-color: $primary-color;
-            &:before {
+
+            &::before {
                 background: $primary-color no-repeat
-                    url(../../resources/icons/restaurant__card_speed-icon.svg);
+                    url("../../resources/icons/restaurant__card_speed-icon.svg");
                 background-size: cover;
             }
         }
+
         &_footnote {
-            margin: 0 10px 10px 10px;
+            margin: 0 10px 10px;
         }
     }
+
     .card__review {
         padding: 0 10px;
         margin-bottom: 32px;
         @include templateFlex(flex-start, flex-start);
         column-gap: 24px;
         @include templateTransition(transition);
-        @media (max-width: 830px) {
+        @media (width <= 830px) {
             column-gap: 12px;
             margin-bottom: 16px;
         }
+
         &_logo {
             max-width: 64px;
             width: 100%;
             height: 64px;
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
-            @media (max-width: 830px) {
+            @media (width <= 830px) {
                 max-width: 50px;
                 height: 50px;
             }
         }
+
         &_about {
             display: flex;
             flex-direction: column;
             row-gap: 4px;
+
             h3 {
                 @include templateFont(22, 700, 1.2);
             }
+
             span {
                 @include templateFlex(flex-start, center);
                 @include templateFont(22, 400, 1.2);
                 column-gap: 8px;
                 color: $primary-color;
-                &:before {
+
+                &::before {
                     content: '';
-                    display: block;
                     width: 25px;
                     height: 23px;
+                    display: block;
                     background: no-repeat
-                        url(../../resources/icons/restaurant__card_rating.svg);
+                        url("../../resources/icons/restaurant__card_rating.svg");
                     background-size: cover;
                 }
             }
-            @media (max-width: 830px) {
+            @media (width <= 830px) {
                 h3 {
                     font-size: 18px;
                 }
+
                 span {
                     font-size: 18px;
-                    &:before {
+
+                    &::before {
                         width: 18px;
                         height: 18px;
                     }

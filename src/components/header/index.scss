@@ -5,66 +5,75 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 25px;
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         .header__row {
             &_user-panel {
                 display: none;
             }
         }
     }
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
         gap: 30px 10px;
         padding-bottom: 30px;
     }
+
     &_logo {
         justify-self: flex-start;
         @include templateFont(32, 700, 1.2);
         text-transform: lowercase;
         color: $secondary-color;
+
         a {
             @include templateFlex(center, center);
             column-gap: 12px;
         }
+
         span {
             color: $primary-color;
         }
-        @media (max-width: 1000px) {
+        @media (width <= 1000px) {
             font-size: 24px;
+
             img {
                 width: 25px;
             }
         }
     }
+
     &_location {
         @include templateFlex(center, center);
         @include templateFont(18, 700, 1);
         column-gap: 12px;
         color: $gray-color;
+
         .location__input {
             @include templateFlex(space-between, center);
             column-gap: 8px;
+
             &::before {
                 content: '';
-                display: block;
                 width: 14px;
                 height: 19px;
-                background: url(../../resources/icons/map__icon.svg);
+                display: block;
+                background: url('../../resources/icons/map__icon.svg');
             }
         }
-        @media (max-width: 1000px) {
+        @media (width <= 1000px) {
             font-size: 16px;
         }
-        @media (max-width: 900px) {
+        @media (width <= 900px) {
             font-size: 14px;
         }
     }
+
     &_search-panel {
-        max-width: 450px;
-        width: 100%;
-        justify-self: center;
         position: relative;
-        @include templateFlex(center, center);
+        width: 100%;
+        max-width: 450px;
+        justify-self: center;
         z-index: 2;
+        @include templateFlex(center, center);
+
         input {
             padding: 0 10px 0 35px;
             width: 100%;
@@ -75,48 +84,54 @@
             text-align: left;
             border-radius: 10px;
             background: transparentize($primary-color, 0.9)
-                url(../../resources/icons/search-food__icon.svg) 7px/18px 18px
+                url('../../resources/icons/search-food__icon.svg') 7px/18px 18px
                 no-repeat;
             @include templateTransition(box-shadow);
+
             &::placeholder {
                 @include templateFont(18, 700, 1);
                 color: $gray-color;
             }
+
             &:hover {
                 box-shadow: $primary-shadow;
             }
-            @media (max-width: 1000px) {
+            @media (width <= 1000px) {
                 font-size: 16px;
+
                 &::placeholder {
                     font-size: 16px;
                 }
             }
-            @media (max-width: 600px) {
+            @media (width <= 600px) {
                 font-size: 14px;
+
                 &::placeholder {
                     font-size: 14px;
                 }
             }
         }
+
         button {
             height: 46px;
             min-width: 26px;
             @include templateFont(18, 700, 1);
-            background-color: transparentize($primary-color, 0.9);
             border-radius: 0 10px 10px 0;
             @include templateTransition(box-shadow);
             background: url('../../resources/icons/remove__icon.svg') center /
                 20px 20px no-repeat transparentize($primary-color, 0.9);
         }
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             grid-column: 1/4;
             grid-row: 2/3;
             max-width: 100%;
         }
     }
+
     .user-panel {
         @include templateFlex(flex-end, center);
         column-gap: 20px;
+
         &__basket {
             max-width: 80px;
             width: 100%;
@@ -127,19 +142,22 @@
             color: $gray-color;
             border-radius: 8px;
             box-shadow: $primary-shadow;
+
             &::before {
                 content: '';
-                display: block;
                 width: 25px;
                 height: 25px;
-                background: url(../../resources/icons/basket__icon.svg) center /
+                display: block;
+                background: url('../../resources/icons/basket__icon.svg') center /
                     cover no-repeat;
             }
         }
+
         &__login {
             min-height: 46px;
             max-width: 200px;
-            // min-width: 118px;
+
+            // min-width: 118px;min-width
             width: 100%;
             padding: 5px 12px;
             @include templateFlex(center, center);
@@ -148,15 +166,17 @@
             text-align: center;
             color: $primary-color;
             box-shadow: $primary-shadow;
+
             &::before {
                 content: '';
-                display: block;
                 width: 25px;
                 height: 25px;
-                background: url(../../resources/icons/user__icon.svg) center /
+                display: block;
+                background: url('../../resources/icons/user__icon.svg') center /
                     23px 23px no-repeat;
             }
         }
+
         button,
         input,
         a {
@@ -164,45 +184,51 @@
             padding: 5px 12px;
             border-radius: 8px;
             @include templateTransition(all);
+
             &:hover {
                 background-color: transparentize($primary-color, 0.9);
             }
         }
-        @media (max-width: 1240px) {
+        @media (width <= 1240px) {
             column-gap: 20px;
         }
-        @media (max-width: 1000px) {
+        @media (width <= 1000px) {
             button,
             input {
                 font-size: 16px;
             }
+
             input::placeholder {
                 font-size: 16px;
             }
         }
-        @media (max-width: 750px) {
+        @media (width <= 750px) {
             .user-panel__login {
-                // min-width: 40px;
+                // min-width: 40px;min-width
                 max-width: 80px;
                 justify-content: center;
+
                 &::before {
                     width: 20px;
                     background-position: center;
                 }
             }
+
             span {
                 display: none;
             }
             column-gap: 10px;
+
             button,
             input {
                 font-size: 14px;
             }
+
             input::placeholder {
                 font-size: 14px;
             }
         }
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             grid-column: 2/4;
             max-width: 100%;
         }
@@ -210,21 +236,24 @@
 }
 
 .header__menu-button {
-    display: none;
     width: 30px;
     height: 30px;
+    display: none;
+
     button {
         @include templateFlex(center, center);
+
         img {
             width: 100%;
             height: 100%;
             @include templateTransition(opacity);
+
             &:hover {
                 opacity: 0.9;
             }
         }
     }
-    @media (max-width: 830px) {
+    @media (width <= 830px) {
         display: block;
     }
 }
@@ -232,25 +261,27 @@
 .header__mobile-menu {
     &_row {
         position: fixed;
+        width: 100vw;
+        height: 100%;
         top: 0;
         left: 0;
-        @include templateFlex(flex-start, center);
         flex-direction: column;
         row-gap: 10px;
-        height: 100%;
-        width: 100vw;
         padding: 20px 0;
-        @include templateFont(18, 700, 1.4);
         color: $dark-color;
         text-transform: uppercase;
         background-color: $light-color;
         z-index: 111;
+        @include templateFlex(flex-start, center);
+        @include templateFont(18, 700, 1.4);
+
         button {
             position: absolute;
             top: 20px;
             right: 15px;
             width: 30px;
             height: 30px;
+
             img {
                 width: 80%;
                 height: 80%;

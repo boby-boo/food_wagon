@@ -6,15 +6,18 @@
         width: 100%;
         margin-bottom: 60px;
     }
+
     &__inner {
         position: relative;
         width: 100%;
         @include templateFlex(space-between, center);
         column-gap: 20px;
+
         &_elements {
             width: 100%;
         }
     }
+
     &__label {
         position: absolute;
         top: 50%;
@@ -26,8 +29,9 @@
         @include templateTransition(all);
         z-index: 2;
     }
+
     &__field {
-        padding: 10px 5px 10px 5px;
+        padding: 10px 5px;
         width: 100%;
         display: flex;
         flex-grow: 4;
@@ -36,6 +40,7 @@
         @include templateTransition(all);
         border-bottom: 1px dashed $gray-color;
     }
+
     &__icon {
         svg {
             width: 18px;
@@ -44,11 +49,12 @@
             fill: #adadad;
         }
     }
+
     &__error_message {
         padding-left: 5px;
         font-size: 14px;
         text-transform: uppercase;
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             font-size: 12px;
         }
     }

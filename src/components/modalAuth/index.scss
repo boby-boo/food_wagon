@@ -6,11 +6,13 @@
     width: 100%;
     height: 100%;
     z-index: 6;
+
     &_error {
         margin-bottom: 20px;
         font-size: 16px;
         text-align: center;
     }
+
     &_overlay {
         position: fixed;
         top: 0;
@@ -32,6 +34,7 @@
     border-radius: 10px;
     background-color: $light-color;
     z-index: 111;
+
     h2 {
         margin-bottom: 60px;
         align-self: center;
@@ -39,19 +42,24 @@
         color: $dark-color;
         text-align: center;
         text-transform: uppercase;
+
         span {
             color: $primary-color;
         }
     }
+
     button {
         margin-bottom: 30px;
     }
+
     &__footer {
         text-align: center;
         align-self: center;
+
         span {
             padding-left: 10px;
         }
+
         a {
             color: $primary-color;
         }
@@ -60,7 +68,8 @@
 
 .animate__color {
     @include templateTransition(all);
-    filter: drop-shadow(0px 0px 7px $primary-color);
+    filter: drop-shadow(0 0 7px $primary-color);
+
     svg {
         path {
             fill: #ffb30fb3;

@@ -1,6 +1,7 @@
 .product {
     padding-top: 20px;
     @include templateFont(30, 400, 1);
+
     &__row {
         max-width: 1100px;
         width: 100%;
@@ -9,24 +10,27 @@
         column-gap: 20px;
         border-radius: 14px;
         overflow: hidden;
-        box-shadow: 2px 2px 15px 2px rgba(66, 66, 66, 0.1);
+        box-shadow: 2px 2px 15px 2px rgb(66 66 66 / 10%);
         background-color: transparentize($gray-color, 0.95);
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             flex-direction: column-reverse;
         }
     }
+
     &__image {
+        width: 100%;
         height: 432px;
         max-width: 600px;
-        width: 100%;
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             max-width: 100%;
             height: 330px;
         }
+
         img {
-            @include templateObject();
+            @include templateObject;
         }
     }
+
     &__content {
         max-width: 500px;
         width: 100%;
@@ -34,65 +38,74 @@
         @include templateFlex(space-between, flex-start);
         flex-direction: column;
         gap: 30px;
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             padding: 0 5px;
             gap: 20px;
             margin-bottom: 20px;
         }
+
         &-title {
             @extend .primary-title;
             @include templateFlex(center, center);
             column-gap: 15px;
             margin-bottom: 20px;
             color: $dark-color;
+
             span {
                 font-weight: 400;
                 font-size: 30px;
                 color: $gray-color;
             }
         }
-        @media (max-width: 1030px) {
+        @media (width <= 1030px) {
             &-title {
                 margin-bottom: 10px;
                 column-gap: 10px;
                 font-size: 30px;
                 flex-wrap: wrap;
+
                 span {
                     font-size: 25px;
                 }
             }
         }
     }
+
     &__info {
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             margin: 0 auto;
             @include templateFlex(center, center);
             flex-direction: column;
             row-gap: 20px;
+
             h1 {
                 padding-top: 20px;
                 margin-bottom: 0;
             }
         }
     }
+
     &__controls {
         @include templateFlex(space-between, center);
         column-gap: 10px;
         max-width: 350px;
         width: 100%;
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             margin: 0 auto;
             flex-direction: column;
             row-gap: 20px;
         }
+
         &_price {
-            color: $primary-color;
             font-size: 40px;
+            color: $primary-color;
         }
+
         &_buttons {
             max-width: 210px;
             width: 100%;
             @include templateFlex(space-between, center);
+
             button {
                 width: 60px;
                 height: 60px;
@@ -102,53 +115,64 @@
                 border-radius: 50%;
                 background-color: $primary-color;
                 @include templateTransition(background-color);
+
                 &:hover {
                     background-color: transparentize($primary-color, 0.2);
                 }
             }
+
             span {
                 font-size: 40px;
             }
         }
-        @media (max-width: 1030px) {
+        @media (width <= 1030px) {
             max-width: 300px;
             font-size: 25px;
+
             &_buttons {
                 max-width: 160px;
+
                 button {
                     width: 40px;
                     height: 40px;
                 }
             }
+
             &_price {
                 font-size: 30px;
             }
+
             span {
                 font-size: 30px;
             }
         }
     }
+
     &__description {
         @include templateFont(25, 400, 1);
+
         h3 {
             font: inherit;
             margin-bottom: 10px;
         }
+
         p {
             @include templateFont(20, 400, 1.4);
             color: $gray-color;
         }
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             margin: 0 auto;
             text-align: center;
+
             p {
                 font-size: 18px;
             }
         }
-        @media (max-width: 1030px) {
+        @media (width <= 1030px) {
             @include templateFont(18, 400, 1.2);
         }
     }
+
     &__button {
         @extend .restaurants__button;
         margin: 0;
@@ -158,13 +182,15 @@
         border-radius: 6px;
         background-color: $primary-color;
         @include templateTransition(background-color);
+
         &:hover {
             background-color: transparentize($primary-color, 0.2);
         }
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             margin: 0 auto;
         }
     }
+
     &__about {
         max-width: 1100px;
         margin: 0 auto;
@@ -174,19 +200,23 @@
         @include templateFont(18, 400, 1.4);
     }
 }
+
 .review {
     padding: 40px 0;
+
     &__title {
         @extend .primary-title;
         color: $dark-color;
         margin-bottom: 20px;
     }
+
     .review__row {
         max-width: 1100px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 40px;
+
         .review-card {
             width: 100%;
             margin: 0 auto;
@@ -195,60 +225,69 @@
             gap: 30px;
             flex-wrap: wrap;
             border-radius: 14px;
-            box-shadow: 2px 2px 15px 2px rgba(66, 66, 66, 0.1);
-            @media (max-width: 900px) {
+            box-shadow: 2px 2px 15px 2px rgb(66 66 66 / 10%);
+            @media (width <= 900px) {
                 flex-direction: column;
             }
+
             &__info {
-                @media (max-width: 800px) {
+                @media (width <= 800px) {
                     @include templateFlex(center, center);
                 }
             }
+
             &__author {
                 @include templateFlex(flex-start, center);
                 gap: 20px;
                 flex-wrap: wrap;
-                @media (max-width: 800px) {
+                @media (width <= 800px) {
                     justify-content: center;
                 }
+
                 &_image {
                     max-width: 140px;
                     width: 100%;
                     height: 140px;
                     border-radius: 50%;
                     overflow: hidden;
+
                     img {
-                        @include templateObject();
+                        @include templateObject;
                     }
                 }
+
                 &_desc {
                     @include templateFlex(flex-start, flex-start);
                     flex-direction: column;
                     gap: 6px;
                     @include templateFont(22, 400, 1.2);
+
                     span {
                         font-style: italic;
                         color: $gray-color;
                     }
+
                     &-rate {
                         margin-top: 14px;
-                        @media (max-width: 900px) {
+                        @media (width <= 900px) {
                             margin-top: 0;
                         }
                     }
                 }
             }
+
             &__message {
                 @include templateFont(20, 400, 1.4);
                 max-width: 410px;
                 width: 100%;
-                @media (max-width: 900px) {
+                @media (width <= 900px) {
                     text-align: center;
                 }
             }
         }
     }
 }
+
 .product__next_btn {
     @extend .custom-arrow__next_item;
     right: 0;
@@ -256,6 +295,7 @@
     transform: translateY(-50%);
     z-index: 2;
 }
+
 .product__prev_btn {
     @extend .custom-arrow__prev_item;
     left: 0;
@@ -263,31 +303,35 @@
     transform: translateY(-50%);
     z-index: 2;
 }
+
 .btn-icon {
     fill: $light-color;
 }
+
 .btn__icon {
     &_minus,
     &_plus {
-        &:before {
+        &::before {
             content: '';
-            display: block;
             width: 25px;
             height: 25px;
-            @media (max-width: 1030px) {
+            display: block;
+            @media (width <= 1030px) {
                 width: 20px;
                 height: 20px;
             }
         }
     }
+
     &_minus {
-        &:before {
+        &::before {
             background: url('../../resources/icons/minus__icon.svg')
                 center/cover no-repeat;
         }
     }
+
     &_plus {
-        &:before {
+        &::before {
             background: url('../../resources/icons/plus__icon.svg') center/cover
                 no-repeat;
         }

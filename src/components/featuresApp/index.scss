@@ -1,6 +1,6 @@
 .gradient-text {
     background: linear-gradient(93deg, #fb3c00 -47.72%, #ffb800 136.81%);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -12,7 +12,8 @@
     overflow: hidden;
     background: linear-gradient(261deg, #ffae00 63.85%, #ff8a00 111.94%);
     z-index: 1;
-    &:before {
+
+    &::before {
         content: '';
         position: absolute;
         top: 100%;
@@ -24,15 +25,17 @@
         border-radius: 50%;
         z-index: -1;
     }
+
     &__top {
         padding: 130px 0 80px;
-        @media (max-width: 1230px) {
+        @media (width <= 1230px) {
             padding: 60px 0 40px;
         }
-        @media (max-width: 800px) {
+        @media (width <= 800px) {
             display: none;
         }
     }
+
     &__row {
         margin: 0 auto;
         @include templateFlex(center, center);
@@ -40,31 +43,36 @@
         background-color: #fff;
         overflow: hidden;
         box-shadow:
-            0px 27px 82px 0px rgba(255, 174, 0, 0.28),
-            0px 14px 15px 0px rgba(255, 174, 0, 0.01);
+            0 27px 82px 0 rgb(255 174 0 / 28%),
+            0 14px 15px 0 rgb(255 174 0 / 1%);
+
         &_item {
             @extend .gradient-text;
             @include templateFont(35, 700, 1.2);
             @include templateTransition(all);
+
             &:nth-child(2) {
                 @include templateFlex(space-between, center);
-                &:before,
-                &:after {
+
+                &::before,
+                &::after {
                     content: '';
-                    display: block;
                     width: 2px;
                     height: 96px;
+                    display: block;
                     background-color: #cfcfcf;
-                    @media (max-width: 1230px) {
+                    @media (width <= 1230px) {
                         display: none;
                     }
                 }
             }
+
             div {
                 padding: 55px;
                 @include templateFlex(center, center);
                 column-gap: 30px;
             }
+
             &-active {
                 @extend .features__row_item;
                 color: $light-color;
@@ -72,44 +80,45 @@
                 @include templateTransition(all);
             }
         }
-        @media (max-width: 1230px) {
+        @media (width <= 1230px) {
             flex-direction: column;
             max-width: 450px;
         }
     }
+
     &__bottom {
         padding-top: 60px;
+
         &_row {
             width: 100%;
             @include templateFlex(space-between, center);
             column-gap: 20px;
-            @media (max-width: 1270px) {
+            @media (width <= 1270px) {
                 align-items: center;
                 justify-content: center;
                 flex-direction: column-reverse;
                 row-gap: 40px;
             }
         }
+
         &_image {
             margin-bottom: -220px;
             max-width: 603px;
             height: 760px;
+
             img {
-                filter: drop-shadow(
-                        0px 24.810802459716797px 75.35132598876953px
-                            rgba(255, 174, 0, 0.28)
-                    )
-                    drop-shadow(
-                        0px 12.864860534667969px 13.783780097961426px
-                            rgba(255, 174, 0, 0.01)
-                    );
-                @include templateObject();
+                filter: drop-shadow(0 24px 75px #ffae0047)
+                    drop-shadow(0 12px 13px #ffae0003);
+                @include templateObject;
             }
         }
+
         &_content {
             max-width: 500px;
+
             &_text {
                 margin-bottom: 40px;
+
                 h2 {
                     margin-bottom: 16px;
                     @include templateFont(68, 700, 1.06);
@@ -118,21 +127,23 @@
                         linear-gradient(93deg, #ffb800 -47.72%, #ff8a00 136.81%)
                     );
                     background-clip: text;
-                    -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+
                 p {
                     @include templateFont(18, 400, 1.4);
                 }
             }
-            @media (max-width: 1270px) {
+            @media (width <= 1270px) {
                 flex-direction: column;
                 text-align: center;
             }
         }
+
         .content__buttons {
             @include templateFlex(flex-start, center);
             column-gap: 8px;
+
             &_link {
                 padding: 8px 13px;
                 max-width: 218px;
@@ -143,51 +154,60 @@
                 border-radius: 5px;
                 box-shadow: $primary-shadow;
                 @include templateTransition(all);
+
                 &:hover {
                     background-color: transparentize($primary-color, 0.5);
+
                     span,
                     h4 {
                         color: $light-color;
                     }
+
                     img {
                         opacity: 1;
                     }
                 }
+
                 &:nth-child(2) {
                     span {
                         text-transform: none;
                     }
                 }
             }
+
             &_description {
                 @include templateFlex(flex-start, flex-start);
                 flex-direction: column;
                 @include templateTransition(all);
+
                 span {
                     text-align: left;
                     color: $gray-color;
                     text-transform: uppercase;
                 }
+
                 h4 {
                     text-transform: capitalize;
                     @include templateFont(18, 600, 1.2);
                 }
+
                 span,
                 h4 {
                     @include templateTransition(color);
                 }
             }
+
             &_image {
                 max-width: 35px;
-
                 height: 35px;
+
                 img {
-                    @include templateObject();
+                    @include templateObject;
                     opacity: 0.7;
                     @include templateTransition(opacity);
                 }
             }
-            @media (max-width: 1270px) {
+            @media (width <= 1270px) {
                 justify-content: center;
                 gap: 20px;
                 flex-wrap: wrap;

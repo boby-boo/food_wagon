@@ -1,8 +1,9 @@
 .order-info {
     padding: 60px 0;
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
         padding: 20px;
     }
+
     &__row {
         padding: 80px 20px 50px;
         max-width: 1000px;
@@ -11,29 +12,32 @@
         flex-direction: column;
         gap: 20px;
         border-radius: 10px;
-        box-shadow: 0px 0px 15px 5px #0000001a;
-        @media (max-width: 600px) {
+        box-shadow: 0 0 15px 5px #0000001a;
+        @media (width <= 600px) {
             padding: 60px 20px 20px;
         }
     }
+
     &__title {
         margin: 40px 0;
         @include templateFont(28, 400, 1.5);
         color: $gray-color;
         text-align: center;
         text-transform: uppercase;
-        @media (max-width: 400px) {
+        @media (width <= 400px) {
             font-size: 23px;
         }
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             margin: 25px 0;
         }
     }
+
     &__inputs-inner {
         width: 100%;
         @include templateFlex(center, center);
         column-gap: 20px;
     }
+
     &__field {
         padding: 10px;
         max-width: 400px;
@@ -42,11 +46,13 @@
         color: $gray-color;
         border-radius: 10px;
         box-shadow: $secondary-shadow;
+
         &::placeholder {
             font-weight: 400;
             text-transform: uppercase;
         }
     }
+
     input[type='button'] {
         @extend .primary__button;
         letter-spacing: 1px;
@@ -57,7 +63,7 @@
     width: 100%;
     @include templateFlex(space-between, flex-start);
     column-gap: 20px;
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
         flex-wrap: wrap;
     }
 }
@@ -65,44 +71,52 @@
 .steps__row {
     @include templateFlex(center, center);
     column-gap: 6px;
+
     input {
         display: none;
     }
+
     &_step {
         @include templateFlex(center, center);
         column-gap: 6px;
         height: 40px;
+
         &:last-child {
             .dotted {
                 display: none;
             }
         }
+
         .circle {
             @include templateFlex(center, center);
             @include templateFont(18, 600, 1.2);
-            color: $light-color;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            color: $light-color;
             background-color: transparentize($gray-color, 0.7);
+            border-radius: 50%;
             cursor: pointer;
+
             &:hover {
                 .circle {
                     background-color: transparentize($primary-color, 0.2);
                 }
             }
         }
+
         .dotted {
-            display: block;
             width: 10px;
             height: 10px;
+            display: block;
             background-color: transparentize($gray-color, 0.7);
             border-radius: 50%;
+
             &__row {
                 @include templateFlex(center, center);
                 column-gap: 4px;
             }
         }
+
         .circle,
         .dotted {
             @include templateTransition(all);
@@ -114,6 +128,7 @@
     .circle {
         background-color: $primary-color;
     }
+
     .dotted {
         background-color: transparentize($primary-color, 0.4);
     }
@@ -136,24 +151,29 @@
     &__buttons {
         max-width: 550px;
     }
+
     &__icon {
         fill: $gray-color;
     }
+
     &__info_personal {
         width: 100%;
     }
+
     &__buttons {
         margin-bottom: 60px;
         width: 100%;
         @include templateFlex(center, center);
         column-gap: 10px;
-        @media (max-width: 600px) {
+        @media (width <= 600px) {
             flex-direction: column;
             row-gap: 40px;
         }
+
         input {
             display: none;
         }
+
         &_inner {
             label {
                 max-width: 200px;
@@ -165,12 +185,14 @@
                 border-radius: 20px;
                 cursor: pointer;
                 @include templateTransition(all);
+
                 &:hover {
                     box-shadow: $primary-shadow;
                     background-color: transparentize($primary-color, 0.9);
                 }
             }
         }
+
         &__icon {
             @include templateTransition(fill);
         }
@@ -180,9 +202,10 @@
 .delivery__buttons_inner-card:checked,
 .delivery__buttons_inner-cash:checked {
     & + label {
-        background-color: $primary-color;
         color: $light-color;
+        background-color: $primary-color;
         box-shadow: $primary-shadow;
+
         .delivery__icon {
             fill: $light-color;
         }
@@ -200,9 +223,11 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: $secondary-shadow;
+
     span {
         color: $primary-color;
     }
+
     p {
         text-transform: uppercase;
     }
