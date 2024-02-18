@@ -30,3 +30,4 @@ export { default as CartProductsPrice } from './cartProductsPrice';
 export { default as SignupForm } from './signupForm';
 export { default as Spinner } from './spinner';
 export { default as CartProductsList } from './cartProductsList';
+export { default as UserPopup } from './userPopup';

@@ -79,6 +79,12 @@ const useFoodWagonService = () => {
         return res;
     };
 
+    const getOrders = async userId => {
+        const res = await request(`${_baseURL}orders`);
+        const findId = res.filter(order => order.infoAboutUser.id === userId);
+        return findId;
+    };
+
     const updateUserInfo = async (id, body, url = `${_baseURL}users/`) => {
         const res = await request(`${url}${id}`, 'PATCH', body);
         return res;
@@ -93,6 +99,7 @@ const useFoodWagonService = () => {
         postUser,
         getUser,
         postOrder,
+        getOrders,
         updateUserInfo,
     };
 };

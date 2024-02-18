@@ -20,19 +20,14 @@ const UserPopup = ({ toggleModalOpen }) => {
     const [activePanel, setActivePanel] = useState('personal__data');
     const [isChanged, setIsChanged] = useState(false);
     const dispatch = useDispatch();
-    const { updateUserInfo } = FoodWagonService();
+    const { updateUserInfo, getOrders } = FoodWagonService();
     const popupRef = useRef();
     const mainBlockRef = useRef();
     const personalRefs = [];
     const addressRefs = [];
 
     useEffect(() => {
-        fetch('http://localhost:3001/orders')
-            .then(res => res.json())
-            .then(res =>
-                res.filter(order => order.infoAboutUser.id === userData.id),
-            )
-            .then(res => setUserOrders(res));
+        getOrders(userData.id).then(res => setUserOrders(res));
 
         const handleResize = () => {
             if (

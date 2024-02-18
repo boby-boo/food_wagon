@@ -1,2151 +1,2264 @@
 {
-    "restaurant": [
+  "restaurant": [
+    {
+      "partnerName": "Food World",
+      "logo": "restaurant/partners/food_world.png",
+      "time_of_delivery": 50,
+      "rate": 46,
+      "category": "world",
+      "image": "restaurant/food_world/preview.jpg",
+      "working_hours": "9:30 - 20:00",
+      "products": "food-world",
+      "data": [
         {
-            "partnerName": "Food World",
-            "logo": "restaurant/partners/food_world.png",
-            "time_of_delivery": 50,
-            "rate": 46,
-            "category": "world",
-            "image": "restaurant/food_world/preview.jpg",
-            "working_hours": "9:30 - 20:00",
-            "products": "food-world",
-            "data": [
-                {
-                    "name": "Calf Sauce",
-                    "id": "01",
-                    "price": 3,
-                    "category": "world",
-                    "description": "Delicious calf sauce with a perfect blend of spices.",
-                    "image": "restaurant/food_world/calf-sauce.jpg",
-                    "ingredients": ["Calf meat", "Spices", "Seasonings"],
-                    "weight": 200,
-                    "review": [
-                        {
-                            "author": "Michael Scott",
-                            "rate": 5,
-                            "comment": "This pizza is so good",
-                            "date": "2023-12-17"
-                        },
-                        {
-                            "author": "Dwight Schrute",
-                            "rate": 5,
-                            "comment": "Interesting flavor combination!",
-                            "date": "2023-12-20"
-                        }
-                    ]
-                },
-                {
-                    "name": "Chick",
-                    "id": "02",
-                    "price": 6,
-                    "category": "world",
-                    "description": "Tender and juicy chicken cooked to perfection.",
-                    "image": "restaurant/food_world/chick.jpg",
-                    "ingredients": ["Chicken", "Herbs", "Marinade"],
-                    "weight": 300,
-                    "review": [
-                        {
-                            "author": "Pam Beesly",
-                            "rate": 5,
-                            "comment": "The chicken is amazing!",
-                            "date": "2023-12-18"
-                        }
-                    ]
-                },
-                {
-                    "name": "Chicken Soup",
-                    "id": "03",
-                    "price": 3,
-                    "category": "world",
-                    "description": "Warm and comforting chicken soup to soothe your soul.",
-                    "image": "restaurant/food_world/chicken-soup.jpg",
-                    "ingredients": [
-                        "Chicken broth",
-                        "Vegetables",
-                        "Seasonings"
-                    ],
-                    "weight": 250,
-                    "review": [
-                        {
-                            "author": "Angela Martin",
-                            "rate": 4,
-                            "comment": "Good for a cold day.",
-                            "date": "2023-12-22"
-                        },
-                        {
-                            "author": "Oscar Martinez",
-                            "rate": 3,
-                            "comment": "Could use more salt.",
-                            "date": "2023-12-23"
-                        }
-                    ]
-                },
-                {
-                    "name": "Dumplings",
-                    "id": "04",
-                    "price": 5.2,
-                    "category": "world",
-                    "description": "Savory dumplings filled with a delightful mixture of ingredients.",
-                    "image": "restaurant/food_world/dumplings.jpg",
-                    "ingredients": ["Minced meat", "Dough", "Herbs"],
-                    "weight": 180,
-                    "review": [
-                        {
-                            "author": "Stanley Hudson",
-                            "rate": 4,
-                            "comment": "I'd eat these again.",
-                            "date": "2023-12-24"
-                        },
-                        {
-                            "author": "Phyllis Vance",
-                            "rate": 5,
-                            "comment": "Delicious!",
-                            "date": "2023-12-25"
-                        }
-                    ]
-                },
-                {
-                    "name": "Ear",
-                    "id": "05",
-                    "price": 2,
-                    "category": "world",
-                    "description": "A classic dish known for its unique taste and texture.",
-                    "image": "restaurant/food_world/ear.jpg",
-                    "ingredients": ["Pork ear", "Soy sauce", "Spices"],
-                    "weight": 120,
-                    "review": []
-                },
-                {
-                    "name": "Pig-chop",
-                    "id": "06",
-                    "price": 4.4,
-                    "category": "world",
-                    "description": "Tasty and succulent pig chop cooked to perfection.",
-                    "image": "restaurant/food_world/pig-chop.jpg",
-                    "ingredients": ["Pork chop", "Marinade", "Herbs"],
-                    "weight": 220,
-                    "review": []
-                },
-                {
-                    "name": "Plov",
-                    "id": "07",
-                    "price": 3.3,
-                    "category": "world",
-                    "description": "A flavorful rice dish with a mix of meat and vegetables.",
-                    "image": "restaurant/food_world/plov.jpg",
-                    "ingredients": ["Rice", "Meat", "Vegetables"],
-                    "weight": 280,
-                    "review": [
-                        {
-                            "author": "Ryan Howard",
-                            "rate": 3,
-                            "comment": "Not bad, but I've had better.",
-                            "date": "2023-12-26"
-                        }
-                    ]
-                },
-                {
-                    "name": "Squid",
-                    "id": "08",
-                    "price": 3.2,
-                    "category": "world",
-                    "description": "Tender and delicious squid prepared with a special touch.",
-                    "image": "restaurant/food_world/squid.jpg",
-                    "ingredients": ["Squid", "Garlic", "Olive oil"],
-                    "weight": 150,
-                    "review": []
-                },
-                {
-                    "name": "Zander",
-                    "id": "09",
-                    "price": 5,
-                    "category": "world",
-                    "description": "Mouthwatering zander dish with a perfect blend of flavors.",
-                    "image": "restaurant/food_world/zander.jpg",
-                    "ingredients": ["Zander fish", "Lemon", "Herbs"],
-                    "weight": 250,
-                    "review": [
-                        {
-                            "author": "Jim Halpert",
-                            "rate": 5,
-                            "comment": "Absolutely delicious!",
-                            "date": "2023-12-19"
-                        }
-                    ]
-                }
-            ]
+          "name": "Calf Sauce",
+          "id": "01",
+          "price": 3,
+          "category": "world",
+          "description": "Delicious calf sauce with a perfect blend of spices.",
+          "image": "restaurant/food_world/calf-sauce.jpg",
+          "ingredients": [
+            "Calf meat",
+            "Spices",
+            "Seasonings"
+          ],
+          "weight": 200,
+          "review": [
+            {
+              "author": "Michael Scott",
+              "rate": 5,
+              "comment": "This pizza is so good",
+              "date": "2023-12-17"
+            },
+            {
+              "author": "Dwight Schrute",
+              "rate": 5,
+              "comment": "Interesting flavor combination!",
+              "date": "2023-12-20"
+            }
+          ]
         },
         {
-            "partnerName": "Pizza Hub",
-            "logo": "restaurant/partners/pizza_hub.png",
-            "time_of_delivery": 30,
-            "rate": 40,
-            "category": "pizza",
-            "image": "restaurant/pizza_hub/preview.jpg",
-            "working_hours": "7:00 - 23:30",
-            "products": "pizza-hub",
-            "data": [
-                {
-                    "name": "Margarita",
-                    "id": "10",
-                    "price": 2.3,
-                    "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
-                    "image": "restaurant/pizza_hub/margarita.jpg",
-                    "ingredients": [
-                        "Tomato sauce",
-                        "Mozzarella cheese",
-                        "Fresh basil"
-                    ],
-                    "weight": 350,
-                    "review": [
-                        {
-                            "author": "John Doe",
-                            "rate": 5,
-                            "comment": "Amazing pizza! Loved the fresh basil on top.",
-                            "date": "2023-12-11"
-                        },
-                        {
-                            "author": "Anna Smith",
-                            "rate": 4,
-                            "comment": "Great taste, but a bit too much basil for my liking.",
-                            "date": "2023-12-12"
-                        },
-                        {
-                            "author": "Mike Johnson",
-                            "rate": 3,
-                            "comment": "Not bad, but I've had better Margaritas elsewhere.",
-                            "date": "2023-12-13"
-                        }
-                    ]
-                },
-                {
-                    "name": "Meet",
-                    "id": "11",
-                    "price": 3,
-                    "description": "Hearty pizza with a combination of different meats, including sausage, pepperoni, and ham.",
-                    "image": "restaurant/pizza_hub/meet.jpg",
-                    "ingredients": ["Sausage", "Pepperoni", "Ham"],
-                    "weight": 420,
-                    "review": [
-                        {
-                            "author": "Jane Smith",
-                            "rate": 4,
-                            "comment": "Great mix of meats, very satisfying!",
-                            "date": "2023-12-12"
-                        },
-                        {
-                            "author": "Alex Johnson",
-                            "rate": 5,
-                            "comment": "The best meat pizza I've ever had!",
-                            "date": "2023-12-13"
-                        },
-                        {
-                            "author": "Dmitriy Kozlov",
-                            "rate": 4,
-                            "comment": "Tasty combination, but a bit heavy for my taste.",
-                            "date": "2023-12-14"
-                        }
-                    ]
-                },
-                {
-                    "name": "Norwegian",
-                    "id": "12",
-                    "price": 6,
-                    "description": "Scandinavian-inspired pizza with smoked salmon, cream cheese, and dill.",
-                    "image": "restaurant/pizza_hub/norwegian.jpg",
-                    "ingredients": ["Smoked salmon", "Cream cheese", "Dill"],
-                    "weight": 380,
-                    "review": [
-                        {
-                            "author": "Alice Johnson",
-                            "rate": 5,
-                            "comment": "Delicious and unique flavors, loved the smoked salmon!",
-                            "date": "2023-12-13"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pepperoni",
-                    "id": "13",
-                    "price": 3.4,
-                    "description": "Classic pizza with spicy pepperoni slices and tomato sauce.",
-                    "image": "restaurant/pizza_hub/pepperoni.jpg",
-                    "ingredients": [
-                        "Pepperoni",
-                        "Tomato sauce",
-                        "Mozzarella cheese"
-                    ],
-                    "weight": 400,
-                    "review": [
-                        {
-                            "author": "Bob Anderson",
-                            "rate": 3,
-                            "comment": "Decent pepperoni pizza, could use more cheese.",
-                            "date": "2023-12-14"
-                        }
-                    ]
-                },
-                {
-                    "name": "Seven cheeses",
-                    "id": "14",
-                    "price": 4.3,
-                    "description": "Delicious pizza topped with a blend of seven different cheeses for a rich flavor.",
-                    "image": "restaurant/pizza_hub/seven-cheeses.jpg",
-                    "ingredients": [
-                        "Cheese1",
-                        "Cheese2",
-                        "Cheese3",
-                        "Cheese4",
-                        "Cheese5",
-                        "Cheese6",
-                        "Cheese7"
-                    ],
-                    "weight": 450,
-                    "review": [
-                        {
-                            "author": "Charlie Brown",
-                            "rate": 4,
-                            "comment": "Cheese lover's dream! Fantastic blend.",
-                            "date": "2023-12-15"
-                        }
-                    ]
-                },
-                {
-                    "name": "Tom-yam",
-                    "id": "15",
-                    "price": 3.33,
-                    "description": "Unique pizza with a fusion of flavors, combining the traditional taste of Tom-yam with pizza ingredients.",
-                    "image": "restaurant/pizza_hub/tom-yam.jpg",
-                    "ingredients": ["Tom-yam sauce", "Seafood", "Vegetables"],
-                    "weight": 370,
-                    "review": [
-                        {
-                            "author": "David Williams",
-                            "rate": 4,
-                            "comment": "Surprisingly good fusion! Tom-yam works well with pizza.",
-                            "date": "2023-12-16"
-                        }
-                    ]
-                }
-            ]
+          "name": "Chick",
+          "id": "02",
+          "price": 6,
+          "category": "world",
+          "description": "Tender and juicy chicken cooked to perfection.",
+          "image": "restaurant/food_world/chick.jpg",
+          "ingredients": [
+            "Chicken",
+            "Herbs",
+            "Marinade"
+          ],
+          "weight": 300,
+          "review": [
+            {
+              "author": "Pam Beesly",
+              "rate": 5,
+              "comment": "The chicken is amazing!",
+              "date": "2023-12-18"
+            }
+          ]
         },
         {
-            "partnerName": "Ruby Tuesday",
-            "logo": "restaurant/partners/ruby_tuesday.png",
-            "time_of_delivery": 40,
-            "rate": 26,
-            "category": "pizza",
-            "image": "restaurant/ruby_tuesday/preview.jpg",
-            "working_hours": "8:00 - 23:30",
-            "products": "ruby-tuesday",
-            "data": [
-                {
-                    "name": "Pizza caesar",
-                    "id": "16",
-                    "price": 4.4,
-                    "description": "A delightful pizza inspired by the classic Caesar salad, featuring a combination of fresh greens, chicken, and Caesar dressing.",
-                    "image": "restaurant/ruby_tuesday/pizza-caesar.jpg",
-                    "ingredients": [
-                        "Fresh greens",
-                        "Chicken",
-                        "Caesar dressing"
-                    ],
-                    "weight": 380,
-                    "review": [
-                        {
-                            "author": "Angela Martin",
-                            "rate": 5,
-                            "comment": "Great combination of flavors!",
-                            "date": "2023-12-20"
-                        },
-                        {
-                            "author": "Michael Scott",
-                            "rate": 3,
-                            "comment": "Not bad, but I expected more from a Caesar-inspired pizza.",
-                            "date": "2023-12-21"
-                        },
-                        {
-                            "author": "Jim Halpert",
-                            "rate": 4,
-                            "comment": "Fantastic! A must-try for Caesar salad lovers.",
-                            "date": "2023-12-22"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza chef",
-                    "id": "17",
-                    "price": 3.3,
-                    "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
-                    "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
-                    "ingredients": [
-                        "Premium ingredients",
-                        "Special chef's sauce",
-                        "Cheese blend"
-                    ],
-                    "weight": 410,
-                    "review": [
-                        {
-                            "author": "Dwight Schrute",
-                            "rate": 3,
-                            "comment": "Decent pizza, but I've had better.",
-                            "date": "2023-12-21"
-                        },
-                        {
-                            "author": "Pam Beesly",
-                            "rate": 4,
-                            "comment": "The chef's sauce is the highlight! Delicious.",
-                            "date": "2023-12-22"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza dacha",
-                    "id": "18",
-                    "price": 4.25,
-                    "description": "A rustic pizza with a farmhouse twist, featuring fresh vegetables and savory toppings reminiscent of a countryside retreat.",
-                    "image": "restaurant/ruby_tuesday/pizza-dacha.jpg",
-                    "ingredients": [
-                        "Fresh vegetables",
-                        "Savory toppings",
-                        "Farmhouse-inspired sauce"
-                    ],
-                    "weight": 430,
-                    "review": []
-                },
-                {
-                    "name": "Pizza meat",
-                    "id": "19",
-                    "price": 5.4,
-                    "description": "A meat lover's paradise! This pizza is loaded with a variety of succulent meats, providing a hearty and satisfying flavor experience.",
-                    "image": "restaurant/ruby_tuesday/pizza-meat.jpg",
-                    "ingredients": [
-                        "Pepperoni",
-                        "Sausage",
-                        "Ham",
-                        "Bacon",
-                        "Ground beef"
-                    ],
-                    "weight": 460,
-                    "review": [
-                        {
-                            "author": "Stanley Hudson",
-                            "rate": 5,
-                            "comment": "So much meat! Loved it.",
-                            "date": "2023-12-22"
-                        },
-                        {
-                            "author": "Oscar Martinez",
-                            "rate": 4,
-                            "comment": "Great variety of meats, but a bit heavy.",
-                            "date": "2023-12-23"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza pepperoni",
-                    "id": "20",
-                    "price": 2.3,
-                    "description": "The classic pepperoni pizza, featuring spicy pepperoni slices on a bed of rich tomato sauce and melted cheese.",
-                    "image": "restaurant/ruby_tuesday/pizza-pepperoni.jpg",
-                    "ingredients": [
-                        "Pepperoni",
-                        "Tomato sauce",
-                        "Mozzarella cheese"
-                    ],
-                    "weight": 400,
-                    "review": []
-                },
-                {
-                    "name": "Pizza village",
-                    "id": "21",
-                    "price": 4.6,
-                    "description": "Transport yourself to a charming village with this pizza, showcasing a delightful mix of traditional flavors and wholesome ingredients.",
-                    "image": "restaurant/ruby_tuesday/pizza-village.jpg",
-                    "ingredients": [
-                        "Traditional village flavors",
-                        "Wholesome ingredients",
-                        "Special sauce"
-                    ],
-                    "weight": 420,
-                    "review": [
-                        {
-                            "author": "Phyllis Vance",
-                            "rate": 5,
-                            "comment": "Charming and delicious!",
-                            "date": "2023-12-23"
-                        },
-                        {
-                            "author": "Kevin Malone",
-                            "rate": 5,
-                            "comment": "Good, but could use more sauce.",
-                            "date": "2023-12-24"
-                        }
-                    ]
-                }
-            ]
+          "name": "Chicken Soup",
+          "id": "03",
+          "price": 3,
+          "category": "world",
+          "description": "Warm and comforting chicken soup to soothe your soul.",
+          "image": "restaurant/food_world/chicken-soup.jpg",
+          "ingredients": [
+            "Chicken broth",
+            "Vegetables",
+            "Seasonings"
+          ],
+          "weight": 250,
+          "review": [
+            {
+              "author": "Angela Martin",
+              "rate": 4,
+              "comment": "Good for a cold day.",
+              "date": "2023-12-22"
+            },
+            {
+              "author": "Oscar Martinez",
+              "rate": 3,
+              "comment": "Could use more salt.",
+              "date": "2023-12-23"
+            }
+          ]
         },
         {
-            "partnerName": "Kuakata Fried Chicken",
-            "logo": "restaurant/partners/kuakata_fried_chicken.png",
-            "time_of_delivery": 26,
-            "rate": 53,
-            "category": "pizza",
-            "image": "restaurant/kuakata_fried_chicken/preview.jpg",
-            "working_hours": "9:00 - 23:00",
-            "products": "kuakata-fried-chicken",
-            "data": [
-                {
-                    "name": "Pizza caesar",
-                    "id": "22",
-                    "price": 3.2,
-                    "description": "A classic pizza inspired by the timeless Caesar salad. Indulge in the perfect combination of fresh ingredients and savory flavors.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-classic.jpg",
-                    "ingredients": [
-                        "Fresh greens",
-                        "Chicken",
-                        "Caesar dressing",
-                        "Parmesan cheese"
-                    ],
-                    "weight": 400,
-                    "review": [
-                        {
-                            "author": "Oscar Martinez",
-                            "rate": 3,
-                            "comment": "A classic with a twist! Loved the freshness.",
-                            "date": "2023-12-24"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza girls",
-                    "id": "23",
-                    "price": 5,
-                    "description": "A fun and vibrant pizza for the girls! Packed with colorful and delicious toppings, it's a party on every slice.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-girls.jpg",
-                    "ingredients": [
-                        "Colorful peppers",
-                        "Olives",
-                        "Mushrooms",
-                        "Cheese blend"
-                    ],
-                    "weight": 420,
-                    "review": []
-                },
-                {
-                    "name": "Pizza hawaiian",
-                    "id": "24",
-                    "price": 2.45,
-                    "description": "Transport your taste buds to the tropics with this Hawaiian-inspired pizza. Enjoy the perfect blend of ham, pineapple, and cheese.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-hawaiian.jpg",
-                    "ingredients": [
-                        "Ham",
-                        "Pineapple",
-                        "Mozzarella cheese",
-                        "Tomato sauce"
-                    ],
-                    "weight": 380,
-                    "review": [
-                        {
-                            "author": "Kelly Kapoor",
-                            "rate": 4,
-                            "comment": "Tropical paradise on a pizza!",
-                            "date": "2023-12-25"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza oleole",
-                    "id": "25",
-                    "price": 2.1,
-                    "description": "An exotic pizza experience with the OleOle twist! Savor unique flavors and spices that make every bite a culinary adventure.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-oleole.jpg",
-                    "ingredients": [
-                        "Spicy sausage",
-                        "Chilies",
-                        "Olive oil",
-                        "Garlic"
-                    ],
-                    "weight": 450,
-                    "review": []
-                },
-                {
-                    "name": "Pizza plus",
-                    "id": "26",
-                    "price": 3.6,
-                    "description": "Take your pizza experience to the next level with Pizza Plus! Loaded with extra toppings and flavors, it's a taste sensation.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-plus.jpg",
-                    "ingredients": [
-                        "Pepperoni",
-                        "Sausage",
-                        "Bacon",
-                        "Onions",
-                        "Peppers"
-                    ],
-                    "weight": 430,
-                    "review": [
-                        {
-                            "author": "Ryan Howard",
-                            "rate": 5,
-                            "comment": "Amazing variety of toppings!",
-                            "date": "2023-12-26"
-                        }
-                    ]
-                },
-                {
-                    "name": "Pizza vesuvius",
-                    "id": "27",
-                    "price": 4,
-                    "description": "Experience the fiery flavors of Vesuvius with this bold and spicy pizza. It's an eruption of taste that will leave you craving more.",
-                    "image": "restaurant/kuakata_fried_chicken/pizza-vesuvius.jpg",
-                    "ingredients": [
-                        "Spicy pepperoni",
-                        "Jalapenos",
-                        "Hot sauce",
-                        "Mozzarella cheese"
-                    ],
-                    "weight": 410,
-                    "review": []
-                }
-            ]
+          "name": "Dumplings",
+          "id": "04",
+          "price": 5.2,
+          "category": "world",
+          "description": "Savory dumplings filled with a delightful mixture of ingredients.",
+          "image": "restaurant/food_world/dumplings.jpg",
+          "ingredients": [
+            "Minced meat",
+            "Dough",
+            "Herbs"
+          ],
+          "weight": 180,
+          "review": [
+            {
+              "author": "Stanley Hudson",
+              "rate": 4,
+              "comment": "I'd eat these again.",
+              "date": "2023-12-24"
+            },
+            {
+              "author": "Phyllis Vance",
+              "rate": 5,
+              "comment": "Delicious!",
+              "date": "2023-12-25"
+            }
+          ]
         },
         {
-            "partnerName": "Red Square",
-            "logo": "restaurant/partners/red_square.png",
-            "time_of_delivery": 40,
-            "rate": 45,
-            "category": "sushi",
-            "image": "restaurant/red_square/preview.jpg",
-            "working_hours": "11:00 - 22:30",
-            "products": "red-square",
-            "data": [
-                {
-                    "name": "Sushi",
-                    "id": "28",
-                    "price": 4.4,
-                    "description": "Experience the authentic taste of sushi with our classic Sushi roll. Fresh ingredients and expert craftsmanship for sushi enthusiasts.",
-                    "image": "restaurant/red_square/azhi.jpg",
-                    "ingredients": [
-                        "Nori seaweed",
-                        "Sushi rice",
-                        "Salmon",
-                        "Avocado",
-                        "Cucumber",
-                        "Soy sauce",
-                        "Wasabi",
-                        "Pickled ginger"
-                    ],
-                    "weight": 350,
-                    "review": [
-                        {
-                            "author": "Pam Beesly",
-                            "rate": 5,
-                            "comment": "Delicious and fresh! Loved the combination.",
-                            "date": "2023-12-27"
-                        },
-                        {
-                            "author": "Michael Scott",
-                            "rate": 3,
-                            "comment": "Solid sushi option!",
-                            "date": "2023-12-28"
-                        }
-                    ]
-                },
-                {
-                    "name": "Black sushi",
-                    "id": "29",
-                    "price": 5,
-                    "description": "Indulge in the elegance of Black Sushi. A visually stunning sushi roll with a unique blend of flavors and premium ingredients.",
-                    "image": "restaurant/red_square/black.jpg",
-                    "ingredients": [
-                        "Black rice",
-                        "Tuna",
-                        "Mango",
-                        "Sesame seeds",
-                        "Eel sauce"
-                    ],
-                    "weight": 380,
-                    "review": [
-                        {
-                            "author": "Jim Halpert",
-                            "rate": 4,
-                            "comment": "Fancy and flavorful!",
-                            "date": "2023-12-28"
-                        }
-                    ]
-                },
-                {
-                    "name": "Fresh sushi",
-                    "id": "30",
-                    "price": 5,
-                    "description": "Savor the freshness with our Fresh Sushi roll. Bursting with vibrant flavors and the finest ingredients for a delightful sushi experience.",
-                    "image": "restaurant/red_square/fresh.jpg",
-                    "ingredients": [
-                        "Shrimp",
-                        "Fresh herbs",
-                        "Mango",
-                        "Jasmine rice",
-                        "Soy sauce",
-                        "Wasabi"
-                    ],
-                    "weight": 320,
-                    "review": [
-                        {
-                            "author": "Stanley Hudson",
-                            "rate": 4,
-                            "comment": "Really enjoyed the freshness!",
-                            "date": "2023-12-29"
-                        },
-                        {
-                            "author": "Angela Martin",
-                            "rate": 4,
-                            "comment": "Solid sushi option!",
-                            "date": "2023-12-30"
-                        },
-                        {
-                            "author": "Dwight Schrute",
-                            "rate": 3,
-                            "comment": "Decent, but not as good as my beet sushi.",
-                            "date": "2023-12-29"
-                        }
-                    ]
-                },
-                {
-                    "name": "Nisuaz",
-                    "id": "31",
-                    "price": 2.4,
-                    "description": "Nisuaz offers a delightful twist on traditional sushi. Enjoy a fusion of flavors that will surprise and delight your taste buds.",
-                    "image": "restaurant/red_square/nisuaz.jpg",
-                    "ingredients": [
-                        "Smoked salmon",
-                        "Cream cheese",
-                        "Cucumber",
-                        "Chives",
-                        "Soy sauce"
-                    ],
-                    "weight": 300,
-                    "review": [
-                        {
-                            "author": "Kelly Kapoor",
-                            "rate": 3,
-                            "comment": "It's okay, but I prefer traditional sushi.",
-                            "date": "2023-12-30"
-                        }
-                    ]
-                },
-                {
-                    "name": "Sushi smoke",
-                    "id": "32",
-                    "price": 3.6,
-                    "description": "Dive into the rich and smoky flavors of Sushi Smoke. A unique sushi roll that combines traditional taste with a hint of smokiness.",
-                    "image": "restaurant/red_square/smoke.jpg",
-                    "ingredients": [
-                        "Smoked mackerel",
-                        "Eel",
-                        "Avocado",
-                        "Sesame seeds",
-                        "Teriyaki sauce"
-                    ],
-                    "weight": 400,
-                    "review": [
-                        {
-                            "author": "Ryan Howard",
-                            "rate": 4,
-                            "comment": "Great smoky flavor! A unique sushi experience.",
-                            "date": "2023-12-30"
-                        },
-                        {
-                            "author": "Oscar Martinez",
-                            "rate": 3,
-                            "comment": "Nice twist with the smokiness.",
-                            "date": "2023-12-31"
-                        }
-                    ]
-                },
-                {
-                    "name": "Tanuki",
-                    "id": "33",
-                    "price": 4.25,
-                    "description": "Discover the playful and delicious Tanuki sushi roll. A creative combination of ingredients that brings joy and flavor to every bite.",
-                    "image": "restaurant/red_square/tanuki.jpg",
-                    "ingredients": [
-                        "Spicy tuna",
-                        "Crunchy tempura flakes",
-                        "Cucumber",
-                        "Soy sauce",
-                        "Sesame seeds"
-                    ],
-                    "weight": 350,
-                    "review": [
-                        {
-                            "author": "Kevin Malone",
-                            "rate": 4,
-                            "comment": "Fun and tasty! Loved the crunchy tempura.",
-                            "date": "2023-12-30"
-                        },
-                        {
-                            "author": "Phyllis Vance",
-                            "rate": 6,
-                            "comment": "Interesting combination, but I prefer traditional sushi.",
-                            "date": "2023-12-31"
-                        }
-                    ]
-                }
-            ]
+          "name": "Ear",
+          "id": "05",
+          "price": 2,
+          "category": "world",
+          "description": "A classic dish known for its unique taste and texture.",
+          "image": "restaurant/food_world/ear.jpg",
+          "ingredients": [
+            "Pork ear",
+            "Soy sauce",
+            "Spices"
+          ],
+          "weight": 120,
+          "review": []
         },
         {
-            "partnerName": "Taco Bell",
-            "logo": "restaurant/partners/taco_bell.png",
-            "time_of_delivery": 50,
-            "rate": 35,
-            "category": "taco",
-            "image": "restaurant/taco_bell/preview.jpg",
-            "working_hours": "5:30 - 23:30",
-            "products": "taco-bell",
-            "data": [
-                {
-                    "name": "Burrito",
-                    "id": "34",
-                    "price": 2.4,
-                    "description": "A savory and satisfying Burrito filled with a delicious blend of ingredients. A classic choice for a hearty and flavorful meal.",
-                    "image": "restaurant/taco_bell/burrito.jpg",
-                    "ingredients": [
-                        "Flour tortilla",
-                        "Seasoned beef",
-                        "Black beans",
-                        "Rice",
-                        "Cheese",
-                        "Lettuce",
-                        "Tomatoes",
-                        "Sour cream"
-                    ],
-                    "weight": "400",
-                    "review": [
-                        {
-                            "author": "Stanley Hudson",
-                            "rate": 5,
-                            "comment": "Decent burrito, but could use more seasoning.",
-                            "date": "2023-12-31"
-                        }
-                    ]
-                },
-                {
-                    "name": "Cheeseburger",
-                    "id": "35",
-                    "price": 4.2,
-                    "description": "Indulge in the cheesy goodness of our Cheeseburger Taco. A fusion of taco and classic cheeseburger flavors in every bite.",
-                    "image": "restaurant/taco_bell/cheeseburger.jpg",
-                    "ingredients": [
-                        "Soft taco shell",
-                        "Seasoned beef",
-                        "Cheese",
-                        "Lettuce",
-                        "Tomatoes",
-                        "Pickles",
-                        "Ketchup",
-                        "Mustard"
-                    ],
-                    "weight": "300",
-                    "review": [
-                        {
-                            "author": "Phyllis Vance",
-                            "rate": 5,
-                            "comment": "Interesting combination! Loved the cheeseburger twist.",
-                            "date": "2024-01-01"
-                        }
-                    ]
-                },
-                {
-                    "name": "Combo Pizza",
-                    "id": "36",
-                    "price": 5.8,
-                    "description": "Experience the best of both worlds with our Combo Pizza Taco. The perfect combination of taco and pizza flavors for a delightful meal.",
-                    "image": "restaurant/taco_bell/combo.jpg",
-                    "ingredients": [
-                        "Crunchy taco shell",
-                        "Seasoned beef",
-                        "Tomato sauce",
-                        "Cheese",
-                        "Pepperoni",
-                        "Bell peppers",
-                        "Olives"
-                    ],
-                    "weight": "450",
-                    "review": []
-                },
-                {
-                    "name": "Fusion",
-                    "id": "37",
-                    "price": 2.4,
-                    "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
-                    "image": "restaurant/taco_bell/fusion.jpg",
-                    "ingredients": [
-                        "Soft taco shell",
-                        "Grilled chicken",
-                        "Mango salsa",
-                        "Cilantro",
-                        "Lime crema",
-                        "Red cabbage"
-                    ],
-                    "weight": "350",
-                    "review": [
-                        {
-                            "author": "Ryan Howard",
-                            "rate": 5,
-                            "comment": "Awesome fusion! Loved the mango salsa.",
-                            "date": "2024-01-02"
-                        },
-                        {
-                            "author": "Stanley Hudson",
-                            "rate": 3,
-                            "comment": "Decent burrito, but could use more seasoning.",
-                            "date": "2023-12-31"
-                        }
-                    ]
-                },
-                {
-                    "name": "Rome pizza",
-                    "id": "38",
-                    "price": 4,
-                    "description": "Embark on a culinary journey with our Rome Pizza Taco. A taco inspired by the classic flavors of Rome, bringing a taste of Italy to your taco experience.",
-                    "image": "restaurant/taco_bell/rome.jpg",
-                    "ingredients": [
-                        "Soft taco shell",
-                        "Italian sausage",
-                        "Marinara sauce",
-                        "Mozzarella cheese",
-                        "Basil",
-                        "Parmesan"
-                    ],
-                    "weight": "320",
-                    "review": [
-                        {
-                            "author": "Kelly Kapoor",
-                            "rate": 5,
-                            "comment": "Italian flavors in a taco! Loved it!",
-                            "date": "2024-01-03"
-                        }
-                    ]
-                },
-                {
-                    "name": "Udon",
-                    "id": "39",
-                    "price": 3,
-                    "description": "Savor the delicious and comforting Udon Taco. A unique twist on traditional tacos with the rich and hearty flavors of Japanese udon noodles.",
-                    "image": "restaurant/taco_bell/udon.jpg",
-                    "ingredients": [
-                        "Soft taco shell",
-                        "Teriyaki beef",
-                        "Udon noodles",
-                        "Broccoli",
-                        "Carrots",
-                        "Soy sauce"
-                    ],
-                    "weight": "380",
-                    "review": []
-                }
-            ]
+          "name": "Pig-chop",
+          "id": "06",
+          "price": 4.4,
+          "category": "world",
+          "description": "Tasty and succulent pig chop cooked to perfection.",
+          "image": "restaurant/food_world/pig-chop.jpg",
+          "ingredients": [
+            "Pork chop",
+            "Marinade",
+            "Herbs"
+          ],
+          "weight": 220,
+          "review": []
         },
         {
-            "partnerName": "Donuts hut",
-            "logo": "restaurant/partners/donuts_hut.png",
-            "time_of_delivery": 23,
-            "rate": 20,
-            "category": "donuts",
-            "image": "restaurant/donuts_hut/preview.jpg",
-            "working_hours": "10:00 - 23:30",
-            "products": "donuts-hut",
-            "data": [
-                {
-                    "name": "Crispy Sandwich",
-                    "id": "40",
-                    "price": 4.5,
-                    "description": "A delightful crispy sandwich with a perfect balance of textures and flavors.",
-                    "image": "restaurant/donuts_hut/crispy_sandwich.png",
-                    "ingredients": [
-                        "Crispy bread",
-                        "Grilled chicken",
-                        "Lettuce",
-                        "Tomato",
-                        "Mayonnaise"
-                    ],
-                    "weight": 180,
-                    "review": [
-                        {
-                            "author": "Pam Beesly",
-                            "rate": 4,
-                            "comment": "Great crunchiness and delicious filling!",
-                            "date": "2024-02-05"
-                        },
-                        {
-                            "author": "Dwight Schrute",
-                            "rate": 5,
-                            "comment": "Perfect fuel for a productive day on the farm!",
-                            "date": "2024-02-08"
-                        }
-                    ]
-                },
-                {
-                    "name": "Dancake",
-                    "id": "41",
-                    "price": 6.5,
-                    "description": "Experience the joy of breakfast with our signature Dancake – a delightful dance of flavors and textures on your taste buds.",
-                    "image": "restaurant/donuts_hut/dancake.png",
-                    "ingredients": [
-                        "Flour",
-                        "Buttermilk",
-                        "Vanilla extract",
-                        "Maple syrup",
-                        "Fresh berries"
-                    ],
-                    "weight": 200,
-                    "review": [
-                        {
-                            "author": "Leslie Knope",
-                            "rate": 5,
-                            "comment": "Pawnee's new favorite breakfast treat!",
-                            "date": "2024-02-10"
-                        },
-                        {
-                            "author": "Ron Swanson",
-                            "rate": 4,
-                            "comment": "I don't usually endorse non-meat items, but this Dancake is surprisingly satisfying.",
-                            "date": "2024-02-12"
-                        }
-                    ]
-                },
-                {
-                    "name": "Toffees Cake",
-                    "id": "42",
-                    "price": 7.2,
-                    "description": "Indulge in the rich and decadent sweetness of Toffee's Cake, a heavenly delight crafted with love and the finest ingredients.",
-                    "image": "restaurant/donuts_hut/toffees_cake.png",
-                    "ingredients": [
-                        "Rich chocolate sponge",
-                        "Toffee caramel",
-                        "Whipped cream",
-                        "Chocolate ganache",
-                        "Toasted almonds"
-                    ],
-                    "weight": 300,
-                    "review": [
-                        {
-                            "author": "Eleanor Shellstrop",
-                            "rate": 5,
-                            "comment": "This cake is the 'good place' of desserts!",
-                            "date": "2024-02-15"
-                        },
-                        {
-                            "author": "Tahani Al-Jamil",
-                            "rate": 4,
-                            "comment": "Quite splendid, darling. A taste fit for a sophisticated palate.",
-                            "date": "2024-02-17"
-                        }
-                    ]
-                },
-                {
-                    "name": "Tiramisu",
-                    "id": "43",
-                    "price": 8.0,
-                    "description": "Indulge in the classic Italian delight with our exquisite Tiramisu, a perfect harmony of coffee-soaked ladyfingers and luscious mascarpone cream.",
-                    "image": "restaurant/donuts_hut/tiramisu.png",
-                    "ingredients": [
-                        "Ladyfingers",
-                        "Espresso",
-                        "Mascarpone cheese",
-                        "Cocoa powder",
-                        "Whipped cream"
-                    ],
-                    "weight": 250,
-                    "review": [
-                        {
-                            "author": "Giuseppe Rossi",
-                            "rate": 5,
-                            "comment": "Authentic and delightful! Reminds me of my Nonna's kitchen.",
-                            "date": "2024-02-20"
-                        },
-                        {
-                            "author": "Isabella Romano",
-                            "rate": 4,
-                            "comment": "A taste of Italy in every bite. Buonissimo!",
-                            "date": "2024-02-22"
-                        }
-                    ]
-                },
-                {
-                    "name": "Cupcake",
-                    "id": "44",
-                    "price": 3.5,
-                    "description": "Delight in the sweetness of our delectable Cupcake, a miniature treat with a burst of flavors in every bite.",
-                    "image": "restaurant/donuts_hut/cupcake.png",
-                    "ingredients": [
-                        "Vanilla cake",
-                        "Buttercream frosting",
-                        "Sprinkles",
-                        "Love"
-                    ],
-                    "weight": 100,
-                    "review": [
-                        {
-                            "author": "Lily Baker",
-                            "rate": 5,
-                            "comment": "These cupcakes are a little piece of heaven!",
-                            "date": "2024-02-25"
-                        },
-                        {
-                            "author": "Charlie Sweettooth",
-                            "rate": 4,
-                            "comment": "Sweet and charming, just like the name suggests!",
-                            "date": "2024-02-28"
-                        }
-                    ]
-                }
-            ]
+          "name": "Plov",
+          "id": "07",
+          "price": 3.3,
+          "category": "world",
+          "description": "A flavorful rice dish with a mix of meat and vegetables.",
+          "image": "restaurant/food_world/plov.jpg",
+          "ingredients": [
+            "Rice",
+            "Meat",
+            "Vegetables"
+          ],
+          "weight": 280,
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 3,
+              "comment": "Not bad, but I've had better.",
+              "date": "2023-12-26"
+            }
+          ]
+        },
+        {
+          "name": "Squid",
+          "id": "08",
+          "price": 3.2,
+          "category": "world",
+          "description": "Tender and delicious squid prepared with a special touch.",
+          "image": "restaurant/food_world/squid.jpg",
+          "ingredients": [
+            "Squid",
+            "Garlic",
+            "Olive oil"
+          ],
+          "weight": 150,
+          "review": []
+        },
+        {
+          "name": "Zander",
+          "id": "09",
+          "price": 5,
+          "category": "world",
+          "description": "Mouthwatering zander dish with a perfect blend of flavors.",
+          "image": "restaurant/food_world/zander.jpg",
+          "ingredients": [
+            "Zander fish",
+            "Lemon",
+            "Herbs"
+          ],
+          "weight": 250,
+          "review": [
+            {
+              "author": "Jim Halpert",
+              "rate": 5,
+              "comment": "Absolutely delicious!",
+              "date": "2023-12-19"
+            }
+          ]
         }
-    ],
-    "allProducts": [
+      ]
+    },
+    {
+      "partnerName": "Pizza Hub",
+      "logo": "restaurant/partners/pizza_hub.png",
+      "time_of_delivery": 30,
+      "rate": 40,
+      "category": "pizza",
+      "image": "restaurant/pizza_hub/preview.jpg",
+      "working_hours": "7:00 - 23:30",
+      "products": "pizza-hub",
+      "data": [
         {
-            "name": "Calf Sauce",
-            "id": "01",
-            "price": 3,
-            "category": "world",
-            "description": "Delicious calf sauce with a perfect blend of spices.",
-            "image": "restaurant/food_world/calf-sauce.jpg",
-            "ingredients": ["Calf meat", "Spices", "Seasonings"],
-            "weight": 200,
-            "review": [
-                {
-                    "author": "Michael Scott",
-                    "rate": 5,
-                    "comment": "This pizza is so good",
-                    "date": "2023-12-17"
-                },
-                {
-                    "author": "Dwight Schrute",
-                    "rate": 5,
-                    "comment": "Interesting flavor combination!",
-                    "date": "2023-12-20"
-                }
-            ]
+          "name": "Margarita",
+          "id": "10",
+          "price": 2.3,
+          "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+          "image": "restaurant/pizza_hub/margarita.jpg",
+          "ingredients": [
+            "Tomato sauce",
+            "Mozzarella cheese",
+            "Fresh basil"
+          ],
+          "weight": 350,
+          "review": [
+            {
+              "author": "John Doe",
+              "rate": 5,
+              "comment": "Amazing pizza! Loved the fresh basil on top.",
+              "date": "2023-12-11"
+            },
+            {
+              "author": "Anna Smith",
+              "rate": 4,
+              "comment": "Great taste, but a bit too much basil for my liking.",
+              "date": "2023-12-12"
+            },
+            {
+              "author": "Mike Johnson",
+              "rate": 3,
+              "comment": "Not bad, but I've had better Margaritas elsewhere.",
+              "date": "2023-12-13"
+            }
+          ]
         },
         {
-            "name": "Chick",
-            "id": "02",
-            "price": 6,
-            "category": "world",
-            "description": "Tender and juicy chicken cooked to perfection.",
-            "image": "restaurant/food_world/chick.jpg",
-            "ingredients": ["Chicken", "Herbs", "Marinade"],
-            "weight": 300,
-            "review": [
-                {
-                    "author": "Pam Beesly",
-                    "rate": 5,
-                    "comment": "The chicken is amazing!",
-                    "date": "2023-12-18"
-                }
-            ]
+          "name": "Meet",
+          "id": "11",
+          "price": 3,
+          "description": "Hearty pizza with a combination of different meats, including sausage, pepperoni, and ham.",
+          "image": "restaurant/pizza_hub/meet.jpg",
+          "ingredients": [
+            "Sausage",
+            "Pepperoni",
+            "Ham"
+          ],
+          "weight": 420,
+          "review": [
+            {
+              "author": "Jane Smith",
+              "rate": 4,
+              "comment": "Great mix of meats, very satisfying!",
+              "date": "2023-12-12"
+            },
+            {
+              "author": "Alex Johnson",
+              "rate": 5,
+              "comment": "The best meat pizza I've ever had!",
+              "date": "2023-12-13"
+            },
+            {
+              "author": "Dmitriy Kozlov",
+              "rate": 4,
+              "comment": "Tasty combination, but a bit heavy for my taste.",
+              "date": "2023-12-14"
+            }
+          ]
         },
         {
-            "name": "Chicken Soup",
-            "id": "03",
-            "price": 3,
-            "category": "world",
-            "description": "Warm and comforting chicken soup to soothe your soul.",
-            "image": "restaurant/food_world/chicken-soup.jpg",
-            "ingredients": ["Chicken broth", "Vegetables", "Seasonings"],
-            "weight": 250,
-            "review": [
-                {
-                    "author": "Angela Martin",
-                    "rate": 4,
-                    "comment": "Good for a cold day.",
-                    "date": "2023-12-22"
-                },
-                {
-                    "author": "Oscar Martinez",
-                    "rate": 3,
-                    "comment": "Could use more salt.",
-                    "date": "2023-12-23"
-                }
-            ]
+          "name": "Norwegian",
+          "id": "12",
+          "price": 6,
+          "description": "Scandinavian-inspired pizza with smoked salmon, cream cheese, and dill.",
+          "image": "restaurant/pizza_hub/norwegian.jpg",
+          "ingredients": [
+            "Smoked salmon",
+            "Cream cheese",
+            "Dill"
+          ],
+          "weight": 380,
+          "review": [
+            {
+              "author": "Alice Johnson",
+              "rate": 5,
+              "comment": "Delicious and unique flavors, loved the smoked salmon!",
+              "date": "2023-12-13"
+            }
+          ]
         },
         {
-            "name": "Dumplings",
-            "id": "04",
-            "price": 5.2,
-            "category": "world",
-            "description": "Savory dumplings filled with a delightful mixture of ingredients.",
-            "image": "restaurant/food_world/dumplings.jpg",
-            "ingredients": ["Minced meat", "Dough", "Herbs"],
-            "weight": 180,
-            "review": [
-                {
-                    "author": "Stanley Hudson",
-                    "rate": 4,
-                    "comment": "I'd eat these again.",
-                    "date": "2023-12-24"
-                },
-                {
-                    "author": "Phyllis Vance",
-                    "rate": 5,
-                    "comment": "Delicious!",
-                    "date": "2023-12-25"
-                }
-            ]
+          "name": "Pepperoni",
+          "id": "13",
+          "price": 3.4,
+          "description": "Classic pizza with spicy pepperoni slices and tomato sauce.",
+          "image": "restaurant/pizza_hub/pepperoni.jpg",
+          "ingredients": [
+            "Pepperoni",
+            "Tomato sauce",
+            "Mozzarella cheese"
+          ],
+          "weight": 400,
+          "review": [
+            {
+              "author": "Bob Anderson",
+              "rate": 3,
+              "comment": "Decent pepperoni pizza, could use more cheese.",
+              "date": "2023-12-14"
+            }
+          ]
         },
         {
-            "name": "Ear",
-            "id": "05",
-            "price": 2,
-            "category": "world",
-            "description": "A classic dish known for its unique taste and texture.",
-            "image": "restaurant/food_world/ear.jpg",
-            "ingredients": ["Pork ear", "Soy sauce", "Spices"],
-            "weight": 120,
-            "review": []
+          "name": "Seven cheeses",
+          "id": "14",
+          "price": 4.3,
+          "description": "Delicious pizza topped with a blend of seven different cheeses for a rich flavor.",
+          "image": "restaurant/pizza_hub/seven-cheeses.jpg",
+          "ingredients": [
+            "Cheese1",
+            "Cheese2",
+            "Cheese3",
+            "Cheese4",
+            "Cheese5",
+            "Cheese6",
+            "Cheese7"
+          ],
+          "weight": 450,
+          "review": [
+            {
+              "author": "Charlie Brown",
+              "rate": 4,
+              "comment": "Cheese lover's dream! Fantastic blend.",
+              "date": "2023-12-15"
+            }
+          ]
         },
         {
-            "name": "Pig-chop",
-            "id": "06",
-            "price": 4.4,
-            "category": "world",
-            "description": "Tasty and succulent pig chop cooked to perfection.",
-            "image": "restaurant/food_world/pig-chop.jpg",
-            "ingredients": ["Pork chop", "Marinade", "Herbs"],
-            "weight": 220,
-            "review": []
-        },
-        {
-            "name": "Plov",
-            "id": "07",
-            "price": 3.3,
-            "category": "world",
-            "description": "A flavorful rice dish with a mix of meat and vegetables.",
-            "image": "restaurant/food_world/plov.jpg",
-            "ingredients": ["Rice", "Meat", "Vegetables"],
-            "weight": 280,
-            "review": [
-                {
-                    "author": "Ryan Howard",
-                    "rate": 3,
-                    "comment": "Not bad, but I've had better.",
-                    "date": "2023-12-26"
-                }
-            ]
-        },
-        {
-            "name": "Squid",
-            "id": "08",
-            "price": 3.2,
-            "category": "world",
-            "description": "Tender and delicious squid prepared with a special touch.",
-            "image": "restaurant/food_world/squid.jpg",
-            "ingredients": ["Squid", "Garlic", "Olive oil"],
-            "weight": 150,
-            "review": []
-        },
-        {
-            "name": "Zander",
-            "id": "09",
-            "price": 5,
-            "category": "world",
-            "description": "Mouthwatering zander dish with a perfect blend of flavors.",
-            "image": "restaurant/food_world/zander.jpg",
-            "ingredients": ["Zander fish", "Lemon", "Herbs"],
-            "weight": 250,
-            "review": [
-                {
-                    "author": "Jim Halpert",
-                    "rate": 5,
-                    "comment": "Absolutely delicious!",
-                    "date": "2023-12-19"
-                }
-            ]
-        },
-        {
-            "name": "Margarita",
-            "id": "10",
-            "price": 2.3,
-            "category": "pizza",
-            "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
-            "image": "restaurant/pizza_hub/margarita.jpg",
-            "ingredients": ["Tomato sauce", "Mozzarella cheese", "Fresh basil"],
-            "weight": 350,
-            "review": [
-                {
-                    "author": "John Doe",
-                    "rate": 5,
-                    "comment": "Amazing pizza! Loved the fresh basil on top.",
-                    "date": "2023-12-11"
-                },
-                {
-                    "author": "Anna Smith",
-                    "rate": 4,
-                    "comment": "Great taste, but a bit too much basil for my liking.",
-                    "date": "2023-12-12"
-                },
-                {
-                    "author": "Mike Johnson",
-                    "rate": 3,
-                    "comment": "Not bad, but I've had better Margaritas elsewhere.",
-                    "date": "2023-12-13"
-                }
-            ]
-        },
-        {
-            "name": "Meet",
-            "id": "11",
-            "price": 3,
-            "category": "pizza",
-            "description": "Hearty pizza with a combination of different meats, including sausage, pepperoni, and ham.",
-            "image": "restaurant/pizza_hub/meet.jpg",
-            "ingredients": ["Sausage", "Pepperoni", "Ham"],
-            "weight": 420,
-            "review": [
-                {
-                    "author": "Jane Smith",
-                    "rate": 4,
-                    "comment": "Great mix of meats, very satisfying!",
-                    "date": "2023-12-12"
-                },
-                {
-                    "author": "Alex Johnson",
-                    "rate": 5,
-                    "comment": "The best meat pizza I've ever had!",
-                    "date": "2023-12-13"
-                },
-                {
-                    "author": "Dmitriy Kozlov",
-                    "rate": 4,
-                    "comment": "Tasty combination, but a bit heavy for my taste.",
-                    "date": "2023-12-14"
-                }
-            ]
-        },
-        {
-            "name": "Norwegian",
-            "id": "12",
-            "price": 6,
-            "category": "pizza",
-            "description": "Scandinavian-inspired pizza with smoked salmon, cream cheese, and dill.",
-            "image": "restaurant/pizza_hub/norwegian.jpg",
-            "ingredients": ["Smoked salmon", "Cream cheese", "Dill"],
-            "weight": 380,
-            "review": [
-                {
-                    "author": "Alice Johnson",
-                    "rate": 5,
-                    "comment": "Delicious and unique flavors, loved the smoked salmon!",
-                    "date": "2023-12-13"
-                }
-            ]
-        },
-        {
-            "name": "Pepperoni",
-            "id": "13",
-            "price": 3.4,
-            "category": "pizza",
-            "description": "Classic pizza with spicy pepperoni slices and tomato sauce.",
-            "image": "restaurant/pizza_hub/pepperoni.jpg",
-            "ingredients": ["Pepperoni", "Tomato sauce", "Mozzarella cheese"],
-            "weight": 400,
-            "review": [
-                {
-                    "author": "Bob Anderson",
-                    "rate": 3,
-                    "comment": "Decent pepperoni pizza, could use more cheese.",
-                    "date": "2023-12-14"
-                }
-            ]
-        },
-        {
-            "name": "Seven cheeses",
-            "id": "14",
-            "price": 4.3,
-            "category": "pizza",
-            "description": "Delicious pizza topped with a blend of seven different cheeses for a rich flavor.",
-            "image": "restaurant/pizza_hub/seven-cheeses.jpg",
-            "ingredients": [
-                "Cheese1",
-                "Cheese2",
-                "Cheese3",
-                "Cheese4",
-                "Cheese5",
-                "Cheese6",
-                "Cheese7"
-            ],
-            "weight": 450,
-            "review": [
-                {
-                    "author": "Charlie Brown",
-                    "rate": 4,
-                    "comment": "Cheese lover's dream! Fantastic blend.",
-                    "date": "2023-12-15"
-                }
-            ]
-        },
-        {
-            "name": "Tom-yam",
-            "id": "15",
-            "price": 3.33,
-            "category": "pizza",
-            "description": "Unique pizza with a fusion of flavors, combining the traditional taste of Tom-yam with pizza ingredients.",
-            "image": "restaurant/pizza_hub/tom-yam.jpg",
-            "ingredients": ["Tom-yam sauce", "Seafood", "Vegetables"],
-            "weight": 370,
-            "review": [
-                {
-                    "author": "David Williams",
-                    "rate": 4,
-                    "comment": "Surprisingly good fusion! Tom-yam works well with pizza.",
-                    "date": "2023-12-16"
-                }
-            ]
-        },
-        {
-            "name": "Pizza caesar",
-            "id": "16",
-            "price": 4.4,
-            "category": "pizza",
-            "description": "A delightful pizza inspired by the classic Caesar salad, featuring a combination of fresh greens, chicken, and Caesar dressing.",
-            "image": "restaurant/ruby_tuesday/pizza-caesar.jpg",
-            "ingredients": ["Fresh greens", "Chicken", "Caesar dressing"],
-            "weight": 380,
-            "review": [
-                {
-                    "author": "Angela Martin",
-                    "rate": 5,
-                    "comment": "Great combination of flavors!",
-                    "date": "2023-12-20"
-                },
-                {
-                    "author": "Michael Scott",
-                    "rate": 3,
-                    "comment": "Not bad, but I expected more from a Caesar-inspired pizza.",
-                    "date": "2023-12-21"
-                },
-                {
-                    "author": "Jim Halpert",
-                    "rate": 4,
-                    "comment": "Fantastic! A must-try for Caesar salad lovers.",
-                    "date": "2023-12-22"
-                }
-            ]
-        },
-        {
-            "name": "Pizza chef",
-            "id": "17",
-            "price": 3.3,
-            "category": "pizza",
-            "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
-            "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
-            "ingredients": [
-                "Premium ingredients",
-                "Special chef's sauce",
-                "Cheese blend"
-            ],
-            "weight": 410,
-            "review": [
-                {
-                    "author": "Dwight Schrute",
-                    "rate": 3,
-                    "comment": "Decent pizza, but I've had better.",
-                    "date": "2023-12-21"
-                },
-                {
-                    "author": "Pam Beesly",
-                    "rate": 4,
-                    "comment": "The chef's sauce is the highlight! Delicious.",
-                    "date": "2023-12-22"
-                }
-            ]
-        },
-        {
-            "name": "Pizza dacha",
-            "id": "18",
-            "price": 4.25,
-            "category": "pizza",
-            "description": "A rustic pizza with a farmhouse twist, featuring fresh vegetables and savory toppings reminiscent of a countryside retreat.",
-            "image": "restaurant/ruby_tuesday/pizza-dacha.jpg",
-            "ingredients": [
-                "Fresh vegetables",
-                "Savory toppings",
-                "Farmhouse-inspired sauce"
-            ],
-            "weight": 430,
-            "review": []
-        },
-        {
-            "name": "Pizza meat",
-            "id": "19",
-            "price": 5.4,
-            "category": "pizza",
-            "description": "A meat lover's paradise! This pizza is loaded with a variety of succulent meats, providing a hearty and satisfying flavor experience.",
-            "image": "restaurant/ruby_tuesday/pizza-meat.jpg",
-            "ingredients": [
-                "Pepperoni",
-                "Sausage",
-                "Ham",
-                "Bacon",
-                "Ground beef"
-            ],
-            "weight": 460,
-            "review": [
-                {
-                    "author": "Stanley Hudson",
-                    "rate": 5,
-                    "comment": "So much meat! Loved it.",
-                    "date": "2023-12-22"
-                },
-                {
-                    "author": "Oscar Martinez",
-                    "rate": 4,
-                    "comment": "Great variety of meats, but a bit heavy.",
-                    "date": "2023-12-23"
-                }
-            ]
-        },
-        {
-            "name": "Pizza pepperoni",
-            "id": "20",
-            "price": 2.3,
-            "category": "pizza",
-            "description": "The classic pepperoni pizza, featuring spicy pepperoni slices on a bed of rich tomato sauce and melted cheese.",
-            "image": "restaurant/ruby_tuesday/pizza-pepperoni.jpg",
-            "ingredients": ["Pepperoni", "Tomato sauce", "Mozzarella cheese"],
-            "weight": 400,
-            "review": []
-        },
-        {
-            "name": "Pizza village",
-            "id": "21",
-            "price": 4.6,
-            "category": "pizza",
-            "description": "Transport yourself to a charming village with this pizza, showcasing a delightful mix of traditional flavors and wholesome ingredients.",
-            "image": "restaurant/ruby_tuesday/pizza-village.jpg",
-            "ingredients": [
-                "Traditional village flavors",
-                "Wholesome ingredients",
-                "Special sauce"
-            ],
-            "weight": 420,
-            "review": [
-                {
-                    "author": "Phyllis Vance",
-                    "rate": 5,
-                    "comment": "Charming and delicious!",
-                    "date": "2023-12-23"
-                },
-                {
-                    "author": "Kevin Malone",
-                    "rate": 5,
-                    "comment": "Good, but could use more sauce.",
-                    "date": "2023-12-24"
-                }
-            ]
-        },
-        {
-            "name": "Pizza caesar",
-            "id": "22",
-            "price": 3.2,
-            "category": "pizza",
-            "description": "A classic pizza inspired by the timeless Caesar salad. Indulge in the perfect combination of fresh ingredients and savory flavors.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-classic.jpg",
-            "ingredients": [
-                "Fresh greens",
-                "Chicken",
-                "Caesar dressing",
-                "Parmesan cheese"
-            ],
-            "weight": 400,
-            "review": [
-                {
-                    "author": "Oscar Martinez",
-                    "rate": 3,
-                    "comment": "A classic with a twist! Loved the freshness.",
-                    "date": "2023-12-24"
-                }
-            ]
-        },
-        {
-            "name": "Pizza girls",
-            "id": "23",
-            "price": 5,
-            "category": "pizza",
-            "description": "A fun and vibrant pizza for the girls! Packed with colorful and delicious toppings, it's a party on every slice.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-girls.jpg",
-            "ingredients": [
-                "Colorful peppers",
-                "Olives",
-                "Mushrooms",
-                "Cheese blend"
-            ],
-            "weight": 420,
-            "review": []
-        },
-        {
-            "name": "Pizza hawaiian",
-            "id": "24",
-            "price": 2.45,
-            "category": "pizza",
-            "description": "Transport your taste buds to the tropics with this Hawaiian-inspired pizza. Enjoy the perfect blend of ham, pineapple, and cheese.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-hawaiian.jpg",
-            "ingredients": [
-                "Ham",
-                "Pineapple",
-                "Mozzarella cheese",
-                "Tomato sauce"
-            ],
-            "weight": 380,
-            "review": [
-                {
-                    "author": "Kelly Kapoor",
-                    "rate": 4,
-                    "comment": "Tropical paradise on a pizza!",
-                    "date": "2023-12-25"
-                }
-            ]
-        },
-        {
-            "name": "Pizza oleole",
-            "id": "25",
-            "price": 2.1,
-            "category": "pizza",
-            "description": "An exotic pizza experience with the OleOle twist! Savor unique flavors and spices that make every bite a culinary adventure.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-oleole.jpg",
-            "ingredients": ["Spicy sausage", "Chilies", "Olive oil", "Garlic"],
-            "weight": 450,
-            "review": []
-        },
-        {
-            "name": "Pizza plus",
-            "id": "26",
-            "price": 3.6,
-            "category": "pizza",
-            "description": "Take your pizza experience to the next level with Pizza Plus! Loaded with extra toppings and flavors, it's a taste sensation.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-plus.jpg",
-            "ingredients": [
-                "Pepperoni",
-                "Sausage",
-                "Bacon",
-                "Onions",
-                "Peppers"
-            ],
-            "weight": 430,
-            "review": [
-                {
-                    "author": "Ryan Howard",
-                    "rate": 5,
-                    "comment": "Amazing variety of toppings!",
-                    "date": "2023-12-26"
-                }
-            ]
-        },
-        {
-            "name": "Pizza vesuvius",
-            "id": "27",
-            "price": 4,
-            "category": "pizza",
-            "description": "Experience the fiery flavors of Vesuvius with this bold and spicy pizza. It's an eruption of taste that will leave you craving more.",
-            "image": "restaurant/kuakata_fried_chicken/pizza-vesuvius.jpg",
-            "ingredients": [
-                "Spicy pepperoni",
-                "Jalapenos",
-                "Hot sauce",
-                "Mozzarella cheese"
-            ],
-            "weight": 410,
-            "review": []
-        },
-        {
-            "name": "Sushi",
-            "id": "28",
-            "price": 4.4,
-            "category": "sushi",
-            "description": "Experience the authentic taste of sushi with our classic Sushi roll. Fresh ingredients and expert craftsmanship for sushi enthusiasts.",
-            "image": "restaurant/red_square/azhi.jpg",
-            "ingredients": [
-                "Nori seaweed",
-                "Sushi rice",
-                "Salmon",
-                "Avocado",
-                "Cucumber",
-                "Soy sauce",
-                "Wasabi",
-                "Pickled ginger"
-            ],
-            "weight": 350,
-            "review": [
-                {
-                    "author": "Pam Beesly",
-                    "rate": 5,
-                    "comment": "Delicious and fresh! Loved the combination.",
-                    "date": "2023-12-27"
-                },
-                {
-                    "author": "Michael Scott",
-                    "rate": 3,
-                    "comment": "Solid sushi option!",
-                    "date": "2023-12-28"
-                }
-            ]
-        },
-        {
-            "name": "Black sushi",
-            "id": "29",
-            "price": 5,
-            "category": "sushi",
-            "description": "Indulge in the elegance of Black Sushi. A visually stunning sushi roll with a unique blend of flavors and premium ingredients.",
-            "image": "restaurant/red_square/black.jpg",
-            "ingredients": [
-                "Black rice",
-                "Tuna",
-                "Mango",
-                "Sesame seeds",
-                "Eel sauce"
-            ],
-            "weight": 380,
-            "review": [
-                {
-                    "author": "Jim Halpert",
-                    "rate": 4,
-                    "comment": "Fancy and flavorful!",
-                    "date": "2023-12-28"
-                }
-            ]
-        },
-        {
-            "name": "Fresh sushi",
-            "id": "30",
-            "price": 5,
-            "category": "sushi",
-            "description": "Savor the freshness with our Fresh Sushi roll. Bursting with vibrant flavors and the finest ingredients for a delightful sushi experience.",
-            "image": "restaurant/red_square/fresh.jpg",
-            "ingredients": [
-                "Shrimp",
-                "Fresh herbs",
-                "Mango",
-                "Jasmine rice",
-                "Soy sauce",
-                "Wasabi"
-            ],
-            "weight": 320,
-            "review": [
-                {
-                    "author": "Stanley Hudson",
-                    "rate": 4,
-                    "comment": "Really enjoyed the freshness!",
-                    "date": "2023-12-29"
-                },
-                {
-                    "author": "Angela Martin",
-                    "rate": 4,
-                    "comment": "Solid sushi option!",
-                    "date": "2023-12-30"
-                },
-                {
-                    "author": "Dwight Schrute",
-                    "rate": 3,
-                    "comment": "Decent, but not as good as my beet sushi.",
-                    "date": "2023-12-29"
-                }
-            ]
-        },
-        {
-            "name": "Nisuaz",
-            "id": "31",
-            "price": 2.4,
-            "category": "sushi",
-            "description": "Nisuaz offers a delightful twist on traditional sushi. Enjoy a fusion of flavors that will surprise and delight your taste buds.",
-            "image": "restaurant/red_square/nisuaz.jpg",
-            "ingredients": [
-                "Smoked salmon",
-                "Cream cheese",
-                "Cucumber",
-                "Chives",
-                "Soy sauce"
-            ],
-            "weight": 300,
-            "review": [
-                {
-                    "author": "Kelly Kapoor",
-                    "rate": 3,
-                    "comment": "It's okay, but I prefer traditional sushi.",
-                    "date": "2023-12-30"
-                }
-            ]
-        },
-        {
-            "name": "Sushi smoke",
-            "id": "32",
-            "price": 3.6,
-            "category": "sushi",
-            "description": "Dive into the rich and smoky flavors of Sushi Smoke. A unique sushi roll that combines traditional taste with a hint of smokiness.",
-            "image": "restaurant/red_square/smoke.jpg",
-            "ingredients": [
-                "Smoked mackerel",
-                "Eel",
-                "Avocado",
-                "Sesame seeds",
-                "Teriyaki sauce"
-            ],
-            "weight": 400,
-            "review": [
-                {
-                    "author": "Ryan Howard",
-                    "rate": 4,
-                    "comment": "Great smoky flavor! A unique sushi experience.",
-                    "date": "2023-12-30"
-                },
-                {
-                    "author": "Oscar Martinez",
-                    "rate": 3,
-                    "comment": "Nice twist with the smokiness.",
-                    "date": "2023-12-31"
-                }
-            ]
-        },
-        {
-            "name": "Tanuki",
-            "id": "33",
-            "price": 4.25,
-            "category": "sushi",
-            "description": "Discover the playful and delicious Tanuki sushi roll. A creative combination of ingredients that brings joy and flavor to every bite.",
-            "image": "restaurant/red_square/tanuki.jpg",
-            "ingredients": [
-                "Spicy tuna",
-                "Crunchy tempura flakes",
-                "Cucumber",
-                "Soy sauce",
-                "Sesame seeds"
-            ],
-            "weight": 350,
-            "review": [
-                {
-                    "author": "Kevin Malone",
-                    "rate": 4,
-                    "comment": "Fun and tasty! Loved the crunchy tempura.",
-                    "date": "2023-12-30"
-                },
-                {
-                    "author": "Phyllis Vance",
-                    "rate": 6,
-                    "comment": "Interesting combination, but I prefer traditional sushi.",
-                    "date": "2023-12-31"
-                }
-            ]
-        },
-        {
-            "name": "Burrito",
-            "id": "34",
-            "price": 2.4,
-            "category": "burrito",
-            "description": "A savory and satisfying Burrito filled with a delicious blend of ingredients. A classic choice for a hearty and flavorful meal.",
-            "image": "restaurant/taco_bell/burrito.jpg",
-            "ingredients": [
-                "Flour tortilla",
-                "Seasoned beef",
-                "Black beans",
-                "Rice",
-                "Cheese",
-                "Lettuce",
-                "Tomatoes",
-                "Sour cream"
-            ],
-            "weight": "400",
-            "review": [
-                {
-                    "author": "Stanley Hudson",
-                    "rate": 5,
-                    "comment": "Decent burrito, but could use more seasoning.",
-                    "date": "2023-12-31"
-                }
-            ]
-        },
-        {
-            "name": "Cheeseburger",
-            "id": "35",
-            "price": 4.2,
-            "category": "cheeseburger",
-            "description": "Indulge in the cheesy goodness of our Cheeseburger Taco. A fusion of taco and classic cheeseburger flavors in every bite.",
-            "image": "restaurant/taco_bell/cheeseburger.jpg",
-            "ingredients": [
-                "Soft taco shell",
-                "Seasoned beef",
-                "Cheese",
-                "Lettuce",
-                "Tomatoes",
-                "Pickles",
-                "Ketchup",
-                "Mustard"
-            ],
-            "weight": "300",
-            "review": [
-                {
-                    "author": "Phyllis Vance",
-                    "rate": 5,
-                    "comment": "Interesting combination! Loved the cheeseburger twist.",
-                    "date": "2024-01-01"
-                }
-            ]
-        },
-        {
-            "name": "Combo Pizza",
-            "id": "36",
-            "price": 5.8,
-            "category": "pizza",
-            "description": "Experience the best of both worlds with our Combo Pizza Taco. The perfect combination of taco and pizza flavors for a delightful meal.",
-            "image": "restaurant/taco_bell/combo.jpg",
-            "ingredients": [
-                "Crunchy taco shell",
-                "Seasoned beef",
-                "Tomato sauce",
-                "Cheese",
-                "Pepperoni",
-                "Bell peppers",
-                "Olives"
-            ],
-            "weight": "450",
-            "review": []
-        },
-        {
-            "name": "Fusion",
-            "id": "37",
-            "price": 2.4,
-            "category": "pizza",
-            "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
-            "image": "restaurant/taco_bell/fusion.jpg",
-            "ingredients": [
-                "Soft taco shell",
-                "Grilled chicken",
-                "Mango salsa",
-                "Cilantro",
-                "Lime crema",
-                "Red cabbage"
-            ],
-            "weight": "350",
-            "review": [
-                {
-                    "author": "Ryan Howard",
-                    "rate": 5,
-                    "comment": "Awesome fusion! Loved the mango salsa.",
-                    "date": "2024-01-02"
-                },
-                {
-                    "author": "Stanley Hudson",
-                    "rate": 3,
-                    "comment": "Decent burrito, but could use more seasoning.",
-                    "date": "2023-12-31"
-                }
-            ]
-        },
-        {
-            "name": "Rome pizza",
-            "id": "38",
-            "price": 4,
-            "category": "pizza",
-            "description": "Embark on a culinary journey with our Rome Pizza Taco. A taco inspired by the classic flavors of Rome, bringing a taste of Italy to your taco experience.",
-            "image": "restaurant/taco_bell/rome.jpg",
-            "ingredients": [
-                "Soft taco shell",
-                "Italian sausage",
-                "Marinara sauce",
-                "Mozzarella cheese",
-                "Basil",
-                "Parmesan"
-            ],
-            "weight": "320",
-            "review": [
-                {
-                    "author": "Kelly Kapoor",
-                    "rate": 5,
-                    "comment": "Italian flavors in a taco! Loved it!",
-                    "date": "2024-01-03"
-                }
-            ]
-        },
-        {
-            "name": "Udon",
-            "id": "39",
-            "price": 3,
-            "category": "taco",
-            "description": "Savor the delicious and comforting Udon Taco. A unique twist on traditional tacos with the rich and hearty flavors of Japanese udon noodles.",
-            "image": "restaurant/taco_bell/udon.jpg",
-            "ingredients": [
-                "Soft taco shell",
-                "Teriyaki beef",
-                "Udon noodles",
-                "Broccoli",
-                "Carrots",
-                "Soy sauce"
-            ],
-            "weight": "380",
-            "review": []
-        },
-        {
-            "name": "Crispy Sandwich",
-            "id": "40",
-            "price": 4.5,
-            "category": "donuts",
-            "description": "A delightful crispy sandwich with a perfect balance of textures and flavors.",
-            "image": "restaurant/donuts_hut/crispy_sandwich.png",
-            "ingredients": [
-                "Crispy bread",
-                "Grilled chicken",
-                "Lettuce",
-                "Tomato",
-                "Mayonnaise"
-            ],
-            "weight": 180,
-            "review": [
-                {
-                    "author": "Pam Beesly",
-                    "rate": 4,
-                    "comment": "Great crunchiness and delicious filling!",
-                    "date": "2024-02-05"
-                },
-                {
-                    "author": "Dwight Schrute",
-                    "rate": 5,
-                    "comment": "Perfect fuel for a productive day on the farm!",
-                    "date": "2024-02-08"
-                }
-            ]
-        },
-        {
-            "name": "Dancake",
-            "id": "41",
-            "price": 6.5,
-            "category": "donuts",
-            "description": "Experience the joy of breakfast with our signature Dancake – a delightful dance of flavors and textures on your taste buds.",
-            "image": "restaurant/donuts_hut/dancake.png",
-            "ingredients": [
-                "Flour",
-                "Buttermilk",
-                "Vanilla extract",
-                "Maple syrup",
-                "Fresh berries"
-            ],
-            "weight": 200,
-            "review": [
-                {
-                    "author": "Leslie Knope",
-                    "rate": 5,
-                    "comment": "Pawnee's new favorite breakfast treat!",
-                    "date": "2024-02-10"
-                },
-                {
-                    "author": "Ron Swanson",
-                    "rate": 4,
-                    "comment": "I don't usually endorse non-meat items, but this Dancake is surprisingly satisfying.",
-                    "date": "2024-02-12"
-                }
-            ]
-        },
-        {
-            "name": "Toffees Cake",
-            "id": "42",
-            "price": 7.2,
-            "category": "donuts",
-            "description": "Indulge in the rich and decadent sweetness of Toffee's Cake, a heavenly delight crafted with love and the finest ingredients.",
-            "image": "restaurant/donuts_hut/toffees_cake.png",
-            "ingredients": [
-                "Rich chocolate sponge",
-                "Toffee caramel",
-                "Whipped cream",
-                "Chocolate ganache",
-                "Toasted almonds"
-            ],
-            "weight": 300,
-            "review": [
-                {
-                    "author": "Eleanor Shellstrop",
-                    "rate": 5,
-                    "comment": "This cake is the 'good place' of desserts!",
-                    "date": "2024-02-15"
-                },
-                {
-                    "author": "Tahani Al-Jamil",
-                    "rate": 4,
-                    "comment": "Quite splendid, darling. A taste fit for a sophisticated palate.",
-                    "date": "2024-02-17"
-                }
-            ]
-        },
-        {
-            "name": "Tiramisu",
-            "id": "43",
-            "price": 8.0,
-            "category": "donuts",
-            "description": "Indulge in the classic Italian delight with our exquisite Tiramisu, a perfect harmony of coffee-soaked ladyfingers and luscious mascarpone cream.",
-            "image": "restaurant/donuts_hut/tiramisu.png",
-            "ingredients": [
-                "Ladyfingers",
-                "Espresso",
-                "Mascarpone cheese",
-                "Cocoa powder",
-                "Whipped cream"
-            ],
-            "weight": 250,
-            "review": [
-                {
-                    "author": "Giuseppe Rossi",
-                    "rate": 5,
-                    "comment": "Authentic and delightful! Reminds me of my Nonna's kitchen.",
-                    "date": "2024-02-20"
-                },
-                {
-                    "author": "Isabella Romano",
-                    "rate": 4,
-                    "comment": "A taste of Italy in every bite. Buonissimo!",
-                    "date": "2024-02-22"
-                }
-            ]
-        },
-        {
-            "name": "Cupcake",
-            "id": "44",
-            "price": 3.5,
-            "category": "donuts",
-            "description": "Delight in the sweetness of our delectable Cupcake, a miniature treat with a burst of flavors in every bite.",
-            "image": "restaurant/donuts_hut/cupcake.png",
-            "ingredients": [
-                "Vanilla cake",
-                "Buttercream frosting",
-                "Sprinkles",
-                "Love"
-            ],
-            "weight": 100,
-            "review": [
-                {
-                    "author": "Lily Baker",
-                    "rate": 5,
-                    "comment": "These cupcakes are a little piece of heaven!",
-                    "date": "2024-02-25"
-                },
-                {
-                    "author": "Charlie Sweettooth",
-                    "rate": 4,
-                    "comment": "Sweet and charming, just like the name suggests!",
-                    "date": "2024-02-28"
-                }
-            ]
+          "name": "Tom-yam",
+          "id": "15",
+          "price": 3.33,
+          "description": "Unique pizza with a fusion of flavors, combining the traditional taste of Tom-yam with pizza ingredients.",
+          "image": "restaurant/pizza_hub/tom-yam.jpg",
+          "ingredients": [
+            "Tom-yam sauce",
+            "Seafood",
+            "Vegetables"
+          ],
+          "weight": 370,
+          "review": [
+            {
+              "author": "David Williams",
+              "rate": 4,
+              "comment": "Surprisingly good fusion! Tom-yam works well with pizza.",
+              "date": "2023-12-16"
+            }
+          ]
         }
-    ],
-    "users": [
+      ]
+    },
+    {
+      "partnerName": "Ruby Tuesday",
+      "logo": "restaurant/partners/ruby_tuesday.png",
+      "time_of_delivery": 40,
+      "rate": 26,
+      "category": "pizza",
+      "image": "restaurant/ruby_tuesday/preview.jpg",
+      "working_hours": "8:00 - 23:30",
+      "products": "ruby-tuesday",
+      "data": [
         {
-            "id": "4d779b9b-ee85-412b-b0b6-2e0e91343788",
-            "name": "Volodymyr",
-            "email": "volodka.isyk.95@gmail.com",
-            "password": "Volodymyr1",
-            "phone": "0662046820",
-            "city": "",
-            "street": "",
-            "house": "",
-            "level": "",
-            "apartment": ""
+          "name": "Pizza caesar",
+          "id": "16",
+          "price": 4.4,
+          "description": "A delightful pizza inspired by the classic Caesar salad, featuring a combination of fresh greens, chicken, and Caesar dressing.",
+          "image": "restaurant/ruby_tuesday/pizza-caesar.jpg",
+          "ingredients": [
+            "Fresh greens",
+            "Chicken",
+            "Caesar dressing"
+          ],
+          "weight": 380,
+          "review": [
+            {
+              "author": "Angela Martin",
+              "rate": 5,
+              "comment": "Great combination of flavors!",
+              "date": "2023-12-20"
+            },
+            {
+              "author": "Michael Scott",
+              "rate": 3,
+              "comment": "Not bad, but I expected more from a Caesar-inspired pizza.",
+              "date": "2023-12-21"
+            },
+            {
+              "author": "Jim Halpert",
+              "rate": 4,
+              "comment": "Fantastic! A must-try for Caesar salad lovers.",
+              "date": "2023-12-22"
+            }
+          ]
+        },
+        {
+          "name": "Pizza chef",
+          "id": "17",
+          "price": 3.3,
+          "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
+          "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
+          "ingredients": [
+            "Premium ingredients",
+            "Special chef's sauce",
+            "Cheese blend"
+          ],
+          "weight": 410,
+          "review": [
+            {
+              "author": "Dwight Schrute",
+              "rate": 3,
+              "comment": "Decent pizza, but I've had better.",
+              "date": "2023-12-21"
+            },
+            {
+              "author": "Pam Beesly",
+              "rate": 4,
+              "comment": "The chef's sauce is the highlight! Delicious.",
+              "date": "2023-12-22"
+            }
+          ]
+        },
+        {
+          "name": "Pizza dacha",
+          "id": "18",
+          "price": 4.25,
+          "description": "A rustic pizza with a farmhouse twist, featuring fresh vegetables and savory toppings reminiscent of a countryside retreat.",
+          "image": "restaurant/ruby_tuesday/pizza-dacha.jpg",
+          "ingredients": [
+            "Fresh vegetables",
+            "Savory toppings",
+            "Farmhouse-inspired sauce"
+          ],
+          "weight": 430,
+          "review": []
+        },
+        {
+          "name": "Pizza meat",
+          "id": "19",
+          "price": 5.4,
+          "description": "A meat lover's paradise! This pizza is loaded with a variety of succulent meats, providing a hearty and satisfying flavor experience.",
+          "image": "restaurant/ruby_tuesday/pizza-meat.jpg",
+          "ingredients": [
+            "Pepperoni",
+            "Sausage",
+            "Ham",
+            "Bacon",
+            "Ground beef"
+          ],
+          "weight": 460,
+          "review": [
+            {
+              "author": "Stanley Hudson",
+              "rate": 5,
+              "comment": "So much meat! Loved it.",
+              "date": "2023-12-22"
+            },
+            {
+              "author": "Oscar Martinez",
+              "rate": 4,
+              "comment": "Great variety of meats, but a bit heavy.",
+              "date": "2023-12-23"
+            }
+          ]
+        },
+        {
+          "name": "Pizza pepperoni",
+          "id": "20",
+          "price": 2.3,
+          "description": "The classic pepperoni pizza, featuring spicy pepperoni slices on a bed of rich tomato sauce and melted cheese.",
+          "image": "restaurant/ruby_tuesday/pizza-pepperoni.jpg",
+          "ingredients": [
+            "Pepperoni",
+            "Tomato sauce",
+            "Mozzarella cheese"
+          ],
+          "weight": 400,
+          "review": []
+        },
+        {
+          "name": "Pizza village",
+          "id": "21",
+          "price": 4.6,
+          "description": "Transport yourself to a charming village with this pizza, showcasing a delightful mix of traditional flavors and wholesome ingredients.",
+          "image": "restaurant/ruby_tuesday/pizza-village.jpg",
+          "ingredients": [
+            "Traditional village flavors",
+            "Wholesome ingredients",
+            "Special sauce"
+          ],
+          "weight": 420,
+          "review": [
+            {
+              "author": "Phyllis Vance",
+              "rate": 5,
+              "comment": "Charming and delicious!",
+              "date": "2023-12-23"
+            },
+            {
+              "author": "Kevin Malone",
+              "rate": 5,
+              "comment": "Good, but could use more sauce.",
+              "date": "2023-12-24"
+            }
+          ]
         }
-    ],
-    "orders": []
+      ]
+    },
+    {
+      "partnerName": "Kuakata Fried Chicken",
+      "logo": "restaurant/partners/kuakata_fried_chicken.png",
+      "time_of_delivery": 26,
+      "rate": 53,
+      "category": "pizza",
+      "image": "restaurant/kuakata_fried_chicken/preview.jpg",
+      "working_hours": "9:00 - 23:00",
+      "products": "kuakata-fried-chicken",
+      "data": [
+        {
+          "name": "Pizza caesar",
+          "id": "22",
+          "price": 3.2,
+          "description": "A classic pizza inspired by the timeless Caesar salad. Indulge in the perfect combination of fresh ingredients and savory flavors.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-classic.jpg",
+          "ingredients": [
+            "Fresh greens",
+            "Chicken",
+            "Caesar dressing",
+            "Parmesan cheese"
+          ],
+          "weight": 400,
+          "review": [
+            {
+              "author": "Oscar Martinez",
+              "rate": 3,
+              "comment": "A classic with a twist! Loved the freshness.",
+              "date": "2023-12-24"
+            }
+          ]
+        },
+        {
+          "name": "Pizza girls",
+          "id": "23",
+          "price": 5,
+          "description": "A fun and vibrant pizza for the girls! Packed with colorful and delicious toppings, it's a party on every slice.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-girls.jpg",
+          "ingredients": [
+            "Colorful peppers",
+            "Olives",
+            "Mushrooms",
+            "Cheese blend"
+          ],
+          "weight": 420,
+          "review": []
+        },
+        {
+          "name": "Pizza hawaiian",
+          "id": "24",
+          "price": 2.45,
+          "description": "Transport your taste buds to the tropics with this Hawaiian-inspired pizza. Enjoy the perfect blend of ham, pineapple, and cheese.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-hawaiian.jpg",
+          "ingredients": [
+            "Ham",
+            "Pineapple",
+            "Mozzarella cheese",
+            "Tomato sauce"
+          ],
+          "weight": 380,
+          "review": [
+            {
+              "author": "Kelly Kapoor",
+              "rate": 4,
+              "comment": "Tropical paradise on a pizza!",
+              "date": "2023-12-25"
+            }
+          ]
+        },
+        {
+          "name": "Pizza oleole",
+          "id": "25",
+          "price": 2.1,
+          "description": "An exotic pizza experience with the OleOle twist! Savor unique flavors and spices that make every bite a culinary adventure.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-oleole.jpg",
+          "ingredients": [
+            "Spicy sausage",
+            "Chilies",
+            "Olive oil",
+            "Garlic"
+          ],
+          "weight": 450,
+          "review": []
+        },
+        {
+          "name": "Pizza plus",
+          "id": "26",
+          "price": 3.6,
+          "description": "Take your pizza experience to the next level with Pizza Plus! Loaded with extra toppings and flavors, it's a taste sensation.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-plus.jpg",
+          "ingredients": [
+            "Pepperoni",
+            "Sausage",
+            "Bacon",
+            "Onions",
+            "Peppers"
+          ],
+          "weight": 430,
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 5,
+              "comment": "Amazing variety of toppings!",
+              "date": "2023-12-26"
+            }
+          ]
+        },
+        {
+          "name": "Pizza vesuvius",
+          "id": "27",
+          "price": 4,
+          "description": "Experience the fiery flavors of Vesuvius with this bold and spicy pizza. It's an eruption of taste that will leave you craving more.",
+          "image": "restaurant/kuakata_fried_chicken/pizza-vesuvius.jpg",
+          "ingredients": [
+            "Spicy pepperoni",
+            "Jalapenos",
+            "Hot sauce",
+            "Mozzarella cheese"
+          ],
+          "weight": 410,
+          "review": []
+        }
+      ]
+    },
+    {
+      "partnerName": "Red Square",
+      "logo": "restaurant/partners/red_square.png",
+      "time_of_delivery": 40,
+      "rate": 45,
+      "category": "sushi",
+      "image": "restaurant/red_square/preview.jpg",
+      "working_hours": "11:00 - 22:30",
+      "products": "red-square",
+      "data": [
+        {
+          "name": "Sushi",
+          "id": "28",
+          "price": 4.4,
+          "description": "Experience the authentic taste of sushi with our classic Sushi roll. Fresh ingredients and expert craftsmanship for sushi enthusiasts.",
+          "image": "restaurant/red_square/azhi.jpg",
+          "ingredients": [
+            "Nori seaweed",
+            "Sushi rice",
+            "Salmon",
+            "Avocado",
+            "Cucumber",
+            "Soy sauce",
+            "Wasabi",
+            "Pickled ginger"
+          ],
+          "weight": 350,
+          "review": [
+            {
+              "author": "Pam Beesly",
+              "rate": 5,
+              "comment": "Delicious and fresh! Loved the combination.",
+              "date": "2023-12-27"
+            },
+            {
+              "author": "Michael Scott",
+              "rate": 3,
+              "comment": "Solid sushi option!",
+              "date": "2023-12-28"
+            }
+          ]
+        },
+        {
+          "name": "Black sushi",
+          "id": "29",
+          "price": 5,
+          "description": "Indulge in the elegance of Black Sushi. A visually stunning sushi roll with a unique blend of flavors and premium ingredients.",
+          "image": "restaurant/red_square/black.jpg",
+          "ingredients": [
+            "Black rice",
+            "Tuna",
+            "Mango",
+            "Sesame seeds",
+            "Eel sauce"
+          ],
+          "weight": 380,
+          "review": [
+            {
+              "author": "Jim Halpert",
+              "rate": 4,
+              "comment": "Fancy and flavorful!",
+              "date": "2023-12-28"
+            }
+          ]
+        },
+        {
+          "name": "Fresh sushi",
+          "id": "30",
+          "price": 5,
+          "description": "Savor the freshness with our Fresh Sushi roll. Bursting with vibrant flavors and the finest ingredients for a delightful sushi experience.",
+          "image": "restaurant/red_square/fresh.jpg",
+          "ingredients": [
+            "Shrimp",
+            "Fresh herbs",
+            "Mango",
+            "Jasmine rice",
+            "Soy sauce",
+            "Wasabi"
+          ],
+          "weight": 320,
+          "review": [
+            {
+              "author": "Stanley Hudson",
+              "rate": 4,
+              "comment": "Really enjoyed the freshness!",
+              "date": "2023-12-29"
+            },
+            {
+              "author": "Angela Martin",
+              "rate": 4,
+              "comment": "Solid sushi option!",
+              "date": "2023-12-30"
+            },
+            {
+              "author": "Dwight Schrute",
+              "rate": 3,
+              "comment": "Decent, but not as good as my beet sushi.",
+              "date": "2023-12-29"
+            }
+          ]
+        },
+        {
+          "name": "Nisuaz",
+          "id": "31",
+          "price": 2.4,
+          "description": "Nisuaz offers a delightful twist on traditional sushi. Enjoy a fusion of flavors that will surprise and delight your taste buds.",
+          "image": "restaurant/red_square/nisuaz.jpg",
+          "ingredients": [
+            "Smoked salmon",
+            "Cream cheese",
+            "Cucumber",
+            "Chives",
+            "Soy sauce"
+          ],
+          "weight": 300,
+          "review": [
+            {
+              "author": "Kelly Kapoor",
+              "rate": 3,
+              "comment": "It's okay, but I prefer traditional sushi.",
+              "date": "2023-12-30"
+            }
+          ]
+        },
+        {
+          "name": "Sushi smoke",
+          "id": "32",
+          "price": 3.6,
+          "description": "Dive into the rich and smoky flavors of Sushi Smoke. A unique sushi roll that combines traditional taste with a hint of smokiness.",
+          "image": "restaurant/red_square/smoke.jpg",
+          "ingredients": [
+            "Smoked mackerel",
+            "Eel",
+            "Avocado",
+            "Sesame seeds",
+            "Teriyaki sauce"
+          ],
+          "weight": 400,
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 4,
+              "comment": "Great smoky flavor! A unique sushi experience.",
+              "date": "2023-12-30"
+            },
+            {
+              "author": "Oscar Martinez",
+              "rate": 3,
+              "comment": "Nice twist with the smokiness.",
+              "date": "2023-12-31"
+            }
+          ]
+        },
+        {
+          "name": "Tanuki",
+          "id": "33",
+          "price": 4.25,
+          "description": "Discover the playful and delicious Tanuki sushi roll. A creative combination of ingredients that brings joy and flavor to every bite.",
+          "image": "restaurant/red_square/tanuki.jpg",
+          "ingredients": [
+            "Spicy tuna",
+            "Crunchy tempura flakes",
+            "Cucumber",
+            "Soy sauce",
+            "Sesame seeds"
+          ],
+          "weight": 350,
+          "review": [
+            {
+              "author": "Kevin Malone",
+              "rate": 4,
+              "comment": "Fun and tasty! Loved the crunchy tempura.",
+              "date": "2023-12-30"
+            },
+            {
+              "author": "Phyllis Vance",
+              "rate": 6,
+              "comment": "Interesting combination, but I prefer traditional sushi.",
+              "date": "2023-12-31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "partnerName": "Taco Bell",
+      "logo": "restaurant/partners/taco_bell.png",
+      "time_of_delivery": 50,
+      "rate": 35,
+      "category": "taco",
+      "image": "restaurant/taco_bell/preview.jpg",
+      "working_hours": "5:30 - 23:30",
+      "products": "taco-bell",
+      "data": [
+        {
+          "name": "Burrito",
+          "id": "34",
+          "price": 2.4,
+          "description": "A savory and satisfying Burrito filled with a delicious blend of ingredients. A classic choice for a hearty and flavorful meal.",
+          "image": "restaurant/taco_bell/burrito.jpg",
+          "ingredients": [
+            "Flour tortilla",
+            "Seasoned beef",
+            "Black beans",
+            "Rice",
+            "Cheese",
+            "Lettuce",
+            "Tomatoes",
+            "Sour cream"
+          ],
+          "weight": "400",
+          "review": [
+            {
+              "author": "Stanley Hudson",
+              "rate": 5,
+              "comment": "Decent burrito, but could use more seasoning.",
+              "date": "2023-12-31"
+            }
+          ]
+        },
+        {
+          "name": "Cheeseburger",
+          "id": "35",
+          "price": 4.2,
+          "description": "Indulge in the cheesy goodness of our Cheeseburger Taco. A fusion of taco and classic cheeseburger flavors in every bite.",
+          "image": "restaurant/taco_bell/cheeseburger.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Seasoned beef",
+            "Cheese",
+            "Lettuce",
+            "Tomatoes",
+            "Pickles",
+            "Ketchup",
+            "Mustard"
+          ],
+          "weight": "300",
+          "review": [
+            {
+              "author": "Phyllis Vance",
+              "rate": 5,
+              "comment": "Interesting combination! Loved the cheeseburger twist.",
+              "date": "2024-01-01"
+            }
+          ]
+        },
+        {
+          "name": "Combo Pizza",
+          "id": "36",
+          "price": 5.8,
+          "description": "Experience the best of both worlds with our Combo Pizza Taco. The perfect combination of taco and pizza flavors for a delightful meal.",
+          "image": "restaurant/taco_bell/combo.jpg",
+          "ingredients": [
+            "Crunchy taco shell",
+            "Seasoned beef",
+            "Tomato sauce",
+            "Cheese",
+            "Pepperoni",
+            "Bell peppers",
+            "Olives"
+          ],
+          "weight": "450",
+          "review": []
+        },
+        {
+          "name": "Fusion",
+          "id": "37",
+          "price": 2.4,
+          "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
+          "image": "restaurant/taco_bell/fusion.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Grilled chicken",
+            "Mango salsa",
+            "Cilantro",
+            "Lime crema",
+            "Red cabbage"
+          ],
+          "weight": "350",
+          "review": [
+            {
+              "author": "Ryan Howard",
+              "rate": 5,
+              "comment": "Awesome fusion! Loved the mango salsa.",
+              "date": "2024-01-02"
+            },
+            {
+              "author": "Stanley Hudson",
+              "rate": 3,
+              "comment": "Decent burrito, but could use more seasoning.",
+              "date": "2023-12-31"
+            }
+          ]
+        },
+        {
+          "name": "Rome pizza",
+          "id": "38",
+          "price": 4,
+          "description": "Embark on a culinary journey with our Rome Pizza Taco. A taco inspired by the classic flavors of Rome, bringing a taste of Italy to your taco experience.",
+          "image": "restaurant/taco_bell/rome.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Italian sausage",
+            "Marinara sauce",
+            "Mozzarella cheese",
+            "Basil",
+            "Parmesan"
+          ],
+          "weight": "320",
+          "review": [
+            {
+              "author": "Kelly Kapoor",
+              "rate": 5,
+              "comment": "Italian flavors in a taco! Loved it!",
+              "date": "2024-01-03"
+            }
+          ]
+        },
+        {
+          "name": "Udon",
+          "id": "39",
+          "price": 3,
+          "description": "Savor the delicious and comforting Udon Taco. A unique twist on traditional tacos with the rich and hearty flavors of Japanese udon noodles.",
+          "image": "restaurant/taco_bell/udon.jpg",
+          "ingredients": [
+            "Soft taco shell",
+            "Teriyaki beef",
+            "Udon noodles",
+            "Broccoli",
+            "Carrots",
+            "Soy sauce"
+          ],
+          "weight": "380",
+          "review": []
+        }
+      ]
+    },
+    {
+      "partnerName": "Donuts hut",
+      "logo": "restaurant/partners/donuts_hut.png",
+      "time_of_delivery": 23,
+      "rate": 20,
+      "category": "donuts",
+      "image": "restaurant/donuts_hut/preview.jpg",
+      "working_hours": "10:00 - 23:30",
+      "products": "donuts-hut",
+      "data": [
+        {
+          "name": "Crispy Sandwich",
+          "id": "40",
+          "price": 4.5,
+          "description": "A delightful crispy sandwich with a perfect balance of textures and flavors.",
+          "image": "restaurant/donuts_hut/crispy_sandwich.png",
+          "ingredients": [
+            "Crispy bread",
+            "Grilled chicken",
+            "Lettuce",
+            "Tomato",
+            "Mayonnaise"
+          ],
+          "weight": 180,
+          "review": [
+            {
+              "author": "Pam Beesly",
+              "rate": 4,
+              "comment": "Great crunchiness and delicious filling!",
+              "date": "2024-02-05"
+            },
+            {
+              "author": "Dwight Schrute",
+              "rate": 5,
+              "comment": "Perfect fuel for a productive day on the farm!",
+              "date": "2024-02-08"
+            }
+          ]
+        },
+        {
+          "name": "Dancake",
+          "id": "41",
+          "price": 6.5,
+          "description": "Experience the joy of breakfast with our signature Dancake – a delightful dance of flavors and textures on your taste buds.",
+          "image": "restaurant/donuts_hut/dancake.png",
+          "ingredients": [
+            "Flour",
+            "Buttermilk",
+            "Vanilla extract",
+            "Maple syrup",
+            "Fresh berries"
+          ],
+          "weight": 200,
+          "review": [
+            {
+              "author": "Leslie Knope",
+              "rate": 5,
+              "comment": "Pawnee's new favorite breakfast treat!",
+              "date": "2024-02-10"
+            },
+            {
+              "author": "Ron Swanson",
+              "rate": 4,
+              "comment": "I don't usually endorse non-meat items, but this Dancake is surprisingly satisfying.",
+              "date": "2024-02-12"
+            }
+          ]
+        },
+        {
+          "name": "Toffees Cake",
+          "id": "42",
+          "price": 7.2,
+          "description": "Indulge in the rich and decadent sweetness of Toffee's Cake, a heavenly delight crafted with love and the finest ingredients.",
+          "image": "restaurant/donuts_hut/toffees_cake.png",
+          "ingredients": [
+            "Rich chocolate sponge",
+            "Toffee caramel",
+            "Whipped cream",
+            "Chocolate ganache",
+            "Toasted almonds"
+          ],
+          "weight": 300,
+          "review": [
+            {
+              "author": "Eleanor Shellstrop",
+              "rate": 5,
+              "comment": "This cake is the 'good place' of desserts!",
+              "date": "2024-02-15"
+            },
+            {
+              "author": "Tahani Al-Jamil",
+              "rate": 4,
+              "comment": "Quite splendid, darling. A taste fit for a sophisticated palate.",
+              "date": "2024-02-17"
+            }
+          ]
+        },
+        {
+          "name": "Tiramisu",
+          "id": "43",
+          "price": 8,
+          "description": "Indulge in the classic Italian delight with our exquisite Tiramisu, a perfect harmony of coffee-soaked ladyfingers and luscious mascarpone cream.",
+          "image": "restaurant/donuts_hut/tiramisu.png",
+          "ingredients": [
+            "Ladyfingers",
+            "Espresso",
+            "Mascarpone cheese",
+            "Cocoa powder",
+            "Whipped cream"
+          ],
+          "weight": 250,
+          "review": [
+            {
+              "author": "Giuseppe Rossi",
+              "rate": 5,
+              "comment": "Authentic and delightful! Reminds me of my Nonna's kitchen.",
+              "date": "2024-02-20"
+            },
+            {
+              "author": "Isabella Romano",
+              "rate": 4,
+              "comment": "A taste of Italy in every bite. Buonissimo!",
+              "date": "2024-02-22"
+            }
+          ]
+        },
+        {
+          "name": "Cupcake",
+          "id": "44",
+          "price": 3.5,
+          "description": "Delight in the sweetness of our delectable Cupcake, a miniature treat with a burst of flavors in every bite.",
+          "image": "restaurant/donuts_hut/cupcake.png",
+          "ingredients": [
+            "Vanilla cake",
+            "Buttercream frosting",
+            "Sprinkles",
+            "Love"
+          ],
+          "weight": 100,
+          "review": [
+            {
+              "author": "Lily Baker",
+              "rate": 5,
+              "comment": "These cupcakes are a little piece of heaven!",
+              "date": "2024-02-25"
+            },
+            {
+              "author": "Charlie Sweettooth",
+              "rate": 4,
+              "comment": "Sweet and charming, just like the name suggests!",
+              "date": "2024-02-28"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "allProducts": [
+    {
+      "name": "Calf Sauce",
+      "id": "01",
+      "price": 3,
+      "category": "world",
+      "description": "Delicious calf sauce with a perfect blend of spices.",
+      "image": "restaurant/food_world/calf-sauce.jpg",
+      "ingredients": [
+        "Calf meat",
+        "Spices",
+        "Seasonings"
+      ],
+      "weight": 200,
+      "review": [
+        {
+          "author": "Michael Scott",
+          "rate": 5,
+          "comment": "This pizza is so good",
+          "date": "2023-12-17"
+        },
+        {
+          "author": "Dwight Schrute",
+          "rate": 5,
+          "comment": "Interesting flavor combination!",
+          "date": "2023-12-20"
+        }
+      ]
+    },
+    {
+      "name": "Chick",
+      "id": "02",
+      "price": 6,
+      "category": "world",
+      "description": "Tender and juicy chicken cooked to perfection.",
+      "image": "restaurant/food_world/chick.jpg",
+      "ingredients": [
+        "Chicken",
+        "Herbs",
+        "Marinade"
+      ],
+      "weight": 300,
+      "review": [
+        {
+          "author": "Pam Beesly",
+          "rate": 5,
+          "comment": "The chicken is amazing!",
+          "date": "2023-12-18"
+        }
+      ]
+    },
+    {
+      "name": "Chicken Soup",
+      "id": "03",
+      "price": 3,
+      "category": "world",
+      "description": "Warm and comforting chicken soup to soothe your soul.",
+      "image": "restaurant/food_world/chicken-soup.jpg",
+      "ingredients": [
+        "Chicken broth",
+        "Vegetables",
+        "Seasonings"
+      ],
+      "weight": 250,
+      "review": [
+        {
+          "author": "Angela Martin",
+          "rate": 4,
+          "comment": "Good for a cold day.",
+          "date": "2023-12-22"
+        },
+        {
+          "author": "Oscar Martinez",
+          "rate": 3,
+          "comment": "Could use more salt.",
+          "date": "2023-12-23"
+        }
+      ]
+    },
+    {
+      "name": "Dumplings",
+      "id": "04",
+      "price": 5.2,
+      "category": "world",
+      "description": "Savory dumplings filled with a delightful mixture of ingredients.",
+      "image": "restaurant/food_world/dumplings.jpg",
+      "ingredients": [
+        "Minced meat",
+        "Dough",
+        "Herbs"
+      ],
+      "weight": 180,
+      "review": [
+        {
+          "author": "Stanley Hudson",
+          "rate": 4,
+          "comment": "I'd eat these again.",
+          "date": "2023-12-24"
+        },
+        {
+          "author": "Phyllis Vance",
+          "rate": 5,
+          "comment": "Delicious!",
+          "date": "2023-12-25"
+        }
+      ]
+    },
+    {
+      "name": "Ear",
+      "id": "05",
+      "price": 2,
+      "category": "world",
+      "description": "A classic dish known for its unique taste and texture.",
+      "image": "restaurant/food_world/ear.jpg",
+      "ingredients": [
+        "Pork ear",
+        "Soy sauce",
+        "Spices"
+      ],
+      "weight": 120,
+      "review": []
+    },
+    {
+      "name": "Pig-chop",
+      "id": "06",
+      "price": 4.4,
+      "category": "world",
+      "description": "Tasty and succulent pig chop cooked to perfection.",
+      "image": "restaurant/food_world/pig-chop.jpg",
+      "ingredients": [
+        "Pork chop",
+        "Marinade",
+        "Herbs"
+      ],
+      "weight": 220,
+      "review": []
+    },
+    {
+      "name": "Plov",
+      "id": "07",
+      "price": 3.3,
+      "category": "world",
+      "description": "A flavorful rice dish with a mix of meat and vegetables.",
+      "image": "restaurant/food_world/plov.jpg",
+      "ingredients": [
+        "Rice",
+        "Meat",
+        "Vegetables"
+      ],
+      "weight": 280,
+      "review": [
+        {
+          "author": "Ryan Howard",
+          "rate": 3,
+          "comment": "Not bad, but I've had better.",
+          "date": "2023-12-26"
+        }
+      ]
+    },
+    {
+      "name": "Squid",
+      "id": "08",
+      "price": 3.2,
+      "category": "world",
+      "description": "Tender and delicious squid prepared with a special touch.",
+      "image": "restaurant/food_world/squid.jpg",
+      "ingredients": [
+        "Squid",
+        "Garlic",
+        "Olive oil"
+      ],
+      "weight": 150,
+      "review": []
+    },
+    {
+      "name": "Zander",
+      "id": "09",
+      "price": 5,
+      "category": "world",
+      "description": "Mouthwatering zander dish with a perfect blend of flavors.",
+      "image": "restaurant/food_world/zander.jpg",
+      "ingredients": [
+        "Zander fish",
+        "Lemon",
+        "Herbs"
+      ],
+      "weight": 250,
+      "review": [
+        {
+          "author": "Jim Halpert",
+          "rate": 5,
+          "comment": "Absolutely delicious!",
+          "date": "2023-12-19"
+        }
+      ]
+    },
+    {
+      "name": "Margarita",
+      "id": "10",
+      "price": 2.3,
+      "category": "pizza",
+      "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+      "image": "restaurant/pizza_hub/margarita.jpg",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Fresh basil"
+      ],
+      "weight": 350,
+      "review": [
+        {
+          "author": "John Doe",
+          "rate": 5,
+          "comment": "Amazing pizza! Loved the fresh basil on top.",
+          "date": "2023-12-11"
+        },
+        {
+          "author": "Anna Smith",
+          "rate": 4,
+          "comment": "Great taste, but a bit too much basil for my liking.",
+          "date": "2023-12-12"
+        },
+        {
+          "author": "Mike Johnson",
+          "rate": 3,
+          "comment": "Not bad, but I've had better Margaritas elsewhere.",
+          "date": "2023-12-13"
+        }
+      ]
+    },
+    {
+      "name": "Meet",
+      "id": "11",
+      "price": 3,
+      "category": "pizza",
+      "description": "Hearty pizza with a combination of different meats, including sausage, pepperoni, and ham.",
+      "image": "restaurant/pizza_hub/meet.jpg",
+      "ingredients": [
+        "Sausage",
+        "Pepperoni",
+        "Ham"
+      ],
+      "weight": 420,
+      "review": [
+        {
+          "author": "Jane Smith",
+          "rate": 4,
+          "comment": "Great mix of meats, very satisfying!",
+          "date": "2023-12-12"
+        },
+        {
+          "author": "Alex Johnson",
+          "rate": 5,
+          "comment": "The best meat pizza I've ever had!",
+          "date": "2023-12-13"
+        },
+        {
+          "author": "Dmitriy Kozlov",
+          "rate": 4,
+          "comment": "Tasty combination, but a bit heavy for my taste.",
+          "date": "2023-12-14"
+        }
+      ]
+    },
+    {
+      "name": "Norwegian",
+      "id": "12",
+      "price": 6,
+      "category": "pizza",
+      "description": "Scandinavian-inspired pizza with smoked salmon, cream cheese, and dill.",
+      "image": "restaurant/pizza_hub/norwegian.jpg",
+      "ingredients": [
+        "Smoked salmon",
+        "Cream cheese",
+        "Dill"
+      ],
+      "weight": 380,
+      "review": [
+        {
+          "author": "Alice Johnson",
+          "rate": 5,
+          "comment": "Delicious and unique flavors, loved the smoked salmon!",
+          "date": "2023-12-13"
+        }
+      ]
+    },
+    {
+      "name": "Pepperoni",
+      "id": "13",
+      "price": 3.4,
+      "category": "pizza",
+      "description": "Classic pizza with spicy pepperoni slices and tomato sauce.",
+      "image": "restaurant/pizza_hub/pepperoni.jpg",
+      "ingredients": [
+        "Pepperoni",
+        "Tomato sauce",
+        "Mozzarella cheese"
+      ],
+      "weight": 400,
+      "review": [
+        {
+          "author": "Bob Anderson",
+          "rate": 3,
+          "comment": "Decent pepperoni pizza, could use more cheese.",
+          "date": "2023-12-14"
+        }
+      ]
+    },
+    {
+      "name": "Seven cheeses",
+      "id": "14",
+      "price": 4.3,
+      "category": "pizza",
+      "description": "Delicious pizza topped with a blend of seven different cheeses for a rich flavor.",
+      "image": "restaurant/pizza_hub/seven-cheeses.jpg",
+      "ingredients": [
+        "Cheese1",
+        "Cheese2",
+        "Cheese3",
+        "Cheese4",
+        "Cheese5",
+        "Cheese6",
+        "Cheese7"
+      ],
+      "weight": 450,
+      "review": [
+        {
+          "author": "Charlie Brown",
+          "rate": 4,
+          "comment": "Cheese lover's dream! Fantastic blend.",
+          "date": "2023-12-15"
+        }
+      ]
+    },
+    {
+      "name": "Tom-yam",
+      "id": "15",
+      "price": 3.33,
+      "category": "pizza",
+      "description": "Unique pizza with a fusion of flavors, combining the traditional taste of Tom-yam with pizza ingredients.",
+      "image": "restaurant/pizza_hub/tom-yam.jpg",
+      "ingredients": [
+        "Tom-yam sauce",
+        "Seafood",
+        "Vegetables"
+      ],
+      "weight": 370,
+      "review": [
+        {
+          "author": "David Williams",
+          "rate": 4,
+          "comment": "Surprisingly good fusion! Tom-yam works well with pizza.",
+          "date": "2023-12-16"
+        }
+      ]
+    },
+    {
+      "name": "Pizza caesar",
+      "id": "16",
+      "price": 4.4,
+      "category": "pizza",
+      "description": "A delightful pizza inspired by the classic Caesar salad, featuring a combination of fresh greens, chicken, and Caesar dressing.",
+      "image": "restaurant/ruby_tuesday/pizza-caesar.jpg",
+      "ingredients": [
+        "Fresh greens",
+        "Chicken",
+        "Caesar dressing"
+      ],
+      "weight": 380,
+      "review": [
+        {
+          "author": "Angela Martin",
+          "rate": 5,
+          "comment": "Great combination of flavors!",
+          "date": "2023-12-20"
+        },
+        {
+          "author": "Michael Scott",
+          "rate": 3,
+          "comment": "Not bad, but I expected more from a Caesar-inspired pizza.",
+          "date": "2023-12-21"
+        },
+        {
+          "author": "Jim Halpert",
+          "rate": 4,
+          "comment": "Fantastic! A must-try for Caesar salad lovers.",
+          "date": "2023-12-22"
+        }
+      ]
+    },
+    {
+      "name": "Pizza chef",
+      "id": "17",
+      "price": 3.3,
+      "category": "pizza",
+      "description": "A pizza masterpiece created by our skilled chefs, with a perfect blend of premium ingredients and flavors.",
+      "image": "restaurant/ruby_tuesday/pizza-chef.jpg",
+      "ingredients": [
+        "Premium ingredients",
+        "Special chef's sauce",
+        "Cheese blend"
+      ],
+      "weight": 410,
+      "review": [
+        {
+          "author": "Dwight Schrute",
+          "rate": 3,
+          "comment": "Decent pizza, but I've had better.",
+          "date": "2023-12-21"
+        },
+        {
+          "author": "Pam Beesly",
+          "rate": 4,
+          "comment": "The chef's sauce is the highlight! Delicious.",
+          "date": "2023-12-22"
+        }
+      ]
+    },
+    {
+      "name": "Pizza dacha",
+      "id": "18",
+      "price": 4.25,
+      "category": "pizza",
+      "description": "A rustic pizza with a farmhouse twist, featuring fresh vegetables and savory toppings reminiscent of a countryside retreat.",
+      "image": "restaurant/ruby_tuesday/pizza-dacha.jpg",
+      "ingredients": [
+        "Fresh vegetables",
+        "Savory toppings",
+        "Farmhouse-inspired sauce"
+      ],
+      "weight": 430,
+      "review": []
+    },
+    {
+      "name": "Pizza meat",
+      "id": "19",
+      "price": 5.4,
+      "category": "pizza",
+      "description": "A meat lover's paradise! This pizza is loaded with a variety of succulent meats, providing a hearty and satisfying flavor experience.",
+      "image": "restaurant/ruby_tuesday/pizza-meat.jpg",
+      "ingredients": [
+        "Pepperoni",
+        "Sausage",
+        "Ham",
+        "Bacon",
+        "Ground beef"
+      ],
+      "weight": 460,
+      "review": [
+        {
+          "author": "Stanley Hudson",
+          "rate": 5,
+          "comment": "So much meat! Loved it.",
+          "date": "2023-12-22"
+        },
+        {
+          "author": "Oscar Martinez",
+          "rate": 4,
+          "comment": "Great variety of meats, but a bit heavy.",
+          "date": "2023-12-23"
+        }
+      ]
+    },
+    {
+      "name": "Pizza pepperoni",
+      "id": "20",
+      "price": 2.3,
+      "category": "pizza",
+      "description": "The classic pepperoni pizza, featuring spicy pepperoni slices on a bed of rich tomato sauce and melted cheese.",
+      "image": "restaurant/ruby_tuesday/pizza-pepperoni.jpg",
+      "ingredients": [
+        "Pepperoni",
+        "Tomato sauce",
+        "Mozzarella cheese"
+      ],
+      "weight": 400,
+      "review": []
+    },
+    {
+      "name": "Pizza village",
+      "id": "21",
+      "price": 4.6,
+      "category": "pizza",
+      "description": "Transport yourself to a charming village with this pizza, showcasing a delightful mix of traditional flavors and wholesome ingredients.",
+      "image": "restaurant/ruby_tuesday/pizza-village.jpg",
+      "ingredients": [
+        "Traditional village flavors",
+        "Wholesome ingredients",
+        "Special sauce"
+      ],
+      "weight": 420,
+      "review": [
+        {
+          "author": "Phyllis Vance",
+          "rate": 5,
+          "comment": "Charming and delicious!",
+          "date": "2023-12-23"
+        },
+        {
+          "author": "Kevin Malone",
+          "rate": 5,
+          "comment": "Good, but could use more sauce.",
+          "date": "2023-12-24"
+        }
+      ]
+    },
+    {
+      "name": "Pizza caesar",
+      "id": "22",
+      "price": 3.2,
+      "category": "pizza",
+      "description": "A classic pizza inspired by the timeless Caesar salad. Indulge in the perfect combination of fresh ingredients and savory flavors.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-classic.jpg",
+      "ingredients": [
+        "Fresh greens",
+        "Chicken",
+        "Caesar dressing",
+        "Parmesan cheese"
+      ],
+      "weight": 400,
+      "review": [
+        {
+          "author": "Oscar Martinez",
+          "rate": 3,
+          "comment": "A classic with a twist! Loved the freshness.",
+          "date": "2023-12-24"
+        }
+      ]
+    },
+    {
+      "name": "Pizza girls",
+      "id": "23",
+      "price": 5,
+      "category": "pizza",
+      "description": "A fun and vibrant pizza for the girls! Packed with colorful and delicious toppings, it's a party on every slice.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-girls.jpg",
+      "ingredients": [
+        "Colorful peppers",
+        "Olives",
+        "Mushrooms",
+        "Cheese blend"
+      ],
+      "weight": 420,
+      "review": []
+    },
+    {
+      "name": "Pizza hawaiian",
+      "id": "24",
+      "price": 2.45,
+      "category": "pizza",
+      "description": "Transport your taste buds to the tropics with this Hawaiian-inspired pizza. Enjoy the perfect blend of ham, pineapple, and cheese.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-hawaiian.jpg",
+      "ingredients": [
+        "Ham",
+        "Pineapple",
+        "Mozzarella cheese",
+        "Tomato sauce"
+      ],
+      "weight": 380,
+      "review": [
+        {
+          "author": "Kelly Kapoor",
+          "rate": 4,
+          "comment": "Tropical paradise on a pizza!",
+          "date": "2023-12-25"
+        }
+      ]
+    },
+    {
+      "name": "Pizza oleole",
+      "id": "25",
+      "price": 2.1,
+      "category": "pizza",
+      "description": "An exotic pizza experience with the OleOle twist! Savor unique flavors and spices that make every bite a culinary adventure.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-oleole.jpg",
+      "ingredients": [
+        "Spicy sausage",
+        "Chilies",
+        "Olive oil",
+        "Garlic"
+      ],
+      "weight": 450,
+      "review": []
+    },
+    {
+      "name": "Pizza plus",
+      "id": "26",
+      "price": 3.6,
+      "category": "pizza",
+      "description": "Take your pizza experience to the next level with Pizza Plus! Loaded with extra toppings and flavors, it's a taste sensation.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-plus.jpg",
+      "ingredients": [
+        "Pepperoni",
+        "Sausage",
+        "Bacon",
+        "Onions",
+        "Peppers"
+      ],
+      "weight": 430,
+      "review": [
+        {
+          "author": "Ryan Howard",
+          "rate": 5,
+          "comment": "Amazing variety of toppings!",
+          "date": "2023-12-26"
+        }
+      ]
+    },
+    {
+      "name": "Pizza vesuvius",
+      "id": "27",
+      "price": 4,
+      "category": "pizza",
+      "description": "Experience the fiery flavors of Vesuvius with this bold and spicy pizza. It's an eruption of taste that will leave you craving more.",
+      "image": "restaurant/kuakata_fried_chicken/pizza-vesuvius.jpg",
+      "ingredients": [
+        "Spicy pepperoni",
+        "Jalapenos",
+        "Hot sauce",
+        "Mozzarella cheese"
+      ],
+      "weight": 410,
+      "review": []
+    },
+    {
+      "name": "Sushi",
+      "id": "28",
+      "price": 4.4,
+      "category": "sushi",
+      "description": "Experience the authentic taste of sushi with our classic Sushi roll. Fresh ingredients and expert craftsmanship for sushi enthusiasts.",
+      "image": "restaurant/red_square/azhi.jpg",
+      "ingredients": [
+        "Nori seaweed",
+        "Sushi rice",
+        "Salmon",
+        "Avocado",
+        "Cucumber",
+        "Soy sauce",
+        "Wasabi",
+        "Pickled ginger"
+      ],
+      "weight": 350,
+      "review": [
+        {
+          "author": "Pam Beesly",
+          "rate": 5,
+          "comment": "Delicious and fresh! Loved the combination.",
+          "date": "2023-12-27"
+        },
+        {
+          "author": "Michael Scott",
+          "rate": 3,
+          "comment": "Solid sushi option!",
+          "date": "2023-12-28"
+        }
+      ]
+    },
+    {
+      "name": "Black sushi",
+      "id": "29",
+      "price": 5,
+      "category": "sushi",
+      "description": "Indulge in the elegance of Black Sushi. A visually stunning sushi roll with a unique blend of flavors and premium ingredients.",
+      "image": "restaurant/red_square/black.jpg",
+      "ingredients": [
+        "Black rice",
+        "Tuna",
+        "Mango",
+        "Sesame seeds",
+        "Eel sauce"
+      ],
+      "weight": 380,
+      "review": [
+        {
+          "author": "Jim Halpert",
+          "rate": 4,
+          "comment": "Fancy and flavorful!",
+          "date": "2023-12-28"
+        }
+      ]
+    },
+    {
+      "name": "Fresh sushi",
+      "id": "30",
+      "price": 5,
+      "category": "sushi",
+      "description": "Savor the freshness with our Fresh Sushi roll. Bursting with vibrant flavors and the finest ingredients for a delightful sushi experience.",
+      "image": "restaurant/red_square/fresh.jpg",
+      "ingredients": [
+        "Shrimp",
+        "Fresh herbs",
+        "Mango",
+        "Jasmine rice",
+        "Soy sauce",
+        "Wasabi"
+      ],
+      "weight": 320,
+      "review": [
+        {
+          "author": "Stanley Hudson",
+          "rate": 4,
+          "comment": "Really enjoyed the freshness!",
+          "date": "2023-12-29"
+        },
+        {
+          "author": "Angela Martin",
+          "rate": 4,
+          "comment": "Solid sushi option!",
+          "date": "2023-12-30"
+        },
+        {
+          "author": "Dwight Schrute",
+          "rate": 3,
+          "comment": "Decent, but not as good as my beet sushi.",
+          "date": "2023-12-29"
+        }
+      ]
+    },
+    {
+      "name": "Nisuaz",
+      "id": "31",
+      "price": 2.4,
+      "category": "sushi",
+      "description": "Nisuaz offers a delightful twist on traditional sushi. Enjoy a fusion of flavors that will surprise and delight your taste buds.",
+      "image": "restaurant/red_square/nisuaz.jpg",
+      "ingredients": [
+        "Smoked salmon",
+        "Cream cheese",
+        "Cucumber",
+        "Chives",
+        "Soy sauce"
+      ],
+      "weight": 300,
+      "review": [
+        {
+          "author": "Kelly Kapoor",
+          "rate": 3,
+          "comment": "It's okay, but I prefer traditional sushi.",
+          "date": "2023-12-30"
+        }
+      ]
+    },
+    {
+      "name": "Sushi smoke",
+      "id": "32",
+      "price": 3.6,
+      "category": "sushi",
+      "description": "Dive into the rich and smoky flavors of Sushi Smoke. A unique sushi roll that combines traditional taste with a hint of smokiness.",
+      "image": "restaurant/red_square/smoke.jpg",
+      "ingredients": [
+        "Smoked mackerel",
+        "Eel",
+        "Avocado",
+        "Sesame seeds",
+        "Teriyaki sauce"
+      ],
+      "weight": 400,
+      "review": [
+        {
+          "author": "Ryan Howard",
+          "rate": 4,
+          "comment": "Great smoky flavor! A unique sushi experience.",
+          "date": "2023-12-30"
+        },
+        {
+          "author": "Oscar Martinez",
+          "rate": 3,
+          "comment": "Nice twist with the smokiness.",
+          "date": "2023-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Tanuki",
+      "id": "33",
+      "price": 4.25,
+      "category": "sushi",
+      "description": "Discover the playful and delicious Tanuki sushi roll. A creative combination of ingredients that brings joy and flavor to every bite.",
+      "image": "restaurant/red_square/tanuki.jpg",
+      "ingredients": [
+        "Spicy tuna",
+        "Crunchy tempura flakes",
+        "Cucumber",
+        "Soy sauce",
+        "Sesame seeds"
+      ],
+      "weight": 350,
+      "review": [
+        {
+          "author": "Kevin Malone",
+          "rate": 4,
+          "comment": "Fun and tasty! Loved the crunchy tempura.",
+          "date": "2023-12-30"
+        },
+        {
+          "author": "Phyllis Vance",
+          "rate": 6,
+          "comment": "Interesting combination, but I prefer traditional sushi.",
+          "date": "2023-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Burrito",
+      "id": "34",
+      "price": 2.4,
+      "category": "burrito",
+      "description": "A savory and satisfying Burrito filled with a delicious blend of ingredients. A classic choice for a hearty and flavorful meal.",
+      "image": "restaurant/taco_bell/burrito.jpg",
+      "ingredients": [
+        "Flour tortilla",
+        "Seasoned beef",
+        "Black beans",
+        "Rice",
+        "Cheese",
+        "Lettuce",
+        "Tomatoes",
+        "Sour cream"
+      ],
+      "weight": "400",
+      "review": [
+        {
+          "author": "Stanley Hudson",
+          "rate": 5,
+          "comment": "Decent burrito, but could use more seasoning.",
+          "date": "2023-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Cheeseburger",
+      "id": "35",
+      "price": 4.2,
+      "category": "cheeseburger",
+      "description": "Indulge in the cheesy goodness of our Cheeseburger Taco. A fusion of taco and classic cheeseburger flavors in every bite.",
+      "image": "restaurant/taco_bell/cheeseburger.jpg",
+      "ingredients": [
+        "Soft taco shell",
+        "Seasoned beef",
+        "Cheese",
+        "Lettuce",
+        "Tomatoes",
+        "Pickles",
+        "Ketchup",
+        "Mustard"
+      ],
+      "weight": "300",
+      "review": [
+        {
+          "author": "Phyllis Vance",
+          "rate": 5,
+          "comment": "Interesting combination! Loved the cheeseburger twist.",
+          "date": "2024-01-01"
+        }
+      ]
+    },
+    {
+      "name": "Combo Pizza",
+      "id": "36",
+      "price": 5.8,
+      "category": "pizza",
+      "description": "Experience the best of both worlds with our Combo Pizza Taco. The perfect combination of taco and pizza flavors for a delightful meal.",
+      "image": "restaurant/taco_bell/combo.jpg",
+      "ingredients": [
+        "Crunchy taco shell",
+        "Seasoned beef",
+        "Tomato sauce",
+        "Cheese",
+        "Pepperoni",
+        "Bell peppers",
+        "Olives"
+      ],
+      "weight": "450",
+      "review": []
+    },
+    {
+      "name": "Fusion",
+      "id": "37",
+      "price": 2.4,
+      "category": "pizza",
+      "description": "A unique Fusion Taco that brings together diverse flavors and ingredients for a taste that's both familiar and exciting.",
+      "image": "restaurant/taco_bell/fusion.jpg",
+      "ingredients": [
+        "Soft taco shell",
+        "Grilled chicken",
+        "Mango salsa",
+        "Cilantro",
+        "Lime crema",
+        "Red cabbage"
+      ],
+      "weight": "350",
+      "review": [
+        {
+          "author": "Ryan Howard",
+          "rate": 5,
+          "comment": "Awesome fusion! Loved the mango salsa.",
+          "date": "2024-01-02"
+        },
+        {
+          "author": "Stanley Hudson",
+          "rate": 3,
+          "comment": "Decent burrito, but could use more seasoning.",
+          "date": "2023-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Rome pizza",
+      "id": "38",
+      "price": 4,
+      "category": "pizza",
+      "description": "Embark on a culinary journey with our Rome Pizza Taco. A taco inspired by the classic flavors of Rome, bringing a taste of Italy to your taco experience.",
+      "image": "restaurant/taco_bell/rome.jpg",
+      "ingredients": [
+        "Soft taco shell",
+        "Italian sausage",
+        "Marinara sauce",
+        "Mozzarella cheese",
+        "Basil",
+        "Parmesan"
+      ],
+      "weight": "320",
+      "review": [
+        {
+          "author": "Kelly Kapoor",
+          "rate": 5,
+          "comment": "Italian flavors in a taco! Loved it!",
+          "date": "2024-01-03"
+        }
+      ]
+    },
+    {
+      "name": "Udon",
+      "id": "39",
+      "price": 3,
+      "category": "taco",
+      "description": "Savor the delicious and comforting Udon Taco. A unique twist on traditional tacos with the rich and hearty flavors of Japanese udon noodles.",
+      "image": "restaurant/taco_bell/udon.jpg",
+      "ingredients": [
+        "Soft taco shell",
+        "Teriyaki beef",
+        "Udon noodles",
+        "Broccoli",
+        "Carrots",
+        "Soy sauce"
+      ],
+      "weight": "380",
+      "review": []
+    },
+    {
+      "name": "Crispy Sandwich",
+      "id": "40",
+      "price": 4.5,
+      "category": "donuts",
+      "description": "A delightful crispy sandwich with a perfect balance of textures and flavors.",
+      "image": "restaurant/donuts_hut/crispy_sandwich.png",
+      "ingredients": [
+        "Crispy bread",
+        "Grilled chicken",
+        "Lettuce",
+        "Tomato",
+        "Mayonnaise"
+      ],
+      "weight": 180,
+      "review": [
+        {
+          "author": "Pam Beesly",
+          "rate": 4,
+          "comment": "Great crunchiness and delicious filling!",
+          "date": "2024-02-05"
+        },
+        {
+          "author": "Dwight Schrute",
+          "rate": 5,
+          "comment": "Perfect fuel for a productive day on the farm!",
+          "date": "2024-02-08"
+        }
+      ]
+    },
+    {
+      "name": "Dancake",
+      "id": "41",
+      "price": 6.5,
+      "category": "donuts",
+      "description": "Experience the joy of breakfast with our signature Dancake – a delightful dance of flavors and textures on your taste buds.",
+      "image": "restaurant/donuts_hut/dancake.png",
+      "ingredients": [
+        "Flour",
+        "Buttermilk",
+        "Vanilla extract",
+        "Maple syrup",
+        "Fresh berries"
+      ],
+      "weight": 200,
+      "review": [
+        {
+          "author": "Leslie Knope",
+          "rate": 5,
+          "comment": "Pawnee's new favorite breakfast treat!",
+          "date": "2024-02-10"
+        },
+        {
+          "author": "Ron Swanson",
+          "rate": 4,
+          "comment": "I don't usually endorse non-meat items, but this Dancake is surprisingly satisfying.",
+          "date": "2024-02-12"
+        }
+      ]
+    },
+    {
+      "name": "Toffees Cake",
+      "id": "42",
+      "price": 7.2,
+      "category": "donuts",
+      "description": "Indulge in the rich and decadent sweetness of Toffee's Cake, a heavenly delight crafted with love and the finest ingredients.",
+      "image": "restaurant/donuts_hut/toffees_cake.png",
+      "ingredients": [
+        "Rich chocolate sponge",
+        "Toffee caramel",
+        "Whipped cream",
+        "Chocolate ganache",
+        "Toasted almonds"
+      ],
+      "weight": 300,
+      "review": [
+        {
+          "author": "Eleanor Shellstrop",
+          "rate": 5,
+          "comment": "This cake is the 'good place' of desserts!",
+          "date": "2024-02-15"
+        },
+        {
+          "author": "Tahani Al-Jamil",
+          "rate": 4,
+          "comment": "Quite splendid, darling. A taste fit for a sophisticated palate.",
+          "date": "2024-02-17"
+        }
+      ]
+    },
+    {
+      "name": "Tiramisu",
+      "id": "43",
+      "price": 8,
+      "category": "donuts",
+      "description": "Indulge in the classic Italian delight with our exquisite Tiramisu, a perfect harmony of coffee-soaked ladyfingers and luscious mascarpone cream.",
+      "image": "restaurant/donuts_hut/tiramisu.png",
+      "ingredients": [
+        "Ladyfingers",
+        "Espresso",
+        "Mascarpone cheese",
+        "Cocoa powder",
+        "Whipped cream"
+      ],
+      "weight": 250,
+      "review": [
+        {
+          "author": "Giuseppe Rossi",
+          "rate": 5,
+          "comment": "Authentic and delightful! Reminds me of my Nonna's kitchen.",
+          "date": "2024-02-20"
+        },
+        {
+          "author": "Isabella Romano",
+          "rate": 4,
+          "comment": "A taste of Italy in every bite. Buonissimo!",
+          "date": "2024-02-22"
+        }
+      ]
+    },
+    {
+      "name": "Cupcake",
+      "id": "44",
+      "price": 3.5,
+      "category": "donuts",
+      "description": "Delight in the sweetness of our delectable Cupcake, a miniature treat with a burst of flavors in every bite.",
+      "image": "restaurant/donuts_hut/cupcake.png",
+      "ingredients": [
+        "Vanilla cake",
+        "Buttercream frosting",
+        "Sprinkles",
+        "Love"
+      ],
+      "weight": 100,
+      "review": [
+        {
+          "author": "Lily Baker",
+          "rate": 5,
+          "comment": "These cupcakes are a little piece of heaven!",
+          "date": "2024-02-25"
+        },
+        {
+          "author": "Charlie Sweettooth",
+          "rate": 4,
+          "comment": "Sweet and charming, just like the name suggests!",
+          "date": "2024-02-28"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "4d779b9b-ee85-412b-b0b6-2e0e91343788",
+      "name": "Volodymyr",
+      "email": "volodka.isyk.95@gmail.com",
+      "password": "Volodymyr1",
+      "phone": "0662046820",
+      "city": "",
+      "street": "",
+      "house": "",
+      "level": "",
+      "apartment": ""
+    }
+  ],
+  "orders": []
 }

@@ -4,9 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 import { searchedState } from '../../reducers/searchStateSlice';
 import { dataOfCart, dataOfUser } from '../../reducers/selectors';
-import UserPopup from '../userPopup/UserPopup';
 import logoIcon from '../../resources/icons/foodwagon__logo.svg';
-import { ModalAuth } from '../index';
+import { ModalAuth, UserPopup } from '../index';
 
 const Header = () => {
     const [value, setValue] = useState('');
