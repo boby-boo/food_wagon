@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
 import { Input } from '../index';
 import { orderAnimationSettings } from '../utils';
-import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
-import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';
-import { ReactComponent as MapIcon } from '../../resources/icons/map__icon.svg';
-import { ReactComponent as StreetIcon } from '../../resources/icons/street__icon.svg';
-import { ReactComponent as HouseIcon } from '../../resources/icons/house__icon.svg';
-import { ReactComponent as LevelIcon } from '../../resources/icons/level__icon.svg';
-import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
-import { ReactComponent as ApartmentIcon } from '../../resources/icons/apartment__icon.svg';
-import { ReactComponent as CardIcon } from '../../resources/icons/credit-card__icon.svg';
-import { ReactComponent as WalletIcon } from '../../resources/icons/wallet__icon.svg';
+import {
+    UserIcon,
+    PhoneIcon,
+    CardIcon,
+    WalletIcon,
+    ApartmentIcon,
+    EmailIcon,
+    MapIcon,
+    StreetIcon,
+    HouseIcon,
+    LevelIcon,
+} from '../icons';
 
 const Order = props => {
     const {

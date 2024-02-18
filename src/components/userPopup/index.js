@@ -10,7 +10,7 @@ import {
     userPopupInputsAddressData as inputsAddress,
 } from '../constants';
 import FoodWagonService from '../../services/FoodWagonService';
-import { ReactComponent as RenameIcon } from '../../resources/icons/rename__icon.svg';
+import { RenameIcon } from '../icons';
 
 const UserPopup = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(

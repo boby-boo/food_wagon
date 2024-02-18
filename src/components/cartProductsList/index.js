@@ -8,8 +8,7 @@ import {
     removeItem,
 } from '../../reducers/cartSlice';
 import { dataOfCart } from '../../reducers/selectors';
-import { ReactComponent as BtnMinusIcon } from '../../resources/icons/minus__icon.svg';
-import { ReactComponent as BtnPlusIcon } from '../../resources/icons/plus__icon.svg';
+import { BtnMinusIcon, BtnPlusIcon } from '../icons';
 
 const CartProductsList = () => {
     const cartData = useSelector(dataOfCart);

@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import icon1 from '../../resources/icons/features__row_icon-1.svg';
-import icon2 from '../../resources/icons/features__row_icon-2.svg';
-import icon3 from '../../resources/icons/features__row_icon-3.svg';
-import featuresImage from '../../resources/images/features__image.png';
-import googleIcon from '../../resources/icons/google-play__icon.svg';
-import appleIcon from '../../resources/icons/apple__icon.svg';
+import {
+    DailyDiscounts,
+    LiveTracing,
+    QuickDelivery,
+    FeaturesImage,
+    GoogleIcon,
+    AppleIcon,
+} from '../icons';
 
 const FeaturesApp = () => {
     const itemsRef = useRef(null);
@@ -52,19 +54,19 @@ const FeaturesApp = () => {
                     <ul className="features__row" ref={itemsRef}>
                         <li className="features__row_item features__row_item-active">
                             <div>
-                                <img src={icon1} alt="features icon" />
+                                <img src={DailyDiscounts} alt="features icon" />
                                 Daily Discounts
                             </div>
                         </li>
                         <li className="features__row_item">
                             <div>
-                                <img src={icon2} alt="features icon" />
+                                <img src={LiveTracing} alt="features icon" />
                                 Live Tracing
                             </div>
                         </li>
                         <li className="features__row_item">
                             <div>
-                                <img src={icon3} alt="features icon" />
+                                <img src={QuickDelivery} alt="features icon" />
                                 Quick Delivery
                             </div>
                         </li>
@@ -74,7 +76,7 @@ const FeaturesApp = () => {
                     <div className="features__bottom_row">
                         <div className="features__bottom_image">
                             <img
-                                src={featuresImage}
+                                src={FeaturesImage}
                                 alt="Featured mobile app"
                             />
                         </div>
@@ -96,7 +98,7 @@ const FeaturesApp = () => {
                                 >
                                     <div className="content__buttons_image">
                                         <img
-                                            src={googleIcon}
+                                            src={GoogleIcon}
                                             alt="Google icon"
                                         />
                                     </div>
@@ -111,7 +113,7 @@ const FeaturesApp = () => {
                                     className="content__buttons_link"
                                 >
                                     <div className="content__buttons_image">
-                                        <img src={appleIcon} alt="Apple icon" />
+                                        <img src={AppleIcon} alt="Apple icon" />
                                     </div>
                                     <div className="content__buttons_description">
                                         <span>Download on the</span>

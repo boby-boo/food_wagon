@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
 import { searchedState } from '../../reducers/searchStateSlice';
 import { dataOfCart, dataOfUser } from '../../reducers/selectors';
-import logoIcon from '../../resources/icons/foodwagon__logo.svg';
+import { LogoIcon } from '../icons';
 import { ModalAuth, UserPopup } from '../index';
 
 const Header = () => {
@@ -104,7 +104,7 @@ const Header = () => {
                         <ul className="header__row">
                             <li className="header__row_logo">
                                 <Link to="/">
-                                    <img src={logoIcon} alt="foodwagon logo" />
+                                    <img src={LogoIcon} alt="foodwagon logo" />
                                     <div>
                                         food<span>wagon</span>
                                     </div>

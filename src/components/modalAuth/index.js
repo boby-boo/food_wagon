@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button, Input } from '../index';
 import FoodWagonService from '../../services/FoodWagonService';
 import { userLogin } from '../../reducers/userSlice';
-import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';
-import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
+import { PasswordIcon, EmailIcon } from '../icons';
 
 const ModalAuth = ({ toggleModalOpen }) => {
     const [userData, setUserData] = useState(

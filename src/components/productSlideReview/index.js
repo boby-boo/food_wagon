@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import userIcon from '../../resources/images/user__icon.png';
-import { ReactComponent as RateIcon } from '../../resources/icons/restaurant__card_rating.svg';
+import { ClientIcon, RateIcon } from '../icons';
 
 const ProductSlideReview = ({ cardsData, updateProductId, productId }) => {
     const renderReview = array => {
@@ -41,7 +40,7 @@ const ProductSlideReview = ({ cardsData, updateProductId, productId }) => {
                     <div className="review-card__info">
                         <div className="review-card__author">
                             <div className="review-card__author_image">
-                                <img src={userIcon} alt="logo user" />
+                                <img src={ClientIcon} alt="logo user" />
                             </div>
                             <div className="review-card__author_desc">
                                 <h3>{author}</h3>

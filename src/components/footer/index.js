@@ -2,9 +2,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { footerData } from '../constants';
-import { ReactComponent as InstagramIcon } from '../../resources/icons/instagram__icon.svg';
-import { ReactComponent as TwitterIcon } from '../../resources/icons/twitter__icon.svg';
-import { ReactComponent as FacebookIcon } from '../../resources/icons/facebook__icon.svg';
+import { InstagramIcon, TwitterIcon, FacebookIcon } from '../icons';
 
 const Footer = () => {
     const listRef = useRef();

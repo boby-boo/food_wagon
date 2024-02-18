@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import DeliveryBannerInput from '../deliveryBannerInput';
-import { ReactComponent as IconDelivery } from '../../../resources/icons/delivery__icon.svg';
-import { ReactComponent as IconPickup } from '../../../resources/icons/pickup__icon.svg';
+import { IconDelivery, IconPickup } from '../../icons';
 import { deliveryBannerAnimationFormSettings } from '../../utils';
 
 const DeliveryBannerForm = () => {
