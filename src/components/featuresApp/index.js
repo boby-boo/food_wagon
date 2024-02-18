@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {
     DailyDiscounts,
     LiveTracing,
-    QuickDelivery,
+    DeliveryIcon,
     FeaturesImage,
     GoogleIcon,
     AppleIcon,
@@ -66,7 +66,7 @@ const FeaturesApp = () => {
                         </li>
                         <li className="features__row_item">
                             <div>
-                                <img src={QuickDelivery} alt="features icon" />
+                                <img src={DeliveryIcon} alt="features icon" />
                                 Quick Delivery
                             </div>
                         </li>

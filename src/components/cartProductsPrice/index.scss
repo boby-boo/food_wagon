@@ -1,11 +1,3 @@
-.order__row {
-    @include templateFlex(space-between, flex-start);
-    gap: 40px;
-    @media (width <= 900px) {
-        flex-direction: column;
-    }
-}
-
 .order__info {
     position: sticky;
     right: 0;
@@ -47,20 +39,5 @@
         @media (width <= 1000px) {
             font-size: 16px;
         }
-    }
-}
-
-.cart__button {
-    @extend .restaurants__button;
-    padding: 21px 80px;
-    @include templateFont(20, 700, 1.2);
-    color: $light-color;
-    text-transform: uppercase;
-    background-color: $primary-color;
-    border-radius: 10px;
-    @include templateTransition(opacity);
-
-    &:hover {
-        opacity: 0.8;
     }
 }

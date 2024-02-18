@@ -23,7 +23,7 @@ import ErrorGif from '../resources/icons/page404.gif';
 import LogoIcon from '../resources/icons/foodwagon__logo.svg';
 import DailyDiscounts from '../resources/icons/features__row_icon-1.svg';
 import LiveTracing from '../resources/icons/features__row_icon-2.svg';
-import QuickDelivery from '../resources/icons/features__row_icon-3.svg';
+import DeliveryIcon from '../resources/icons/features__row_icon-3.svg';
 import FeaturesImage from '../resources/images/features__image.png';
 import GoogleIcon from '../resources/icons/google-play__icon.svg';
 import AppleIcon from '../resources/icons/apple__icon.svg';
@@ -46,6 +46,7 @@ export {
     HouseIcon,
     LevelIcon,
     ApartmentIcon,
+    DeliveryIcon,
     CardIcon,
     WalletIcon,
     InstagramIcon,
@@ -54,7 +55,6 @@ export {
     DailyDiscounts,
     LogoIcon,
     LiveTracing,
-    QuickDelivery,
     FeaturesImage,
     GoogleIcon,
     AppleIcon,

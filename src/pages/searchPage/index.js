@@ -2,18 +2,21 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { dataOfFilteredCards, dataOfSearchState } from '../reducers/selectors';
+import {
+    dataOfFilteredCards,
+    dataOfSearchState,
+} from '../../reducers/selectors';
 import {
     Filter,
     RestaurantItemCard,
     Button,
     ScrollToTopButton,
     Spinner,
-} from '../components';
-import useFoodWagonService from '../services/FoodWagonService';
-import { filteredProductsData } from '../reducers/filteredDataSlice';
-import { searchedState } from '../reducers/searchStateSlice';
-import { searchedListOptions } from '../components/constants';
+} from '../../components';
+import useFoodWagonService from '../../services/FoodWagonService';
+import { filteredProductsData } from '../../reducers/filteredDataSlice';
+import { searchedState } from '../../reducers/searchStateSlice';
+import { searchedListOptions } from '../../components/constants';
 
 const SearchPage = () => {
     const [offset, setOffset] = useState(12);

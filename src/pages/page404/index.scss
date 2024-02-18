@@ -1,0 +1,28 @@
+.error-page {
+    margin: 15vh 0;
+
+    &__row {
+        @include templateFlex(center, center);
+        flex-direction: column;
+
+        h1 {
+            @include templateFont(40, 600, 1.5);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        img {
+            max-width: 400px;
+        }
+
+        a {
+            @include templateTransition(color);
+            text-transform: uppercase;
+            text-decoration: underline;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}

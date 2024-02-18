@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { dataOfCart } from '../reducers/selectors';
-import { CartProductsList, CartProductsPrice } from '../components';
+import { dataOfCart } from '../../reducers/selectors';
+import { CartProductsList, CartProductsPrice } from '../../components';
 
 const CartPage = () => {
     const cartData = useSelector(dataOfCart);

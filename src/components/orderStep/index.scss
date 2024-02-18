@@ -1,7 +1,4 @@
 .steps__row {
-    @include templateFlex(center, center);
-    column-gap: 6px;
-
     input {
         display: none;
     }

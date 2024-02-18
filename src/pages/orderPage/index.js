@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
-import { Order, OrderStep } from '../components';
-import { removeAllItem } from '../reducers/cartSlice';
-import { dataOfCart } from '../reducers/selectors';
-import { orderAnimationSettings } from '../components/utils';
-import useFoodWagonService from '../services/FoodWagonService';
-import { ReactComponent as DeliveryIcon } from '../resources/icons/features__row_icon-3.svg';
+import { Order, OrderStep } from '../../components';
+import { removeAllItem } from '../../reducers/cartSlice';
+import { dataOfCart } from '../../reducers/selectors';
+import { orderAnimationSettings } from '../../components/utils';
+import useFoodWagonService from '../../services/FoodWagonService';
+import { DeliveryIcon } from '../../components/icons';
 
 const OrderPage = () => {
     const {

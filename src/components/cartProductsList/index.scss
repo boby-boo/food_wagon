@@ -1,27 +1,6 @@
 .cart {
     padding: 40px 0;
 
-    &__empty {
-        max-width: 500px;
-        width: 100%;
-        min-height: 65vh;
-        margin: 0 auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        @include templateFont(20, 400, 1.6);
-        text-transform: uppercase;
-        color: $gray-color;
-        text-align: center;
-
-        p {
-            max-width: 350px;
-            margin: 0 auto;
-            margin-bottom: 40px;
-        }
-    }
-
     &__row {
         max-width: 900px;
         width: 100%;
@@ -163,5 +142,13 @@
         width: 16px;
         height: 16px;
         fill: $light-color;
+    }
+}
+
+.order__row {
+    @include templateFlex(space-between, flex-start);
+    gap: 40px;
+    @media (width <= 900px) {
+        flex-direction: column;
     }
 }

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import useFoodWagonService from '../services/FoodWagonService';
+import useFoodWagonService from '../../services/FoodWagonService';
 import {
     RestaurantHeader,
     ProductSlideReview,
     ProductSlide,
     BackButton,
     Spinner,
-} from '../components';
+} from '../../components';
 
 const RestaurantSlider = () => {
     const [updateProductId, setUpdateProductId] = useState(null);
@@ -41,14 +41,11 @@ const RestaurantSlider = () => {
                     productId={productId}
                     setUpdateProductId={setUpdateProductId}
                 />
-                <div className="review">
-                    <h2 className="review__title">Review</h2>
-                    <ProductSlideReview
-                        cardsData={cardsData.data}
-                        productId={productId}
-                        updateProductId={updateProductId}
-                    />
-                </div>
+                <ProductSlideReview
+                    cardsData={cardsData.data}
+                    productId={productId}
+                    updateProductId={updateProductId}
+                />
             </div>
         </section>
     );

@@ -1,0 +1,7 @@
+.signup {
+    margin: 10vh 0;
+    padding: 40px;
+    @media (width <= 600px) {
+        padding: 0;
+    }
+}

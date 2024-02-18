@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import useFoodWagonService from '../services/FoodWagonService';
-import { updateDataCards } from '../reducers/dataCardsSlice';
+import useFoodWagonService from '../../services/FoodWagonService';
+import { updateDataCards } from '../../reducers/dataCardsSlice';
 import {
     RestaurantHeader,
     RestaurantItemCard,
     BackButton,
     Spinner,
-} from '../components';
-import { restaurantFilterOptions } from '../components/constants';
+} from '../../components';
+import { restaurantFilterOptions } from '../../components/constants';
 
 const RestaurantPage = () => {
     const [cardData, setCardData] = useState(null);

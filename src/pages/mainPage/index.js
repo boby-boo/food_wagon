@@ -10,7 +10,7 @@ import {
     FoodCategory,
     PopularItems,
     ScrollToTopButton,
-} from '../components';
+} from '../../components';
 
 const MainPage = () => {
     return (
