@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import DeliveryBannerInput from './DeliveryBannerInput';
-import { ReactComponent as IconDelivery } from '../../resources/icons/delivery__icon.svg';
-import { ReactComponent as IconPickup } from '../../resources/icons/pickup__icon.svg';
-import { deliveryBannerAnimationFormSettings } from '../utils';
+import DeliveryBannerInput from '../deliveryBannerInput';
+import { ReactComponent as IconDelivery } from '../../../resources/icons/delivery__icon.svg';
+import { ReactComponent as IconPickup } from '../../../resources/icons/pickup__icon.svg';
+import { deliveryBannerAnimationFormSettings } from '../../utils';
 
 const DeliveryBannerForm = () => {
     const [userMail, setUserMail] = useState('');

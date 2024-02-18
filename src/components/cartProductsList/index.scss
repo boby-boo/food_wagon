@@ -143,8 +143,8 @@
                 min-height: 24px;
                 border: 1px solid $primary-color;
                 border-radius: 6px;
-                background: url('../../../resources/icons/remove__icon.svg')
-                    center / 18px 18px no-repeat;
+                background: url('../../resources/icons/remove__icon.svg') center /
+                    18px 18px no-repeat;
                 @include templateTransition(background-color);
 
                 &:hover {

@@ -1,4 +1,4 @@
-import DeliveryBanner from '../components/deliveryBanner/DeliveryBanner';
+import { DeliveryBanner } from '../components';
 import AboutService from '../components/aboutService/AboutService';
 import FlashDeals from '../components/flashDeals/FlashDeals';
 import FeatureRestaurants from '../components/featureRestaurants/FeatureRestaurants';

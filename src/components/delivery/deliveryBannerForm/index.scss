@@ -1,50 +1,4 @@
 .delivery-banner {
-    background: url("../../resources/images/banner__food-image.png") center /
-        cover no-repeat;
-
-    &__row {
-        padding: 132px 0;
-        @media (width <= 1000px) {
-            padding: 64px 0;
-        }
-        @media (width <= 700px) {
-            padding: 30px 0;
-        }
-
-        &_text {
-            margin-bottom: 32px;
-
-            h1 {
-                @include templateFont(88, 700, 1);
-                color: $light-color;
-                margin-bottom: 15px;
-            }
-
-            p {
-                @include templateFont(22, 400, 1.2);
-            }
-            @media (width <= 1000px) {
-                h1,
-                p {
-                    text-align: center;
-                }
-
-                h1 {
-                    font-size: 69px;
-                }
-            }
-            @media (width <= 700px) {
-                h1 {
-                    font-size: 40px;
-                }
-
-                p {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-
     &__form {
         max-width: 880px;
         background-color: $light-color;
@@ -65,44 +19,6 @@
 
             input {
                 display: none;
-            }
-
-            .input__wrapper {
-                max-width: 148px;
-                width: 100%;
-
-                .form__top_input {
-                    padding: 5px;
-                    min-height: 38px;
-                    @include templateFlex(center, center);
-                    column-gap: 10px;
-                    @include templateFont(18, 700, 1);
-                    color: #757575;
-                    border-radius: 8px;
-                    @include templateTransition(all);
-
-                    &:hover {
-                        color: #f17228e5;
-                        background: #f172280c;
-                        cursor: pointer;
-
-                        .icon {
-                            fill: #f17228e5;
-                        }
-                    }
-                }
-
-                .form__top_input-delivery:checked,
-                .form__top_input-pickup:checked {
-                    & + label {
-                        color: $secondary-color;
-                        background: #f172281a;
-
-                        .input__delivery_icon {
-                            fill: $secondary-color;
-                        }
-                    }
-                }
             }
         }
 
@@ -126,7 +42,7 @@
                 font-size: 18px;
                 color: $gray-color;
                 background: #f5f5f5
-                    url("../../resources/icons/form-location__icon.svg") 16px
+                    url('../../../resources/icons/form-location__icon.svg') 16px
                     center / 18px 34px no-repeat;
                 border-radius: 8px;
                 @include templateTransition(box-shadow);
@@ -170,7 +86,7 @@
                     width: 14px;
                     height: 14px;
                     display: block;
-                    background: url("../../resources/icons/form-location__search_icon.svg");
+                    background: url('../../../resources/icons/form-location__search_icon.svg');
                 }
             }
         }

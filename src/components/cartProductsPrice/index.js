@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { dataOfCart } from '../../../reducers/selectors';
+import { dataOfCart } from '../../reducers/selectors';
 
 const CartProductsPrice = () => {
     const [totalPrice, setTotalPrice] = useState(0);
