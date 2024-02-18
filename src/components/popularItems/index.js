@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
-import Spinner from '../spinner/Spinner';
+import { Spinner } from '../index';
 import { popularItemsSliderSettings } from '../utils';
 import { addToCart } from '../../reducers/cartSlice';
 import useFoodWagonService from '../../services/FoodWagonService';

@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import useFoodWagonService from '../../services/FoodWagonService';
-import Button from '../button/Button';
-import Spinner from '../spinner/Spinner';
+import { Button, Spinner } from '../index';
 
 const FeatureRestaurants = () => {
     const [restaurantsData, setRestaurantsData] = useState(null);

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { dataOfUser } from '../../reducers/selectors';
-import ModalAuth from '../modalAuth/ModalAuth';
+import { ModalAuth } from '../index';
 
 const PrivateRoute = ({ children }) => {
     const [isOpenModalWindow, setIsOpenModalWindow] = useState(true);

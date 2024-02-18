@@ -1,14 +1,16 @@
-import { DeliveryBanner } from '../components';
-import AboutService from '../components/aboutService/AboutService';
-import FlashDeals from '../components/flashDeals/FlashDeals';
-import FeatureRestaurants from '../components/featureRestaurants/FeatureRestaurants';
-import FoodCategory from '../components/foodCategory/FoodCategory';
-import FeaturesApp from '../components/featuresApp/FeaturesApp';
-import CardsOfOrders from '../components/cardsOfOrders/CardsOfOrders';
-import Banner from '../components/banner/Banner';
-import PopularItems from '../components/popularItems/PopularItems';
-import ErrorBoundary from '../components/errorBoundary/ErrorBoundary';
-import ScrollToTopButton from '../components/scrollToTopButton/ScrollToTopButton';
+import {
+    DeliveryBanner,
+    AboutService,
+    Banner,
+    CardsOfOrders,
+    ErrorBoundary,
+    FeatureRestaurants,
+    FeaturesApp,
+    FlashDeals,
+    FoodCategory,
+    PopularItems,
+    ScrollToTopButton,
+} from '../components';
 
 const MainPage = () => {
     return (

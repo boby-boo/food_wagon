@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Input from '../input/Input';
+import { Input } from '../index';
 import { orderAnimationSettings } from '../utils';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
 import { ReactComponent as PhoneIcon } from '../../resources/icons/phone__icon.svg';

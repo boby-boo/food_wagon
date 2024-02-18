@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useFoodWagonService from '../services/FoodWagonService';
-import ProductSlide from '../components/productSliderItem/ProductSlide';
-import ProductSlideReview from '../components/productSliderItem/ProductSlideReview';
-import Spinner from '../components/spinner/Spinner';
-import RestaurantHeader from '../components/restaurantHeader/RestaurantHeader';
-import BackButton from '../components/backButton/BackButton';
+import {
+    RestaurantHeader,
+    ProductSlideReview,
+    ProductSlide,
+    BackButton,
+    Spinner,
+} from '../components';
 
 const RestaurantSlider = () => {
     const [updateProductId, setUpdateProductId] = useState(null);

@@ -6,7 +6,7 @@ import { searchedState } from '../../reducers/searchStateSlice';
 import { dataOfCart, dataOfUser } from '../../reducers/selectors';
 import UserPopup from '../userPopup/UserPopup';
 import logoIcon from '../../resources/icons/foodwagon__logo.svg';
-import ModalAuth from '../modalAuth/ModalAuth';
+import { ModalAuth } from '../index';
 
 const Header = () => {
     const [value, setValue] = useState('');

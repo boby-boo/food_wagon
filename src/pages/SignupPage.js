@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { userLogin } from '../reducers/userSlice';
 import FoodWagonService from '../services/FoodWagonService';
-import SignupForm from '../components/signupForm/SignupForm';
+import { SignupForm } from '../components';
 
 const SignupPage = () => {
     const [userData, setUserData] = useState({

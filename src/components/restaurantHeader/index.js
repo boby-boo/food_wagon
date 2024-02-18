@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Filter from '../filter/Filter';
+import { Filter } from '../index';
 
 const RestaurantHeader = props => {
     const {

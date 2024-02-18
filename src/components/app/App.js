@@ -1,21 +1,21 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Spinner from '../spinner/Spinner';
+import { Footer, Header, Notification, PrivateRoute, Spinner } from '../index';
 
-const Header = lazy(() => import('../header/Header'));
+// const Header = lazy(() => import('../header/Header'));
 const MainPage = lazy(() => import('../../pages/MainPage'));
 const RestaurantPage = lazy(() => import('../../pages/RestaurantPage'));
 const RestaurantSliderPage = lazy(
     () => import('../../pages/RestaurantSliderPage'),
 );
 const CartPage = lazy(() => import('../../pages/CartPage'));
-const Footer = lazy(() => import('../footer/Footer'));
+// const { Footer } = lazy(() => import('../index'));
 const SearchPage = lazy(() => import('../../pages/SearchPage'));
 const SignupPage = lazy(() => import('../../pages/SignupPage'));
-const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
+// const PrivateRoute = lazy(() => import('../privateRoute/PrivateRoute'));
 const Page404 = lazy(() => import('../../pages/Page404'));
 const OrderPage = lazy(() => import('../../pages/OrderPage'));
-const Notification = lazy(() => import('../notification/Notification'));
+// const Notification = lazy(() => import('../notification/Notification'));
 
 const App = () => {
     return (

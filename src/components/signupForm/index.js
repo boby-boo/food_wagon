@@ -1,4 +1,4 @@
-import Input from '../input/Input';
+import { Input } from '../index';
 import { ReactComponent as UserIcon } from '../../resources/icons/user__icon.svg';
 import { ReactComponent as EmailIcon } from '../../resources/icons/email__icon.svg';
 import { ReactComponent as PasswordIcon } from '../../resources/icons/password__icon.svg';

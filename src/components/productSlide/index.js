@@ -1,6 +1,6 @@
 import Slider from 'react-slick';
 import { motion, AnimatePresence } from 'framer-motion';
-import ProductSlideDescription from './ProductSlideDescription';
+import { ProductSlideDescription } from '../index';
 import { productItemSliderSettings } from '../utils';
 
 import 'slick-carousel/slick/slick.css';

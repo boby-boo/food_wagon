@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import RestaurantItemCard from '../components/restaurantItemCard/RestaurantItemCard';
-import Spinner from '../components/spinner/Spinner';
-import Button from '../components/button/Button';
 import { dataOfFilteredCards, dataOfSearchState } from '../reducers/selectors';
-import Filter from '../components/filter/Filter';
-import ScrollToTopButton from '../components/scrollToTopButton/ScrollToTopButton';
+import {
+    Filter,
+    RestaurantItemCard,
+    Button,
+    ScrollToTopButton,
+    Spinner,
+} from '../components';
 import useFoodWagonService from '../services/FoodWagonService';
 import { filteredProductsData } from '../reducers/filteredDataSlice';
 import { searchedState } from '../reducers/searchStateSlice';

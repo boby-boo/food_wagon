@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import Spinner from '../components/spinner/Spinner';
 import useFoodWagonService from '../services/FoodWagonService';
 import { updateDataCards } from '../reducers/dataCardsSlice';
-import BackButton from '../components/backButton/BackButton';
-import RestaurantHeader from '../components/restaurantHeader/RestaurantHeader';
-import RestaurantItemCard from '../components/restaurantItemCard/RestaurantItemCard';
+import {
+    RestaurantHeader,
+    RestaurantItemCard,
+    BackButton,
+    Spinner,
+} from '../components';
 import { restaurantFilterOptions } from '../components/constants';
 
 const RestaurantPage = () => {

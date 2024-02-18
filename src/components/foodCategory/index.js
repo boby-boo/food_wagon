@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { foodCategorySliderSettings } from '../utils';
 import useFoodWagonService from '../../services/FoodWagonService';
-import Spinner from '../spinner/Spinner';
+import { Spinner } from '../index';
 
 const FoodCategory = () => {
     const [categoriesData, setCategoriesData] = useState();

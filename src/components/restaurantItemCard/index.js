@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { addToCart } from '../../reducers/cartSlice';
-import Spinner from '../spinner/Spinner';
+import { Spinner } from '../index';
 
 const RestaurantItemCard = ({ cardsArray }) => {
     const dispatch = useDispatch();

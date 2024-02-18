@@ -1,0 +1,76 @@
+.steps__row {
+    @include templateFlex(center, center);
+    column-gap: 6px;
+
+    input {
+        display: none;
+    }
+
+    &_step {
+        @include templateFlex(center, center);
+        column-gap: 6px;
+        height: 40px;
+
+        &:last-child {
+            .dotted {
+                display: none;
+            }
+        }
+
+        .circle {
+            @include templateFlex(center, center);
+            @include templateFont(18, 600, 1.2);
+            width: 40px;
+            height: 40px;
+            color: $light-color;
+            background-color: transparentize($gray-color, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:hover {
+                .circle {
+                    background-color: transparentize($primary-color, 0.2);
+                }
+            }
+        }
+
+        .dotted {
+            width: 10px;
+            height: 10px;
+            display: block;
+            background-color: transparentize($gray-color, 0.7);
+            border-radius: 50%;
+
+            &__row {
+                @include templateFlex(center, center);
+                column-gap: 4px;
+            }
+        }
+
+        .circle,
+        .dotted {
+            @include templateTransition(all);
+        }
+    }
+}
+
+.step__complete {
+    .circle {
+        background-color: $primary-color;
+    }
+
+    .dotted {
+        background-color: transparentize($primary-color, 0.4);
+    }
+}
+
+.step__input_address:checked,
+.step__input_personal:checked,
+.step__input_delivery:checked {
+    & + .steps__row_step {
+        .circle {
+            box-shadow: $primary-shadow;
+            background-color: $primary-color;
+        }
+    }
+}
