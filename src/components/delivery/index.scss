@@ -1,3 +1,14 @@
-@import 'deliveryBannerForm';
-@import 'deliveryBannerInput';
-@import 'deliveryBannerText';
+.delivery-banner {
+    background: url('../../resources/images/banner__food-image.png') center /
+        cover no-repeat;
+
+    &__row {
+        padding: 132px 0;
+        @media (width <= 1000px) {
+            padding: 64px 0;
+        }
+        @media (width <= 700px) {
+            padding: 30px 0;
+        }
+    }
+}

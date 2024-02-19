@@ -1,0 +1,34 @@
+.delivery-banner__row {
+    &_text {
+        margin-bottom: 32px;
+
+        h1 {
+            @include templateFont(88, 700, 1);
+            color: $light-color;
+            margin-bottom: 15px;
+        }
+
+        p {
+            @include templateFont(22, 400, 1.2);
+        }
+        @media (width <= 1000px) {
+            h1,
+            p {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 69px;
+            }
+        }
+        @media (width <= 700px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

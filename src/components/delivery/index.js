@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import DeliveryBannerForm from './deliveryBannerForm';
-import DeliveryBannerText from './deliveryBannerText';
+import { DeliveryBannerForm, DeliveryBannerText } from '../index';
 
 const DeliveryBanner = () => {
     return (

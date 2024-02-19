@@ -42,7 +42,7 @@
                 font-size: 18px;
                 color: $gray-color;
                 background: #f5f5f5
-                    url('../../../resources/icons/form-location__icon.svg') 16px
+                    url('../../resources/icons/form-location__icon.svg') 16px
                     center / 18px 34px no-repeat;
                 border-radius: 8px;
                 @include templateTransition(box-shadow);
@@ -86,7 +86,7 @@
                     width: 14px;
                     height: 14px;
                     display: block;
-                    background: url('../../../resources/icons/form-location__search_icon.svg');
+                    background: url('../../resources/icons/form-location__search_icon.svg');
                 }
             }
         }

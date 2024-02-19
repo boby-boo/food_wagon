@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { deliveryBannerAnimationTextSettings } from '../../utils';
+import { deliveryBannerAnimationTextSettings } from '../utils';
 
 const DeliveryBannerText = () => {
     return (
