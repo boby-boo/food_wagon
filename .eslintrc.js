@@ -22,6 +22,7 @@ module.exports = {
         'no-plusplus': 'off',
         'import/prefer-default-export': 'off',
         'react/display-name': 'off',
+        'import/no-cycle': 'off',
         'no-underscore-dangle': 'off',
         'import/no-dynamic-require': 'off',
         'global-require': 'off',
