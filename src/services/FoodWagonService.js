@@ -4,7 +4,7 @@ import { useHttp } from '../hooks/http.hook';
 const useFoodWagonService = () => {
     const _baseOffsetRestaurant = 4;
     const _baseOffsetProducts = 12;
-    const _baseURL = 'http://localhost:3001/';
+    const _baseURL = 'https://food-wagon-to-vercel12.vercel.app/';
     const { request } = useHttp();
 
     const getAllRestaurant = async (
