@@ -27,7 +27,7 @@
         "lint": "eslint --fix --ext .js,.jsx .",
         "stylelint": "stylelint \"**/*.scss\" --fix",
         "prettier": "prettier",
-        "start": "concurrently \"react-scripts start\" \"npx json-server food_wagon.json --port 3001\"",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
