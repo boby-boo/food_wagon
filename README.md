@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Food Wagon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Food Wagon - is a service for searching and ordering food.
 
-## Available Scripts
+## Technologies Used in the Project:
 
-In the project directory, you can run:
+**React:** The project utilizes the React library for building the user interface, ensuring a responsive and interactive user experience.
 
-### `npm start`
+**Redux Toolkit:** Redux Toolkit is employed to manage the application's state efficiently, providing a centralized store for data and enabling seamless data flow within the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**JSON-Server:** To simulate a backend server for handling data, JSON-Server is employed. This allows for realistic testing and development of the application's data interactions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**SCSS:** Styling is implemented with SCSS (Sass), enhancing the maintainability and organization of the project's stylesheets.
 
-### `npm test`
+**Framer Motion:** Animations and motion effects are implemented using Framer Motion, adding a dynamic and visually appealing touch to the user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Features:
 
-### `npm run build`
+**Intuitive Interface**
+Wood Fagon ensures users an intuitive and user-friendly interface, making the process of searching and ordering food enjoyable and carefree.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Diverse Restaurants**
+With our service, you gain access to a wide selection of restaurants offering diverse culinary delights. From cafes to fast-food joints, we have everything to satisfy your taste buds.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Goal:
+Our primary goal is to enhance the overall food ordering and delivery experience for users. We aim to create a platform that not only simplifies the process but also adds an element of a diverse range of restaurant choices. By leveraging the power of React, we seek to provide a modern, efficient, and enjoyable solution for users to explore, order, and indulge in the world of gastronomy. Join us on this culinary journey with Wood Fagon! Bon appétit! 🍽️
