@@ -8,7 +8,7 @@ import { removeAllItem } from '../../reducers/cartSlice';
 import { dataOfCart } from '../../reducers/selectors';
 import { orderAnimationSettings } from '../../components/utils';
 import useFoodWagonService from '../../services/FoodWagonService';
-import { DeliveryIcon } from '../../components/icons';
+import { ReactComponent as DeliveryIcon } from './images/features__row_icon-3.svg';
 
 const OrderPage = () => {
     const {
